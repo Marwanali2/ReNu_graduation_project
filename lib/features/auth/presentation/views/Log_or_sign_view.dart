@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/log_or_sign_view_body.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/log_or_sign_view_body.dart';
 
 class LogOrSignView extends StatelessWidget {
   const LogOrSignView({super.key});
