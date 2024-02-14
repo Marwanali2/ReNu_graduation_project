@@ -3,7 +3,7 @@ import 'package:graduation_project/features/auth/presentation/views/Log_or_sign_
 import 'package:graduation_project/features/splash/presentaion/view/splash_view.dart';
 
 abstract class AppRouter {
-  static const kAuth = '/auth';
+  static const kLogOrSign = '/logorsign';
  static final router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
@@ -13,7 +13,7 @@ abstract class AppRouter {
         },
       ),
       GoRoute(
-        path: kAuth,
+        path: kLogOrSign,
         builder: (context, state) {
           return const LogOrSignView();
         },

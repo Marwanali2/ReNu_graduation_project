@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/features/splash/presentaion/view/widgets/sliding_image.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -18,15 +20,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     initSliding();
     slidingAnimation.addListener(() {});
-    //navigateToHome();
+    navigateToHome();
   }
 
-  // void navigateToHome() {
-  //   Future.delayed(const Duration(seconds: 2), () {
-  //     Get.to(const HomeView(),transition: Transition.fade,duration: ktransationDuration);
-  //    GoRouter.of(context).push(AppRouter.kAuth);
-  //   });
-  // }
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      // Get.to(const HomeView(),transition: Transition.fade,duration: ktransationDuration);
+     GoRouter.of(context).push(AppRouter.kLogOrSign);
+    });
+  }
 
   void initSliding() {
     animationController =
