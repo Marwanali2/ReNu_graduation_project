@@ -25,13 +25,7 @@ fontFamily: signFont
  static const textStyle30=TextStyle(
 fontSize: 30,
 fontWeight: FontWeight.w700,
-color:Color(0xff676767),
-fontFamily: signFont
- );
- static const textStyle=TextStyle(
-fontSize: 30,
-fontWeight: FontWeight.w700,
-color:Color(0xff676767),
+color:Color(0xff282828),
 fontFamily: signFont
  );
  static const textStyle16=TextStyle(

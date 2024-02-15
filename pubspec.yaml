@@ -67,11 +67,11 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Roboto
+    - family: Roboto-Black
       fonts:
         - asset: assests/fonts/Roboto-Black.ttf
         # - asset: assests/fonts/Roboto-Light.ttf
-    - family: Inter
+    - family: Inter-VariableFont_slnt,wght
       fonts:
         - asset: assests/fonts/Inter-VariableFont_slnt,wght.ttf
 
