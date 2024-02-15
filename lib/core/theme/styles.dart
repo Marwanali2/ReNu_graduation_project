@@ -27,7 +27,18 @@ fontSize: 30,
 fontWeight: FontWeight.w700,
 color:Color(0xff676767),
 fontFamily: signFont
-
+ );
+ static const textStyle=TextStyle(
+fontSize: 30,
+fontWeight: FontWeight.w700,
+color:Color(0xff676767),
+fontFamily: signFont
+ );
+ static const textStyle16=TextStyle(
+fontSize: 16,
+fontWeight: FontWeight.w600,
+color:Color(0xff676767),
+fontFamily: signFont
  );
 
 }
