@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/auth/presentation/views/Log_or_sign_view.dart';
+import 'package:graduation_project/features/auth/presentation/views/login_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/splash/presentaion/view/splash_view.dart';
 
@@ -26,6 +27,12 @@ abstract class AppRouter {
         path: kSignUp,
         builder: (context, state) {
           return const SignUpView();
+        },
+      ),
+      GoRoute(
+        path: kLogIn,
+        builder: (context, state) {
+          return const LogInView();
         },
       ),
       //   GoRoute(

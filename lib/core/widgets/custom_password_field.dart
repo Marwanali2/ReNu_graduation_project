@@ -4,9 +4,9 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CustomPasswordField extends StatefulWidget {
-  const CustomPasswordField({super.key, required this.hintText});
+  const CustomPasswordField({super.key,  this.hintText});
   
-final String hintText;
+final String? hintText;
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
 }

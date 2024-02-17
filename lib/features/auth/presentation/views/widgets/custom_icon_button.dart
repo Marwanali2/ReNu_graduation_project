@@ -1,22 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 
 class CustomIconButton extends StatelessWidget {
-  const CustomIconButton({super.key, required this.icon});
-final IconData icon;
+  const CustomIconButton(
+      {super.key,
+      required this.icon,
+      required this.height,
+      required this.width,
+      required this.iconSize,
+      required this.borderRadius,
+
+      });
+  final IconData icon;
+  final double height;
+  final double width;
+  final double iconSize;
+  final double borderRadius;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
-        width:35,
-        height: 35,
+        width: width,
+        height: height,
         decoration: BoxDecoration(
-          borderRadius:BorderRadius.circular(17),
-          border: Border.all(width: 1,color:buttonColor )
+            borderRadius: BorderRadius.circular(borderRadius),
+            border: Border.all(width: 1, color: buttonColor)),
+        child: Icon(
+          icon,
+          size: iconSize,
+          color: Color(0xff000000),
         ),
-        child: Icon(icon,size: 25,color: Color(0xff000000),),
       ),
     );
   }

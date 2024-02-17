@@ -35,9 +35,9 @@ class LogOrSignViewBody extends StatelessWidget {
       const Row(
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomIconButton(icon: FontAwesomeIcons.google,),
+            CustomIconButton(icon: FontAwesomeIcons.google,height: 27,width: 27,iconSize: 18.87,borderRadius: 17,),
             SizedBox(width: 20,),
-            CustomIconButton(icon: FontAwesomeIcons.apple,),
+            CustomIconButton(icon: FontAwesomeIcons.apple,height: 27,width: 27,iconSize: 18.87,borderRadius: 17,),
 
           ],
         ),
