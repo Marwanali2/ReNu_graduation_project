@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
-const buttonColor=Color(0xff676767);
+const buttonColor=Color.fromARGB(255, 137, 126, 126);
 const whiteColor=Color(0xffFFFFFF);
 const blackcolor=Color(0xff000000);
+const borderColor=Color(0xffD8DADC);
