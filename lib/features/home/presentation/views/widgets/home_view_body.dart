@@ -8,12 +8,7 @@ class HomeViewBody extends StatelessWidget {
     return Column(
       children: [
         Row(
-          children: [
-            Text(
-              'xxxxx',
-              style: TextStyle(fontWeight: FontWeight.w600),
-            )
-          ],
+          children: [],
         ),
       ],
     );
