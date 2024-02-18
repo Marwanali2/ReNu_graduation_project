@@ -4,8 +4,9 @@ import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CustomTextWidget extends StatelessWidget {
-  const CustomTextWidget({super.key});
-
+  const CustomTextWidget({super.key, required this.text, required this.textbutton, });
+  final String text;
+  final String textbutton;
   @override
   Widget build(BuildContext context) {
     return  Row(

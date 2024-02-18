@@ -85,7 +85,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 const CustomPasswordField(hintText: 'repeat password',),
                  const SizedBox(height: 20,),
                  const CustomButtonField(text: 'Sign up'),
-                 const Center(child: CustomTextWidget()),
+                 const Center(child: CustomTextWidget(text: 'Don’t have an account?' ,textbutton: 'Sign up',)),
               ],
             ),
           ),

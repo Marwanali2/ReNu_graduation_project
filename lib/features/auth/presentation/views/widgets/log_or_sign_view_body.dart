@@ -42,7 +42,7 @@ class LogOrSignViewBody extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 30,),
-                    Center(child: CustomTextWidget()),
+                    Center(child: CustomTextWidget(text:'Already have account?',textbutton: 'Log in',)),
 
         ]),
       ),

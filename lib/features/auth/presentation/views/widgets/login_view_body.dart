@@ -96,7 +96,8 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                   CustomIconButton(icon: FontAwesomeIcons.apple,height: 49,width: 49,iconSize: 34,borderRadius: 25,)
                   
                               ]),
-               )
+               ),
+               
                 
                ],)
         
