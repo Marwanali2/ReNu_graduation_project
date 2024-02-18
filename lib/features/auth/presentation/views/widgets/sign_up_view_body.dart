@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
@@ -85,7 +86,9 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 const CustomPasswordField(hintText: 'repeat password',),
                  const SizedBox(height: 20,),
                  const CustomButtonField(text: 'Sign up'),
-                 const Center(child: CustomTextWidget(text: 'Don’t have an account?' ,textbutton: 'Sign up',)),
+                    Center(child: CustomTextWidget(text1:'Already have account?',textbutton: 'Log in',pageRoute: () {
+                      GoRouter.of(context).push(AppRouter.kLogIn);
+                    },)),
               ],
             ),
           ),

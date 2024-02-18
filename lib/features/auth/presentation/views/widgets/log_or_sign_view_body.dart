@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_button_Facebook.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_button_email.dart';
@@ -42,7 +44,10 @@ class LogOrSignViewBody extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 30,),
-                    Center(child: CustomTextWidget(text:'Already have account?',textbutton: 'Log in',)),
+                    Center(child: CustomTextWidget(text1:'Already have account?',textbutton: 'Log in', pageRoute: (){
+                GoRouter.of(context).push(AppRouter.kLogIn);
+               },
+               )),
 
         ]),
       ),

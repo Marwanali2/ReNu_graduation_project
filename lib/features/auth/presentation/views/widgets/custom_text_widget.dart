@@ -4,20 +4,19 @@ import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CustomTextWidget extends StatelessWidget {
-  const CustomTextWidget({super.key, required this.text, required this.textbutton, });
-  final String text;
+  const CustomTextWidget({super.key, required this.text1, required this.textbutton, required this.pageRoute, });
+  final String text1;
   final String textbutton;
+  final VoidCallback pageRoute;
   @override
   Widget build(BuildContext context) {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.center,
 children: [
- const Text('Already have account? ',style: Styles.textStyle14,),
+  Text(text1,style: Styles.textStyle14,),
   GestureDetector(
-    onTap: (){
-      GoRouter.of(context).push(AppRouter.kLogIn);
-    },
-    child: Text('Log In?',style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600,color: const Color(0xff000000),),))
+    onTap: pageRoute,
+    child: Text(textbutton,style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600,color: const Color(0xff000000),),))
 
 ],
     );
