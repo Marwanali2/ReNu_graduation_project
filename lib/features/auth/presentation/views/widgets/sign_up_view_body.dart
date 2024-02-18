@@ -10,6 +10,7 @@ import 'package:graduation_project/core/widgets/custom_text_field.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_mobile_number_widget.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_widget.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/custom_title_widget.dart';
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
 
@@ -30,20 +31,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: 39,
-                  height: 39,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border:
-                          Border.all(color: const Color(0xffD8DADC), width: 1)),
-                  child: IconButton(
-                    onPressed: () {
-                      GoRouter.of(context).pop();
-                    },
-                    icon: const Icon(FontAwesomeIcons.chevronLeft),
-                  ),
-                ),
+                const CustomTitleWidget(),
                 const SizedBox(
                   height: 30,
                 ),

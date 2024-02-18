@@ -18,7 +18,7 @@ fontFamily: signFont
  static const textStyle14=TextStyle(
 fontSize: 14,
 fontWeight: FontWeight.w400,
-color:Color(0xff676767),
+color:Color.fromRGBO(103, 103, 103, 1),
 fontFamily: signFont
 
  );

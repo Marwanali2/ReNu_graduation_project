@@ -10,6 +10,7 @@ import 'package:graduation_project/core/widgets/custom_password_field.dart';
 import 'package:graduation_project/core/widgets/custom_text_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_icon_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_widget.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/custom_title_widget.dart';
 
 class LogInViewBody extends StatefulWidget {
   const LogInViewBody({super.key});
@@ -32,20 +33,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: 39,
-                    height: 39,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border:
-                            Border.all(color: const Color(0xffD8DADC), width: 1)),
-                    child: IconButton(
-                      onPressed: () {
-                        GoRouter.of(context).pop();
-                      },
-                      icon: const Icon(FontAwesomeIcons.chevronLeft),
-                    ),
-                  ),
+               const  CustomTitleWidget(),
                   const SizedBox(
                     height: 30,
                   ),
@@ -73,7 +61,9 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     GestureDetector(
-                      onTap: (){},
+                      onTap: (){
+                        GoRouter.of(context).push(AppRouter.kForgetPassword);
+                      },
                       child: Text('Forget password ?',style: Styles.textStyle14.copyWith(color: blackcolor),))
                   ],
                  ),
