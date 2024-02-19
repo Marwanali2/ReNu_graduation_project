@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/pin_code_text_field.dart';
@@ -62,7 +64,10 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                       ),
                       const PinCodeTextFieldWidget(),
 
-                  const CustomButtonField(text: 'Verify'),
+                   CustomButtonField(text: 'Verify',ontap: (){
+                       GoRouter.of(context).push(AppRouter.kResetPassword);
+
+                  },),
 
                    Row(
                     mainAxisAlignment: MainAxisAlignment.center,
