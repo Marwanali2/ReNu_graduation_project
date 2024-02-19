@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
+import 'package:location/location.dart';
 
 class CustomGoogleMap extends StatefulWidget {
   const CustomGoogleMap({super.key});
@@ -13,15 +14,14 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
   late CameraPosition initialCameraPosition;
   late LocationService locationService;
   late GoogleMapController googleMapController;
+  Location location = Location();
   Set<Marker> markers = {};
   @override
   void initState() {
-    initialCameraPosition = const CameraPosition(
-      target: LatLng(
-        31.787146997099,
-        35.9883674356408,
-      ),
-      zoom: 16,
+    LatLng initialLocation = const LatLng(30.78753546661836, 30.99754772107391);
+    initialCameraPosition = CameraPosition(
+      target: initialLocation,
+      zoom: 13.5,
     );
     initMarkers();
     locationService = LocationService();
@@ -56,14 +56,15 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
     googleMapController.setMapStyle(darkMapStyle);
   }
 
-  void initMarkers() {
-    Marker userLocationMarker = const Marker(
-      markerId: MarkerId(
+  void initMarkers() async {
+    LocationData userLocation = await location.getLocation();
+    Marker userLocationMarker = Marker(
+      markerId: const MarkerId(
         'user location marker',
       ),
       position: LatLng(
-        30.78357146997099,
-        30.982883674356408,
+        userLocation.latitude!,
+        userLocation.longitude!,
       ),
     );
     markers.add(userLocationMarker);
