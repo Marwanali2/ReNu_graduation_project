@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
+import 'package:graduation_project/core/widgets/custom_button_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/pin_code_text_field.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:graduation_project/core/theme/styles.dart';
@@ -15,9 +18,11 @@ class VerifyEmailViewBody extends StatefulWidget {
 
 class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
   GlobalKey<FormState> formKey = GlobalKey();
+ 
 
   @override
   Widget build(BuildContext context) {
+        
     return SafeArea(
         child: Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, top: 32),
@@ -56,6 +61,18 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                         ],
                       ),
                       const PinCodeTextFieldWidget(),
+
+                  const CustomButtonField(text: 'Verify'),
+
+                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GestureDetector(
+                        onTap: (){},
+                        child: Text('Send code again',style: Styles.textStyle16.copyWith(fontFamily: formFont,color: blackcolor.withOpacity(0.7)),),
+                      ),
+                    ],
+                  )
                     ]))));
   }
 }
