@@ -58,4 +58,9 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: ColorsManager.semiBlack2,
   );
+  static TextStyle font22WhiteMeduim = GoogleFonts.poppins(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mainWhite,
+  );
 }
