@@ -32,7 +32,7 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
 
     locationService = LocationService();
     locationService.getUserLocation();
-    initMarkers();
+    
     super.initState();
   }
 
@@ -53,6 +53,7 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
           onMapCreated: (controller) {
             googleMapController = controller;
             initMapStyle();
+            initMarkers();
           },
         ),
         Positioned(
@@ -109,7 +110,7 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
   void initMarkers() async {
     LocationData userLocation = await location.getLocation();
     var customMarker = await BitmapDescriptor.fromAssetImage(
-        const ImageConfiguration(), "assets/images/larg_marker.png");
+        const ImageConfiguration(), "assets/images/user_location_circle.png");
     Marker userLocationMarker = Marker(
       icon: customMarker,
       markerId: const MarkerId(
