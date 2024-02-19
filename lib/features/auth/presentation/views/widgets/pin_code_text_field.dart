@@ -20,7 +20,7 @@ class PinCodeTextFieldWidget extends StatelessWidget {
                           return null;
                         }
                       },
-                      textStyle: Styles.textStyle32.copyWith(color:blackcolor ,fontFamily: formFont),
+                      textStyle: Styles.textStyle32.copyWith(color:blackcolor ,fontFamily: interFont),
                        pinTheme: PinTheme(
                         shape: PinCodeFieldShape.box,
                         borderRadius: BorderRadius.circular(15),

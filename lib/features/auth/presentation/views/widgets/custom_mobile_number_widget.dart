@@ -15,7 +15,7 @@ class CustomMobileNumber extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Country',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: formFont),),
+            Text('Country',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
             const SizedBox(height: 4,),
            const CodeCountry()
     
@@ -25,7 +25,7 @@ class CustomMobileNumber extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Phone number',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: formFont),),
+            Text('Phone number',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
             const SizedBox(height: 4,),
           const SizedBox(width: 201,child:  CustomTextField(hintText: '101 645 0937',textInputType: TextInputType.number,))
     

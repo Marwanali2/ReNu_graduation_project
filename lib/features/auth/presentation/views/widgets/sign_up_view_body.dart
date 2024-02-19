@@ -42,7 +42,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 Text(
                   'Username',
                   style: Styles.textStyle14
-                      .copyWith(fontFamily: formFont, color: blackcolor),
+                      .copyWith(fontFamily: interFont, color: blackcolor),
                 ),
                 const SizedBox(height: 4,),
                const CustomTextField(hintText: 'Your username',),
@@ -52,7 +52,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                Text(
                   'Email',
                   style: Styles.textStyle14
-                      .copyWith(fontFamily: formFont, color: blackcolor),
+                      .copyWith(fontFamily: interFont, color: blackcolor),
                 ),
                 const SizedBox(height: 4,),
                const CustomTextField(hintText: 'example@gmail.com',textInputType:TextInputType.emailAddress,),
@@ -60,7 +60,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                Text(
                   'Password',
                   style: Styles.textStyle14
-                      .copyWith(fontFamily: formFont, color: blackcolor),
+                      .copyWith(fontFamily: interFont, color: blackcolor),
                 ),
                 const SizedBox(height: 4,),
                const CustomPasswordField(hintText: 'must be 8 characters',),
@@ -68,7 +68,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                Text(
                   'Confirm password',
                   style: Styles.textStyle14
-                      .copyWith(fontFamily: formFont, color: blackcolor),
+                      .copyWith(fontFamily: interFont, color: blackcolor),
                 ),
                 const SizedBox(height: 4,),
                 const CustomPasswordField(hintText: 'repeat password',),

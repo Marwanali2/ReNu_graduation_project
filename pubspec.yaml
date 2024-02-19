@@ -71,9 +71,20 @@ flutter:
     - family: Roboto-Light
       fonts:
         - asset: assests/fonts/Roboto-Light.ttf
-        # - asset: assests/fonts/Roboto-Light.ttf
+
     - family: Inter-VariableFont_slnt,wght
       fonts:
         - asset: assests/fonts/Inter-VariableFont_slnt,wght.ttf
+
+    - family: Poppins-Black
+      fonts:
+        - asset: assests/fonts/Poppins-Black.ttf
+
+    - family: Poppins-ExtraBold
+      fonts:
+        - asset: assests/fonts/Poppins-ExtraBold.ttf  
+    - family: Poppins-Bold
+      fonts:
+        - asset: assests/fonts/Poppins-Bold.ttf       
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

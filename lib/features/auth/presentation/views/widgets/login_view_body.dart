@@ -44,7 +44,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                  Text(
                     'Email address',
                     style: Styles.textStyle14
-                        .copyWith(fontFamily: formFont, color: blackcolor),
+                        .copyWith(fontFamily: interFont, color: blackcolor),
                   ),
                   const SizedBox(height: 4,),
                  const CustomTextField(textInputType:TextInputType.emailAddress,),
@@ -52,7 +52,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                  Text(
                     'Password',
                     style: Styles.textStyle14
-                        .copyWith(fontFamily: formFont, color: blackcolor),
+                        .copyWith(fontFamily: interFont, color: blackcolor),
                   ),
                   const SizedBox(height: 4,),
                  const CustomPasswordField(),

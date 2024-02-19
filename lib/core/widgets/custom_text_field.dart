@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
         obscureText: obscureText!,
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: Styles.textStyle14.copyWith(fontFamily: formFont),
+          hintStyle: Styles.textStyle14.copyWith(fontFamily: interFont),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(width: 1,

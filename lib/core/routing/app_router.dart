@@ -4,6 +4,7 @@ import 'package:graduation_project/features/auth/presentation/views/forget_passw
 import 'package:graduation_project/features/auth/presentation/views/login_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/reset_password_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
+import 'package:graduation_project/features/auth/presentation/views/success_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/verify_email_view.dart';
 import 'package:graduation_project/features/splash/presentaion/view/splash_view.dart';
 
@@ -14,6 +15,7 @@ abstract class AppRouter {
   static const kForgetPassword = '/forget';
   static const kVerifyEmail = '/verify';
   static const kResetPassword = '/reset';
+  static const kSuccess = '/success';
 
 
  static final router = GoRouter(
@@ -60,12 +62,12 @@ abstract class AppRouter {
           return const ResetPasswordView();
         },
       ),
-      //   GoRoute(
-      //   path: kLogIn,
-      //   builder: (context, state) {
-      //     return const SignUpView();
-      //   },
-      // ),
+        GoRoute(
+        path: kSuccess,
+        builder: (context, state) {
+          return const SuccessView();
+        },
+      ),
     ]
  );
       

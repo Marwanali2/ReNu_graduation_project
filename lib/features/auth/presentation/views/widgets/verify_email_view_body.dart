@@ -50,13 +50,13 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                           Text(
                             'We’ve sent a code to ',
                             style: Styles.textStyle14.copyWith(
-                                fontFamily: formFont,
+                                fontFamily: interFont,
                                 fontWeight: FontWeight.w500),
                           ),
                           Text(
                             'helloworld@gmail.com',
                             style: Styles.textStyle14.copyWith(
-                                fontFamily: formFont,
+                                fontFamily: interFont,
                                 fontWeight: FontWeight.w500,
                                 color: blackcolor),
                           )
@@ -74,7 +74,7 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                     children: [
                       GestureDetector(
                         onTap: (){},
-                        child: Text('Send code again',style: Styles.textStyle16.copyWith(fontFamily: formFont,color: blackcolor.withOpacity(0.7)),),
+                        child: Text('Send code again',style: Styles.textStyle16.copyWith(fontFamily: interFont,color: blackcolor.withOpacity(0.7)),),
                       ),
                     ],
                   )

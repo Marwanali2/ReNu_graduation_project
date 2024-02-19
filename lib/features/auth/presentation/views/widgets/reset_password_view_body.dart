@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
@@ -42,7 +44,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                       SizedBox(
                         height: 20,
                         child: Text('Please type something you’ll remember',
-                        style: Styles.textStyle16.copyWith(color: blackcolor,fontFamily: formFont,
+                        style: Styles.textStyle16.copyWith(color: blackcolor,fontFamily: interFont,
                         fontWeight: FontWeight.w400),
                         )),
                         const SizedBox(height: 31,),
@@ -53,7 +55,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('New password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: formFont),),
+                    Text('New password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
                    const SizedBox(height: 3,),
                    const CustomPasswordField(hintText: 'must be 8 characters',),
                   
@@ -66,14 +68,16 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Confirm password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: formFont),),
+                    Text('Confirm password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
                    const SizedBox(height: 3,),
                    const CustomPasswordField(hintText: 'repeat password',),
                   
                   ],
                 )),
                 const SizedBox(height: 46,),
-                CustomButtonField(text: 'Change password',ontap: (){},)
+                CustomButtonField(text: 'Change password',ontap: (){
+                  GoRouter.of(context).push(AppRouter.kSuccess);
+                },)
                     ]
                 ))));
   }
