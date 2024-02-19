@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
@@ -57,7 +59,9 @@ class _ForgetPaaswordViewBodyState extends State<ForgetPaaswordViewBody> {
                   ],
                 )),
                 const SizedBox(height: 30,),
-                const CustomButtonField(text: 'Send Code',)
+                 CustomButtonField(text: 'Send Code',ontap: (){
+                  GoRouter.of(context).push(AppRouter.kVerifyEmail);
+                },)
             ],
           ),
         ),
