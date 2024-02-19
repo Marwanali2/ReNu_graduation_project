@@ -4,6 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/service_container_component.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
+import 'package:panara_dialogs/panara_dialogs.dart';
+
+LocationService locationService = LocationService();
 
 class OurServicesSection extends StatelessWidget {
   const OurServicesSection({super.key});
@@ -26,8 +30,25 @@ class OurServicesSection extends StatelessWidget {
             ),
             ServiceContainerComponent(
               serviceName: 'CleanUp',
-              onTap: () {
-                GoRouter.of(context).pushReplacement(AppRouter.kCleanUp);
+              onTap: () async {
+                try {
+                  await locationService.checkAndRequestLocationService();
+                  await locationService.checkAndRequestLocationPermission();
+                  GoRouter.of(context).pushReplacement(AppRouter.kCleanUp);
+                } catch (e) {
+                  PanaraInfoDialog.showAnimatedFromTop(
+                    context,
+                    title: "Error",
+                    message: "please, enable location service and permissions",
+                    buttonText: "Okay",
+                    color: Colors.red,
+                    onTapDismiss: () {
+                      Navigator.pop(context);
+                    },
+                    panaraDialogType: PanaraDialogType.custom,
+                    barrierDismissible: false,
+                  );
+                }
               },
             ),
             SizedBox(

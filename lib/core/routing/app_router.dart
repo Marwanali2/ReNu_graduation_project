@@ -10,7 +10,7 @@ abstract class AppRouter {
     GoRoute(
       path: '/',
       builder: (context, state) {
-        return const CleanUpView(); //const HomeView();
+        return const HomeView();
       },
     ),
     GoRoute(
