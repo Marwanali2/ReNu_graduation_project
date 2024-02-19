@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/service_container_component.dart';
 
@@ -24,7 +26,9 @@ class OurServicesSection extends StatelessWidget {
             ),
             ServiceContainerComponent(
               serviceName: 'CleanUp',
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).pushReplacement(AppRouter.kCleanUp);
+              },
             ),
             SizedBox(
               width: 35.w,

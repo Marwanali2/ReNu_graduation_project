@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 
 abstract class AppRouter {
@@ -12,11 +13,11 @@ abstract class AppRouter {
         return const HomeView();
       },
     ),
-    //  GoRoute(
-    //  path: kCleanUp,
-    // builder: (context, state) {
-    // return const CleanUpView();
-    //  },
-    // ),
+    GoRoute(
+      path: kCleanUp,
+      builder: (context, state) {
+        return const CleanUpView();
+      },
+    ),
   ]);
 }
