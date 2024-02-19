@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/pin_code_text_field.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_title_widget.dart';
 
@@ -40,32 +42,20 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                         children: [
                           Text(
                             'We’ve sent a code to ',
-                            style: Styles.textStyle14
-                                .copyWith(fontFamily: formFont,
+                            style: Styles.textStyle14.copyWith(
+                                fontFamily: formFont,
                                 fontWeight: FontWeight.w500),
                           ),
-                          Text('helloworld@gmail.com',style:Styles.textStyle14
-                                .copyWith(fontFamily: formFont,
-                                fontWeight: FontWeight.w500,color: blackcolor) ,)
+                          Text(
+                            'helloworld@gmail.com',
+                            style: Styles.textStyle14.copyWith(
+                                fontFamily: formFont,
+                                fontWeight: FontWeight.w500,
+                                color: blackcolor),
+                          )
                         ],
                       ),
-                    // GridView.builder(
-                    //   gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
-                    //     crossAxisCount: 3,
-                    //     mainAxisExtent: 47,
-                    //     mainAxisSpacing: 5,
-                    //     crossAxisSpacing: 5
-                    //     ), 
-                    //   itemBuilder: (context,index){
-                    //     return Container(
-                    //       height: 64,
-                    //       width: 59,
-                    //       decoration: BoxDecoration(
-                    //         border: Border.all(color: blackcolor)
-                    //       ),
-                    //     );
-                    //   }
-                    //   )
+                      const PinCodeTextFieldWidget(),
                     ]))));
   }
 }
