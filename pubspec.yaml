@@ -43,6 +43,7 @@ dependencies:
   google_maps_flutter: ^2.5.3
   location: ^5.0.3
   panara_dialogs: ^0.1.4
+  geocoding: ^2.2.0
   
 dev_dependencies:
   flutter_test:

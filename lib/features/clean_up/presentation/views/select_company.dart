@@ -16,7 +16,7 @@ class SelectCompanyView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const YourLocationAppBar(),
+              YourLocationAppBar(),
               SizedBox(
                 height: 50.h,
               ),

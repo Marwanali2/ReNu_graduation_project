@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:graduation_project/core/theme/colors.dart';
-import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/map_confirm_button.dart';
 import 'package:location/location.dart';
@@ -32,7 +31,7 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
     );
 
     locationService = LocationService();
-    locationService.getUserLocation();
+    locationService.getUserLocationWithServiceAndPermissions();
 
     super.initState();
   }

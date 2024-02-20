@@ -2,6 +2,7 @@ import 'package:location/location.dart';
 
 class LocationService {
   Location location = Location();
+  LocationData? _userLocation; // Variable to store user location
   Future<void> checkAndRequestLocationService() async {
     bool isServiceEnabled = await location.serviceEnabled();
     if (!isServiceEnabled) {
@@ -35,11 +36,24 @@ class LocationService {
     location.onLocationChanged.listen(onData);
   }
 
-  Future<LocationData> getUserLocation() async {
+  Future<LocationData> getUserLocationWithServiceAndPermissions() async {
     await checkAndRequestLocationService();
     await checkAndRequestLocationPermission();
     return await location.getLocation();
   }
+
+  Future<LocationData?> getUserLocation() async {
+    try {
+      _userLocation = await location.getLocation();
+      return _userLocation;
+    } catch (e) {
+      print('Error getting user location: $e');
+      return null;
+    }
+  }
+
+  LocationData? get userLocation =>
+      _userLocation; // Getter to access user location
 }
 
 class LocationServiceExecption implements Exception {}
