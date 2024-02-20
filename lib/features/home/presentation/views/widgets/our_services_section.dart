@@ -34,7 +34,7 @@ class OurServicesSection extends StatelessWidget {
                 try {
                   await locationService.checkAndRequestLocationService();
                   await locationService.checkAndRequestLocationPermission();
-                  GoRouter.of(context).pushReplacement(AppRouter.kCleanUp);
+                  GoRouter.of(context).push(AppRouter.kCleanUp);
                 } catch (e) {
                   PanaraInfoDialog.showAnimatedFromTop(
                     context,

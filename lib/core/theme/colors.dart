@@ -8,4 +8,6 @@ class ColorsManager {
   static Color semiGrey1 = const Color(0xffA2A2A2);
   static Color semiGrey2 = const Color(0xff676767);
   static Color semiGrey3 = const Color(0xffD9D9D9);
+  static Color semiGrey4 = const Color(0xffC4C4C4);
+  static Color semiGrey5 = const Color(0xff616161);
 }
