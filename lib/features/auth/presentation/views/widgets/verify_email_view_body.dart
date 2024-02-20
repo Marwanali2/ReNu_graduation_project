@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
@@ -7,7 +5,6 @@ import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/pin_code_text_field.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_title_widget.dart';
 
