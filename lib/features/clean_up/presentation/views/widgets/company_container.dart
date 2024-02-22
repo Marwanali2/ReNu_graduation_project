@@ -32,9 +32,7 @@ class CompaniesContainer extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                width: 59.w,
-              ),
+              SizedBox(width: 59.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +52,7 @@ class CompaniesContainer extends StatelessWidget {
                           style: TextStyles.font14GreyNormal),
                       SizedBox(width: 2.w),
                       Text(
-                        numOfRatings.toString(),
+                        '( ${numOfRatings.toString()} )',
                         style: TextStyles.font14GreyNormal,
                       ),
                     ],

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/company_container.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/your_location_appbar.dart';
@@ -27,13 +30,18 @@ class SelectCompanyView extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
-              const CompaniesContainer(
-                title: 'Garbage Collection',
-                rating: 3.5,
-                numOfRatings: 25,
-                deliveryDuration: '15 mins',
-                deliveryCost: 35.49,
-                imageAsset: 'assets/images/anosa.jpg',
+              GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).push(AppRouter.kCompanyDetails);
+                },
+                child: const CompaniesContainer(
+                  title: 'Garbage Collection',
+                  rating: 3.5,
+                  numOfRatings: 25,
+                  deliveryDuration: '15 mins',
+                  deliveryCost: 35.49,
+                  imageAsset: 'assets/images/anosa.jpg',
+                ),
               ),
               SizedBox(
                 height: 16.h,

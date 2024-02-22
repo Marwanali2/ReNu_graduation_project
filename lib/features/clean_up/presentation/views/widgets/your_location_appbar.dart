@@ -4,9 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/widgets/back_container.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
 import 'package:location/location.dart';
-//TODO: import 'package:geocoding/geocoding.dart';
+import 'package:geocoding/geocoding.dart';
 
 class YourLocationAppBar extends StatelessWidget {
   YourLocationAppBar({
@@ -19,21 +20,7 @@ class YourLocationAppBar extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () => GoRouter.of(context).pop(),
-          child: Container(
-            width: 40.w,
-            height: 40.h,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(color: ColorsManager.semiGrey3)),
-            child: Center(
-                child: Padding(
-              padding: EdgeInsets.only(left: 8.w),
-              child: Icon(
-                Icons.arrow_back_ios,
-                size: 20.spMax,
-              ),
-            )),
-          ),
+          child: const BackContainerWidget(),
         ),
         SizedBox(
           width: 7.w,
@@ -64,16 +51,20 @@ class YourLocationAppBar extends StatelessWidget {
     );
   }
 
-  void getUserLocationFromLocationService() async {
+  /* void getUserLocationFromLocationService() async {
     LocationData? userLocation = await locationService.getUserLocation();
     LatLng userLatLong =
         LatLng(userLocation!.latitude!, userLocation!.longitude!);
+
     if (userLocation != null) {
-      // TODO: List<Placemark> placemarks =await placemarkFromCoordinates(52.2165157, 6.9437819);
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+          userLocation!.latitude!, userLocation!.longitude!);
+      
+      print(placemarks[0].street);
       print(
           'User Location: ${userLocation.latitude}, ${userLocation.longitude}');
     } else {
       print('Failed to get user location.');
     }
-  }
+  } */
 }

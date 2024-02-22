@@ -21,6 +21,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: ColorsManager.mainBlack,
   );
+  static TextStyle font11SemiGrey1Normal = GoogleFonts.inter(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.semiGrey1,
+  );
   static TextStyle font12SemiBlack1SemiBold = GoogleFonts.poppins(
     fontSize: 12.sp,
     fontWeight: FontWeight.w600,
@@ -83,5 +88,10 @@ class TextStyles {
     fontSize: 22.sp,
     fontWeight: FontWeight.w500,
     color: ColorsManager.mainWhite,
+  );
+  static TextStyle font22SemiGrey1SemiBold = GoogleFonts.poppins(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w600,
+    color: ColorsManager.semiGrey1,
   );
 }
