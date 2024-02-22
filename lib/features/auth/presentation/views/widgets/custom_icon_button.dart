@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/theme/colors.dart';
+import 'package:flutter/cupertino.dart';
 
-class CustomIconButton extends StatelessWidget {
+class CustomIconButton extends StatefulWidget {
   const CustomIconButton(
       {super.key,
       required this.icon,
@@ -16,19 +17,32 @@ class CustomIconButton extends StatelessWidget {
   final double width;
   final double iconSize;
   final double borderRadius;
+
+  @override
+  State<CustomIconButton> createState() => _CustomIconButtonState();
+
+}
+
+class _CustomIconButtonState extends State<CustomIconButton> {
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        
+      },
       child: Container(
-        width: width,
-        height: height,
+        width: widget.width,
+        height: widget.height,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(borderRadius),
+            borderRadius: BorderRadius.circular(widget.borderRadius),
             border: Border.all(width: 1, color: buttonColor)),
         child: Icon(
-          icon,
-          size: iconSize,
+          widget.icon,
+          size: widget.iconSize,
           color: Color(0xff000000),
         ),
       ),
