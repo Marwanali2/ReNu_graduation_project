@@ -44,6 +44,7 @@ dependencies:
   location: ^5.0.3
   panara_dialogs: ^0.1.4
   geocoding: ^2.2.0
+  dropdown_button2: ^2.3.9
   
 dev_dependencies:
   flutter_test:

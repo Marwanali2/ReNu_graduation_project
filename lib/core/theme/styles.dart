@@ -74,6 +74,16 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: ColorsManager.mainBlack,
   );
+  static TextStyle font16BlackSemiBoldInter = GoogleFonts.inter(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+    color: ColorsManager.mainBlack,
+  );
+  static TextStyle font16BlackMeduimRoboto = GoogleFonts.roboto(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mainBlack,
+  );
   static TextStyle font20SemiBlack1SemiBold = GoogleFonts.poppins(
     fontSize: 20.sp,
     fontWeight: FontWeight.w600,
