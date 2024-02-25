@@ -40,7 +40,7 @@ class SuccessViewBody extends StatelessWidget {
             backgroundcolor: blackcolor,
             textcolor: Colors.white,
             ontap: (){
-              GoRouter.of(context).push(AppRouter.kLogIn);
+              GoRouter.of(context).push(AppRouter.kSell);
             },
           )
         ],
