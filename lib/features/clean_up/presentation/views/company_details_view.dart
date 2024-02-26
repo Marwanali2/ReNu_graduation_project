@@ -123,7 +123,7 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                                     color: Colors.black,
                                   ),
                                   SizedBox(
-                                    width: 30.w,
+                                    width: 29.w,
                                   ),
                                   Column(
                                     crossAxisAlignment:
