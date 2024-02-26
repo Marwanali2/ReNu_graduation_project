@@ -4,6 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 
 class TextStyles {
+  static TextStyle font8BlackMeduim = GoogleFonts.inter(
+    fontSize: 8.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mainBlack,
+  );
   static TextStyle font10BlackMeduim = GoogleFonts.roboto(
     fontSize: 10.sp,
     fontWeight: FontWeight.w500,
