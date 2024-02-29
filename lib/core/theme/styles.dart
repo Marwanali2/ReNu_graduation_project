@@ -34,5 +34,10 @@ fontWeight: FontWeight.w600,
 color:Color(0xff676767),
 fontFamily: robotoFont
  );
-
+ static const textStyle12=TextStyle(
+fontSize: 12,
+fontWeight: FontWeight.w500,
+color:Color(0xffD9D9D9),
+fontFamily: poppinsBlackFont
+ );
 }

@@ -10,24 +10,13 @@ class SellViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(children: [
-        Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            const CustomTitleWidget(),
-            Text('Antika',
-                style: Styles.textStyle16
-                    .copyWith(color: blackcolor, fontFamily: poppinsBlackFont)),
-            Container(
-              height: 29,
-              width: 29,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(14),
-                color: borderColor
-              ),
-            )
-          ],
-        )
-      ]),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 35,left: 20,right: 20),
+        child: Column(
+          
+          
+          ),
+      ),
     );
   }
 }

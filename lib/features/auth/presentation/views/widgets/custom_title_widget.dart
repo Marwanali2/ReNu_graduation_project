@@ -19,7 +19,8 @@ class CustomTitleWidget extends StatelessWidget {
                         GoRouter.of(context).pop();
                       },
                       icon: const Icon(FontAwesomeIcons.chevronLeft),
-                    ),
+                      iconSize: 15,
+                      ),
               );
   }
 }
