@@ -3,6 +3,7 @@ import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/custom_title_antica_bar.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/sell_view_body.dart';
 class AnticaTabBar extends StatefulWidget {
   const AnticaTabBar({super.key,});
 
@@ -67,10 +68,11 @@ void dispose() {
             Text('hi') ,      
             Text('hi') ,      
             Text('hi') ,      
-            Text('hi') ,      
+           SellViewBody() 
+                 ],
           
             
-            ]
+            
            
                    ),
                    )])),
