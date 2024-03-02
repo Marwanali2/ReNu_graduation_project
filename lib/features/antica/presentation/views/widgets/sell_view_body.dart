@@ -5,8 +5,9 @@ import 'package:graduation_project/core/theme/catigories.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/choose_category_list_view.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/custom_antica_text_field.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/custom_upload_image.dart';
-
+import 'package:graduation_project/features/antica/presentation/views/widgets/custom_antica_sell_button.dart';
 class SellViewBody extends StatefulWidget {
   const SellViewBody({super.key});
 
@@ -19,7 +20,7 @@ class _SellViewBodyState extends State<SellViewBody> {
   Widget build(BuildContext context) {
     return  SingleChildScrollView(
       child: Padding(
-        padding:const EdgeInsets.only(top: 25,left: 20),
+        padding:const EdgeInsets.only(top: 25,left: 20,right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -34,14 +35,23 @@ class _SellViewBodyState extends State<SellViewBody> {
                    )),
                   const SizedBox(height: 10,),
                   const ChooseCatigoryListView(),
-                  const SizedBox(height: 5,),
+                  const SizedBox(height: 20,),
                   Text('Product Name ',style: Styles.textStyle14.copyWith(fontFamily: interFont,color: blackcolor),),
-
+                 const CustomAnticaTextField(height: 56,),
+                const SizedBox(height: 10,),
                    Text('Description',style: Styles.textStyle14.copyWith(fontFamily: interFont,color: blackcolor),),
-
-      
+                  const CustomAnticaTextField(height: 117,),
+                  const SizedBox(height: 20,),
+                 const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomAnticaSellButton(backgroundcolor: whiteColor, text: 'Save as Draft'),
+                    CustomAnticaSellButton(backgroundcolor: blackcolor, text: 'Create post')
+           ],)
         ]),
       ),
     );
   }
 }
+
+ 

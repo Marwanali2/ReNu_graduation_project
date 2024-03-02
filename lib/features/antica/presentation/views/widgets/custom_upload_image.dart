@@ -31,10 +31,9 @@ setState(() => this.image = imageTemp);
   Widget build(BuildContext context) {
     return GestureDetector(
             onTap: (){
-              //pickImage();
+              pickImage();
             },
-            child: Center(
-              child: Container(
+            child:Container(
                 height: 74,
                 width: 320,
                 decoration: BoxDecoration(
@@ -54,7 +53,7 @@ setState(() => this.image = imageTemp);
                     ),)
                   ],
                 ),
-              ),
+              
             ),
           );
   }

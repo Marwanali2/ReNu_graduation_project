@@ -15,7 +15,7 @@ class ChooseCatigoryListView extends StatelessWidget {
           itemCount: 6,
           itemBuilder:(context, index) {
             return Padding(
-              padding: const EdgeInsets.only(right: 5),
+              padding: const EdgeInsets.only(right: 4),
               child: Container(
                 width:50,
                 height:60,
