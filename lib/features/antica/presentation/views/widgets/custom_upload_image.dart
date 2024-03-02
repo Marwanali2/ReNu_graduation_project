@@ -31,27 +31,29 @@ setState(() => this.image = imageTemp);
   Widget build(BuildContext context) {
     return GestureDetector(
             onTap: (){
-              pickImage();
+              //pickImage();
             },
-            child: Container(
-              height: 74,
-              width: 320,
-              decoration: BoxDecoration(
-                color:const Color(0xffD9D9D9).withOpacity(0.4),
-                borderRadius: BorderRadius.circular(15)
-              ),
-              child:const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.cloud_upload_outlined),
-                  SizedBox(width: 4,),
-                  Text('Upload Product Image',style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: poppinsBlackFont,
-                    color: Color(0xff313131)
-                  ),)
-                ],
+            child: Center(
+              child: Container(
+                height: 74,
+                width: 320,
+                decoration: BoxDecoration(
+                  color:const Color(0xffD9D9D9).withOpacity(0.4),
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                child:const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.cloud_upload_outlined),
+                    SizedBox(width: 4,),
+                    Text('Upload Product Image',style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: poppinsBlackFont,
+                      color: Color(0xff313131)
+                    ),)
+                  ],
+                ),
               ),
             ),
           );
