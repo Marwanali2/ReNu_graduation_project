@@ -36,7 +36,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: ColorsManager.semiBlack1,
   );
-
+  static TextStyle font12BlackNormal = GoogleFonts.poppins(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w400,
+    color: ColorsManager.mainBlack,
+  );
   static TextStyle font12Grey1SemiBold = GoogleFonts.poppins(
     fontSize: 12.sp,
     fontWeight: FontWeight.w600,
@@ -67,6 +71,11 @@ class TextStyles {
   static TextStyle font14BlackMeduim = GoogleFonts.poppins(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
+    color: ColorsManager.mainBlack,
+  );
+  static TextStyle font14BlackLight = GoogleFonts.poppins(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w300,
     color: ColorsManager.mainBlack,
   );
   static TextStyle font15SemiBlack2SemiBold = GoogleFonts.poppins(
@@ -108,5 +117,10 @@ class TextStyles {
     fontSize: 22.sp,
     fontWeight: FontWeight.w600,
     color: ColorsManager.semiGrey1,
+  );
+  static TextStyle font24MeduimSemiBlack1 = GoogleFonts.poppins(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.semiBlack1,
   );
 }
