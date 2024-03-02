@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
-import 'package:graduation_project/core/theme/catigories.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/choose_category_list_view.dart';
@@ -10,7 +9,6 @@ import 'package:graduation_project/features/antica/presentation/views/widgets/cu
 import 'package:graduation_project/features/antica/presentation/views/widgets/custom_antica_sell_button.dart';
 class SellViewBody extends StatefulWidget {
   const SellViewBody({super.key});
-
   @override
   State<SellViewBody> createState() => _SellViewBodyState();
 }
@@ -47,7 +45,8 @@ class _SellViewBodyState extends State<SellViewBody> {
                   children: [
                     CustomAnticaSellButton(backgroundcolor: whiteColor, text: 'Save as Draft'),
                     CustomAnticaSellButton(backgroundcolor: blackcolor, text: 'Create post')
-           ],)
+           ],),
+                const SizedBox(height: 10,)
         ]),
       ),
     );
