@@ -32,7 +32,7 @@ class _SellViewBodyState extends State<SellViewBody> {
                    fontFamily: poppinsBlackFont
                    )),
                   const SizedBox(height: 10,),
-                  const ChooseCatigoryListView(),
+                  const ChooseCatigoryBodyListView(),
                   const SizedBox(height: 20,),
                   Text('Product Name ',style: Styles.textStyle14.copyWith(fontFamily: interFont,color: blackcolor),),
                  const CustomAnticaTextField(height: 56,),

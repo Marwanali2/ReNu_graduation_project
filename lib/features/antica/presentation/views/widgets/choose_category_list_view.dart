@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/theme/catigories.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 
-class ChooseCatigoryListView extends StatelessWidget {
-  const ChooseCatigoryListView({super.key});
+class ChooseCatigoryBodyListView extends StatelessWidget {
+  const ChooseCatigoryBodyListView({super.key});
 
   @override
   Widget build(BuildContext context) {

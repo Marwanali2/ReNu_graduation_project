@@ -40,4 +40,25 @@ fontWeight: FontWeight.w500,
 color:Color(0xffD9D9D9),
 fontFamily: poppinsBlackFont
  );
+
+ static const textStyle11=TextStyle(
+fontSize: 11,
+fontWeight: FontWeight.w600,
+color:Color(0xff000000),
+fontFamily: poppinsBlackFont
+ );
+ static const textStyle7=TextStyle(
+fontSize: 7,
+fontWeight: FontWeight.w400,
+color:Color(0xff616161),
+fontFamily: poppinsBlackFont
+ );
+
+ static const textStyle20=TextStyle(
+fontSize: 20,
+fontWeight: FontWeight.w600,
+color:Color(0xff000000),
+fontFamily: poppinsBlackFont
+ );
+
 }

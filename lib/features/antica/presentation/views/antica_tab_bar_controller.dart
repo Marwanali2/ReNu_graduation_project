@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/catigories_view_body.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/custom_title_antica_bar.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/sell_view_body.dart';
 class AnticaTabBar extends StatefulWidget {
@@ -66,8 +67,8 @@ void dispose() {
             controller: tabController,
             children:const [
             Text('hi') ,      
-            Text('hi') ,      
-            Text('hi') ,      
+            Text('hi') , 
+      CatigoriesViewBody(), 
            SellViewBody() 
                  ],
           
