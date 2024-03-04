@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/company_details_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/descripe_offers.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
 
 abstract class AppRouter {
@@ -10,6 +11,7 @@ abstract class AppRouter {
   static const kSelectCompany = '/selectCompany';
   static const kCompanyDetails = '/companyDetails';
   static const kDescripeOffers = '/descripeOffers';
+  static const kFavCompanies = '/favCompanies';
 
   static final router = GoRouter(routes: <RouteBase>[
     GoRoute(
@@ -40,6 +42,12 @@ abstract class AppRouter {
       path: kDescripeOffers,
       builder: (context, state) {
         return DescripeOffers();
+      },
+    ),
+    GoRoute(
+      path: kFavCompanies,
+      builder: (context, state) {
+        return FavCompanies();
       },
     ),
   ]);
