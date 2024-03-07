@@ -4,6 +4,7 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/catigories_view_body.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/custom_title_antica_bar.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/favorites_view_body.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/sell_view_body.dart';
 class AnticaTabBar extends StatefulWidget {
   const AnticaTabBar({super.key,});
@@ -66,8 +67,8 @@ void dispose() {
            child:  TabBarView(
             controller: tabController,
             children:const [
-            Text('hi') ,      
-            Text('hi') , 
+            Text('hi') ,    
+            FavoritesViewBody(),  
       CatigoriesViewBody(), 
            SellViewBody() 
                  ],
