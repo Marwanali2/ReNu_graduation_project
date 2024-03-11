@@ -12,31 +12,37 @@ class DescripeOffersButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(ColorsManager.mainBlack),
-        maximumSize: MaterialStateProperty.all(
-          Size(
-            220.w,
-            56.h,
-          ),
-        ),
-        shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              10.r,
+    return Container(
+      margin: EdgeInsets.only(
+        right: MediaQuery.sizeOf(context).width * 0.1.w,
+        left: MediaQuery.sizeOf(context).width * 0.1.w,
+      ),
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(ColorsManager.mainBlack),
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                10.r,
+              ),
             ),
           ),
         ),
-      ),
-      onPressed: () {
-        GoRouter.of(context).push(AppRouter.kFavCompanies);
-      },
-      child: Center(
-        child: Text(
-          'EGP 100 / For 3 Month',
-          style: TextStyles.font16BlackSemiBoldInter.copyWith(
-            color: ColorsManager.mainWhite,
+        onPressed: () {
+          GoRouter.of(context).push(AppRouter.kCleanuUpCheck);
+        },
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 18.h,
+            bottom: 18.h,
+          ),
+          child: Center(
+            child: Text(
+              'EGP 100 / For 3 Month',
+              style: TextStyles.font16BlackSemiBoldInter.copyWith(
+                color: ColorsManager.mainWhite,
+              ),
+            ),
           ),
         ),
       ),

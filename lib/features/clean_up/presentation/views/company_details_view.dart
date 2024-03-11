@@ -84,7 +84,9 @@ class _CompanyDetailsState extends State<CompanyDetails> {
                           ),
                           SizedBox(height: 15.h),
                           selectCleanUpTime(),
-                          const Spacer(),
+                          SizedBox(
+                            height: MediaQuery.sizeOf(context).height * 0.1,
+                          ),
                           const Align(
                             alignment: Alignment.bottomRight,
                             child: WorkTimeConfirmButton(),

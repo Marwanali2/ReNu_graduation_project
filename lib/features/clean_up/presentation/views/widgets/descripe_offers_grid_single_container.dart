@@ -10,17 +10,17 @@ class DescripeOffersGridSingleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         CircleAvatar(
-          maxRadius: 40.r,
+          maxRadius: 35.r,
           foregroundImage: const AssetImage(
             'assets/images/anosa.jpg',
           ),
-          minRadius: 40.r,
         ),
-        SizedBox(height: 10.h),
-        SizedBox(
-          width: 100.w,
+        SizedBox(height: 5.h),
+        Padding(
+          padding: EdgeInsets.only(left: 5.w),
           child: Text(
             'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
             maxLines: 2,

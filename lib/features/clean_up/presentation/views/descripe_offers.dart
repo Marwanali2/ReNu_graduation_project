@@ -21,16 +21,14 @@ class DescripeOffers extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: 14.h),
-                    SizedBox(
-                      width: MediaQuery.sizeOf(context).width,
-                      child: Text(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                        style: TextStyles.font14BlackLight,
-                      ),
+                    Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                      style: TextStyles.font14BlackLight,
                     ),
                     SizedBox(height: 25.h),
                     const DescripeOffersGridView(),
-                    SizedBox(height: 10.h),
+                    // SizedBox(height: MediaQuery.sizeOf(context).height * 0.1.h),
+                    SizedBox(height: 8.h),
                     const DescripeOffersButton(),
                   ],
                 ),

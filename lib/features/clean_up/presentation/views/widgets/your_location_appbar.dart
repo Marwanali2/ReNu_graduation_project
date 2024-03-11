@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:graduation_project/core/theme/colors.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/back_container.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
-import 'package:location/location.dart';
-import 'package:geocoding/geocoding.dart';
 
+
+// ignore: must_be_immutable
 class YourLocationAppBar extends StatelessWidget {
   YourLocationAppBar({
     super.key,
@@ -41,7 +40,9 @@ class YourLocationAppBar extends StatelessWidget {
             )),
         const Spacer(),
         IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kFavCompanies);
+            },
             icon: Icon(
               Icons.favorite_border_outlined,
               color: Colors.black,
