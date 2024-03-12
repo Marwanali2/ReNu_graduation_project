@@ -6,9 +6,9 @@ class FavoritesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return  Padding(
       padding: EdgeInsets.only(left:25,right:20),
-      child:Column(
+      child:Stack(
         children: [
           FavoritesGridView(name: 'Flower Poetry ', date: 'May 23 - June 23'),
         ],
