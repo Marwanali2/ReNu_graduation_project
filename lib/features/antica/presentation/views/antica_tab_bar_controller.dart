@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/antica/presentation/views/widgets/buy_now_view_body1.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/antica_view_body1.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/big_antica_view_body2.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/catigories_view_body.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/custom_title_antica_bar.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/favorites_view_body.dart';
@@ -68,7 +69,7 @@ void dispose() {
            child:  TabBarView(
             controller: tabController,
             children:const [
-              BuyNowViewBody(),
+              BuyNowViewBody2(),
             FavoritesViewBody(),  
             CatigoriesViewBody(), 
              SellViewBody() 
