@@ -36,24 +36,26 @@ class _CusttomButtonFaceBookState extends State<CusttomButtonFaceBook> {
       },
       child: Container(
         height: 35,
-        width: 242,
+        width: 210,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: buttonColor.withOpacity(0.6),
+          border: Border.all(
+            color: buttonColor
+          )
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
            const Icon(Icons.facebook_sharp, 
-             color: buttonColor
+             color: Color(0xff20226A)
             ),
             const SizedBox(
               width: 15,
             ),
             Text(
-              'it’s easier to sign up now',
+              'Continue with facebook',
               style: Styles.textStyle14
-                  .copyWith(fontWeight: FontWeight.w500, color: whiteColor),
+                  .copyWith(fontWeight: FontWeight.w500, color: Color(0xff20226A)),
             ),
           ],
         ),

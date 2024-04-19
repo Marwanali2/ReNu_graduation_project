@@ -44,9 +44,13 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(width: 1,color: borderColor),
           ),
+           errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: Color(0xffE64646)),
+          ),
           focusedBorder: const OutlineInputBorder(
 
-            borderSide: BorderSide(width: 1,color: borderColor),
+            borderSide: BorderSide(width: 1,color: borderFormColor),
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
            )

@@ -10,27 +10,13 @@ class CustomMobileNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Country',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
-            const SizedBox(height: 4,),
-           const CodeCountry()
-    
-          ],
-        ),
-        const SizedBox(width: 8,),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Phone number',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
-            const SizedBox(height: 4,),
-          const SizedBox(width: 201,child:  CustomTextField(hintText: '101 645 0937',textInputType: TextInputType.number,))
-    
-          ],
-        ),
+        Text('Phone number',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
+        const SizedBox(height: 4,),
+      const SizedBox(width: 320,child:  CustomTextField(hintText: '0101 645 0937',textInputType: TextInputType.number,))
+        
       ],
     );
   }

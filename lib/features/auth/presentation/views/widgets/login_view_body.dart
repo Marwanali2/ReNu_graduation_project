@@ -33,11 +33,10 @@ class _LogInViewBodyState extends State<LogInViewBody> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-               const  CustomTitleWidget(),
+               const  CustomTitleWidget(title: 'LogIn',),
                   const SizedBox(
                     height: 30,
                   ),
-                  const Text('Log In', style: Styles.textStyle30),
                   const SizedBox(
                     height: 28,
                   ),const SizedBox(height: 12,),
@@ -64,7 +63,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       onTap: (){
                         GoRouter.of(context).push(AppRouter.kForgetPassword);
                       },
-                      child: Text('Forget password ?',style: Styles.textStyle14.copyWith(color: blackcolor),))
+                      child: Text('Forget password ?',style: Styles.textStyle14.copyWith(color: borderFormColor),))
                   ],
                  ),
                  const SizedBox(height: 30,),
@@ -79,17 +78,18 @@ class _LogInViewBodyState extends State<LogInViewBody> {
     
                  ],),
                  const SizedBox(height: 30,),
-                const SizedBox(
-                  width: 320,
-                   child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                    CustomIconButton(icon: FontAwesomeIcons.facebook,height: 49,width: 49,iconSize: 34.09,borderRadius: 25,),
-                    CustomIconButton(icon: FontAwesomeIcons.google,height: 49,width: 49,iconSize: 34.09,borderRadius: 25,),
-                    CustomIconButton(icon: FontAwesomeIcons.apple,height: 49,width: 49,iconSize: 34,borderRadius: 25,)
-                    
-                                ]),
-                 ),
+               const Center(
+                  child:  SizedBox(
+                    width: 250,
+                     child:  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                      CustomIconButton(icon: FontAwesomeIcons.facebook,height: 49,width: 49,iconSize: 34.09,borderRadius: 25,iconColor: Color(0xff20226A),),
+                      CustomIconButton(icon: FontAwesomeIcons.google,height: 49,width: 49,iconSize: 34.09,borderRadius: 25,iconColor: Color(0xffFF3D00),),
+                      
+                                  ]),
+                   ),
+                ),
                  const SizedBox(height: 50,),
                   Center(child: CustomTextWidget(text1: 'Don’t have an account? ' ,textbutton: 'Sign up',pageRoute: (){
                   GoRouter.of(context).push(AppRouter.kSignUp);

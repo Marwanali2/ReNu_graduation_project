@@ -12,7 +12,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
           padding: EdgeInsets.only(top: 35,left: 20),
           child: Column(
             children: [
-               CustomTitleWidget(),
+               CustomTitleWidget(title: '',),
               
             ],
           ),

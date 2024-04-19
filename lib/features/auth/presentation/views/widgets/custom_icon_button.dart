@@ -9,7 +9,7 @@ class CustomIconButton extends StatefulWidget {
       required this.height,
       required this.width,
       required this.iconSize,
-      required this.borderRadius,
+      required this.borderRadius, required this.iconColor,
 
       });
   final IconData icon;
@@ -17,7 +17,7 @@ class CustomIconButton extends StatefulWidget {
   final double width;
   final double iconSize;
   final double borderRadius;
-
+final Color iconColor;
   @override
   State<CustomIconButton> createState() => _CustomIconButtonState();
 
@@ -43,7 +43,7 @@ class _CustomIconButtonState extends State<CustomIconButton> {
         child: Icon(
           widget.icon,
           size: widget.iconSize,
-          color: Color(0xff000000),
+          color: widget.iconColor,
         ),
       ),
     );

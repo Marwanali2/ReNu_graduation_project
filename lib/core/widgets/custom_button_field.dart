@@ -18,10 +18,10 @@ final Color? textcolor;
         width: double.infinity,
         decoration: BoxDecoration(
           color: backgroundcolor,
-          border: Border.all(color: const Color(0xff747474),width: 1),
+          border: Border.all(color: borderFormColor,width: 1),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(child: Text(text,style: Styles.textStyle16.copyWith(fontFamily: interFont,color: textcolor)),),
+        child: Center(child: Text(text,style: Styles.textStyle16.copyWith(fontFamily: interFont,color: borderFormColor)),),
       ),
 
     );

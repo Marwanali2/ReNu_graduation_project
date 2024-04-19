@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
-class CusttomButtonEmail extends StatelessWidget {
-  const CusttomButtonEmail({super.key});
+class CusttomButtonGoogle extends StatelessWidget {
+  const CusttomButtonGoogle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +29,18 @@ class CusttomButtonEmail extends StatelessWidget {
       ),
       child:
           Center(
-            child: Text(
-              ' Use email or phone',
-              style: Styles.textStyle14.copyWith(fontSize: 12,color: Color(0xff013004),fontFamily: robotoFont)
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(FontAwesomeIcons.google),
+                 const SizedBox(
+              width: 15,
+            ),
+                Text(
+                  ' Continue with Google',
+                  style: Styles.textStyle14.copyWith(fontSize: 12,color: Color(0xff013004),fontFamily: robotoFont)
+                ),
+              ],
             ),
           ),
         
@@ -38,4 +48,4 @@ class CusttomButtonEmail extends StatelessWidget {
       
     );
   }
-}
+  }

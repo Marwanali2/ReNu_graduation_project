@@ -30,7 +30,7 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const CustomTitleWidget(),
+                      const CustomTitleWidget(title: '',),
                       const SizedBox(
                         height: 30,
                       ),

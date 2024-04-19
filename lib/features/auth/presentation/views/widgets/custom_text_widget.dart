@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
+import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CustomTextWidget extends StatelessWidget {
@@ -13,10 +14,10 @@ class CustomTextWidget extends StatelessWidget {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.center,
 children: [
-  Text(text1,style: Styles.textStyle14,),
+  Text(text1,style: Styles.textStyle14.copyWith(color: blackcolor),),
   GestureDetector(
     onTap: pageRoute,
-    child: Text(textbutton,style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600,color: const Color(0xff000000),),))
+    child: Text(textbutton,style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600,color: const Color(0xff3BAE49),),))
 
 ],
     );

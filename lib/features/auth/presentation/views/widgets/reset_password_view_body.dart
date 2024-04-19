@@ -29,7 +29,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const CustomTitleWidget(),
+                      const CustomTitleWidget(title: '',),
                       const SizedBox(
                         height: 30,
                       ),

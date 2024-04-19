@@ -4,7 +4,7 @@ abstract class Styles{
    static const textStyle32=TextStyle(
 fontSize: 32,
 fontWeight: FontWeight.w500,
-color:Color(0xff676767),
+color:Color(0xff3C3C3C),
 fontFamily: robotoFont
  );
 

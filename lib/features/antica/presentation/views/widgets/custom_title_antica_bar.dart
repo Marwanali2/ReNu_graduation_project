@@ -11,7 +11,7 @@ class CustomTitleAnticaBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                              children: [
-                               const CustomTitleWidget(),
+                               const CustomTitleWidget(title: '',),
                                Text('Antika',
                     style: Styles.textStyle16
                         .copyWith(color: blackcolor, fontFamily: poppinsBlackFont)),

@@ -16,6 +16,7 @@ class SuccessViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Image.asset('assests/images/security.png'),
           Text(
             'Password changed',
             textAlign: TextAlign.center,
