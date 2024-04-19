@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
@@ -32,6 +34,10 @@ class CustomBuyNowListView extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 20),
             child: Stack(children: [
               GestureDetector(
+                onTap: (){
+                GoRouter.of(context).push(AppRouter.kDetailsOfAntica);
+
+                },
                 child: Container(
                   height: 213,
                   width: 320,

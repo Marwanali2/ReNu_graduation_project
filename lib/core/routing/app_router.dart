@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/antica/presentation/views/antica_tab_bar_controller.dart';
+import 'package:graduation_project/features/antica/presentation/views/details_of_antica_view.dart';
 import 'package:graduation_project/features/antica/presentation/views/sell_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/Log_or_sign_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/forget_password_view.dart';
@@ -19,6 +20,7 @@ abstract class AppRouter {
   static const kResetPassword = '/reset';
   static const kSuccess = '/success';
   static const kAnticaTabbar = '/anticatabbar';
+  static const kDetailsOfAntica = '/detailsofantica';
 
 
  static final router = GoRouter(
@@ -75,6 +77,12 @@ abstract class AppRouter {
         path: kAnticaTabbar,
         builder: (context, state) {
           return const AnticaTabBar();
+        },
+      ),
+      GoRoute(
+        path: kDetailsOfAntica,
+        builder: (context, state) {
+          return const DetailsOfAnticaView();
         },
       ),
     ]

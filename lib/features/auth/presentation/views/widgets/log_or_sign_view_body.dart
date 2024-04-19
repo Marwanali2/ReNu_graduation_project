@@ -26,7 +26,7 @@ class _LogOrSignViewBodyState extends State<LogOrSignViewBody> {
         padding: const EdgeInsets.only(top: 100),
         child: Column(
           children: [
-          Image.asset('assests/images/logo.png'),
+          Image.asset('assests/aimages/Component 9.png'),
           const SizedBox(
             height: 80,
           ),

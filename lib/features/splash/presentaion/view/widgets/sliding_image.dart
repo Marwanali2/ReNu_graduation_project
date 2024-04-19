@@ -15,7 +15,12 @@ class SlidingImage extends StatelessWidget {
       builder: (context, _) {
         return SlideTransition(
           position: slidingAnimation,
-          child: Image.asset('assests/images/logo.png')
+          child: Column(
+            children: [
+              Image.asset('assests/images/logo1.png'),
+
+            ],
+          )
         );
       },
     );
