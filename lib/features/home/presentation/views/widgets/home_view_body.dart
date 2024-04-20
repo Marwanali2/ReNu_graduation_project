@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const HomeTopContaner(),
+          const HomeTopContainer(),
           SizedBox(
             height: 24.h,
           ),

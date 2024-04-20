@@ -1,10 +1,11 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ImageSlider extends StatefulWidget {
   final List<String> imageUrls;
 
-  const ImageSlider({super.key, required this.imageUrls});
+  const ImageSlider({Key? key, required this.imageUrls}) : super(key: key);
 
   @override
   _ImageSliderState createState() => _ImageSliderState();
@@ -12,6 +13,29 @@ class ImageSlider extends StatefulWidget {
 
 class _ImageSliderState extends State<ImageSlider> {
   int _currentPage = 0;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 5), (Timer timer) {
+      if (_currentPage < widget.imageUrls.length - 1) {
+        setState(() {
+          _currentPage++;
+        });
+      } else {
+        setState(() {
+          _currentPage = 0;
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

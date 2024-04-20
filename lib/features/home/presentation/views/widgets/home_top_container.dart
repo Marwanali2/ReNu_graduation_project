@@ -4,8 +4,8 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/home_custom_app_bar.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/search_and_scanner.dart';
 
-class HomeTopContaner extends StatelessWidget {
-  const HomeTopContaner({
+class HomeTopContainer extends StatelessWidget {
+  const HomeTopContainer({
     super.key,
   });
 
