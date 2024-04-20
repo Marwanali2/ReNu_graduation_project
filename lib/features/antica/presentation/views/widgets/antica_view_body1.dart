@@ -10,7 +10,7 @@ class BuyNowViewBody1 extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20,right: 20),
       child: Stack(
         children: [
-          const FavoritesGridView(name: 'Flower Poetry ', date: 'May 23 - June 23'),
+          const FavoritesGridView(name: 'Flower Poetry ', date: 'May 23 - June 23',image: 'assests/images/Rectangle246.png',),
           Padding(
             padding: const EdgeInsets.only(top: 450),
             child: GestureDetector(

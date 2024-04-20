@@ -3,9 +3,10 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class FavoritesGridView extends StatelessWidget {
-  const FavoritesGridView ({super.key, required this.name, required this.date});
+  const FavoritesGridView ({super.key, required this.name, required this.date, required this.image});
 final String name;
 final String date;
+final String image;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -33,7 +34,7 @@ final String date;
                     mainAxisAlignment: MainAxisAlignment.end,
                     //mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset('assests/images/caa.png'),
+                      Image.asset(image),
                       Padding(
                         padding: const EdgeInsets.only(left: 100,top: 15,bottom: 10),
                         child: Container(
