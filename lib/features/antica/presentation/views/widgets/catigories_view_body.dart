@@ -26,17 +26,17 @@ class CatigoriesViewBody extends StatelessWidget {
                   child: Text(
                     'See all ',
                     style: Styles.textStyle13.copyWith(
-                      fontFamily: poppinsBlackFont,
+            decoration: TextDecoration.underline,         
+             fontFamily: poppinsBlackFont,
                       fontWeight: FontWeight.w500,
-                      color: blackcolor
                       ),
                   ),
                 ),
               ],
             ),
             const SizedBox(
-              height: 146,
-              child: CatigoriesListView(name: 'Flower Poetry', date: 'May 23 - June 23')),
+              height: 152,
+              child: CatigoriesListView(name: 'Coin', date: 'May 23 - June 23',image: 'assests/images/coin1.png',)),
             const SizedBox(height: 20,),
 
             Row(
@@ -50,17 +50,17 @@ class CatigoriesViewBody extends StatelessWidget {
                   child: Text(
                     'See all ',
                     style: Styles.textStyle13.copyWith(
+                      decoration: TextDecoration.underline,         
                       fontFamily: poppinsBlackFont,
                       fontWeight: FontWeight.w500,
-                      color: blackcolor
                       ),
                   ),
                 ),
               ],
             ),
            const SizedBox(
-              height: 146,
-              child: CatigoriesListView(name: 'Flower Poetry', date: 'May 23 - June 23')),
+              height: 152,
+              child: CatigoriesListView(name: 'Camera', date: 'May 23 - June 23',image: 'assests/images/camera1.png',)),
 
  const SizedBox(height: 20,),
             
@@ -75,17 +75,17 @@ class CatigoriesViewBody extends StatelessWidget {
                   child: Text(
                     'See all ',
                     style: Styles.textStyle13.copyWith(
+                                  decoration: TextDecoration.underline,         
                       fontFamily: poppinsBlackFont,
                       fontWeight: FontWeight.w500,
-                      color: blackcolor
                       ),
                   ),
                 ),
               ],
             ),
            const SizedBox(
-              height: 146,
-              child: CatigoriesListView(name: 'Flower Poetry', date: 'May 23 - June 23')),
+              height: 152,
+              child: CatigoriesListView(name: 'Flower Poetry', date: 'May 23 - June 23',image: 'assests/images/jew1.png',)),
           ],
         ),
       ),
