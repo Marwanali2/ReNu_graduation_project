@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
+import 'package:graduation_project/core/theme/colors.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CustomUploadImage extends StatefulWidget {
@@ -37,7 +38,9 @@ setState(() => this.image = imageTemp);
                 height: 74,
                 width: 320,
                 decoration: BoxDecoration(
-                  color:const Color(0xffD9D9D9).withOpacity(0.4),
+                  border: Border.all(
+                    color: borderFormColor
+                  ),
                   borderRadius: BorderRadius.circular(15)
                 ),
                 child:const Row(

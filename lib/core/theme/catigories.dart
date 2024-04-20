@@ -1,9 +1,9 @@
 const List catigories=[
-  'assests/images/Amphora.png',
-  'assests/images/map_jewelry-store.png',
-  'assests/images/mdi_paint-outline.png',
-  'assests/images/ri_coins-line.png',
-  'assests/images/Shopping Bag Full.png',
-  'assests/images/Vector.png',
+'assests/images/Frame36776.png',
+'assests/images/Frame36777.png',
+'assests/images/Frame36778.png',
+'assests/images/Frame36779.png',
+'assests/images/Frame36781.png',
+'assests/images/Frame36886.png',
 ];
 
