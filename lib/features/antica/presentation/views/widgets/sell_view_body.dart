@@ -43,8 +43,7 @@ class _SellViewBodyState extends State<SellViewBody> {
                  const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomAnticaSellButton(backgroundcolor: whiteColor, text: 'Save as Draft'),
-                    CustomAnticaSellButton(backgroundcolor: blackcolor, text: 'Create post')
+                    CustomAnticaSellButton( text: 'Create Post'),
            ],),
                 const SizedBox(height: 10,)
         ]),

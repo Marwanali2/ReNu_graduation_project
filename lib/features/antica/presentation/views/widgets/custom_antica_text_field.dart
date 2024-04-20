@@ -24,11 +24,11 @@ final double height;
         enabledBorder:  OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(width: 1,
-            color: borderColor
+            color: borderFormColor
             ),
           ),
           focusedBorder:  OutlineInputBorder(
-            borderSide: BorderSide(width: 1,color:borderColor),
+            borderSide: BorderSide(width: 1,color:borderFormColor),
             borderRadius: BorderRadius.all(Radius.circular(10)),
           ),
       ),

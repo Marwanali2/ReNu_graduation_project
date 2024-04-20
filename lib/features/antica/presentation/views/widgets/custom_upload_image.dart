@@ -46,13 +46,13 @@ setState(() => this.image = imageTemp);
                 child:const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.cloud_upload_outlined),
+                    Icon(Icons.cloud_upload_outlined,color: borderFormColor,),
                     SizedBox(width: 4,),
                     Text('Upload Product Image',style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.w600,
                       fontFamily: poppinsBlackFont,
-                      color: Color(0xff313131)
+                      color: borderFormColor
                     ),)
                   ],
                 ),

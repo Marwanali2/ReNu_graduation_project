@@ -20,7 +20,7 @@ class ChooseCatigoryBodyListView extends StatelessWidget {
                 width:50,
                 height:60,
                 decoration: BoxDecoration(
-                  border: Border.all(color: blackcolor,width: 1),
+                  border: Border.all(color: Color(0xffE5E5E5),width: 1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child:Image.asset(catigories[index]),
