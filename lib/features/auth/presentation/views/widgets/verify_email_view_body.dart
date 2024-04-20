@@ -61,7 +61,7 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                       ),
                       const PinCodeTextFieldWidget(),
 
-                   CustomButtonField(text: 'Verify',ontap: (){
+                   CustomButtonField(text: 'Verify',textcolor: borderFormColor,ontap: (){
                        GoRouter.of(context).push(AppRouter.kResetPassword);
 
                   },),

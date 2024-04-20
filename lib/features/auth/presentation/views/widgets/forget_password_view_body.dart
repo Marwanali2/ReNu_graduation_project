@@ -59,7 +59,7 @@ class _ForgetPaaswordViewBodyState extends State<ForgetPaaswordViewBody> {
                   ],
                 )),
                 const SizedBox(height: 30,),
-                 CustomButtonField(text: 'Send Code',ontap: (){
+                 CustomButtonField(text: 'Send Code',textcolor: borderFormColor,ontap: (){
                   GoRouter.of(context).push(AppRouter.kVerifyEmail,);
                 },)
             ],

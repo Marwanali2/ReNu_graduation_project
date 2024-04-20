@@ -75,7 +75,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                   ],
                 )),
                 const SizedBox(height: 46,),
-                CustomButtonField(text: 'Change password',ontap: (){
+                CustomButtonField(text: 'Change password',textcolor: borderFormColor,ontap: (){
                   GoRouter.of(context).push(AppRouter.kSuccess);
                 },)
                     ]

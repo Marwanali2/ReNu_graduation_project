@@ -21,7 +21,7 @@ final Color? textcolor;
           border: Border.all(color: borderFormColor,width: 1),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(child: Text(text,style: Styles.textStyle16.copyWith(fontFamily: interFont,color: borderFormColor)),),
+        child: Center(child: Text(text,style: Styles.textStyle16.copyWith(fontFamily: interFont,color:textcolor)),),
       ),
 
     );

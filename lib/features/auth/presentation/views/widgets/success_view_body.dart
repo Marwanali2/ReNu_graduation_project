@@ -12,7 +12,7 @@ class SuccessViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 284, left: 20, right: 20),
+      padding: const EdgeInsets.only(top: 60, left: 20, right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -38,8 +38,8 @@ class SuccessViewBody extends StatelessWidget {
           ),
           CustomButtonField(
             text: 'Back to login',
-            backgroundcolor: blackcolor,
-            textcolor: Colors.white,
+            backgroundcolor:borderFormColor,
+            textcolor: whiteColor,
             ontap: (){
               GoRouter.of(context).push(AppRouter.kAnticaTabbar);
             },

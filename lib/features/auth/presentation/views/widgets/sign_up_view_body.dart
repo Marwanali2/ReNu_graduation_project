@@ -90,7 +90,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                              },
                            ),
                          ),
-                 const CustomButtonField(text: 'Sign up'),
+                 const CustomButtonField(text: 'Sign up',textcolor: borderFormColor),
                                   const SizedBox(height: 10,),
 
                     Center(child: CustomTextWidget(text1:'Already have account?  ',textbutton: 'Log in',pageRoute: () {

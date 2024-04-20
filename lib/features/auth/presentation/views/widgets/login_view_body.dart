@@ -67,7 +67,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                   ],
                  ),
                  const SizedBox(height: 30,),
-                const CustomButtonField(text: 'Log in',),
+                const CustomButtonField(text: 'Log in',textcolor: borderFormColor,),
                 const SizedBox(height: 10,),
                  const Row(children: [
                   Expanded(child: Divider(color: borderColor)),
