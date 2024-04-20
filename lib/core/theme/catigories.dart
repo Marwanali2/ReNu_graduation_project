@@ -1,9 +1,9 @@
 const List catigories=[
-'assests/images/Frame36776.png',
-'assests/images/Frame36777.png',
-'assests/images/Frame36778.png',
-'assests/images/Frame36779.png',
-'assests/images/Frame36781.png',
-'assests/images/Frame36886.png',
+'assests/images/Coin.png',
+'assests/images/Vase.png',
+'assests/images/Camera.png',
+'assests/images/Diamond.png',
+'assests/images/Palette.png',
+'assests/images/mingcute_add-fill.png'
 ];
 
