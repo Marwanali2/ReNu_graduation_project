@@ -8,16 +8,19 @@ class SvgPictureComponent extends StatelessWidget {
     required this.name,
     required this.width,
     required this.height,
+    this.color,
   });
   final String name;
   final double width;
   final double height;
+  final Color?color;
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       'assets/svg/$name.svg',
       height: height.h,
       width: width.w,
+      color: color,
     );
   }
 }

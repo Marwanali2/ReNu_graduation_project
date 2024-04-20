@@ -14,6 +14,11 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: ColorsManager.mainBlack,
   );
+  static TextStyle font10WhiteMeduim = GoogleFonts.roboto(
+    fontSize: 10.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mainWhite,
+  );
 static TextStyle font10SemiGrey1Normal = GoogleFonts.poppins(
     fontSize: 10.sp,
     fontWeight: FontWeight.w400,

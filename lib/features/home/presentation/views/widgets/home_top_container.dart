@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/home_custom_app_bar.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/search_and_scanner.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/search_field_container.dart';
 
 class HomeTopContainer extends StatelessWidget {
   const HomeTopContainer({
@@ -13,7 +13,7 @@ class HomeTopContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: ColorsManager.semiGrey1.withOpacity(0.8),
+        color: ColorsManager.green1,
         borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(
             30.r,
@@ -33,7 +33,7 @@ class HomeTopContainer extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            const SearchAndScanner(),
+            const SearchFieldContainer(),
           ],
         ),
       ),

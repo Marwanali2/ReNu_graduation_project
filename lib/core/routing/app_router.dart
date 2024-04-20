@@ -20,7 +20,7 @@ abstract class AppRouter {
     GoRoute(
       path: '/',
       builder: (context, state) {
-        return const HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
+        return  HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
       },
     ),
     GoRoute(
