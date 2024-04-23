@@ -9,6 +9,15 @@ class EcoTipsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> tips = [
+      'Energy Saving',
+      'recycling and its importance to the environment',
+    ];
+    List<String> tipsDescription = [
+      'Save energy by turning off lights and appliances when not in use.',
+      'Recycling helps reduce waste and protect the environment.',
+    ];
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -36,47 +45,71 @@ class EcoTipsSection extends StatelessWidget {
         SizedBox(
           height: 5.h,
         ),
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 23.0.r,
-              backgroundImage: const AssetImage('assets/images/anosa.jpg'),
-            ),
-            SizedBox(width: 5.w),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Tip number 1',
-                  style: TextStyles.font15SemiBlack2SemiBold,
-                ),
-                SizedBox(
-                  height: 5.h,
-                ),
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width * 0.7,
-                  child: Text(
-                    'Tip number 1 detailsTip number 1 detailsTip number 1 detailsTip number 1 detailsTip number 1Tip number 1 details',
-                    style: TextStyles.font11BlackSemiBold,
+        ListView.builder(
+          itemCount: 2,
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.only(bottom: 10.h),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 23.0.r,
+                        backgroundImage:
+                            const AssetImage('assets/images/anosa.jpg'),
+                      ),
+                      SizedBox(width: 5.w),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.sizeOf(context).width * 0.7,
+                            child: Text(
+                              tips[index],
+                              style: TextStyles.font16BlackMeduim,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          SizedBox(
+                            width: MediaQuery.sizeOf(context).width * 0.7,
+                            child: Text(
+                              tipsDescription[index],
+                              style: TextStyles.font12Grey1SemiBold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        width: 25.w,
+                        height: 25.h,
+                        decoration: BoxDecoration(
+                          color: ColorsManager.green1,
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                            size: 12.w,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
-            Container(
-              width: 17.w,
-              height: 17.h,
-              decoration: BoxDecoration(
-                color: ColorsManager.semiGrey3,
-                borderRadius: BorderRadius.circular(20.r),
+                  Divider(
+                    color: Colors.grey,
+                    thickness: 2.h,
+                    height: 15.h,
+                  ),
+                ],
               ),
-              child: Center(
-                child: Icon(
-                  Icons.arrow_forward_ios,
-                  size: 11.w,
-                ),
-              ),
-            ),
-          ],
+            );
+          },
         ),
       ],
     );

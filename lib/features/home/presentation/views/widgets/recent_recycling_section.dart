@@ -1,53 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/core/widgets/text_with_under_line_and_arrow.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/recent_recycling_component.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/text_with_underline.dart';
 
 class RecentRecyclingSection extends StatelessWidget {
   const RecentRecyclingSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<String> prices = [
+      '+500RPs',
+      '-500RPs',
+      '+500RPs',
+      '-500RPs',
+      '+500RPs',
+    ];
+    List<Color> pricesColors = [
+      Colors.green,
+      Colors.red,
+      Colors.green,
+      Colors.red,
+      Colors.green,
+    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Text('Recent Recycling',
-                style: TextStyles.font20SemiBlack1SemiBold),
+            Text(
+              'Recent Recycling',
+              style: TextStyles.font20SemiBlack1SemiBold,
+            ),
             const Spacer(),
-            TextWithUnderLine(
-              text: 'See All',
-              lineWidth: 40,
-              onTap: () {},
-            ),
-            SizedBox(
-              width: 4.w,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Icon(
-                Icons.arrow_forward_ios,
-                size: 12.w,
-              ),
-            ),
+            TextWithUnderLineAndArrowButton(text: 'See All', arrowOnTap: () {}),
           ],
         ),
         SizedBox(height: 11.h),
-        const RecentRecyclingComponent(
-          status: 'Recycle Successful',
-          time: '2 days ago',
-          price: '500RPs',
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        const RecentRecyclingComponent(
-          status: 'Recycle Successful',
-          time: '4 days ago',
-          price: '50RPs',
-        ),
+        ListView.builder(
+          shrinkWrap: true,
+          itemCount: 5,
+          physics: const NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.only(bottom: 10.h),
+              child: RecentRecyclingComponent(
+                status: 'Recycle Successful',
+                time: '2 days ago',
+                price: prices[index],
+                priceColor: pricesColors[index],
+              ),
+            );
+          },
+        )
       ],
     );
   }

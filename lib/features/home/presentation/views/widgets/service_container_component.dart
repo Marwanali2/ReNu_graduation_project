@@ -9,26 +9,28 @@ class ServiceContainerComponent extends StatelessWidget {
     super.key,
     required this.serviceName,
     required this.onTap,
+    required this.serviceSVGName,
   });
   final String serviceName;
+  final String serviceSVGName;
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 86.w,
-        height: 86.h,
+        width: 85.w,
+        height: MediaQuery.sizeOf(context).height * 0.15.h,
         decoration: BoxDecoration(
-          color: ColorsManager.semiGrey3,
           borderRadius: BorderRadius.circular(18.r),
+          border: Border.all(color: ColorsManager.green3, width: 3.w),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SvgPictureComponent(name: 'points', width: 30, height: 30),
+            SvgPictureComponent(name: serviceSVGName, width: 50, height: 50),
             SizedBox(height: 11.h),
-            Text(serviceName, style: TextStyles.font11BlackSemiBold),
+            Text(serviceName, style: TextStyles.font12SemiBlack1SemiBold),
           ],
         ),
       ),

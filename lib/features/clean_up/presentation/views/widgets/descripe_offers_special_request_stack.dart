@@ -35,7 +35,7 @@ class DescripeOffersSpecialRequestStack extends StatelessWidget {
           bottom: 2.h,
           child: Text(
             'Special request',
-            style: TextStyles.font24MeduimSemiBlack1,
+            style: TextStyles.font24MeduimSemiBlack1Poopins,
           ),
         )
       ],

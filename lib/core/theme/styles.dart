@@ -19,7 +19,7 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: ColorsManager.mainWhite,
   );
-static TextStyle font10SemiGrey1Normal = GoogleFonts.poppins(
+  static TextStyle font10SemiGrey1Normal = GoogleFonts.poppins(
     fontSize: 10.sp,
     fontWeight: FontWeight.w400,
     color: ColorsManager.semiGrey1,
@@ -71,6 +71,11 @@ static TextStyle font10SemiGrey1Normal = GoogleFonts.poppins(
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
     color: ColorsManager.semiGrey2,
+  );
+   static TextStyle font14MainBlackSemiBold = GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mainBlack,
   );
   static TextStyle font14GreyNormal = GoogleFonts.poppins(
     fontSize: 14.sp,
@@ -127,9 +132,14 @@ static TextStyle font10SemiGrey1Normal = GoogleFonts.poppins(
     fontWeight: FontWeight.w600,
     color: ColorsManager.semiGrey1,
   );
-  static TextStyle font24MeduimSemiBlack1 = GoogleFonts.poppins(
+  static TextStyle font24MeduimSemiBlack1Poopins = GoogleFonts.poppins(
     fontSize: 24.sp,
     fontWeight: FontWeight.w500,
     color: ColorsManager.semiBlack1,
+  );
+  static TextStyle font24MeduimWhite = GoogleFonts.roboto(
+    fontSize: 24.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mainWhite,
   );
 }

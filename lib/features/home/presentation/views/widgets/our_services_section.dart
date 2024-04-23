@@ -23,6 +23,7 @@ class OurServicesSection extends StatelessWidget {
           children: [
             ServiceContainerComponent(
               serviceName: 'Recycling',
+              serviceSVGName: 'recycling-truck',
               onTap: () {},
             ),
             SizedBox(
@@ -30,6 +31,7 @@ class OurServicesSection extends StatelessWidget {
             ),
             ServiceContainerComponent(
               serviceName: 'CleanUp',
+              serviceSVGName: 'clean-up',
               onTap: () async {
                 try {
                   await locationService.checkAndRequestLocationService();
@@ -55,7 +57,8 @@ class OurServicesSection extends StatelessWidget {
               width: 35.w,
             ),
             ServiceContainerComponent(
-              serviceName: 'Antica',
+              serviceName: 'Antika',
+              serviceSVGName: 'antika',
               onTap: () {},
             ),
           ],
