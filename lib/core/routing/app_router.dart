@@ -20,7 +20,7 @@ abstract class AppRouter {
 
   static final router = GoRouter(routes: <RouteBase>[
     GoRoute(
-      path: kCleanUp, //kHomeView,
+      path: kHomeView,
       builder: (context, state) {
         return HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
       },
@@ -38,7 +38,7 @@ abstract class AppRouter {
       },
     ),
      GoRoute(
-      path:'/', // krecentRecycling,
+      path: krecentRecycling,
       builder: (context, state) {
         return const RecentRecyclingView();
       },

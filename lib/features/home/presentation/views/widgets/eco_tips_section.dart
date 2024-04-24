@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/text_with_underline.dart';
 
 class EcoTipsSection extends StatelessWidget {
@@ -12,6 +13,10 @@ class EcoTipsSection extends StatelessWidget {
     List<String> tips = [
       'Energy Saving',
       'recycling and its importance to the environment',
+    ];
+    List<String> tipsSvgAssetName = [
+      'energy_saving',
+      'garbage-truck',
     ];
     List<String> tipsDescription = [
       'Save energy by turning off lights and appliances when not in use.',
@@ -58,8 +63,11 @@ class EcoTipsSection extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 23.0.r,
-                        backgroundImage:
-                            const AssetImage('assets/images/anosa.jpg'),
+                        child: SvgPictureComponent(
+                          name: tipsSvgAssetName[index],
+                          width: 24,
+                          height: 24,
+                        ),
                       ),
                       SizedBox(width: 5.w),
                       Column(

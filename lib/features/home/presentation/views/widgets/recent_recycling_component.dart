@@ -10,12 +10,13 @@ class RecentRecyclingComponent extends StatelessWidget {
     required this.status,
     required this.time,
     required this.price,
-    required this.priceColor,
+    required this.priceColor, required this.svgAssetName,
   });
   final String status;
   final String time;
   final String price;
   final Color priceColor;
+  final String svgAssetName;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +46,7 @@ class RecentRecyclingComponent extends StatelessWidget {
               ),
               child: Center(
                 child: SvgPictureComponent(
-                  name: 'recycling-box',
+                  name: svgAssetName,
                   width: 24.w,
                   height: 24.h,
                 ),
@@ -71,8 +72,8 @@ class RecentRecyclingComponent extends StatelessWidget {
             Text(
               price,
               style: TextStyles.font15SemiBlack2SemiBold.copyWith(
-                    color: priceColor,
-                  ),
+                color: priceColor,
+              ),
             ),
           ],
         ),

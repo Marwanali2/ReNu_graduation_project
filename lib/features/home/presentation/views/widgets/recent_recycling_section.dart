@@ -19,6 +19,18 @@ class RecentRecyclingListView extends StatelessWidget {
       '-500RPs',
       '+500RPs',
     ];
+     List<String> svgAssetName = [
+      'recycling-box',
+      'recycling_cart',
+      'recycling-box',
+      'recycling_cart',
+      'recycling-box',
+      'recycling-box',
+      'recycling_cart',
+      'recycling-box',
+      'recycling_cart',
+      'recycling-box',
+    ];
     List<Color> pricesColors = [
       Colors.green,
       Colors.red,
@@ -42,6 +54,7 @@ class RecentRecyclingListView extends StatelessWidget {
             status: 'Recycle Successful',
             time: '2 days ago',
             price: prices[index],
+            svgAssetName: svgAssetName[index],
             priceColor: pricesColors[index],
           ),
         );
