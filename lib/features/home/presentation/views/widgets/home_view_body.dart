@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
+import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/core/widgets/text_with_under_line_and_arrow.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/eco_tips_section.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/home_top_container.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/home_banner.dart';
@@ -27,7 +31,23 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(height: 17.h),
                 const OurServicesSection(),
                 SizedBox(height: 22.h),
-                const RecentRecyclingSection(),
+                Row(
+                  children: [
+                    Text(
+                      'Recent Recycling',
+                      style: TextStyles.font20SemiBlack1SemiBold,
+                    ),
+                    const Spacer(),
+                    TextWithUnderLineAndArrowButton(
+                        text: 'See All',
+                        arrowOnTap: () {
+                          GoRouter.of(context).push(AppRouter.krecentRecycling);
+                          print('**** See All ****');
+                        }),
+                  ],
+                ),
+                SizedBox(height: 11.h),
+                const RecentRecyclingListView(),
                 SizedBox(height: 11.h),
                 const EcoTipsSection(),
               ],

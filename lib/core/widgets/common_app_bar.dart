@@ -7,9 +7,10 @@ import 'package:graduation_project/features/clean_up/presentation/views/widgets/
 class CommonAppBar extends StatelessWidget {
   const CommonAppBar({
     super.key,
-    required this.title,
+    required this.title,required this.sizedBoxWidth,
   });
   final String title;
+  final double sizedBoxWidth;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +19,7 @@ class CommonAppBar extends StatelessWidget {
           onTap: () => GoRouter.of(context).pop(),
           child: const BackContainerWidget(),
         ),
-        SizedBox(width: 7.w),
+        SizedBox(width: sizedBoxWidth.w),
         Text(
           title,
           style: TextStyles.font20BlackMeduim,

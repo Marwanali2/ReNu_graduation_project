@@ -6,10 +6,12 @@ import 'package:graduation_project/features/clean_up/presentation/views/descripe
 import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/recent_recycling.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/';
   static const kCleanUp = '/cleanUp';
+  static const krecentRecycling = '/recentRecycling';
   static const kSelectCompany = '/selectCompany';
   static const kCompanyDetails = '/companyDetails';
   static const kDescripeOffers = '/descripeOffers';
@@ -18,7 +20,7 @@ abstract class AppRouter {
 
   static final router = GoRouter(routes: <RouteBase>[
     GoRoute(
-      path: kHomeView,
+      path: kCleanUp, //kHomeView,
       builder: (context, state) {
         return HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
       },
@@ -33,6 +35,12 @@ abstract class AppRouter {
       path: kSelectCompany,
       builder: (context, state) {
         return SelectCompanyView();
+      },
+    ),
+     GoRoute(
+      path:'/', // krecentRecycling,
+      builder: (context, state) {
+        return const RecentRecyclingView();
       },
     ),
     GoRoute(

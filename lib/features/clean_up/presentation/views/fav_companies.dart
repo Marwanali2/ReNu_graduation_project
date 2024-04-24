@@ -17,7 +17,7 @@ class FavCompanies extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CommonAppBar(title: 'Favorite Company'),
+                const CommonAppBar(title: 'Favorite Company', sizedBoxWidth:  7,),
                 SizedBox(height: 43.h),
                 Text(
                   'Companies',

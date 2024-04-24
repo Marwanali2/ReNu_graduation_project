@@ -9,24 +9,27 @@ class TextWithUnderLineAndArrowButton extends StatelessWidget {
   final void Function() arrowOnTap;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        TextWithUnderLine(
-          text: text,
-          lineWidth: 40,
-          onTap: () {},
-        ),
-        SizedBox(
-          width: 4.w,
-        ),
-        GestureDetector(
-          onTap: arrowOnTap,
-          child: Icon(
-            Icons.arrow_forward_ios,
-            size: 12.w,
+    return GestureDetector(
+      onTap: arrowOnTap,
+      child: Row(
+        children: [
+          TextWithUnderLine(
+            text: text,
+            lineWidth: 40,
+            onTap: () {},
           ),
-        ),
-      ],
+          SizedBox(
+            width: 4.w,
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Icon(
+              Icons.arrow_forward_ios,
+              size: 12.w,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
