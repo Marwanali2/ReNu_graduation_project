@@ -8,7 +8,7 @@ import 'package:graduation_project/features/clean_up/presentation/views/select_c
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 
 abstract class AppRouter {
-  static const kHomeView = '/homeView';
+  static const kHomeView = '/';
   static const kCleanUp = '/cleanUp';
   static const kSelectCompany = '/selectCompany';
   static const kCompanyDetails = '/companyDetails';
@@ -18,9 +18,9 @@ abstract class AppRouter {
 
   static final router = GoRouter(routes: <RouteBase>[
     GoRoute(
-      path: '/',
+      path: kHomeView,
       builder: (context, state) {
-        return  HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
+        return HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
       },
     ),
     GoRoute(

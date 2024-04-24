@@ -72,10 +72,15 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: ColorsManager.semiGrey2,
   );
-   static TextStyle font14MainBlackSemiBold = GoogleFonts.roboto(
+  static TextStyle font14MainBlackSemiBold = GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     color: ColorsManager.mainBlack,
+  );
+    static TextStyle font14SemiBlack2SemiBold = GoogleFonts.roboto(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w700,
+    color: ColorsManager.semiBlack2,
   );
   static TextStyle font14GreyNormal = GoogleFonts.poppins(
     fontSize: 14.sp,
@@ -120,6 +125,11 @@ class TextStyles {
   static TextStyle font20BlackMeduim = GoogleFonts.poppins(
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,
+    color: ColorsManager.mainBlack,
+  );
+  static TextStyle font20BlackNormalRobot = GoogleFonts.roboto(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w400,
     color: ColorsManager.mainBlack,
   );
   static TextStyle font22WhiteMeduim = GoogleFonts.poppins(
