@@ -40,9 +40,9 @@ class HomeViewBody extends StatelessWidget {
                     const Spacer(),
                     TextWithUnderLineAndArrowButton(
                         text: 'See All',
+                        lineWidth: 40,
                         arrowOnTap: () {
                           GoRouter.of(context).push(AppRouter.krecentRecycling);
-                          print('**** See All ****');
                         }),
                   ],
                 ),

@@ -4,9 +4,10 @@ import 'package:graduation_project/features/home/presentation/views/widgets/text
 
 class TextWithUnderLineAndArrowButton extends StatelessWidget {
   const TextWithUnderLineAndArrowButton(
-      {super.key, required this.text, required this.arrowOnTap});
+      {super.key, required this.text, required this.arrowOnTap, required this.lineWidth});
   final String text;
   final void Function() arrowOnTap;
+  final double lineWidth ;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,18 +16,15 @@ class TextWithUnderLineAndArrowButton extends StatelessWidget {
         children: [
           TextWithUnderLine(
             text: text,
-            lineWidth: 40,
-            onTap: () {},
+            lineWidth: lineWidth,
+            
           ),
           SizedBox(
             width: 4.w,
           ),
-          GestureDetector(
-            onTap: () {},
-            child: Icon(
-              Icons.arrow_forward_ios,
-              size: 12.w,
-            ),
+          Icon(
+            Icons.arrow_forward_ios,
+            size: 12.w,
           ),
         ],
       ),

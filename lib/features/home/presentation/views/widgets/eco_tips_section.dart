@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/core/widgets/text_with_under_line_and_arrow.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/text_with_underline.dart';
 
 class EcoTipsSection extends StatelessWidget {
   const EcoTipsSection({super.key});
@@ -30,21 +32,12 @@ class EcoTipsSection extends StatelessWidget {
           children: [
             Text('Eco Tips', style: TextStyles.font20SemiBlack1SemiBold),
             const Spacer(),
-            TextWithUnderLine(
-              text: 'Show more',
-              lineWidth: 70,
-              onTap: () {},
-            ),
-            SizedBox(
-              width: 4.w,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Icon(
-                Icons.arrow_forward_ios,
-                size: 12.w,
-              ),
-            ),
+            TextWithUnderLineAndArrowButton(
+                text: 'Show More',
+                lineWidth: 70,
+                arrowOnTap: () {
+                  GoRouter.of(context).push(AppRouter.kEcoTips);
+                }),
           ],
         ),
         SizedBox(

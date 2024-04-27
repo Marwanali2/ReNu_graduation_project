@@ -25,11 +25,7 @@ class RecentRecyclingListView extends StatelessWidget {
       'recycling-box',
       'recycling_cart',
       'recycling-box',
-      'recycling-box',
-      'recycling_cart',
-      'recycling-box',
-      'recycling_cart',
-      'recycling-box',
+
     ];
     List<Color> pricesColors = [
       Colors.green,
@@ -37,15 +33,11 @@ class RecentRecyclingListView extends StatelessWidget {
       Colors.green,
       Colors.red,
       Colors.green,
-      Colors.green,
-      Colors.red,
-      Colors.green,
-      Colors.red,
-      Colors.green,
+  
     ];
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: 10,
+      itemCount: svgAssetName.length,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         return Padding(

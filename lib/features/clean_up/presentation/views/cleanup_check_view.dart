@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/back_container.dart';
-import 'package:flutter_advanced_calendar/flutter_advanced_calendar.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/show_subscription_time_container.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/text_with_underline.dart';
 
@@ -181,7 +180,7 @@ class TitleWithSecondUnderLineTextRow extends StatelessWidget {
           child: TextWithUnderLine(
             text: secondText,
             lineWidth: 70.w,
-            onTap: secondTextOnTap,
+           // onTap: secondTextOnTap,
           ),
         ),
         Icon(

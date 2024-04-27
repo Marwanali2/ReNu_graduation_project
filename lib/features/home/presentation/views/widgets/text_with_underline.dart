@@ -7,18 +7,18 @@ class TextWithUnderLine extends StatelessWidget {
   const TextWithUnderLine({
     super.key,
     required this.text,
-    required this.onTap,
+    
     required this.lineWidth,
   });
   final String text;
-  final void Function() onTap;
+  
   final double lineWidth;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
-          onTap: onTap,
+          
           child: Text(
             text,
             style: TextStyles.font12SemiBlack1SemiBold,

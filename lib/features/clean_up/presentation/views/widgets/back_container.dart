@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_project/core/theme/colors.dart';
 
 class BackContainerWidget extends StatelessWidget {
   const BackContainerWidget({
-    super.key,
+    super.key, this.bordercolor=const Color(0xffD9D9D9),
   });
-
+  final Color bordercolor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,7 +13,7 @@ class BackContainerWidget extends StatelessWidget {
       height: 40.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(color: ColorsManager.semiGrey3)),
+          border: Border.all(color: bordercolor)),
       child: Center(
           child: Padding(
         padding: EdgeInsets.only(left: 8.w),
