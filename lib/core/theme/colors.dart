@@ -17,4 +17,5 @@ class ColorsManager {
   static Color green1 = const Color(0xff3BAE49);
   static Color green2 = const Color(0xff325831);
   static Color green3 = const Color(0xff2F8B3A);
+  static Color green4 = const Color(0xff8CD56C);
 }

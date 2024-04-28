@@ -77,7 +77,7 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: ColorsManager.mainBlack,
   );
-    static TextStyle font14SemiBlack2SemiBold = GoogleFonts.roboto(
+  static TextStyle font14SemiBlack2SemiBold = GoogleFonts.roboto(
     fontSize: 14.sp,
     fontWeight: FontWeight.w700,
     color: ColorsManager.semiBlack2,
@@ -97,7 +97,12 @@ class TextStyles {
     fontWeight: FontWeight.w300,
     color: ColorsManager.mainBlack,
   );
-  static TextStyle font15SemiBlack2SemiBold = GoogleFonts.poppins(
+  static TextStyle font15SemiBlack2SemiBold = GoogleFonts.roboto(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.mainBlack,
+  );
+  static TextStyle font15SemiBlack2SemiBoldPoppins = GoogleFonts.poppins(
     fontSize: 15.sp,
     fontWeight: FontWeight.w600,
     color: ColorsManager.semiBlack2,
