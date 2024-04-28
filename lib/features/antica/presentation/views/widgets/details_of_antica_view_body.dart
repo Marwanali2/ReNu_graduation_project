@@ -4,7 +4,6 @@ import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/back_icon_widget.dart';
-import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 class DetailsOfAnticaViewBody extends StatelessWidget {
   const DetailsOfAnticaViewBody ({super.key});
 

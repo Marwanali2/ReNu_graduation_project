@@ -6,7 +6,6 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
 import 'package:graduation_project/core/widgets/custom_password_field.dart';
-import 'package:graduation_project/core/widgets/custom_text_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_title_widget.dart';
 
 class ResetPasswordViewBody extends StatefulWidget {

@@ -19,7 +19,7 @@ class BuyNowViewBody1 extends StatelessWidget {
                 width: 60,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Color(0xff5B5B5B).withOpacity(0.7)
+                  color:const Color(0xff5B5B5B).withOpacity(0.7)
                   
                 ),
                 child: Center(

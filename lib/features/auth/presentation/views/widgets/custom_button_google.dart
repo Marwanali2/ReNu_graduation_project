@@ -32,13 +32,13 @@ class CusttomButtonGoogle extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(FontAwesomeIcons.google),
+               const Icon(FontAwesomeIcons.google),
                  const SizedBox(
               width: 15,
             ),
                 Text(
                   ' Continue with Google',
-                  style: Styles.textStyle14.copyWith(fontSize: 12,color: Color(0xff013004),fontFamily: robotoFont)
+                  style: Styles.textStyle14.copyWith(fontSize: 12,color:const Color(0xff013004),fontFamily: robotoFont)
                 ),
               ],
             ),

@@ -55,7 +55,7 @@ class CustomBuyNowListView extends StatelessWidget {
                     width: 94,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Color(0xffFFFFFF).withOpacity(0.3)),
+                        color:const Color(0xffFFFFFF).withOpacity(0.3)),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -79,7 +79,7 @@ class CustomBuyNowListView extends StatelessWidget {
                     height: 87,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Color(0xffFFFFFF).withOpacity(0.2)),
+                        color:const Color(0xffFFFFFF).withOpacity(0.2)),
                     child: Padding(
                       padding: const EdgeInsets.only(top:22,left: 10,right: 10),
                       child: Row(
@@ -98,7 +98,7 @@ class CustomBuyNowListView extends StatelessWidget {
                               ),
                               Row(
                                 children: [
-                                  Text('current bit ',style: TextStyle(color: borderFormColor),),
+                                 const Text('current bit ',style: TextStyle(color: borderFormColor),),
                                   Text(
                                     textAlign: TextAlign.start,
                                     'EGP 135 ',
@@ -124,7 +124,7 @@ class CustomBuyNowListView extends StatelessWidget {
                                 width: 120,
                                 decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16),
-                                color: Color(0xffD9D9D9)
+                                color:const Color(0xffD9D9D9)
                                 ),
                                 child: Center(
                                   child: Text('Place a bit',style: Styles.textStyle14.copyWith(

@@ -1,6 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
@@ -55,7 +53,7 @@ class _CusttomButtonFaceBookState extends State<CusttomButtonFaceBook> {
             Text(
               'Continue with facebook',
               style: Styles.textStyle14
-                  .copyWith(fontWeight: FontWeight.w500, color: Color(0xff20226A)),
+                  .copyWith(fontWeight: FontWeight.w500, color: const Color(0xff20226A)),
             ),
           ],
         ),

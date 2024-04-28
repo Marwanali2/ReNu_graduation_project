@@ -30,7 +30,7 @@ class CusttomButtonEmail extends StatelessWidget {
           Center(
             child: Text(
               ' Use email or phone',
-              style: Styles.textStyle14.copyWith(fontSize: 12,color: Color(0xff013004),fontFamily: robotoFont)
+              style: Styles.textStyle14.copyWith(fontSize: 12,color:const Color(0xff013004),fontFamily: robotoFont)
             ),
           ),
         

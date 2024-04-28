@@ -1,8 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/antica/presentation/views/antica_tab_bar_controller.dart';
 import 'package:graduation_project/features/antica/presentation/views/details_of_antica_view.dart';
-import 'package:graduation_project/features/antica/presentation/views/sell_view.dart';
-import 'package:graduation_project/features/auth/presentation/views/Log_or_sign_view.dart';
+import 'package:graduation_project/features/auth/presentation/views/log_or_sign_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/login_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/reset_password_view.dart';

@@ -15,7 +15,7 @@ class _AnticaSearchState extends State<AnticaSearch> {
       autocorrect: true,
   
                       decoration:InputDecoration(
-                        prefixIcon: Icon(Icons.search_rounded,color: borderFormColor,),
+                        prefixIcon:const Icon(Icons.search_rounded,color: borderFormColor,),
 
                           border: OutlineInputBorder(
                             borderSide:const BorderSide(

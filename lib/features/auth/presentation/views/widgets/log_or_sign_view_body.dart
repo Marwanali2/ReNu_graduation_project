@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/auth/presentation/views/widgets/custom_button_Facebook.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/custom_button_facebook.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_button_email.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_button_google.dart';
-import 'package:graduation_project/features/auth/presentation/views/widgets/custom_icon_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_widget.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 class LogOrSignViewBody extends StatefulWidget {
   const LogOrSignViewBody({super.key});
 

@@ -6,7 +6,7 @@ class FavoritesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return const Padding(
       padding: EdgeInsets.only(left:25,right:20),
       child:Stack(
         children: [

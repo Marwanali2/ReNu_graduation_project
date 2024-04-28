@@ -19,9 +19,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
    
   
-  late Timer _timer;
-  double _currentIndex = 0;
-
+  
   @override
   void initState() {
     

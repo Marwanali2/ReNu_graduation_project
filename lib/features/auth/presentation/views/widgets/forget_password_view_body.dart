@@ -52,8 +52,8 @@ class _ForgetPaaswordViewBodyState extends State<ForgetPaaswordViewBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Email address',style: Styles.textStyle14.copyWith(color: Color(0xff000000)),),
-                    SizedBox(height: 3,),
+                    Text('Email address',style: Styles.textStyle14.copyWith(color: const Color(0xff000000)),),
+                  const  SizedBox(height: 3,),
                    const CustomTextField(hintText: 'Enter your email address',textInputType: TextInputType.emailAddress,),
                   
                   ],

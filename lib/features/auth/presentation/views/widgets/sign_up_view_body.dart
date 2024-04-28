@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
@@ -76,9 +74,9 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 const CustomPasswordField(hintText: 'repeat password',),
                  const SizedBox(height: 5,),
                  ListTile(
-                  contentPadding: EdgeInsets.only(left: 10,),
+                  contentPadding:const EdgeInsets.only(left: 10,),
                   
-                           title:  Text('I accept the terms and privacy policy',style:Styles.textStyle14.copyWith(color: Color(0xff2C2C2B)) ,),
+                           title:  Text('I accept the terms and privacy policy',style:Styles.textStyle14.copyWith(color:const Color(0xff2C2C2B)) ,),
                            leading: Radio<SingingCharacter>(
                             activeColor: borderFormColor,
                              value: SingingCharacter.jefferson,

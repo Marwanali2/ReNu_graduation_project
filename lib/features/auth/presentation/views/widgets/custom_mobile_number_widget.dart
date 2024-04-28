@@ -3,7 +3,6 @@ import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_text_field.dart';
-import 'package:graduation_project/features/auth/presentation/views/widgets/custom_country_code.dart';
 
 class CustomMobileNumber extends StatelessWidget {
   const CustomMobileNumber({super.key});
