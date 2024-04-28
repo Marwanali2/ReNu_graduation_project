@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/antica_search.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/antica_view_body1.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/big_antica_view_body2.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/catigories_view_body.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/custom_title_antica.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/custom_title_antica_bar.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/favorites_view_body.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/sell_view_body.dart';
@@ -33,19 +35,24 @@ void dispose() {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          padding:const EdgeInsets.only(top: 35,),
+          padding:const EdgeInsets.only(top: 40,),
           height: MediaQuery.of(context).size.height,
           child:  Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Padding(
                  padding:  EdgeInsets.symmetric(horizontal: 20),
-                 child: CustomTitleAnticaBar(),
+                 child: CustomTitleAntica(),
                ),
                    const SizedBox(height: 30,),
-                   Padding(
-                     padding: const EdgeInsets.only(left: 20),
-                     child: Text('Create New Post',style: Styles.textStyle16.copyWith(color: blackcolor,fontFamily: poppinsBlackFont),),
+                  const Padding(
+                     padding:  EdgeInsets.only(left: 20),
+                     child: SizedBox(
+                      height: 34,
+                      width: 320,
+                    
+                       child: AnticaSearch(),
+                     )
                    ),
                    const SizedBox(height: 30,),
           TabBar(
@@ -54,8 +61,9 @@ void dispose() {
         indicator:const BoxDecoration(
           shape: BoxShape.circle,
         ),           
-            labelStyle:Styles.textStyle12.copyWith(color: blackcolor),
+            labelStyle:Styles.textStyle12.copyWith(color: borderFormColor),
             unselectedLabelStyle: Styles.textStyle12.copyWith(fontWeight: FontWeight.w400),
+            indicatorSize: TabBarIndicatorSize.label,
           controller:tabController,
           tabs:const[
                   Tab(text:'Buy Now'),
@@ -83,3 +91,6 @@ void dispose() {
        );
   }
 }
+
+
+

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
@@ -14,10 +16,18 @@ class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
+
+   
+  
+  late Timer _timer;
+  double _currentIndex = 0;
+
   @override
   void initState() {
+    
     super.initState();
 
+    
     initSliding();
     slidingAnimation.addListener(() {});
     navigateToHome();

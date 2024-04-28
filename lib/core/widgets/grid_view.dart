@@ -25,26 +25,26 @@ final String image;
           children: [
             Container(
               width: 143,
-              height: 173,
+              height: 183 ,
               decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: borderColor,
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                  child: Stack(
+                    //mainAxisAlignment: MainAxisAlignment.start,
                     //mainAxisSize: MainAxisSize.min,
                     children: [
                       Image.asset(image),
                       Padding(
-                        padding: const EdgeInsets.only(left: 100,top: 15,bottom: 10),
+                        padding: const EdgeInsets.only(top:150,left: 110),
                         child: Container(
                           height: 25,
                           width: 25,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            border: Border.all(color: blackcolor)
+                            border: Border.all(color: blackcolor),
+                            color: whiteColor
                           ),
-                          child:GestureDetector(child:const Icon(Icons.favorite,size: 18,weight:13,))),
+                          child:GestureDetector(child:const Icon(Icons.favorite,size: 18,weight:13,color: Color(0xffEB001B),))),
                       ),
                       
                     ],

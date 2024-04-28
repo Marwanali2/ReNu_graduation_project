@@ -39,38 +39,41 @@ class CustomBuyNowListView extends StatelessWidget {
 
                 },
                 child: Container(
-                  height: 213,
+                  height: 234,
                   width: 320,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color(0xff5B5B5B)),
+                      borderRadius: BorderRadius.circular(10),
+                      ),
+                      child:Image.asset('assests/images/big.png'),
                 ),
               ),
+              
+                 Padding(
+                   padding: const EdgeInsets.only(top: 10,left: 10),
+                   child: Container(
+                    height: 25,
+                    width: 94,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Color(0xffFFFFFF).withOpacity(0.3)),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.clock,
+                          size: 15,
+                        ),
+                        Text(
+                          '2h 45m 32s',
+                          style: Styles.textStyle11,
+                        ),
+                      ],
+                    ),
+                                   
+                                 ),
+                 ),
               Padding(
-                padding: const EdgeInsets.all(6.0),
-                child: Container(
-                  height: 25,
-                  width: 94,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Color(0xffFFFFFF).withOpacity(0.3)),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.clock,
-                        size: 15,
-                      ),
-                      Text(
-                        '2h 45m 32s',
-                        style: Styles.textStyle11,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 126),
+                padding: const EdgeInsets.only(top: 150),
                 child: Container(
                     width: 320,
                     height: 87,
@@ -93,17 +96,26 @@ class CustomBuyNowListView extends StatelessWidget {
                       
                                 ),
                               ),
-                              Text(
-                                textAlign: TextAlign.start,
-                                'EGP 135 ',
-                                style: Styles.textStyle14.copyWith(
-                                  color: blackcolor,
-                                  fontFamily: poppinsBlackFont,
-                                  fontWeight: FontWeight.w600
-                                ),
+                              Row(
+                                children: [
+                                  Text('current bit ',style: TextStyle(color: borderFormColor),),
+                                  Text(
+                                    textAlign: TextAlign.start,
+                                    'EGP 135 ',
+                                    style: Styles.textStyle14.copyWith(
+                                      color: blackcolor,
+                                      fontFamily: poppinsBlackFont,
+                                      fontWeight: FontWeight.w600
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
+
+
+
+                          
                           Padding(
                             padding: const EdgeInsets.only(bottom: 20),
                             child: GestureDetector(
