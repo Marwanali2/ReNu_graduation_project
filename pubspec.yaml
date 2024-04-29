@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   country_code_picker: ^3.0.0
+  linear_progress_bar: "^1.1.1"
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5
   firebase_auth: ^4.17.5
