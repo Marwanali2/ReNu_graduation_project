@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 
 class CompaniesContainer extends StatelessWidget {
   const CompaniesContainer({
@@ -27,8 +28,9 @@ class CompaniesContainer extends StatelessWidget {
           width: 330.w,
           height: 97.h,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.r),
-              color: ColorsManager.semiGrey4),
+            border: Border.all(color: ColorsManager.green1),
+            borderRadius: BorderRadius.circular(15.r),
+          ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -65,7 +67,11 @@ class CompaniesContainer extends StatelessWidget {
                       Text(deliveryDuration,
                           style: TextStyles.font14GreyNormal),
                       SizedBox(width: 27.w),
-                      Icon(Icons.fire_truck_outlined, size: 20.spMax),
+                      Icon(
+                        Icons.fire_truck_outlined,
+                        size: 20.spMax,
+                        color: ColorsManager.green1,
+                      ),
                       SizedBox(width: 5.w),
                       Text('EGP $deliveryCost',
                           style: TextStyles.font14GreyNormal),
@@ -73,25 +79,29 @@ class CompaniesContainer extends StatelessWidget {
                   ),
                 ],
               ),
-              const Spacer(),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.favorite_border))
             ],
           ),
         ),
         Positioned(
           left: 1.w,
           top: 25.h,
-          child: SizedBox(
-            width: 51.w,
-            height: 51.h,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10.r),
-                  bottomRight: Radius.circular(10.r)),
-              child: Image.asset(
-                imageAsset,
-                fit: BoxFit.cover,
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10.r),
+              bottomRight: Radius.circular(10.r),
+            ),
+            child: Container(
+              width: 51.w,
+              height: 48.h,
+              decoration: BoxDecoration(
+                color: ColorsManager.green2,
+              ),
+              child: const Center(
+                child: SvgPictureComponent(
+                  name: 'rubbish',
+                  height: 24,
+                  width: 24,
+                ),
               ),
             ),
           ),

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/back_container.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
-
 
 // ignore: must_be_immutable
 class YourLocationAppBar extends StatelessWidget {
@@ -25,29 +23,9 @@ class YourLocationAppBar extends StatelessWidget {
           width: 7.w,
         ),
         Text(
-          'Your Location',
-          style: TextStyles.font16BlackMeduim,
+          'Companies',
+          style: TextStyles.font20BlackMeduim,
         ),
-        SizedBox(
-          width: 1.w,
-        ),
-        IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.keyboard_arrow_down_outlined,
-              color: Colors.black,
-              size: 30.spMax,
-            )),
-        const Spacer(),
-        IconButton(
-            onPressed: () {
-              GoRouter.of(context).push(AppRouter.kFavCompanies);
-            },
-            icon: Icon(
-              Icons.favorite_border_outlined,
-              color: Colors.black,
-              size: 20.spMax,
-            )),
       ],
     );
   }

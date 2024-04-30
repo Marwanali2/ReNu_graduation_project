@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
@@ -43,7 +45,7 @@ class SingleNotificationContainer extends StatelessWidget {
                 ),
                 SizedBox(width: 5.w),
                 SizedBox(
-                  width: MediaQuery.sizeOf(context).width * 0.5.h,
+                  width: (MediaQuery.sizeOf(context).height * 0.18.h),
                   child: Text(
                     notificationTitle,
                     style: TextStyles.font15SemiBlack2SemiBold
