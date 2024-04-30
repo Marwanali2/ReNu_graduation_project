@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/back_icon_widget.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/bidders_of_antika.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/descreption_of_details.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/estimate_of_details.dart';
 class DetailsOfAnticaViewBody extends StatelessWidget {
@@ -59,7 +61,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                           ),
                         
               ),
-
+      
             ),
             Padding(
                    padding: const EdgeInsets.only(top: 60,left: 190),
@@ -85,11 +87,19 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                                    
                                  ),
           )]),
-
+      
           const SizedBox(height: 10,),
           const DescritionOfDetails(),
           const SizedBox(height: 10,),
-          const EstimateOfDetails()
+          const EstimateOfDetails(),
+          const SizedBox(height: 10,),
+          Text('Bidders',
+        style: Styles.textStyle20.copyWith(
+          fontFamily: robotoFont
+        ),
+    
+        ),
+          const BiddersOfAntika()
         ],
       ),
     );

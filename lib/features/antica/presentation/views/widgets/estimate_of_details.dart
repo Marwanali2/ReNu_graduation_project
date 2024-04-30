@@ -4,14 +4,22 @@ import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:linear_progress_bar/linear_progress_bar.dart';
-class EstimateOfDetails extends StatelessWidget {
+import 'package:flutter/cupertino.dart';
+class EstimateOfDetails extends StatefulWidget {
   const EstimateOfDetails({super.key});
+
+  @override
+  State<EstimateOfDetails> createState() => _EstimateOfDetailsState();
+}
+
+class _EstimateOfDetailsState extends State<EstimateOfDetails> {
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
             width:321,
-            height:103,
+            height:105,
             decoration:BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: borderFormColor
@@ -52,7 +60,7 @@ class EstimateOfDetails extends StatelessWidget {
                       ),)
                     ],
                   ),
-                  const SizedBox(height: 15,),
+                 const SizedBox(height: 15,),
            Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
              children: [
@@ -66,11 +74,17 @@ class EstimateOfDetails extends StatelessWidget {
                        backgroundColor: whiteColor,
                      ),
                ),
-              const Row(
+               Row(
                 children: [
-                  Image.asset('assests/images/solar_stopwatch-line-duotone.png'),
+                  Image.asset('assests/images/solarstopwatchlineduotone.png'),
+                  const SizedBox(width: 4,),
+                 const Text('00:30',style: TextStyle(
+                    color: whiteColor,
+                    fontSize: 14,
+                  ),),
                 ],
                )
+
              ],
            )
                 ],
