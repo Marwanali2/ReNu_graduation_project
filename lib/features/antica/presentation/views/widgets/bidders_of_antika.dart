@@ -1,44 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
-import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/listview_of_bidders_of_antika.dart';
 
 class BiddersOfAntika extends StatelessWidget {
   const BiddersOfAntika({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-          scrollDirection: Axis.vertical,
-          itemCount: 4 ,
-          itemBuilder: (context,index){
-            return Row(
-              children: [ 
-                Image.asset('assests/images/Ellipse199.png'),
-                Column(
-                  children: [
-                    Text('Messi',style: Styles.textStyle13.copyWith(
-                      color:blackcolor,
-                      fontWeight: FontWeight.w500
-                    ),),
-                   const Text('1h 34m ago',style: TextStyle(
-                      fontSize: 10,
-                      color: borderColor,
-                      fontWeight: FontWeight.w500
-                    ),)
-                  ],
-                ),
-
-                Text('EGP 220',style: Styles.textStyle13.copyWith(
-                  color: borderFormColor,
-                  fontWeight: FontWeight.w500,
+    return             Expanded(
+              child: Stack(
+                        children: [
+                         const BiddersOfAntikaListView(),
+                         Center(
+               child: GestureDetector(
+                onTap: (){
                   
-                ),)
-              ],
+                },
+                 child: Container(
+                  height: 40,
+                  width: 109,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: const Color(0xff325831)
+                  ),
+                  child: const Center(
+                    child: Text('place a bit ',style: TextStyle(
+                      fontFamily: poppinsBlackFont,
+                      fontWeight: FontWeight.w500,
+                      color: whiteColor,
+                      fontSize: 13
+                    ),),
+                  ),
+                 ),
+               ),
+                        )]),
             );
-          }
-          
-    );
+
   }
 }
