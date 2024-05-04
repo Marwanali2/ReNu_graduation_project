@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/back_container.dart';
@@ -9,8 +10,10 @@ import 'package:graduation_project/features/clean_up/presentation/views/widgets/
 class YourLocationAppBar extends StatelessWidget {
   YourLocationAppBar({
     super.key,
+    required this.placemarks,
   });
   LocationService locationService = LocationService();
+  final List<Placemark> placemarks;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,9 +25,11 @@ class YourLocationAppBar extends StatelessWidget {
         SizedBox(
           width: 7.w,
         ),
-        Text(
-          'Companies',
-          style: TextStyles.font20BlackMeduim,
+        Expanded(
+          child: Text(
+            '${placemarks[0].locality}, ${placemarks[0].subAdministrativeArea}, ${placemarks[0].administrativeArea}',
+            style: TextStyles.font20BlackMeduim,
+          ),
         ),
       ],
     );

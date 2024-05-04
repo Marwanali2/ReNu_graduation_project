@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/company_container.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/your_location_appbar.dart';
 
 class SelectCompanyView extends StatelessWidget {
-  const SelectCompanyView({super.key});
-
+  const SelectCompanyView({super.key,required this.placemarks});
+final List<Placemark> placemarks;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,13 +18,13 @@ class SelectCompanyView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              YourLocationAppBar(),
+              YourLocationAppBar(placemarks: placemarks,),
               SizedBox(
                 height: 50.h,
               ),
               GestureDetector(
                 onTap: () {
-                  GoRouter.of(context).push(AppRouter.kCompanyDetails);
+                    GoRouter.of(context).push(AppRouter.kCompanyDetails);
                 },
                 child: const CompaniesContainer(
                   title: 'EcoDelta Recyclers',

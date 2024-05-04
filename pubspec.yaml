@@ -35,6 +35,7 @@ dependencies:
   flutter_advanced_calendar: ^1.4.1
   flutter_iconly: ^1.0.2
   flutter_screenutil: ^5.9.0
+  flutter_showcaseview: ^2.1.3
   flutter_svg: ^2.0.9
   geocoding: ^2.2.0
   go_router: ^13.2.0
@@ -42,6 +43,7 @@ dependencies:
   google_maps_flutter: ^2.5.3
   location: ^5.0.3
   panara_dialogs: ^0.1.4
+  showcaseview: ^2.1.1
 
 dev_dependencies:
 

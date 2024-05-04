@@ -8,6 +8,7 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/map_confirm_button.dart';
 import 'package:location/location.dart';
+import 'package:geocoding/geocoding.dart' hide Location;
 
 class CustomGoogleMap extends StatefulWidget {
   const CustomGoogleMap({super.key});
@@ -22,6 +23,7 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
   late GoogleMapController googleMapController;
   Location location = Location();
   Set<Marker> markers = {};
+  List<Placemark> placemarks = [];
   @override
   void initState() {
     LatLng initialLocation = const LatLng(30.78753546661836, 30.99754772107391);
@@ -47,12 +49,13 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
     return Stack(
       children: [
         GoogleMap(
+          mapType: MapType.hybrid,
           zoomControlsEnabled: false,
           markers: markers,
           initialCameraPosition: initialCameraPosition,
           onMapCreated: (controller) {
             googleMapController = controller;
-            initMapStyle();
+            //     initMapStyle();
             initMarkers();
           },
         ),
@@ -69,6 +72,11 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
                         userLocation.longitude!,
                       ),
                       zoom: 15)));
+              placemarks = await placemarkFromCoordinates(
+                userLocation.latitude!,
+                userLocation.longitude!,
+              );
+              placemarks.add(placemarks[0]);
             },
             child: Container(
               width: 44.w,
@@ -82,25 +90,24 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
             ),
           ),
         ),
-        const ConfirmButton(),
+        ConfirmButton(placemarks: placemarks),
       ],
     );
   }
 
-  void initMapStyle() async {
+/*   void initMapStyle() async {
     googleMapController = googleMapController;
-    var darkMapStyle = await DefaultAssetBundle.of(context).loadString(
-      'assets/map_styles/dark_map_style.json',
-    );
-    googleMapController.setMapStyle(darkMapStyle);
+    // var darkMapStyle = await DefaultAssetBundle.of(context).loadString(
+    //   'assets/map_styles/dark_map_style.json',
+   // );
+    //  googleMapController.setMapStyle(darkMapStyle);
   }
-
+ */
   void initMarkers() async {
     LocationData userLocation = await location.getLocation();
     var customMarker = await BitmapDescriptor.fromAssetImage(
         const ImageConfiguration(), "assets/images/user_location_circle.png");
     Marker userLocationMarker = Marker(
-      icon: customMarker,
       markerId: const MarkerId(
         'user location marker',
       ),
@@ -108,6 +115,8 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
         userLocation.latitude!,
         userLocation.longitude!,
       ),
+      
+      icon: customMarker,
     );
     markers.add(userLocationMarker);
     setState(() {});

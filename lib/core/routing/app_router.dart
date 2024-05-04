@@ -2,16 +2,16 @@ import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_check_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/company_details_view.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/custom_google_map.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/descripe_offers.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
-import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 import 'package:graduation_project/features/home/presentation/views/eco_tips_view.dart';
 import 'package:graduation_project/features/home/presentation/views/notifications_view.dart';
 import 'package:graduation_project/features/home/presentation/views/recent_recycling_view.dart';
 
 abstract class AppRouter {
-  static const kHomeView = '/';
+  static const kMain = '/';
   static const kCleanUp = '/cleanUp';
   static const krecentRecycling = '/recentRecycling';
   static const kSelectCompany = '/selectCompany';
@@ -24,9 +24,9 @@ abstract class AppRouter {
 
   static final router = GoRouter(routes: <RouteBase>[
     GoRoute(
-      path: kHomeView,
+      path: kMain,
       builder: (context, state) {
-        return HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
+        return CustomGoogleMap(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
       },
     ),
     GoRoute(
@@ -38,10 +38,10 @@ abstract class AppRouter {
     GoRoute(
       path: kSelectCompany,
       builder: (context, state) {
-        return SelectCompanyView();
+        return SelectCompanyView(placemarks: [],);
       },
     ),
-     GoRoute(
+    GoRoute(
       path: krecentRecycling,
       builder: (context, state) {
         return const RecentRecyclingView();
@@ -59,7 +59,7 @@ abstract class AppRouter {
         return DescripeOffers();
       },
     ),
-     GoRoute(
+    GoRoute(
       path: kNotifications,
       builder: (context, state) {
         return NotificationsView();
