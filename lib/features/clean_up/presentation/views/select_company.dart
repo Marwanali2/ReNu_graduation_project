@@ -7,8 +7,8 @@ import 'package:graduation_project/features/clean_up/presentation/views/widgets/
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/your_location_appbar.dart';
 
 class SelectCompanyView extends StatelessWidget {
-  const SelectCompanyView({super.key,required this.placemarks});
-final List<Placemark> placemarks;
+  const SelectCompanyView({super.key, required this.placemarks});
+  final List<Placemark> placemarks;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -18,13 +18,15 @@ final List<Placemark> placemarks;
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              YourLocationAppBar(placemarks: placemarks,),
+              YourLocationAppBar(
+                placemarks: placemarks,
+              ),
               SizedBox(
                 height: 50.h,
               ),
               GestureDetector(
                 onTap: () {
-                    GoRouter.of(context).push(AppRouter.kCompanyDetails);
+                  GoRouter.of(context).push(AppRouter.kCompanyDetails);
                 },
                 child: const CompaniesContainer(
                   title: 'EcoDelta Recyclers',

@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:graduation_project/core/theme/colors.dart';
+import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
-import 'package:graduation_project/features/clean_up/presentation/views/widgets/map_confirm_button.dart';
 import 'package:location/location.dart';
 import 'package:geocoding/geocoding.dart' hide Location;
+import 'package:panara_dialogs/panara_dialogs.dart';
 
 class CustomGoogleMap extends StatefulWidget {
   const CustomGoogleMap({super.key});
@@ -49,14 +49,14 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
     return Stack(
       children: [
         GoogleMap(
-          mapType: MapType.hybrid,
+          mapType: MapType.terrain,
           zoomControlsEnabled: false,
           markers: markers,
           initialCameraPosition: initialCameraPosition,
           onMapCreated: (controller) {
             googleMapController = controller;
             //     initMapStyle();
-            initMarkers();
+            //  initMarkers();
           },
         ),
         Positioned(
@@ -77,6 +77,8 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
                 userLocation.longitude!,
               );
               placemarks.add(placemarks[0]);
+              initMarkers();
+              
             },
             child: Container(
               width: 44.w,
@@ -90,17 +92,52 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
             ),
           ),
         ),
-        ConfirmButton(placemarks: placemarks),
+        Positioned(
+          bottom: 30.h,
+          left: 16.w,
+          right: 16.w,
+          child: ElevatedButton(
+              onPressed: () {
+                if (placemarks.isEmpty) {
+                  PanaraInfoDialog.show(
+                    context,
+                    title: 'Please set your location',
+                    message: 'Please set your location on the map to continue',
+                    buttonText: "Okay",
+                    onTapDismiss: () {
+                      Navigator.pop(context);
+                    },
+                    panaraDialogType: PanaraDialogType.normal,
+                    barrierDismissible: false,
+                  );
+
+                  return;
+                }
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SelectCompanyView(
+                        placemarks: placemarks,
+                      ),
+                    ));
+              },
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(Size(330.w, 55.h)),
+                backgroundColor:
+                    MaterialStateProperty.all(ColorsManager.semiBlack2),
+              ),
+              child: Text('Confirm', style: TextStyles.font22WhiteMeduim)),
+        ),
       ],
     );
   }
 
 /*   void initMapStyle() async {
     googleMapController = googleMapController;
-    // var darkMapStyle = await DefaultAssetBundle.of(context).loadString(
-    //   'assets/map_styles/dark_map_style.json',
-   // );
-    //  googleMapController.setMapStyle(darkMapStyle);
+    var darkMapStyle = await DefaultAssetBundle.of(context).loadString(
+      'assets/map_styles/dark_map_style.json',
+   );
+     googleMapController.setMapStyle(darkMapStyle);
   }
  */
   void initMarkers() async {
@@ -115,7 +152,6 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
         userLocation.latitude!,
         userLocation.longitude!,
       ),
-      
       icon: customMarker,
     );
     markers.add(userLocationMarker);
