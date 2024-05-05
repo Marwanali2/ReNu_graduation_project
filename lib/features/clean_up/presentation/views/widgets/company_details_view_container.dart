@@ -15,12 +15,12 @@ class CompanyDetailsViewContainer extends StatelessWidget {
     return Positioned(
       left: 15.w,
       right: 15.w,
-      top: 77.h,
+      top: 130.h,
       child: Container(
-        width: 330.w,
-        height: 141.h,
+        width: 320.w,
+        height: MediaQuery.sizeOf(context).height * 0.16.h,
         decoration: BoxDecoration(
-          color: ColorsManager.semiGrey6,
+          color: ColorsManager.green1,
           borderRadius: BorderRadius.all(
             Radius.circular(
               10.r,
@@ -43,13 +43,13 @@ class CompanyDetailsViewContainer extends StatelessWidget {
               children: [
                 SizedBox(width: 10.w),
                 const CompanyDetailsViewContainerDetailsColumn(
-                    title: 'Delivery price', titleValue: 'EGP 35.49'),
+                    title: 'Delivery price', titleValue: 'EGP 35.99'),
                 const VerticalGreyDivider(),
                 const CompanyDetailsViewContainerDetailsColumn(
                     title: 'Delivery Time', titleValue: '15 mins'),
                 const VerticalGreyDivider(),
                 const CompanyDetailsViewContainerDetailsColumn(
-                    title: 'Delivery By', titleValue: 'ReNu You'),
+                    title: 'Delivery By', titleValue: 'EcoDelta'),
               ],
             ),
           ],

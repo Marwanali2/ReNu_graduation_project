@@ -17,87 +17,91 @@ final List<String> items = [
 String? selectedValue;
 bool isEveryDay = true;
 
-class CompanyDetails extends StatefulWidget {
-  const CompanyDetails({Key? key}) : super(key: key);
+class CompanyDetailsView extends StatefulWidget {
+  const CompanyDetailsView({Key? key}) : super(key: key);
 
   @override
-  State<CompanyDetails> createState() => _CompanyDetailsState();
+  State<CompanyDetailsView> createState() => _CompanyDetailsViewState();
 }
 
-class _CompanyDetailsState extends State<CompanyDetails> {
+class _CompanyDetailsViewState extends State<CompanyDetailsView> {
   String selectedTime = '9:00 AM';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: DefaultTabController(
-        length: 2,
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const CompanydetailsAppbarAndContainer(),
-              SizedBox(
-                height: 130.h,
-              ),
-              TabBar(
-                dividerColor: ColorsManager.mainWhite,
-                indicatorColor: ColorsManager.mainBlack,
-                indicatorPadding: EdgeInsets.only(top: 25.h),
-                indicator: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: ColorsManager.mainBlack,
+    return SafeArea(
+      child: Scaffold(
+        body: DefaultTabController(
+          length: 2,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const CompanydetailsAppbarAndContainer(),
+                SizedBox(
+                  height: 130.h,
                 ),
-                physics: const BouncingScrollPhysics(),
-                tabs: [
-                  Text(
-                    'Offers',
-                    style: TextStyles.font22SemiGrey1SemiBold,
+                TabBar(
+                  dividerColor: ColorsManager.mainWhite,
+                  indicatorPadding: EdgeInsets.only(top: 25.h),
+                  indicator: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: ColorsManager.green1,
                   ),
-                  Text(
-                    'Worktime',
-                    style: TextStyles.font22SemiGrey1SemiBold,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 13.h,
-              ),
-              SizedBox(
-                height: MediaQuery.sizeOf(context).height,
-                child: TabBarView(
-                  children: [
-                    const OffersTapBody(),
-                    Padding(
-                      padding: EdgeInsets.only(left: 16.w, right: 16.w),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Reiteration Time',
-                            style: TextStyles.font16BlackMeduim,
-                          ),
-                          SizedBox(height: 15.h),
-                          selectReiterationTime(),
-                          SizedBox(height: 60.h),
-                          Text(
-                            'Clean-Up Time',
-                            style: TextStyles.font16BlackMeduim,
-                          ),
-                          SizedBox(height: 15.h),
-                          selectCleanUpTime(),
-                          SizedBox(
-                            height: MediaQuery.sizeOf(context).height * 0.1,
-                          ),
-                          const Align(
-                            alignment: Alignment.bottomRight,
-                            child: WorkTimeConfirmButton(),
-                          ),
-                        ],
-                      ),
+                  labelPadding: EdgeInsets.only(bottom: 5.h),
+                  physics: const BouncingScrollPhysics(),
+                  tabs: [
+                    Text(
+                      'Offers',
+                      style: TextStyles.font15SemiBlack2SemiBold.copyWith(
+                          fontSize: 20.sp, color: ColorsManager.mainBlack),
+                    ),
+                    Text(
+                      'Worktime',
+                      style: TextStyles.font15SemiBlack2SemiBold.copyWith(
+                          fontSize: 20.sp, color: ColorsManager.mainBlack),
                     ),
                   ],
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: 30.h,
+                ),
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).height,
+                  child: TabBarView(
+                    children: [
+                       OffersTapBody(),
+                      Padding(
+                        padding: EdgeInsets.only(left: 16.w, right: 16.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Reiteration Time',
+                              style: TextStyles.font16BlackMeduim,
+                            ),
+                            SizedBox(height: 15.h),
+                            selectReiterationTime(),
+                            SizedBox(height: 60.h),
+                            Text(
+                              'Clean-Up Time',
+                              style: TextStyles.font16BlackMeduim,
+                            ),
+                            SizedBox(height: 15.h),
+                            selectCleanUpTime(),
+                            SizedBox(
+                              height: MediaQuery.sizeOf(context).height * 0.1,
+                            ),
+                            const Align(
+                              alignment: Alignment.bottomRight,
+                              child: WorkTimeConfirmButton(),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

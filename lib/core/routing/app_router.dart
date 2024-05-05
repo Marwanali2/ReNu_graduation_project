@@ -26,7 +26,7 @@ abstract class AppRouter {
     GoRoute(
       path: kMain,
       builder: (context, state) {
-        return CustomGoogleMap(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
+        return CompanyDetailsView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
       },
     ),
     GoRoute(
@@ -38,7 +38,9 @@ abstract class AppRouter {
     GoRoute(
       path: kSelectCompany,
       builder: (context, state) {
-        return SelectCompanyView(placemarks: [],);
+        return SelectCompanyView(
+          placemarks: [],
+        );
       },
     ),
     GoRoute(
@@ -50,7 +52,7 @@ abstract class AppRouter {
     GoRoute(
       path: kCompanyDetails,
       builder: (context, state) {
-        return CompanyDetails();
+        return CompanyDetailsView();
       },
     ),
     GoRoute(

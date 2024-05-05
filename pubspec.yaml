@@ -43,7 +43,6 @@ dependencies:
   google_maps_flutter: ^2.5.3
   location: ^5.0.3
   panara_dialogs: ^0.1.4
-  showcaseview: ^2.1.1
 
 dev_dependencies:
 

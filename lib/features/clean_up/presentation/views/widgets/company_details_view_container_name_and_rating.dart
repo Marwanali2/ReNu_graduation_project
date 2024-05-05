@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CompanyDetailsViewContainerNameAndRating extends StatelessWidget {
@@ -13,21 +14,24 @@ class CompanyDetailsViewContainerNameAndRating extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Garbage Collection',
+          'EcoDelta Recyclers',
           style: TextStyles.font14BlackMeduim,
         ),
         SizedBox(height: 4.h),
         Row(
           children: [
-            Icon(Icons.star, size: 20.spMax),
+            Icon(Icons.star, size: 20.spMax, color: Colors.yellow),
             SizedBox(
               width: 2.w,
             ),
-            Text('3.5', style: TextStyles.font14GreyNormal),
+            Text('4.5',
+                style: TextStyles.font14GreyNormal
+                    .copyWith(color: ColorsManager.mainBlack)),
             SizedBox(width: 2.w),
             Text(
-              '( 25 )',
-              style: TextStyles.font14GreyNormal,
+              '(30)',
+              style: TextStyles.font14GreyNormal
+                  .copyWith(color: ColorsManager.semiGrey5),
             ),
           ],
         ),

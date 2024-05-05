@@ -24,7 +24,7 @@ class CompanyDetailsViewContainerDetailsColumn extends StatelessWidget {
         Text(
           titleValue,
           style: TextStyles.font12SemiBlack1SemiBold.copyWith(
-              fontWeight: FontWeight.w400, color: ColorsManager.semiGrey2),
+              fontWeight: FontWeight.w400, color: ColorsManager.semiGrey5),
         ),
       ],
     );
