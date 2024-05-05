@@ -52,7 +52,7 @@ void dispose() {
                      )
                    ),
                    const SizedBox(height: 30,),
-          TabBar(
+          TabBar( 
         labelPadding: EdgeInsets.zero, 
         indicatorPadding:const EdgeInsets.only(top:23),
         indicator:const BoxDecoration(

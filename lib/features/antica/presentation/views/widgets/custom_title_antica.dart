@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/antica/presentation/views/widgets/back_icon_widget.dart';
+import 'package:graduation_project/core/widgets/back_icon_widget.dart';
 
 class CustomTitleAntica extends StatelessWidget {
   const CustomTitleAntica ({super.key});
