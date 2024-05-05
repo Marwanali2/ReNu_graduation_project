@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/antica/presentation/views/antica_tab_bar_controller.dart';
 import 'package:graduation_project/features/antica/presentation/views/details_of_antica_view.dart';
+import 'package:graduation_project/features/antica/presentation/views/widgets/bidders_bottom_sheet.dart';
 import 'package:graduation_project/features/auth/presentation/views/log_or_sign_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/login_view.dart';
@@ -20,7 +21,7 @@ abstract class AppRouter {
   static const kSuccess = '/success';
   static const kAnticaTabbar = '/anticatabbar';
   static const kDetailsOfAntica = '/detailsofantica';
-
+  static const kbottomSheet='/bottomsheet';
 
  static final router = GoRouter(
     routes: <RouteBase>[
@@ -82,6 +83,12 @@ abstract class AppRouter {
         path: kDetailsOfAntica,
         builder: (context, state) {
           return const DetailsOfAnticaView();
+        },
+      ),
+      GoRoute(
+        path: kbottomSheet,
+        builder: (context, state) {
+          return const BiddersBottomSheet();
         },
       ),
     ]
