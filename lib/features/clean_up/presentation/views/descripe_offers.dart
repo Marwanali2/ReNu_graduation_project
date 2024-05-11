@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/descripe_offers_button.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/descripe_offers_grid_view.dart';
@@ -29,7 +30,7 @@ class DescripeOffers extends StatelessWidget {
                     const DescripeOffersGridView(),
                     // SizedBox(height: MediaQuery.sizeOf(context).height * 0.1.h),
                     SizedBox(height: 8.h),
-                    const DescripeOffersButton(),
+                     DescripeOffersButton(text:  'EGP 100 / For 3 Month',buttonColor: MaterialStateProperty.all(ColorsManager.mainBlack),),
                   ],
                 ),
               ),

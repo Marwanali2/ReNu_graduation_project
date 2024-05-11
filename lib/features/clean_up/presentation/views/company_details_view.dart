@@ -4,11 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/cleanup_check_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/company_details_appbar_and_container.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/offers_tap_body.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/select_cleanup_time_body.dart';
-import 'package:graduation_project/features/clean_up/presentation/views/widgets/work_time_confirm_button.dart';
+import 'package:lottie/lottie.dart';
+import 'package:panara_dialogs/panara_dialogs.dart';
 
 final List<String> items = [
   'Every Day',
@@ -25,6 +27,31 @@ class CompanyDetailsView extends StatefulWidget {
 }
 
 class _CompanyDetailsViewState extends State<CompanyDetailsView> {
+  DateTime? selectedStartDate;
+  DateTime? selectedEndDate;
+
+  void _presentDateRangePicker() {
+    showDateRangePicker(
+      context: context,
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2030),
+      // initialDateRange: DateTimeRange(
+      //   start: selectedStartDate ?? DateTime.now(),
+      //   end: selectedEndDate ?? DateTime.now().add(const Duration(days: 7)),
+      // ),
+      helpText: 'Select a range for EcoDelta Services',
+      keyboardType: TextInputType.datetime,
+    ).then((pickedDateRange) {
+      if (pickedDateRange == null) {
+        return;
+      }
+      setState(() {
+        selectedStartDate = pickedDateRange.start;
+        selectedEndDate = pickedDateRange.end;
+      });
+    });
+  }
+
   String selectedTime = '9:00 AM';
   @override
   Widget build(BuildContext context) {
@@ -68,10 +95,135 @@ class _CompanyDetailsViewState extends State<CompanyDetailsView> {
                   height: MediaQuery.sizeOf(context).height,
                   child: TabBarView(
                     children: [
-                       OffersTapBody(),
+                      OffersTapBody(),
                       Padding(
-                        padding: EdgeInsets.only(left: 16.w, right: 16.w),
-                        child: Column(
+                          padding: EdgeInsets.only(left: 16.w, right: 16.w),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Lottie.asset(
+                                'assets/lottie/range_date_lottie.json',
+                                reverse: true,
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.sizeOf(context).height * 0.01,
+                              ),
+                              TextButton(
+                                onPressed: _presentDateRangePicker,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Select The Start-End Date Range',
+                                      style: TextStyles.font16BlackSemiBoldInter
+                                          .copyWith(
+                                        color: ColorsManager.mainBlack,
+                                        fontFamily: 'Popins',
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.5,
+                                      child: Divider(
+                                        color: ColorsManager.mainBlack,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.sizeOf(context).height * 0.02,
+                              ),
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                    ColorsManager.green1,
+                                  ),
+                                  shape: MaterialStateProperty.all(
+                                    RoundedRectangleBorder(
+                                      side: BorderSide(
+                                        color: Colors.green[300]!,
+                                        width: 5.w,
+                                      ),
+                                      borderRadius: BorderRadius.circular(
+                                        10.r,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  if (selectedStartDate == null &&
+                                      selectedEndDate == null) {
+                                    PanaraInfoDialog.show(
+                                      context,
+                                      title: 'Missed Step',
+                                      message: 'Select Start-End Date Range',
+                                      buttonText: "Okay",
+                                      onTapDismiss: () {
+                                        Navigator.pop(context);
+                                      },
+                                      panaraDialogType: PanaraDialogType.normal,
+                                      barrierDismissible: false,
+                                    );
+                                  } else {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => CleanupCheckView(
+                                          selectedEndDate: selectedStartDate,
+                                          selectedStartDate: selectedEndDate,
+                                        ),
+                                      ),
+                                    );
+                                  }
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                    top: 18.h,
+                                    bottom: 18.h,
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Show CleanUP Check Summary',
+                                      style: TextStyles.font16BlackSemiBoldInter
+                                          .copyWith(
+                                        color: ColorsManager.mainWhite,
+                                        fontFamily: 'Popins',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              // // display the selected date
+                              // Container(
+                              //   padding: const EdgeInsets.all(30),
+                              //   child: Text(
+                              //     selectedStartDate != null &&
+                              //             selectedEndDate != null
+                              //         ? '@${selectedStartDate.toString()} to ${selectedEndDate.toString()}'
+                              //         : 'No date selected!',
+                              //     style: const TextStyle(fontSize: 30),
+                              //   ),
+                              // )
+                            ],
+                          )
+                          /*  TableCalendar(
+                          firstDay: DateTime.utc(2010, 10, 16),
+                          lastDay: DateTime.utc(2030, 3, 14),
+                          calendarStyle: CalendarStyle(
+                            todayDecoration: BoxDecoration(
+                              color: Colors.green,
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.black),
+                            ),
+                          ),
+                          focusedDay: DateTime.now(),
+                          currentDay: DateTime.now(),
+                        ), */
+                          /* 
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -96,7 +248,8 @@ class _CompanyDetailsViewState extends State<CompanyDetailsView> {
                             ),
                           ],
                         ),
-                      ),
+                       */
+                          ),
                     ],
                   ),
                 ),

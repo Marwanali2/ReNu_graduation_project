@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BackContainerWidget extends StatelessWidget {
   const BackContainerWidget({
-    super.key, this.bordercolor=const Color(0xffD9D9D9),
+    super.key,
+    this.bordercolor = const Color(0xff3BAE49),
   });
   final Color bordercolor;
   @override

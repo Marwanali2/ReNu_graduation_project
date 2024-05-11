@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer/available_balance.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer/drawer_header_and_name_circe.dart';
@@ -21,8 +22,8 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             title: Text(
               'Marwan',
-              style: TextStyles.font20BlackNormalRobot
-                  .copyWith(fontSize: 22.sp),
+              style:
+                  TextStyles.font20BlackNormalRobot.copyWith(fontSize: 22.sp),
             ),
             subtitle: const Text('Marwanalizz42@gmail.com'),
             trailing: const Icon(Icons.arrow_drop_down_outlined),
@@ -37,6 +38,7 @@ class AppDrawer extends StatelessWidget {
                 DrawerListItemPageContainer(
                   titleText: 'Home',
                   icon: Icons.home_outlined,
+                  containerColor: ColorsManager.green1,
                   onTap: () {
                     GoRouter.of(context).pop(); // handle with index and if
                   },

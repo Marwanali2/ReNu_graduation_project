@@ -42,7 +42,10 @@ dependencies:
   google_fonts: ^6.1.0
   google_maps_flutter: ^2.5.3
   location: ^5.0.3
+  lottie: ^3.1.0
   panara_dialogs: ^0.1.4
+  table_calendar: ^3.0.9
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
 
@@ -70,6 +73,7 @@ flutter:
     - assets/svg/
     - assets/images/
     - assets/map_styles/dark_map_style.json
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

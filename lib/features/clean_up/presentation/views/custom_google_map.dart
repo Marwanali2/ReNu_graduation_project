@@ -11,8 +11,8 @@ import 'package:geocoding/geocoding.dart' hide Location;
 import 'package:panara_dialogs/panara_dialogs.dart';
 
 class CustomGoogleMap extends StatefulWidget {
-  const CustomGoogleMap({super.key});
-
+  const CustomGoogleMap({super.key, required this.isShowCompany});
+  final bool isShowCompany;
   @override
   State<CustomGoogleMap> createState() => _CustomGoogleMapState();
 }
@@ -26,12 +26,23 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
   List<Placemark> placemarks = [];
   @override
   void initState() {
-    LatLng initialLocation = const LatLng(30.78753546661836, 30.99754772107391);
+    LatLng initialLocation = widget.isShowCompany
+        ? const LatLng(30.7843657916722, 30.996239788174858)
+        : const LatLng(30.78753546661836, 30.99754772107391);
     initialCameraPosition = CameraPosition(
       target: initialLocation,
-      zoom: 13.5,
+      zoom: widget.isShowCompany ? 15 : 13.5,
     );
-
+    widget.isShowCompany
+        ? markers.add(
+            const Marker(
+              markerId: MarkerId(
+                'company location marker',
+              ),
+              position: LatLng(30.7843657916722, 30.996239788174858),
+            ),
+          )
+        : markers = {};
     locationService = LocationService();
     locationService.getUserLocationWithServiceAndPermissions();
 
@@ -59,46 +70,49 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
             //  initMarkers();
           },
         ),
-        Positioned(
-          left: 16.w,
-          bottom: 159.h,
-          child: GestureDetector(
-            onTap: () async {
-              LocationData userLocation = await location.getLocation();
-              googleMapController
-                  .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-                      target: LatLng(
-                        userLocation.latitude!,
-                        userLocation.longitude!,
-                      ),
-                      zoom: 15)));
-              placemarks = await placemarkFromCoordinates(
-                userLocation.latitude!,
-                userLocation.longitude!,
-              );
-              placemarks.add(placemarks[0]);
-              initMarkers();
-              
-            },
-            child: Container(
-              width: 44.w,
-              height: 40.h,
-              decoration: BoxDecoration(
-                color: ColorsManager.semiGrey3,
-                borderRadius: BorderRadius.circular(30.r),
+        widget.isShowCompany
+            ? const SizedBox()
+            : Positioned(
+                left: 16.w,
+                bottom: 159.h,
+                child: GestureDetector(
+                  onTap: () async {
+                    LocationData userLocation = await location.getLocation();
+                    googleMapController.animateCamera(
+                        CameraUpdate.newCameraPosition(CameraPosition(
+                            target: LatLng(
+                              userLocation.latitude!,
+                              userLocation.longitude!,
+                            ),
+                            zoom: 15)));
+                    placemarks = await placemarkFromCoordinates(
+                      userLocation.latitude!,
+                      userLocation.longitude!,
+                    );
+                    placemarks.add(placemarks[0]);
+                    initMarkers();
+                  },
+                  child: Container(
+                    width: 44.w,
+                    height: 40.h,
+                    decoration: BoxDecoration(
+                      color: ColorsManager.semiGrey3,
+                      border: Border.all(
+                          color: ColorsManager.mainBlack, width: 1.w),
+                      borderRadius: BorderRadius.circular(30.r),
+                    ),
+                    child: Center(
+                        child: SvgPicture.asset('assets/svg/set_location.svg')),
+                  ),
+                ),
               ),
-              child: Center(
-                  child: SvgPicture.asset('assets/svg/set_location.svg')),
-            ),
-          ),
-        ),
         Positioned(
           bottom: 30.h,
           left: 16.w,
           right: 16.w,
           child: ElevatedButton(
               onPressed: () {
-                if (placemarks.isEmpty) {
+                if (placemarks.isEmpty && widget.isShowCompany == false) {
                   PanaraInfoDialog.show(
                     context,
                     title: 'Please set your location',
@@ -113,20 +127,48 @@ class _CustomGoogleMapState extends State<CustomGoogleMap> {
 
                   return;
                 }
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SelectCompanyView(
-                        placemarks: placemarks,
-                      ),
-                    ));
+                widget.isShowCompany
+                    ? Navigator.pop(context)
+                    : Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SelectCompanyView(
+                            placemarks: placemarks,
+                          ),
+                        ));
               },
               style: ButtonStyle(
-                minimumSize: MaterialStateProperty.all(Size(330.w, 55.h)),
-                backgroundColor:
-                    MaterialStateProperty.all(ColorsManager.semiBlack2),
+                backgroundColor: MaterialStateProperty.all(
+                  ColorsManager.green1.withOpacity(0.8),
+                ),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    side: BorderSide(
+                      color: Colors.green[300]!,
+                      width: 5.w,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                      50.r,
+                    ),
+                  ),
+                ),
               ),
-              child: Text('Confirm', style: TextStyles.font22WhiteMeduim)),
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: 18.h,
+                  bottom: 18.h,
+                ),
+                child: Center(
+                  child: Text(
+                    widget.isShowCompany ? 'Back' : 'Confirm',
+                    style: TextStyles.font16BlackSemiBoldInter.copyWith(
+                      color: ColorsManager.mainWhite,
+                      fontSize: 20.sp,
+                      fontFamily: 'Popins',
+                    ),
+                  ),
+                ),
+              )),
         ),
       ],
     );

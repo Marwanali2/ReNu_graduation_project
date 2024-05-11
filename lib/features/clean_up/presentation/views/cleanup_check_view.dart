@@ -1,103 +1,149 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/core/widgets/common_app_bar.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/custom_google_map.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/back_container.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/show_subscription_time_container.dart';
+import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/last_cleanup_section.dart';
+import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/text_with_underline.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-class CleanupCheckView extends StatelessWidget {
-  CleanupCheckView({super.key});
+class CleanupCheckView extends StatefulWidget {
+  CleanupCheckView(
+      {super.key,
+      required this.selectedStartDate,
+      required this.selectedEndDate});
+  final DateTime? selectedStartDate;
+  final DateTime? selectedEndDate;
+
+  @override
+  State<CleanupCheckView> createState() => _CleanupCheckViewState();
+}
+
+class _CleanupCheckViewState extends State<CleanupCheckView> {
+  @override
+  void initState() {
+    super.initState();
+    print(
+        '****************************************${widget.selectedStartDate!.toIso8601String().split('T').first}');
+    print('****************************************${widget.selectedEndDate}');
+  }
+
   // final _calendarControllerToday = AdvancedCalendarController.today();
-  // final _calendarControllerCustom =
-  //     AdvancedCalendarController(DateTime(2022, 10, 23));
-  // final events = <DateTime>[
-  //   DateTime.now(),
-  //   DateTime(2022, 10, 10),
-  // ];
   @override
   Widget build(BuildContext context) {
     //  final theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: const BackContainerWidget(),
-          centerTitle: true,
-          title: Text(
-            'Clean Up',
-            style: TextStyles.font20BlackMeduim,
-          ),
-        ),
         body: Padding(
-          padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 20.h),
+          padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 32.h),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                CommonAppBar(
+                  title: 'Clean Up',
+                  sizedBoxWidth: MediaQuery.sizeOf(context).width * 0.2,
+                ),
                 SizedBox(height: 48.h),
                 Text(
-                  'Clean Up Day',
-                  style: TextStyles.font14BlackMeduim,
+                  'Clean Up Calender',
+                  style: TextStyles.font14BlackMeduim
+                      .copyWith(fontFamily: 'Roboto'),
                 ),
                 SizedBox(height: 15.h),
-                /*  AdvancedCalendar(
-                  controller: _calendarControllerToday,
-                  events: events,
-                  startWeekDay: 1,
+                TableCalendar(
+                  firstDay: widget.selectedEndDate!,
+                  lastDay: widget.selectedStartDate!,
+                  focusedDay: widget.selectedEndDate!,
                 ),
-                 SizedBox(height: 15.h), */
+                SizedBox(height: 15.h),
                 Text(
                   'subscription time',
-                  style: TextStyles.font13Grey1Light.copyWith(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                const ShowSubscriptionTimeContainer(
-                  title: 'subscription start time',
-                  date: '1 Feb 2024',
-                  svgAsset: 'assets/svg/start_date.svg',
-                ),
-                SizedBox(height: 8.h),
-                const ShowSubscriptionTimeContainer(
-                  title: 'subscription expiry time',
-                  date: '23 Feb 2024',
-                  svgAsset: 'assets/svg/end_date.svg',
+                  style: TextStyles.font14BlackMeduim
+                      .copyWith(fontFamily: 'Roboto'),
                 ),
                 SizedBox(height: 14.h),
-                // Text(
-                //   'Cleaner Location',
-                //   style: TextStyles.font14BlackMeduim,
-                // ),
-                //  SizedBox(height: 14.h),
-                Center(child: SvgPicture.asset('assets/svg/Group 36750.svg')),
-                SizedBox(height: 30.h),
+                ShowSubscriptionTimeContainer(
+                  title: 'subscription start time',
+                  date: widget.selectedEndDate!
+                      .toIso8601String()
+                      .split('T')
+                      .first,
+                  svgAsset: 'assets/svg/start_date.svg',
+                  svgColor: ColorsManager.green1,
+                  dateColor: ColorsManager.green1,
+                ),
+                SizedBox(height: 8.h),
+                ShowSubscriptionTimeContainer(
+                  title: 'subscription expiry time',
+                  date: widget.selectedStartDate!
+                      .toIso8601String()
+                      .split('T')
+                      .first,
+                  svgAsset: 'assets/svg/end_date.svg',
+                  svgColor: ColorsManager.red,
+                  dateColor: ColorsManager.red,
+                ),
+                SizedBox(height: 14.h),
+                Row(
+                  children: [
+                    Text(
+                      'Cleaner Location',
+                      style: TextStyles.font14BlackMeduim
+                          .copyWith(fontFamily: 'Roboto'),
+                    ),
+                    const Spacer(),
+                    TextButton.icon(
+                      style: ButtonStyle(
+                        iconColor:
+                            MaterialStateProperty.all(ColorsManager.green1),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CustomGoogleMap(
+                                isShowCompany: true,
+                              ),
+                            ));
+                      },
+                      icon: const Icon(Icons.map_outlined),
+                      label: const Text('View'),
+                    )
+                  ],
+                ),
+                SizedBox(height: 14.h),
+                const SvgPictureComponent(
+                  name: 'company_location',
+                  width: double.infinity,
+                  height: 151,
+                ),
+                SizedBox(height: 14.h),
                 TitleWithSecondUnderLineTextRow(
                   title: 'Last Clean Up',
                   secondText: 'Show more',
-                  secondTextOnTap: () {},
-                ),
-                SizedBox(height: 20.h),
-                ListView.builder(
-                  itemCount: 3,
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: 10.h),
-                      child: const LastCleanUpContainer(),
+                  secondTextOnTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LastCleanUpView()),
                     );
+                    //  GoRouter.of(context).push(AppRouter.kCleanUp);
                   },
                 ),
                 SizedBox(height: 20.h),
-                TitleWithSecondUnderLineTextRow(
-                  title: 'Clean Up Tips',
-                  secondText: 'Show more',
-                  secondTextOnTap: () {},
-                ),
+                const LastCleanUpListView(),
+                SizedBox(height: 20.h),
               ],
             ),
           ),
@@ -176,11 +222,11 @@ class TitleWithSecondUnderLineTextRow extends StatelessWidget {
         ),
         const Spacer(),
         GestureDetector(
-          onTap: () {},
+          onTap: secondTextOnTap,
           child: TextWithUnderLine(
             text: secondText,
             lineWidth: 70.w,
-           // onTap: secondTextOnTap,
+            // onTap: secondTextOnTap,
           ),
         ),
         Icon(

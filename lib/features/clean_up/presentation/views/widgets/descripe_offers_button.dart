@@ -8,7 +8,11 @@ import 'package:graduation_project/core/theme/styles.dart';
 class DescripeOffersButton extends StatelessWidget {
   const DescripeOffersButton({
     super.key,
+    required this.text,
+    required this.buttonColor,
   });
+  final String text;
+  final MaterialStateProperty<Color?> buttonColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class DescripeOffersButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(ColorsManager.mainBlack),
+          backgroundColor: buttonColor,
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
@@ -38,7 +42,7 @@ class DescripeOffersButton extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              'EGP 100 / For 3 Month',
+              text,
               style: TextStyles.font16BlackSemiBoldInter.copyWith(
                 color: ColorsManager.mainWhite,
               ),

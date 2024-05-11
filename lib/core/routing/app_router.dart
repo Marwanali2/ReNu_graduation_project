@@ -7,6 +7,8 @@ import 'package:graduation_project/features/clean_up/presentation/views/descripe
 import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
 import 'package:graduation_project/features/home/presentation/views/eco_tips_view.dart';
+import 'package:graduation_project/features/home/presentation/views/home_view.dart';
+import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
 import 'package:graduation_project/features/home/presentation/views/notifications_view.dart';
 import 'package:graduation_project/features/home/presentation/views/recent_recycling_view.dart';
 
@@ -21,12 +23,14 @@ abstract class AppRouter {
   static const kCleanuUpCheck = '/cleanuUpCheck';
   static const kEcoTips = '/ecoTips';
   static const kNotifications = '/notifications';
+  static const kGoogleMaps = '/googleMaps';
+  static const kLastCleanUp = '/lastCleanUp';
 
   static final router = GoRouter(routes: <RouteBase>[
     GoRoute(
       path: kMain,
       builder: (context, state) {
-        return CompanyDetailsView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
+        return HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
       },
     ),
     GoRoute(
@@ -82,7 +86,22 @@ abstract class AppRouter {
     GoRoute(
       path: kCleanuUpCheck,
       builder: (context, state) {
-        return CleanupCheckView();
+        return CleanupCheckView(
+          selectedEndDate: DateTime.now(),
+          selectedStartDate: DateTime.now(),
+        );
+      },
+    ),
+    GoRoute(
+      path: kGoogleMaps,
+      builder: (context, state) {
+        return  CustomGoogleMap(isShowCompany: false,);
+      },
+    ),
+    GoRoute(
+      path: kLastCleanUp,
+      builder: (context, state) {
+        return const LastCleanUpView();
       },
     ),
   ]);

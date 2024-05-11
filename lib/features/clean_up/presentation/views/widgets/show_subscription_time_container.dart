@@ -9,11 +9,13 @@ class ShowSubscriptionTimeContainer extends StatelessWidget {
     super.key,
     required this.title,
     required this.date,
-    required this.svgAsset,
+    required this.svgAsset, this.svgColor, this.dateColor,
   });
   final String title;
-  final String date;
+  final String? date;
   final String svgAsset;
+  final Color? svgColor;
+  final Color? dateColor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,11 +34,14 @@ class ShowSubscriptionTimeContainer extends StatelessWidget {
               height: 27.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.r),
-                color: ColorsManager.semiGrey3,
+                border: Border.all(
+                  color: ColorsManager.mainBlack,
+                ),
               ),
               child: Center(
                 child: SvgPicture.asset(
                   svgAsset,
+                  color: svgColor,
                 ),
               ),
             ),
@@ -52,8 +57,8 @@ class ShowSubscriptionTimeContainer extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  date,
-                  style: TextStyles.font10SemiGrey1Normal,
+                  '$date',
+                  style: TextStyles.font10SemiGrey1Normal.copyWith(color: dateColor),
                 )
               ],
             )
