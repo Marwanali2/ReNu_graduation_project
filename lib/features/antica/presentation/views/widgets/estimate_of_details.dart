@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'dart:async';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
@@ -14,6 +15,34 @@ class EstimateOfDetails extends StatefulWidget {
 
 class _EstimateOfDetailsState extends State<EstimateOfDetails> {
 
+
+
+late Timer timer;
+int _start = 30;
+
+void startTimer() {
+  const oneSec =  Duration(seconds: 1);
+  timer =  Timer.periodic(
+  oneSec,
+    (Timer timer) {
+      if (_start == 0) {
+        setState(() {
+          timer.cancel();
+        });
+      } else {
+        setState(() {
+          _start--;
+        });
+      }
+    },
+  );
+}
+
+@override
+void dispose() {
+  timer.cancel();
+  super.dispose();
+}
 
   @override
   Widget build(BuildContext context) {
@@ -78,10 +107,15 @@ class _EstimateOfDetailsState extends State<EstimateOfDetails> {
                 children: [
                   Image.asset('assests/images/solarstopwatchlineduotone.png'),
                   const SizedBox(width: 4,),
-                 const Text('00:30',style: TextStyle(
-                    color: whiteColor,
-                    fontSize: 14,
-                  ),),
+                 GestureDetector(
+                  onTap: (){
+                    startTimer();
+                  },
+                   child:   Text('00:$_start',style:const TextStyle(
+                      color: whiteColor,
+                      fontSize: 14,
+                    ),),
+                 ),
                 ],
                )
 

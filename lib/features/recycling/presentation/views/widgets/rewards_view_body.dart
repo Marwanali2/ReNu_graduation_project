@@ -13,6 +13,9 @@ class RewardsViewBody extends StatefulWidget {
 }
 
 class _RewardsViewBodyState extends State<RewardsViewBody> with SingleTickerProviderStateMixin {
+
+
+  
   late TabController tabController;
 @override
   void initState() {
@@ -50,6 +53,7 @@ void dispose() {
             ),
           ),
           TabBar(
+          labelPadding: EdgeInsets.zero,
             controller: tabController,
             isScrollable: true,
             tabs: [
@@ -64,7 +68,7 @@ void dispose() {
                   child: Row(
                     children: [
                       Image.asset('assests/images/Cleaner.png'),
-                     const Text('Cleaner materials',)
+                     const Text('Cleaner materials ',)
                     ],
                   ),
                 ),
@@ -78,8 +82,9 @@ void dispose() {
                   height:44,
                   child: Row(
                     children: [
+
                       Image.asset('assests/images/Sweep.png'),
-                      const Text('HouseWare',)
+                      const Text('HouseWare ',)
                     ],
                   ),
                 ),
@@ -94,7 +99,7 @@ Tab(
                   child: Row(
                     children: [
                       Image.asset('assests/images/Vacuum.png'),
-                     const Text('Electronics',)
+                     const Text('Electronics ',)
                     ],
                   ),
                 ),

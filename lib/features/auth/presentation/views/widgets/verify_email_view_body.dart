@@ -66,15 +66,7 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
 
                   },),
 
-                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: (){},
-                        child: Text('Send code again',style: Styles.textStyle16.copyWith(fontFamily: interFont,color: blackcolor.withOpacity(0.7)),),
-                      ),
-                    ],
-                  )
+                   
                     ]))));
   }
 }

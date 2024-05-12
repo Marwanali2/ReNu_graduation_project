@@ -9,7 +9,6 @@ import 'package:graduation_project/features/auth/presentation/views/reset_passwo
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/success_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/verify_email_view.dart';
-import 'package:graduation_project/features/recycling/presentation/views/recycling_tab_bar.dart';
 import 'package:graduation_project/features/splash/presentaion/view/splash_view.dart';
 
 abstract class AppRouter {
@@ -92,12 +91,12 @@ abstract class AppRouter {
           return const BiddersBottomSheet();
         },
       ),
-      GoRoute(
-        path: kRecyclingTabBar,
-        builder: (context, state) {
-          return const RecyclingTabBar();
-        },
-      ),
+      // GoRoute(
+      //   path: kRecyclingTabBar,
+      //   builder: (context, state) {
+      //     return const RecyclingTabBar();
+      //   },
+      // ),
     ]
  );
       

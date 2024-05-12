@@ -14,7 +14,7 @@ class BiddersOfAntikaListView extends StatelessWidget {
         padding: EdgeInsets.zero,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: 3 ,
+            itemCount:4 ,
             itemBuilder: (context,index){
               return SizedBox(
                 height: 59,

@@ -10,36 +10,34 @@ class CatigoriesListView extends StatelessWidget {
   final String image;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: 3,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 15),
-                  child: Container(
-                    height: 124,
-                    width: 97,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: borderColor,
-                    ),
-                    child: Center(child: Image.asset(image)),
+    return ListView.builder(
+        itemCount: 3,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Container(
+                  height: 124,
+                  width: 97,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: borderColor,
                   ),
+                  child: Center(child: Image.asset(image)),
                 ),
-                Text(
-                  name,
-                  style: Styles.textStyle11,
-                ),
-                Text(
-                  date,
-                  style: Styles.textStyle7,
-                ),
-              ],
-            );
-          }),
-    );
+              ),
+              Text(
+                name,
+                style: Styles.textStyle11,
+              ),
+              Text(
+                date,
+                style: Styles.textStyle7,
+              ),
+            ],
+          );
+        });
   }
 }

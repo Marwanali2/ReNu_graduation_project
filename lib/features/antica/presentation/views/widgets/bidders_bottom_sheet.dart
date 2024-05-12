@@ -21,7 +21,7 @@ String? selectedValue;
     return GestureDetector(
                 onTap: (){
                 showModalBottomSheet(
-                  
+                  useRootNavigator: true,
                   context: context, 
                   builder: (context){
                   return const ComponentsOfBidders();

@@ -19,10 +19,11 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
   Widget build(BuildContext context) {
   
     return            SizedBox(
-                    height: 500,
+                    height: 450,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20,left: 20,right: 20),
                       child: Column(
+                      
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                          const Row(
@@ -41,7 +42,7 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
                               )
                             ],
                           ),
-                        const  SizedBox(height: 10,),
+                        const  SizedBox(height: 50,),
                           SizedBox(
                             height: 56,
                             width: 320,
@@ -79,11 +80,10 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
                             ),
                                        
                           ),
-                          const SizedBox(height: 20,),
+                          const SizedBox(height: 50,),
                          const CurrentBitEgp(),
-                          const SizedBox(height: 20,),
-                          Text('Gender ',style: Styles.textStyle20.copyWith(fontFamily: robotoFont),),
-                         const CheckboxOfGender(),
+                          const SizedBox(height: 50,),
+                        //  const CheckboxOfGender(),
                          const Center(child: CustomButtonPlaceBit()),
                                          ],
                       ),
@@ -106,7 +106,7 @@ class CustomButtonPlaceBit extends StatelessWidget {
 
     (
       onTap: (){
-        GoRouter.of(context).push(AppRouter.kDetailsOfAntica);
+      //  GoRouter.of(context).push(AppRouter.kDetailsOfAntica);
       },
       child: Container(
         width: 126,
