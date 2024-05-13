@@ -9,16 +9,19 @@ class CustomTextField extends StatelessWidget {
        this.hintText,
       this.obscureText = false,
       this.textInputType,
+       this.onChanged,
       });
   final String? hintText;
   final bool? obscureText;
   final TextInputType? textInputType;
+  final Function(String?) ? onChanged;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 56,
       width: 320,
       child: TextFormField(
+        onChanged:onChanged ,
         keyboardType: textInputType,
         obscureText: obscureText!,
         decoration: InputDecoration(

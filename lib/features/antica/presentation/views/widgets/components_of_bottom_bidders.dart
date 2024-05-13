@@ -3,8 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
-import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/antica/presentation/views/widgets/checkbox_of_gender.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/current_bit_egp.dart';
 
 class ComponentsOfBidders extends StatefulWidget {
@@ -19,7 +17,7 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
   Widget build(BuildContext context) {
   
     return            SizedBox(
-                    height: 450,
+                    height: 500,
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20,left: 20,right: 20),
                       child: Column(
@@ -106,7 +104,7 @@ class CustomButtonPlaceBit extends StatelessWidget {
 
     (
       onTap: (){
-      //  GoRouter.of(context).push(AppRouter.kDetailsOfAntica);
+        GoRouter.of(context).push(AppRouter.kDetailsOfAntica);
       },
       child: Container(
         width: 126,
