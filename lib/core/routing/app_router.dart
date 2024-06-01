@@ -9,9 +9,15 @@ import 'package:graduation_project/features/auth/presentation/views/reset_passwo
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/success_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/verify_email_view.dart';
-import 'package:graduation_project/features/splash/presentaion/view/splash_view.dart';
+import 'package:graduation_project/features/splash/presentaion/view/splash-view2.dart';
+import 'package:graduation_project/features/splash/presentaion/view/splash_view1.dart';
+import 'package:graduation_project/features/splash/presentaion/view/splash_view3.dart';
+import 'package:graduation_project/features/splash/presentaion/view/widgets/splash_view_body2.dart';
+import 'package:graduation_project/features/splash/presentaion/view/widgets/splash_view_body3.dart';
 
 abstract class AppRouter {
+  static const splash2 = '/splash2';
+  static const splash3 = '/splash3';
   static const kLogOrSign = '/logorsign';
   static const kSignUp = '/signup';
   static const kLogIn = '/login';
@@ -29,6 +35,18 @@ abstract class AppRouter {
         path: '/',
         builder: (context, state) {
           return const SplashView();
+        },
+      ),
+       GoRoute(
+        path: splash2,
+        builder: (context, state) {
+          return const SplashView2();
+        },
+      ),
+       GoRoute(
+        path: splash3,
+        builder: (context, state) {
+          return const SplashView3();
         },
       ),
       GoRoute(
