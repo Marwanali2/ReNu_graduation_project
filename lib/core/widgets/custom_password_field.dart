@@ -15,22 +15,29 @@ final Function(String?)? onchanged;
 
 class _CustomPasswordFieldState extends State<CustomPasswordField> {
 
+
+
+
   bool obscureText = true;
   String? password;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 56,
+      height: 80,
       child: TextFormField(
-        onChanged: (data) {
-                      setState(() {
-                        password=data;
-                      });
+
+        onChanged:(value){
+          password=value;
+        } ,
+                    validator: (value) {
+                     if (value!.isEmpty) {
+                     return 'field is required';
+                    }
                     },
         keyboardType: TextInputType.visiblePassword,
         obscureText: obscureText,
         decoration: InputDecoration(
-          
+          constraints:const BoxConstraints(minHeight: 50),
           suffixIcon:  IconButton(
             icon: Icon(
               // Based on passwordVisible state choose the icon
@@ -48,6 +55,10 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
             ),
           hintText:widget.hintText ,
           hintStyle: Styles.textStyle14.copyWith(fontFamily: interFont),
+           border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: borderColor),
+          ),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             borderSide: BorderSide(width: 1,color: borderColor),

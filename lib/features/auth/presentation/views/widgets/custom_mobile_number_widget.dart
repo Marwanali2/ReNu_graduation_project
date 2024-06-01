@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/core/widgets/custom_text_field.dart';
+import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_field.dart';
 
 class CustomMobileNumber extends StatelessWidget {
   const CustomMobileNumber({super.key});
@@ -14,7 +14,12 @@ class CustomMobileNumber extends StatelessWidget {
       children: [
         Text('Phone number',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
         const SizedBox(height: 4,),
-      const SizedBox(width: 320,child:  CustomTextField(hintText: '0101 645 0937',textInputType: TextInputType.number,))
+      const SizedBox(width: 320,child:  CustomTextField(
+        hintText: '0101 645 0937',
+        textInputType: TextInputType.phone,
+      
+      
+      ))
         
       ],
     );

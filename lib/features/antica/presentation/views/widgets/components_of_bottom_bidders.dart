@@ -71,7 +71,7 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
                                    validator: (value) {
                                    if(value==null){
                                    return "please , enter name !";
-                               }
+                               }return null;
                               },
                               
                             
