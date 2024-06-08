@@ -39,10 +39,11 @@ void startTimer() {
 }
 
 @override
-void dispose() {
-  timer.cancel();
-  super.dispose();
-}
+ void stopTimer() {
+    if (timer.isActive) { // Check if the timer is active before canceling.
+      timer.cancel();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
