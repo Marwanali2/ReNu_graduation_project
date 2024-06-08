@@ -1,4 +1,112 @@
 import 'package:go_router/go_router.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/cleanup_check_view.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/company_details_view.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/custom_google_map.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/descripe_offers.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
+import 'package:graduation_project/features/home/presentation/views/eco_tips_view.dart';
+import 'package:graduation_project/features/home/presentation/views/home_view.dart';
+import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
+import 'package:graduation_project/features/home/presentation/views/notifications_view.dart';
+import 'package:graduation_project/features/home/presentation/views/recent_recycling_view.dart';
+
+abstract class AppRouter {
+  static const kMain = '/';
+  static const kCleanUp = '/cleanUp';
+  static const krecentRecycling = '/recentRecycling';
+  static const kSelectCompany = '/selectCompany';
+  static const kCompanyDetails = '/companyDetails';
+  static const kDescripeOffers = '/descripeOffers';
+  static const kFavCompanies = '/favCompanies';
+  static const kCleanuUpCheck = '/cleanuUpCheck';
+  static const kEcoTips = '/ecoTips';
+  static const kNotifications = '/notifications';
+  static const kGoogleMaps = '/googleMaps';
+  static const kLastCleanUp = '/lastCleanUp';
+
+  static final router = GoRouter(routes: <RouteBase>[
+    GoRoute(
+      path: kMain,
+      builder: (context, state) {
+        return HomeView(); //CleanupCheckView(); //const CompanyDetails(); // CompanyDetails(); // const CleanUpView(); //const HomeView();
+      },
+    ),
+    GoRoute(
+      path: kCleanUp,
+      builder: (context, state) {
+        return const CleanUpView();
+      },
+    ),
+    GoRoute(
+      path: kSelectCompany,
+      builder: (context, state) {
+        return SelectCompanyView(
+          placemarks: [],
+        );
+      },
+    ),
+    GoRoute(
+      path: krecentRecycling,
+      builder: (context, state) {
+        return const RecentRecyclingView();
+      },
+    ),
+    GoRoute(
+      path: kCompanyDetails,
+      builder: (context, state) {
+        return CompanyDetailsView();
+      },
+    ),
+    GoRoute(
+      path: kDescripeOffers,
+      builder: (context, state) {
+        return DescripeOffers();
+      },
+    ),
+    GoRoute(
+      path: kNotifications,
+      builder: (context, state) {
+        return NotificationsView();
+      },
+    ),
+    GoRoute(
+      path: kFavCompanies,
+      builder: (context, state) {
+        return FavCompanies();
+      },
+    ),
+    GoRoute(
+      path: kEcoTips,
+      builder: (context, state) {
+        return EcoTipsView();
+      },
+    ),
+    GoRoute(
+      path: kCleanuUpCheck,
+      builder: (context, state) {
+        return CleanupCheckView(
+          selectedEndDate: DateTime.now(),
+          selectedStartDate: DateTime.now(),
+        );
+      },
+    ),
+    GoRoute(
+      path: kGoogleMaps,
+      builder: (context, state) {
+        return  CustomGoogleMap(isShowCompany: false,);
+      },
+    ),
+    GoRoute(
+      path: kLastCleanUp,
+      builder: (context, state) {
+        return const LastCleanUpView();
+      },
+    ),
+  ]);
+}
+import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/antica/presentation/views/antica_tab_bar_controller.dart';
 import 'package:graduation_project/features/antica/presentation/views/details_of_antica_view.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/bidders_bottom_sheet.dart';

@@ -35,6 +35,8 @@ dependencies:
   equatable: ^2.0.5
   firebase_auth: ^4.17.5
   firebase_core: ^2.25.4
+  cupertino_icons: ^1.0.2
+  dropdown_button2: ^2.3.9
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
@@ -52,6 +54,13 @@ dependencies:
 
 dev_dependencies:
   flutter_lints: ^2.0.0
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 
@@ -66,6 +75,12 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/svg/
+    - assets/images/
+    - assets/map_styles/dark_map_style.json
+    - assets/lottie/
+
   assets:
     - assests/images/
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -96,5 +111,18 @@ flutter:
     - family: Poppins-Bold
       fonts:
         - asset: assests/fonts/Poppins-Bold.ttf
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Inter-SemiBold.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Roboto-Light.ttf
+        - asset: assets/fonts/Roboto-Medium.ttf
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
