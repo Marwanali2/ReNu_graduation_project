@@ -1,15 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/common_app_bar.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/custom_google_map.dart';
-import 'package:graduation_project/features/clean_up/presentation/views/widgets/back_container.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/show_subscription_time_container.dart';
 import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/last_cleanup_section.dart';
@@ -18,7 +12,7 @@ import 'package:graduation_project/features/home/presentation/views/widgets/text
 import 'package:table_calendar/table_calendar.dart';
 
 class CleanupCheckView extends StatefulWidget {
-  CleanupCheckView(
+  const CleanupCheckView(
       {super.key,
       required this.selectedStartDate,
       required this.selectedEndDate});
