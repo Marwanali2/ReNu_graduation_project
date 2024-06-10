@@ -17,27 +17,44 @@ class _EstimateOfDetailsState extends State<EstimateOfDetails> {
 
 
 
-late Timer timer;
-int _start = 30;
+ late Timer timer; // Declare the timer with late keyword
+  int counter = 30;
 
-void startTimer() {
-  const oneSec =  Duration(seconds: 1);
-  timer =  Timer.periodic(
-  oneSec,
-    (Timer timer) {
-      if (_start == 0) {
-        setState(() {
+  void startTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      setState(() {
+        counter--;
+        if(counter==0){
+          setState(() {
           timer.cancel();
-        });
-      } else {
-        setState(() {
-          _start--;
-        });
-      }
-    },
-  );
-}
+         });
+        }
+      });
+    });
+  }
 
+
+// void startTimer() {
+//   const oneSec =  Duration(seconds: 1);
+//   timer =  Timer.periodic(
+//   oneSec,
+//     (Timer timer) {
+//       if (_start == 0) {
+//         setState(() {
+//           timer.cancel();
+//         });
+//       } else {
+//         setState(() {
+//           _start--;
+//         });
+//       }
+//     },
+//   );
+// }
+void initState() {
+  super.initState();
+  startTimer(); // Initialize the timer
+}
 @override
 void dispose() {
   timer.cancel();
@@ -111,7 +128,7 @@ void dispose() {
                   onTap: (){
                     startTimer();
                   },
-                   child:   Text('00:$_start',style:const TextStyle(
+                   child:   Text('00:$counter',style:const TextStyle(
                       color: whiteColor,
                       fontSize: 14,
                     ),),
