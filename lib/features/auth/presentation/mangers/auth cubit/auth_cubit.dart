@@ -1,0 +1,107 @@
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:graduation_project/core/helpers/constants.dart';
+import 'package:graduation_project/core/networking/api_services.dart';
+import 'package:graduation_project/features/auth/data/models/user_model.dart';
+part 'auth_state.dart';
+
+class AuthCubit extends Cubit<AuthState> {
+  AuthCubit() : super(AuthInitial());
+  final Dio _dio = Dio();
+  UserModel userModel = UserModel();
+
+  Future<void> registerUser({
+    required String name,
+    required String email,
+    required String password,
+    required String passwordConfirmation,
+    required String phone,
+  }) async {
+    emit(RegisterLoadingState());
+    try {
+      Response response = await _dio.post(
+        '${ApiServices.baseUrl}/users/register',
+        options: Options(
+          headers: {'Accept': 'application/json'},
+        ),
+        data: {
+          'name': name,
+          'email': email,
+          'password': password,
+          'password_confirmation': passwordConfirmation,
+          'phone': phone,
+        },
+      );
+      if (response.statusCode == 200) {
+        var responseBody = response.data;
+        if (responseBody['message'] == 'success') {
+          UserModel.fromJson(responseBody['deta']['user']);
+          //  userToken = responseBody['deta']['user']['token'];
+          debugPrint('*********userToken is $userToken *********');
+          debugPrint('success response is $responseBody}:');
+          emit(RegisterSuccessState());
+        } else {
+          debugPrint('failure response is $responseBody}:');
+          emit(
+            RegisterFailureState(
+              errorMessage: responseBody['message'],
+            ),
+          );
+        }
+      }
+    } catch (e) {
+      debugPrint('Failed to register , The Reason : $e');
+      emit(
+        RegisterFailureState(
+          errorMessage: e.toString(),
+        ),
+      );
+    }
+  }
+
+  Future<void> loginUser({
+    required String email,
+    required String password,
+  }) async {
+    emit(LoginLoadingState());
+    try {
+      Response response = await _dio.post('${ApiServices.baseUrl}/users/login',
+          options: Options(
+            headers: {
+              'Accept': 'application/json',
+              'Authorization': '',
+            }, // التوكين ملوش لازمة انه يتبعت مع الطلب
+          ),
+          data: {
+            'email': email,
+            'password': password,
+          });
+      if (response.statusCode == 200) {
+        var responseBody = response.data;
+        if (responseBody['message'] == 'success') {
+          UserModel.fromJson(responseBody['deta']['user']);
+          debugPrint('success login with response: $responseBody');
+          /*  CachedNetwork.insertToCache(
+            key: 'token',
+            value: responseBody['data']['token'],
+          ).then((value) {
+            userToken == UserDataCubit().userModel?.token;
+          }); */
+          emit(LoginSuccessState());
+        } else {
+          debugPrint('Failure response: $responseBody');
+          emit(LoginFailureState(errorMessage: responseBody['message']));
+        }
+      }
+    } on Exception catch (e) {
+      debugPrint('Failed to login , Reason is : $e');
+      emit(
+        LoginFailureState(
+          errorMessage: e.toString(),
+        ),
+      );
+    }
+  }
+}
