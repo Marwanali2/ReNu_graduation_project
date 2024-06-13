@@ -29,3 +29,21 @@ class LoginFailureState extends AuthState {
 
   LoginFailureState({required this.errorMessage});
 }
+
+class SendCodeLoadingState extends AuthState {}
+class SendCodeSuccessState extends AuthState {}
+// ignore: must_be_immutable
+class SendCodeFailureState extends AuthState {
+  String? errorMessage;
+
+  SendCodeFailureState({required this.errorMessage});
+}
+
+class CheckCodeLoadingState extends AuthState {}
+class CheckCodeSuccessState extends AuthState {}
+// ignore: must_be_immutable
+class CheckCodeFailureState extends AuthState {
+  String? errorMessage;
+
+  CheckCodeFailureState({required this.errorMessage});
+}
