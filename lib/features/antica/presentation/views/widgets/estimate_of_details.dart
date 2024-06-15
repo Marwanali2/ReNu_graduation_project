@@ -25,9 +25,7 @@ class _EstimateOfDetailsState extends State<EstimateOfDetails> {
       setState(() {
         counter--;
         if(counter==0){
-          setState(() {
           timer.cancel();
-         });
         }
       });
     });

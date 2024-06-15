@@ -3,7 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
+import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antica/presentation/views/widgets/current_bit_egp.dart';
+
 
 class ComponentsOfBidders extends StatefulWidget {
   const ComponentsOfBidders({super.key});
@@ -13,6 +15,8 @@ class ComponentsOfBidders extends StatefulWidget {
 }
 
 class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
+    final TextEditingController nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
   
@@ -46,6 +50,7 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
                             width: 320,
                             
                             child: TextFormField(
+                              controller: nameController,
                               decoration:const InputDecoration(
                                 hintText: 'Name',
                                 enabledBorder:  OutlineInputBorder(
@@ -82,7 +87,23 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
                          const CurrentBitEgp(),
                           const SizedBox(height: 50,),
                         //  const CheckboxOfGender(),
-                         const Center(child: CustomButtonPlaceBit()),
+                          Center(child: GestureDetector
+
+    (
+      onTap: (){
+
+GoRouter.of(context).pop();
+      },
+      child: Container(
+        width: 126,
+        height: 56,
+        decoration: BoxDecoration(
+          color:borderFormColor,
+          borderRadius: BorderRadius.circular(30)
+        ),
+        child:const Center(child: Text('Place a bit ',style: TextStyle(color: whiteColor),)),
+      ),
+    )),
                                          ],
                       ),
                     ),
@@ -95,26 +116,48 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
   }
 }
 
-class CustomButtonPlaceBit extends StatelessWidget {
-  const CustomButtonPlaceBit({super.key});
+
+
+class CurrentBitEgp extends StatefulWidget {
+  const CurrentBitEgp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return  GestureDetector
+  State<CurrentBitEgp> createState() => _CurrentBitEgpState();
+}
 
-    (
-      onTap: (){
-        GoRouter.of(context).push(AppRouter.kDetailsOfAntica);
-      },
-      child: Container(
-        width: 126,
-        height: 56,
-        decoration: BoxDecoration(
-          color:borderFormColor,
-          borderRadius: BorderRadius.circular(30)
-        ),
-        child:const Center(child: Text('Place a bit ',style: TextStyle(color: whiteColor),)),
-      ),
-    );
+class _CurrentBitEgpState extends State<CurrentBitEgp> {
+
+  double binegp=0.00;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: (){
+                                if(binegp==0.00){
+                                  binegp=0.00;
+                                  setState(() {
+                                    
+                                  });
+                                }else{
+                                  binegp=binegp-5;
+                                  setState(() {
+                                    
+                                  });
+                                }
+                              },
+                              child: Image.asset('assests/images/minus.png')),
+                            Text('EGP '+binegp.toString(),style: Styles.textStyle20.copyWith(fontFamily: robotoFont),),
+                            GestureDetector(
+                              onTap: (){
+                                 binegp=binegp+5;
+                                setState(() {
+                                  
+                                });
+                              },
+                              child: Image.asset('assests/images/plus.png'))
+                          ],);
   }
 }
+

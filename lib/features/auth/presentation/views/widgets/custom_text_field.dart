@@ -4,17 +4,21 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
+   CustomTextField(
       {super.key,
        this.hintText,
       this.obscureText = false,
       this.textInputType,
-       this.onChanged,
+       this.onChanged, required this.controller,
       });
   final String? hintText;
   final bool? obscureText;
   final TextInputType? textInputType;
   final Function(String?) ? onChanged;
+  final TextEditingController controller;
+
+    //final TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -26,30 +30,8 @@ class CustomTextField extends StatelessWidget {
         if (value!.isEmpty) {
           return 'field is required';
         }
-
-          // if(textInputType==TextInputType.emailAddress){
-          //  if(value!.isEmpty){
-          //   return 'Please enter your email';
-          // }else if(!value.isValidEmail){
-          //   return 'please enter valid email ';
-          // }
-          // }
-          // if(textInputType==TextInputType.phone){
-          // if(value!.isEmpty){
-          //   return 'Please enter your phone';
-          // }else if(!value.isValidPhone){
-          //   return 'please enter valid phone ';
-          // }
-          // }
-          // if(textInputType==TextInputType.name){
-          // if(value!.isEmpty){
-          //   return 'Please enter your name';
-          // }else if(!value.isValidName){
-          //   return 'please enter valid name ';
-          // }
-          // }
-        
         },
+        controller: controller,
         onChanged:onChanged ,
         keyboardType: textInputType,
         obscureText: obscureText!,

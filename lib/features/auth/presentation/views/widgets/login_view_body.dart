@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
@@ -7,6 +8,7 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
 import 'package:graduation_project/core/widgets/custom_password_field.dart';
+import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_icon_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_widget.dart';
@@ -22,154 +24,181 @@ class LogInViewBody extends StatefulWidget {
 
 class _LogInViewBodyState extends State<LogInViewBody> {
   bool isLoading = false;
+
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController passwordcontroller = TextEditingController();
+
   GlobalKey<FormState> formKey = GlobalKey();
- late String? email, password;
+  late String? email, password;
   @override
   Widget build(BuildContext context) {
-    return ModalProgressHUD(
-      inAsyncCall: isLoading,
-      child: SingleChildScrollView(
-        child: SafeArea(
-            child: Padding(
-          padding: const EdgeInsets.only(top: 25, left: 20, right: 20),
-          child: Form(
-              key: formKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CustomTitleWidget(
-                    title: 'Login',
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const SizedBox(
-                    height: 28,
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Text(
-                    'Email address',
-                    style: Styles.textStyle14
-                        .copyWith(fontFamily: interFont, color: blackcolor),
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  const CustomTextField(
-                    textInputType: TextInputType.emailAddress,
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Text(
-                    'Password',
-                    style: Styles.textStyle14
-                        .copyWith(fontFamily: interFont, color: blackcolor),
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  const CustomPasswordField(),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+    return BlocConsumer<AuthCubit, AuthState>(
+      listener: (context, state) {
+
+        if (state is LoginLoadingState){
+          isLoading=true;
+        }else if (state is LoginSuccessState){
+          GoRouter.of(context).push(AppRouter.kHome);
+          isLoading=false;
+        }else if(state is LoginFailureState){
+          showSnackBar(context,state.errorMessage!);
+          isLoading=false;
+        }
+      },
+      builder: (context, state) {
+        return ModalProgressHUD(
+          inAsyncCall: isLoading,
+          child: SingleChildScrollView(
+            child: SafeArea(
+                child: Padding(
+              padding: const EdgeInsets.only(top: 25, left: 20, right: 20),
+              child: Form(
+                  key: formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      GestureDetector(
-                          onTap: () {
-                            GoRouter.of(context)
-                                .push(AppRouter.kForgetPassword);
-                          },
-                          child: Text(
-                            'Forget password ?',
-                            style: Styles.textStyle14
-                                .copyWith(color: borderFormColor),
-                          ))
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  CustomButtonField(
-                    text: 'Log in',
-                    textcolor: borderFormColor,
-                    ontap: ()  {
-                      
-
-                      if (formKey.currentState!.validate()) {
-                        GoRouter.of(context).push(AppRouter.kRecyclingTabBar);
-
-                         }else{
-                          print('not success');
-                         };
-
-                    },
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Row(
-                    children: [
-                      Expanded(child: Divider(color: borderColor)),
-                      SizedBox(
-                        width: 10,
+                      const CustomTitleWidget(
+                        title: 'Login',
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      const SizedBox(
+                        height: 28,
+                      ),
+                      const SizedBox(
+                        height: 12,
                       ),
                       Text(
-                        'Or Login with',
-                        style: Styles.textStyle14,
+                        'Email address',
+                        style: Styles.textStyle14
+                            .copyWith(fontFamily: interFont, color: blackcolor),
                       ),
-                      SizedBox(
-                        width: 10,
+                      const SizedBox(
+                        height: 4,
                       ),
-                      Expanded(child: Divider(color: borderColor)),
+                      CustomTextField(
+                        controller: emailcontroller,
+                        textInputType: TextInputType.emailAddress,
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Text(
+                        'Password',
+                        style: Styles.textStyle14
+                            .copyWith(fontFamily: interFont, color: blackcolor),
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      CustomPasswordField(
+                        controller: passwordcontroller,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          GestureDetector(
+                              onTap: () {
+                                GoRouter.of(context)
+                                    .push(AppRouter.kForgetPassword);
+                              },
+                              child: Text(
+                                'Forget password ?',
+                                style: Styles.textStyle14
+                                    .copyWith(color: borderFormColor),
+                              ))
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      CustomButtonField(
+                        text: 'Log in',
+                        textcolor: borderFormColor,
+                        ontap: () {
+
+                      final String email=emailcontroller.text;
+                      final String password=passwordcontroller.text;
+                          if (formKey.currentState!.validate()) {
+                            BlocProvider.of<AuthCubit>(context).loginUser(email: email, password: password);
+
+                          }
+                        },
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Row(
+                        children: [
+                          Expanded(child: Divider(color: borderColor)),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Or Login with',
+                            style: Styles.textStyle14,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(child: Divider(color: borderColor)),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      const Center(
+                        child: SizedBox(
+                          width: 250,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                CustomIconButton(
+                                  icon: FontAwesomeIcons.facebook,
+                                  height: 49,
+                                  width: 49,
+                                  iconSize: 34.09,
+                                  borderRadius: 25,
+                                  iconColor: Color(0xff20226A),
+                                ),
+                                CustomIconButton(
+                                  icon: FontAwesomeIcons.google,
+                                  height: 49,
+                                  width: 49,
+                                  iconSize: 34.09,
+                                  borderRadius: 25,
+                                  iconColor: Color(0xffFF3D00),
+                                ),
+                              ]),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Center(
+                          child: CustomTextWidget(
+                        text1: 'Don’t have an account? ',
+                        textbutton: 'Sign up',
+                        pageRoute: () {
+                          GoRouter.of(context).push(AppRouter.kSignUp);
+                        },
+                      )),
                     ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Center(
-                    child: SizedBox(
-                      width: 250,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            CustomIconButton(
-                              icon: FontAwesomeIcons.facebook,
-                              height: 49,
-                              width: 49,
-                              iconSize: 34.09,
-                              borderRadius: 25,
-                              iconColor: Color(0xff20226A),
-                            ),
-                            CustomIconButton(
-                              icon: FontAwesomeIcons.google,
-                              height: 49,
-                              width: 49,
-                              iconSize: 34.09,
-                              borderRadius: 25,
-                              iconColor: Color(0xffFF3D00),
-                            ),
-                          ]),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Center(
-                      child: CustomTextWidget(
-                    text1: 'Don’t have an account? ',
-                    textbutton: 'Sign up',
-                    pageRoute: () {
-                      GoRouter.of(context)
-                          .push(AppRouter.kSignUp);
-                    },
                   )),
-                ],
-              )),
-        )),
+            )),
+          ),
+        );
+      },
+    );
+  }
+  void showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
       ),
     );
   }

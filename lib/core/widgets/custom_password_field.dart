@@ -4,10 +4,11 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CustomPasswordField extends StatefulWidget {
-  const CustomPasswordField({super.key,  this.hintText, this.onchanged});
+  const CustomPasswordField({super.key,  this.hintText, this.onchanged, required this.controller});
   
 final String? hintText;
 final Function(String?)? onchanged;
+final TextEditingController controller;
 
   @override
   State<CustomPasswordField> createState() => _CustomPasswordFieldState();
@@ -20,12 +21,15 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
 
   bool obscureText = true;
   String? password;
+  final TextEditingController passwordcontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 80,
+    
       child: TextFormField(
-
+        controller: passwordcontroller,
         onChanged:(value){
           password=value;
         } ,
