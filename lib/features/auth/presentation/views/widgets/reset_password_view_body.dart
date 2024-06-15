@@ -17,6 +17,9 @@ class ResetPasswordViewBody extends StatefulWidget {
 
 class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
     GlobalKey<FormState> formKey = GlobalKey();
+      final TextEditingController passwordcontroller = TextEditingController();
+ final TextEditingController repeatpasswordcontroller =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +60,9 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                     children: [
                       Text('New password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
                      const SizedBox(height: 3,),
-                     const CustomPasswordField(hintText: 'must be 8 characters',),
+                      CustomPasswordField(hintText: 'must be 8 characters',
+                      controller: passwordcontroller,
+                      ),
                     
                     ],
                   )),
@@ -70,7 +75,7 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                     children: [
                       Text('Confirm password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
                      const SizedBox(height: 3,),
-                     const CustomPasswordField(hintText: 'repeat password',),
+                      CustomPasswordField(hintText: 'repeat password',controller: repeatpasswordcontroller,),
                     
                     ],
                   )),
