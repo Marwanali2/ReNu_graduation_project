@@ -22,7 +22,8 @@ class AuthCubit extends Cubit<AuthState> {
     emit(RegisterLoadingState());
     try {
       Response response = await _dio.post(
-        '${ApiServices.baseUrl}/users/register',
+        //'${ApiServices.baseUrl}/users/register',
+        'https://api-service.cloud/recycle/public_html/api/users/register',
         options: Options(
           headers: {'Accept': 'application/json'},
         ),
@@ -30,28 +31,26 @@ class AuthCubit extends Cubit<AuthState> {
           'name': name,
           'email': email,
           'password': password,
-          'password_confirmation': passwordConfirmation,
           'phone': phone,
+          'password_confirmation': passwordConfirmation,
         },
       );
+      var responseBody = response.data;
       if (response.statusCode == 200) {
-        if (response.data['message'] == 'success') {
-          var responseBody = response.data;
-          UserModel.fromJson(responseBody['deta']['user']);
-          //  userToken = responseBody['deta']['user']['token'];
-          debugPrint('*********userToken is $userToken *********');
-          debugPrint('success response is $responseBody}:');
-          emit(RegisterSuccessState());
-        } else {
-          debugPrint('failure response is $response}:');
-          emit(
-            RegisterFailureState(
-              errorMessage: response.data['message'],
-            ),
-          );
-        }
+        UserModel.fromJson(responseBody['deta']['user']);
+        //  userToken = responseBody['deta']['user']['token'];
+        debugPrint('*********userToken is $userToken *********');
+        debugPrint('success response is $responseBody}:');
+        emit(RegisterSuccessState());
+      } else {
+        debugPrint('failure response is ${responseBody['message']}:');
+        emit(
+          RegisterFailureState(
+            errorMessage: response.data['message'],
+          ),
+        );
       }
-    } catch (e) {
+    } on Exception catch (e) {
       debugPrint('Failed to register , The Reason : $e');
       emit(
         RegisterFailureState(
@@ -100,70 +99,6 @@ class AuthCubit extends Cubit<AuthState> {
           errorMessage: e.toString(),
         ),
       );
-    }
-  }
-
-  Future<void> sendCode({
-    required String token,
-  }) async {
-    emit(SendCodeLoadingState());
-    try {
-      Response response = await _dio.post(
-        '${ApiServices.baseUrl}/users/sendcode',
-        options: Options(
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': token,
-          },
-        ),
-      );
-      if (response.statusCode == 200) {
-        var responseBody = response.data;
-        if (responseBody['message'] == 'generate code') {
-          debugPrint('success send code with response: $responseBody');
-          emit(SendCodeSuccessState());
-        } else {
-          debugPrint('Failure response: $responseBody');
-          emit(SendCodeFailureState(errorMessage: responseBody['message']));
-        }
-      }
-    } on Exception catch (e) {
-      debugPrint('Failed to send code , Reason is : $e');
-      emit(LoginFailureState(errorMessage: e.toString()));
-    }
-  }
-
-   Future<void> checkCode({
-    required String token,
-    required int code,
-  }) async {
-    emit(CheckCodeLoadingState());
-    try {
-      Response response = await _dio.post(
-        '${ApiServices.baseUrl}/users/checkcode',
-        options: Options(
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': token,
-          },
-        ),
-         data: {
-            'code': code,
-          }
-      );
-      if (response.statusCode == 200) {
-        var responseBody = response.data;
-        if (responseBody['message'] == 'success') {
-          debugPrint('success Check code with response: $responseBody');
-          emit(CheckCodeSuccessState());
-        } else {
-          debugPrint('Failure response: $responseBody');
-          emit(CheckCodeFailureState(errorMessage: responseBody['message']));
-        }
-      }
-    } on Exception catch (e) {
-      debugPrint('Failed to Check code , Reason is : $e');
-      emit(CheckCodeFailureState(errorMessage: e.toString()));
     }
   }
 
