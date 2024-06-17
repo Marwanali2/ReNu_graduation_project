@@ -20,6 +20,8 @@ class AuthCubit extends Cubit<AuthState> {
     required String phone,
   }) async {
     emit(RegisterLoadingState());
+    debugPrint(
+        'name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone');
     try {
       Response response = await _dio.post(
         //'${ApiServices.baseUrl}/users/register',
@@ -51,7 +53,7 @@ class AuthCubit extends Cubit<AuthState> {
         );
       }
     } on Exception catch (e) {
-      debugPrint('Failed to register , The Reason : $e');
+      debugPrint('Failed to register , The Reason : ${e.toString()}');
       emit(
         RegisterFailureState(
           errorMessage: e.toString(),
@@ -59,7 +61,6 @@ class AuthCubit extends Cubit<AuthState> {
       );
     }
   }
-
 
   Future<void> loginUser({
     required String email,
@@ -102,5 +103,4 @@ class AuthCubit extends Cubit<AuthState> {
       );
     }
   }
-
 }
