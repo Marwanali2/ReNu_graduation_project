@@ -79,8 +79,8 @@ class AuthCubit extends Cubit<AuthState> {
             'password': password,
           });
       var responseBody = response.data;
-      if (response.statusCode == 200) {
-        UserModel.fromJson(responseBody['deta']['user']);
+      if (response.statusCode == 200 && responseBody['data'] != null) {
+       userModel= UserModel.fromJson(responseBody['deta']['user']);
         debugPrint('success login with response: $responseBody');
         /*  CachedNetwork.insertToCache(
             key: 'token',
@@ -91,15 +91,14 @@ class AuthCubit extends Cubit<AuthState> {
         emit(LoginSuccessState());
       } else {
         debugPrint('Failure response: $responseBody');
-        emit(LoginFailureState(errorMessage: responseBody['message']));
+        emit(LoginFailureState(errorMessage: responseBody['message']?? 'Unknown error'));
       }
-    } on Exception catch (e) {
-      debugPrint('Failed to login , Reason is : $e');
-      emit(
-        LoginFailureState(
-          errorMessage: e.toString(),
-        ),
-      );
+    } on DioError catch (dioError) {
+      debugPrint('DioError: $dioError');
+      emit(LoginFailureState(errorMessage: dioError.message));
+    } catch (e) {
+      debugPrint('Failed to login, Reason: $e');
+      emit(LoginFailureState(errorMessage: e.toString()));
     }
   }
 
