@@ -9,7 +9,6 @@ import 'package:graduation_project/core/widgets/custom_button_field.dart';
 import 'package:graduation_project/core/widgets/custom_password_field.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
-import 'package:graduation_project/features/auth/presentation/views/widgets/custom_mobile_number_widget.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_widget.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_title_widget.dart';
@@ -28,6 +27,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   String email = '';
   String password = '';
   bool isLoading = false;
+  bool obscureText = true;
   GlobalKey<FormState> formKey = GlobalKey();
   final TextEditingController emailcontroller = TextEditingController();
   final TextEditingController namecontroller = TextEditingController();
@@ -120,10 +120,65 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           ),
                         ),
                         const SizedBox(height: 4),
-                        CustomPasswordField(
-                          controller: passwordcontroller,
-                          hintText: 'must be 8 characters',
-                        ),
+                        SizedBox(
+      height: 80,
+    
+      child: TextFormField(
+        controller: passwordcontroller,
+        onChanged:(value){
+          password=value;
+        } ,
+                    validator: (value) {
+                     if (value!.isEmpty) {
+                     return 'field is required';
+                    }
+                    },
+        keyboardType: TextInputType.visiblePassword,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          constraints:const BoxConstraints(minHeight: 50),
+          suffixIcon:  IconButton(
+            icon: Icon(
+              // Based on passwordVisible state choose the icon
+               obscureText
+               ? Icons.visibility_off
+               : Icons.visibility,
+               color:buttonColor,
+               ),
+            onPressed: () {
+               // Update the state i.e. toogle the state of passwordVisible variable
+               setState(() {
+                   obscureText = !obscureText;
+               });
+             },
+            ),
+          hintText:'must be more than 8',
+          hintStyle: Styles.textStyle14.copyWith(fontFamily: interFont),
+           border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: borderColor),
+          ),
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: borderColor),
+          ),
+           errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: Color(0xffE64646)),
+          ),
+          focusedBorder: const OutlineInputBorder(
+
+            borderSide: BorderSide(width: 1,color: borderFormColor),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+           )
+        ),
+      
+    
+    ),
+
+
+   
                         const SizedBox(height: 5),
                         Text(
                           'Confirm password',
@@ -133,10 +188,63 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           ),
                         ),
                         const SizedBox(height: 4),
-                        CustomPasswordField(
-                          controller: repeatpasswordcontroller,
-                          hintText: 'repeat password',
-                        ),
+                       SizedBox(
+      height: 80,
+    
+      child: TextFormField(
+        controller: repeatpasswordcontroller,
+        onChanged:(value){
+          password=value;
+        } ,
+                    validator: (value) {
+                     if (value!.isEmpty) {
+                     return 'field is required';
+                    }
+                    },
+        keyboardType: TextInputType.visiblePassword,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          constraints:const BoxConstraints(minHeight: 50),
+          suffixIcon:  IconButton(
+            icon: Icon(
+              // Based on passwordVisible state choose the icon
+               obscureText
+               ? Icons.visibility_off
+               : Icons.visibility,
+               color:buttonColor,
+               ),
+            onPressed: () {
+               // Update the state i.e. toogle the state of passwordVisible variable
+               setState(() {
+                   obscureText = !obscureText;
+               });
+             },
+            ),
+          hintText:'repeat password ',
+          hintStyle: Styles.textStyle14.copyWith(fontFamily: interFont),
+           border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: borderColor),
+          ),
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: borderColor),
+          ),
+           errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: Color(0xffE64646)),
+          ),
+          focusedBorder: const OutlineInputBorder(
+
+            borderSide: BorderSide(width: 1,color: borderFormColor),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+           )
+        ),
+      
+    
+    ),
+
                         const SizedBox(height: 5),
                         CustomButtonField(
                           text: 'Sign up',
