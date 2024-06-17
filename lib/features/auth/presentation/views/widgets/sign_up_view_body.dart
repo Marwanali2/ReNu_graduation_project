@@ -142,20 +142,20 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           text: 'Sign up',
                           textcolor: borderFormColor,
                           ontap: () {
-                            final String name = namecontroller.text;
-                            final String email = emailcontroller.text;
-                            final String phone = phonecontroller.text;
-                            final String password = passwordcontroller.text;
-                            final String repearpassword =
+                             String name = namecontroller.text;
+                             String email = emailcontroller.text;
+                             String phone = phonecontroller.text;
+                             String password = passwordcontroller.text;
+                             String repearpassword =
                                 repeatpasswordcontroller.text;
                             if (formKey.currentState!.validate()) {
                               BlocProvider.of<AuthCubit>(context).registerUser(
-                                  name: name,
-                                  email: email,
-                                  password: password,
-                                  passwordConfirmation: repearpassword,
-                                  phone: phone,
-                                  );
+                                name: name,
+                                email: email,
+                                password: password,
+                                passwordConfirmation: repearpassword,
+                                phone: phone,
+                              );
                             }
                           },
                         ),
