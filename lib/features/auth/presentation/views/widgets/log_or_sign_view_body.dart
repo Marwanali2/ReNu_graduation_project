@@ -20,7 +20,7 @@ class _LogOrSignViewBodyState extends State<LogOrSignViewBody> {
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
-        padding: const EdgeInsets.only(top: 50),
+        padding:   EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.1),
         child: Column(
           children: [
           Image.asset('assests/images/Component 9.png'),
