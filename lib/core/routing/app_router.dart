@@ -11,9 +11,9 @@ import 'package:graduation_project/features/home/presentation/views/home_view.da
 import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
 import 'package:graduation_project/features/home/presentation/views/notifications_view.dart';
 import 'package:graduation_project/features/home/presentation/views/recent_recycling_view.dart';
-import 'package:graduation_project/features/antica/presentation/views/antica_tab_bar_controller.dart';
-import 'package:graduation_project/features/antica/presentation/views/details_of_antica_view.dart';
-import 'package:graduation_project/features/antica/presentation/views/widgets/bidders_bottom_sheet.dart';
+import 'package:graduation_project/features/antika/presentation/views/antica_tab_bar_controller.dart';
+import 'package:graduation_project/features/antika/presentation/views/details_of_antica_view.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/bidders_bottom_sheet.dart';
 import 'package:graduation_project/features/auth/presentation/views/log_or_sign_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/forget_password_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/login_view.dart';
