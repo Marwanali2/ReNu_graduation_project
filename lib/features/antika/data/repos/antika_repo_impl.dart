@@ -12,7 +12,7 @@ class AntikaRepoImpl implements AntikaRepo{
 
   @override
 
-  Future<Either<Failures, List<AntikaModel>>> fetchFvoriteAntika() async{
+  Future<Either<Failures, List<AntikaModel>>> fetchFavoriteAntika() async{
 try {
   var data =await apiServices.get(endpoint: '/show_antika');
 List<AntikaModel> showAntika=[];

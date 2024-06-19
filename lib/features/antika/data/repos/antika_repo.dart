@@ -5,7 +5,7 @@ import 'package:graduation_project/features/antika/data/models/Antika_model.dart
 abstract class AntikaRepo{
 
 Future<Either<Failures,List<AntikaModel>>> fetchShowAntika();
-Future<Either<Failures,List<AntikaModel>>> fetchFvoriteAntika();
+Future<Either<Failures,List<AntikaModel>>> fetchFavoriteAntika();
 Future<Either<Failures,List<AntikaModel>>> fetchCameraAntika();
 Future<Either<Failures,List<AntikaModel>>> fetchCoinsAntika();
 Future<Either<Failures,List<AntikaModel>>> fetchJewerlyAntika();
