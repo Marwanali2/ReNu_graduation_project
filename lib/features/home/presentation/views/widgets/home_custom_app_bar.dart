@@ -19,8 +19,8 @@ class HomeCustomAppBar extends StatelessWidget {
         children: [
           const MenuButton(),
           SizedBox(width: 8.w),
-          const NotificationIcon(),
-          SizedBox(width: 8.w),
+          // const NotificationIcon(),
+          // SizedBox(width: 8.w),
           const StarRating(),
           const Spacer(),
           const UserInfo(),
@@ -45,8 +45,8 @@ class UserInfo extends StatelessWidget {
         SizedBox(
           width: 100.w,
           child: Text(
-            'Hello, ${AuthCubit.userModel.name}',
-            maxLines: 2,
+            'youssef abdulkaderabdulkaderabdulkader',
+            maxLines: 1,
             style: TextStyles.font14WhiteMeduim.copyWith(
               overflow: TextOverflow.ellipsis,
             ),

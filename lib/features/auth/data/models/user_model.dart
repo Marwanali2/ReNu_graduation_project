@@ -13,22 +13,25 @@ class UserModel {
   String? createdAt;
   String? updatedAt;
   String? token;
+  int? points;
 
-  UserModel(
-      {this.id,
-      this.name,
-      this.email,
-      this.phone,
-      this.status,
-      this.image,
-      this.code,
-      this.codeExpiredAt,
-      this.lat,
-      this.long,
-      this.emailVerifiedAt,
-      this.createdAt,
-      this.updatedAt,
-      this.token});
+  UserModel({
+    this.id,
+    this.name,
+    this.email,
+    this.phone,
+    this.status,
+    this.image,
+    this.code,
+    this.codeExpiredAt,
+    this.lat,
+    this.long,
+    this.emailVerifiedAt,
+    this.createdAt,
+    this.updatedAt,
+    this.token,
+    this.points,
+  });
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -45,6 +48,7 @@ class UserModel {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     token = json['token'];
+    points = json['points'];
   }
 
   // Map<String, dynamic> toJson() {
