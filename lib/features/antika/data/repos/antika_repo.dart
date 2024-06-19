@@ -1,0 +1,11 @@
+import 'package:dartz/dartz.dart';
+import 'package:graduation_project/core/errors/failures.dart';
+import 'package:graduation_project/features/antika/data/models/Antika_model.dart';
+
+abstract class AntikaRepo{
+
+Future<Either<Failures,List<AntikaModel>>> fetchShowAntika();
+Future<Either<Failures,List<AntikaModel>>> fetchFvoriteAntika();
+Future<Either<Failures,List<AntikaModel>>> fetchCatigoriesAntika();
+
+}
