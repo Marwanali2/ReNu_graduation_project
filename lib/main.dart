@@ -4,6 +4,7 @@ import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
@@ -28,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MultiBlocProvider(
-        providers:[
+        providers: [
           BlocProvider<AuthCubit>(
             create: (context) => AuthCubit(),
           ),

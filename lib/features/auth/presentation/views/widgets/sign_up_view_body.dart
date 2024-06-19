@@ -176,9 +176,6 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
       
     
     ),
-
-
-   
                         const SizedBox(height: 5),
                         Text(
                           'Confirm password',

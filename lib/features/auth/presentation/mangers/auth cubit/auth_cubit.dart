@@ -38,13 +38,13 @@ class AuthCubit extends Cubit<AuthState> {
         },
       );
       var responseBody = response.data;
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 && responseBody['message'] == 'success') {
         UserModel.fromJson(responseBody['deta']['user']);
-        //  userToken = responseBody['deta']['user']['token'];
+        userToken = responseBody['deta']['user']['token'];
         debugPrint('*********userToken is $userToken *********');
         debugPrint('success response is $responseBody}:');
         emit(RegisterSuccessState());
-      } else {
+      } else if (response.statusCode == 422) {
         debugPrint('failure response is ${responseBody['message']}:');
         emit(
           RegisterFailureState(
@@ -56,7 +56,7 @@ class AuthCubit extends Cubit<AuthState> {
       debugPrint('Failed to register , The Reason : ${e.toString()}');
       emit(
         RegisterFailureState(
-          errorMessage: e.toString(),
+          errorMessage: 'Failed to register, TRY AGAIN',
         ),
       );
     }
@@ -67,21 +67,24 @@ class AuthCubit extends Cubit<AuthState> {
     required String password,
   }) async {
     emit(LoginLoadingState());
+    debugPrint('email: $email, password: $password');
     try {
-      Response response = await _dio.post('${ApiServices.baseUrl}/users/login',
-          options: Options(
-            headers: {
-              'Accept': 'application/json',
-              'Authorization': '',
-            }, // التوكين ملوش لازمة انه يتبعت مع الطلب
-          ),
-          data: {
+      Response response = await _dio
+          .post('https://api-service.cloud/recycle/public_html/api/users/login',
+              options: Options(
+                headers: {
+                  'Accept': 'application/json',
+                }, // التوكين ملوش لازمة انه يتبعت مع الطلب
+              ),
+              data: {
             'email': email,
             'password': password,
           });
       var responseBody = response.data;
-      if (response.statusCode == 200 && responseBody['data'] != null) {
-       userModel= UserModel.fromJson(responseBody['deta']['user']);
+      if (response.statusCode == 200 && responseBody['deta'] != null) {
+        userModel = UserModel.fromJson(responseBody['deta']['user']);
+        userToken = responseBody['deta']['user']['token'];
+        debugPrint('*********userToken is $userToken *********');
         debugPrint('success login with response: $responseBody');
         /*  CachedNetwork.insertToCache(
             key: 'token',
@@ -92,11 +95,12 @@ class AuthCubit extends Cubit<AuthState> {
         emit(LoginSuccessState());
       } else {
         debugPrint('Failure response: $responseBody');
-        emit(LoginFailureState(errorMessage: responseBody['message']?? 'Unknown error'));
+        emit(LoginFailureState(
+            errorMessage: responseBody['message'] ?? 'Unknown error'));
       }
-    } on DioError catch (dioError) {
-      debugPrint('DioError: $dioError');
-      emit(LoginFailureState(errorMessage: dioError.message));
+      // } on DioError catch (dioError) {
+      //   debugPrint('DioError: $dioError');
+      emit(LoginFailureState(errorMessage: 'Failed to login, TRY AGAIN'));
     } catch (e) {
       debugPrint('Failed to login, Reason: $e');
       emit(LoginFailureState(errorMessage: e.toString()));
