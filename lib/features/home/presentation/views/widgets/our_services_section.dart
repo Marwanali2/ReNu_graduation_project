@@ -59,7 +59,9 @@ class OurServicesSection extends StatelessWidget {
             ServiceContainerComponent(
               serviceName: 'Antika',
               serviceSVGName: 'antika',
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kAnticaTabbar);
+              },
             ),
           ],
         ),

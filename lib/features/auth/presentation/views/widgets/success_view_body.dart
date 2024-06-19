@@ -23,7 +23,9 @@ class SuccessViewBody extends StatelessWidget {
             style: Styles.textStyle30
                 .copyWith(fontFamily: robotoFont, color: blackcolor),
           ),
-          const SizedBox(height: 12,),
+          const SizedBox(
+            height: 12,
+          ),
           Text(
             'Your password has been changed succesfully',
             textAlign: TextAlign.center,
@@ -38,9 +40,9 @@ class SuccessViewBody extends StatelessWidget {
           ),
           CustomButtonField(
             text: 'Back to login',
-            backgroundcolor:borderFormColor,
+            backgroundcolor: borderFormColor,
             textcolor: whiteColor,
-            ontap: (){
+            ontap: () {
               GoRouter.of(context).push(AppRouter.kAnticaTabbar);
             },
           )

@@ -12,24 +12,28 @@ class RecyclingTabBar extends StatefulWidget {
   State<RecyclingTabBar> createState() => _RecyclingTabBarState();
 }
 
-class _RecyclingTabBarState extends State<RecyclingTabBar>  with SingleTickerProviderStateMixin{
+class _RecyclingTabBarState extends State<RecyclingTabBar>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
-@override
+  @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 2,vsync:this );
+    tabController = TabController(length: 2, vsync: this);
   }
+
   @override
-void dispose() {
-   tabController.dispose();
-   super.dispose();
- }
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-         padding:const EdgeInsets.only(top: 40,),
+        padding: const EdgeInsets.only(
+          top: 40,
+        ),
         height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
@@ -37,43 +41,49 @@ void dispose() {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
-                 const  BackIconWidget(),
-                 const SizedBox(width: 100,),
-                   Text('Recycle' , style: Styles.textStyle16.copyWith(color: blackcolor),)
+                  const BackIconWidget(),
+                  const SizedBox(
+                    width: 100,
+                  ),
+                  Text(
+                    'Recycle',
+                    style: Styles.textStyle16.copyWith(color: blackcolor),
+                  )
                 ],
               ),
             ),
-                               const SizedBox(height: 30,),
-                               
-
+            const SizedBox(
+              height: 30,
+            ),
             TabBar(
               labelPadding: EdgeInsets.zero,
               indicatorColor: borderFormColor,
-              labelStyle:Styles.textStyle12.copyWith(color: borderFormColor),
-            unselectedLabelStyle: Styles.textStyle12.copyWith(fontWeight: FontWeight.w400,),
-            indicatorSize: TabBarIndicatorSize.label,
-              controller: tabController,
-              tabs:const [
-                Tab(text: 'Recycling',),
-                Tab(text: 'Rewards',),
-
-              ],
-              
-
-               
+              labelStyle: Styles.textStyle12.copyWith(color: borderFormColor),
+              unselectedLabelStyle: Styles.textStyle12.copyWith(
+                fontWeight: FontWeight.w400,
               ),
-              Expanded(
-           child:  TabBarView(
-            
-            controller: tabController,
-            children:const [
-              RecyclingViewBody(),
-             RewardsViewBody(),
-                 ],
-           )),
+              indicatorSize: TabBarIndicatorSize.label,
+              controller: tabController,
+              tabs: const [
+                Tab(
+                  text: 'Recycling',
+                ),
+                Tab(
+                  text: 'Rewards',
+                ),
+              ],
+            ),
+            Expanded(
+                child: TabBarView(
+              controller: tabController,
+              children: const [
+                RecyclingViewBody(),
+                RewardsViewBody(),
+              ],
+            )),
           ],
         ),
-        
       ),
     );
-  }}
+  }
+}

@@ -10,7 +10,7 @@
 //   }
 
 //   bool get isValidPassword{
-// final passwordRegExp = 
+// final passwordRegExp =
 //     RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\><*~]).{8,}');
 //     return passwordRegExp.hasMatch(this);
 //   }

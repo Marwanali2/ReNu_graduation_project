@@ -9,7 +9,9 @@ class ShowSubscriptionTimeContainer extends StatelessWidget {
     super.key,
     required this.title,
     required this.date,
-    required this.svgAsset, this.svgColor, this.dateColor,
+    required this.svgAsset,
+    this.svgColor,
+    this.dateColor,
   });
   final String title;
   final String? date;
@@ -58,7 +60,8 @@ class ShowSubscriptionTimeContainer extends StatelessWidget {
                 ),
                 Text(
                   '$date',
-                  style: TextStyles.font10SemiGrey1Normal.copyWith(color: dateColor),
+                  style: TextStyles.font10SemiGrey1Normal
+                      .copyWith(color: dateColor),
                 )
               ],
             )

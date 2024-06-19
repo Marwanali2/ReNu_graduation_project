@@ -33,15 +33,14 @@ class _LogInViewBodyState extends State<LogInViewBody> {
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
-
-        if (state is LoginLoadingState){
-          isLoading=true;
-        }else if (state is LoginSuccessState){
+        if (state is LoginLoadingState) {
+          isLoading = true;
+        } else if (state is LoginSuccessState) {
           GoRouter.of(context).push(AppRouter.kHome);
-          isLoading=false;
-        }else if(state is LoginFailureState){
-          showSnackBar(context,state.errorMessage!);
-          isLoading=false;
+          isLoading = false;
+        } else if (state is LoginFailureState) {
+          showSnackBar(context, state.errorMessage!);
+          isLoading = false;
         }
       },
       builder: (context, state) {
@@ -103,7 +102,6 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                      if (value!.isEmpty) {
                      return 'field is required';
                     }
-                     return null;
                     },
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
@@ -158,12 +156,11 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                         text: 'Log in',
                         textcolor: borderFormColor,
                         ontap: () {
-
-                      final String email=emailcontroller.text;
-                      final String password=passwordcontroller.text;
+                          final String email = emailcontroller.text;
+                          final String password = passwordcontroller.text;
                           if (formKey.currentState!.validate()) {
-                            BlocProvider.of<AuthCubit>(context).loginUser(email: email, password: password);
-
+                            BlocProvider.of<AuthCubit>(context)
+                                .loginUser(email: email, password: password);
                           }
                         },
                       ),
@@ -233,6 +230,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
       },
     );
   }
+
   void showSnackBar(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

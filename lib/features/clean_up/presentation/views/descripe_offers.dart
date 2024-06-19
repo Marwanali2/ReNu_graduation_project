@@ -30,7 +30,11 @@ class DescripeOffers extends StatelessWidget {
                     const DescripeOffersGridView(),
                     // SizedBox(height: MediaQuery.sizeOf(context).height * 0.1.h),
                     SizedBox(height: 8.h),
-                     DescripeOffersButton(text:  'EGP 100 / For 3 Month',buttonColor: MaterialStateProperty.all(ColorsManager.mainBlack),),
+                    DescripeOffersButton(
+                      text: 'EGP 100 / For 3 Month',
+                      buttonColor:
+                          MaterialStateProperty.all(ColorsManager.mainBlack),
+                    ),
                   ],
                 ),
               ),

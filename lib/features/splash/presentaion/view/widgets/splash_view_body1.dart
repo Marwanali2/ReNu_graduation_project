@@ -3,13 +3,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
+
 class SplashScreen1 extends StatefulWidget {
   @override
   _SplashScreen1State createState() => _SplashScreen1State();
 }
 
-class _SplashScreen1State extends State<SplashScreen1> with SingleTickerProviderStateMixin {
- void initState() {
+class _SplashScreen1State extends State<SplashScreen1>
+    with SingleTickerProviderStateMixin {
+  void initState() {
     super.initState();
     Timer(Duration(seconds: 2), () {
       GoRouter.of(context).push(AppRouter.splash2);
@@ -24,7 +26,6 @@ class _SplashScreen1State extends State<SplashScreen1> with SingleTickerProvider
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assests/images/logo1.png'),
-           
           ],
         ),
       ),
@@ -51,15 +52,11 @@ class _SplashScreen1State extends State<SplashScreen1> with SingleTickerProvider
 //   late AnimationController animationController;
 //   late Animation<Offset> slidingAnimation;
 
-   
-  
-  
 //   @override
 //   void initState() {
-    
+
 //     super.initState();
 
-    
 //     initSliding();
 //     slidingAnimation.addListener(() {});
 //     navigateToHome();
@@ -103,7 +100,3 @@ class _SplashScreen1State extends State<SplashScreen1> with SingleTickerProvider
 //     );
 //   }
 // }
-
-
-
-

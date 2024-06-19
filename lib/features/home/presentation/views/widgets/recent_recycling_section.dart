@@ -19,13 +19,12 @@ class RecentRecyclingListView extends StatelessWidget {
       '-500RPs',
       '+500RPs',
     ];
-     List<String> svgAssetName = [
+    List<String> svgAssetName = [
       'recycling-box',
       'recycling_cart',
       'recycling-box',
       'recycling_cart',
       'recycling-box',
-
     ];
     List<Color> pricesColors = [
       Colors.green,
@@ -33,7 +32,6 @@ class RecentRecyclingListView extends StatelessWidget {
       Colors.green,
       Colors.red,
       Colors.green,
-  
     ];
     return ListView.builder(
       shrinkWrap: true,

@@ -12,112 +12,113 @@ class RewardsViewBody extends StatefulWidget {
   State<RewardsViewBody> createState() => _RewardsViewBodyState();
 }
 
-class _RewardsViewBodyState extends State<RewardsViewBody> with SingleTickerProviderStateMixin {
-
-
-  
+class _RewardsViewBodyState extends State<RewardsViewBody>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
-@override
+  @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 3,vsync:this );
+    tabController = TabController(length: 3, vsync: this);
   }
+
   @override
-void dispose() {
-   tabController.dispose();
-   super.dispose();
- }
+  void dispose() {
+    tabController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top:30),
+      padding: const EdgeInsets.only(top: 30),
       child: Column(
         children: [
           Container(
-            height:46,
+            height: 46,
             width: 320,
             decoration: BoxDecoration(
-              color:const Color(0xffD8EFDB),
-              borderRadius: BorderRadius.circular(10)
-            ),
+                color: const Color(0xffD8EFDB),
+                borderRadius: BorderRadius.circular(10)),
             child: Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 10,right: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10),
                   child: Image.asset('assests/images/Coinreward.png'),
                 ),
-               
-              const  Text('Available points: ',style:Styles.textStyle15 ,),
-               const Text('1500 Points',style: Styles.textStyle15,)
+                const Text(
+                  'Available points: ',
+                  style: Styles.textStyle15,
+                ),
+                const Text(
+                  '1500 Points',
+                  style: Styles.textStyle15,
+                )
               ],
             ),
           ),
           TabBar(
-          labelPadding: EdgeInsets.zero,
+              labelPadding: EdgeInsets.zero,
+              controller: tabController,
+              isScrollable: true,
+              tabs: [
+                Tab(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: borderFormColor,
+                        borderRadius: BorderRadius.circular(10)),
+                    height: 44,
+                    child: Row(
+                      children: [
+                        Image.asset('assests/images/Cleaner.png'),
+                        const Text(
+                          'Cleaner materials ',
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: borderFormColor,
+                        borderRadius: BorderRadius.circular(10)),
+                    height: 44,
+                    child: Row(
+                      children: [
+                        Image.asset('assests/images/Sweep.png'),
+                        const Text(
+                          'HouseWare ',
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Tab(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: borderFormColor,
+                        borderRadius: BorderRadius.circular(10)),
+                    height: 44,
+                    child: Row(
+                      children: [
+                        Image.asset('assests/images/Vacuum.png'),
+                        const Text(
+                          'Electronics ',
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ]),
+          Expanded(
+              child: TabBarView(
             controller: tabController,
-            isScrollable: true,
-            tabs: [
-              
-              Tab(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: borderFormColor,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  height:44,
-                  child: Row(
-                    children: [
-                      Image.asset('assests/images/Cleaner.png'),
-                     const Text('Cleaner materials ',)
-                    ],
-                  ),
-                ),
-              ),
-              Tab(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: borderFormColor,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  height:44,
-                  child: Row(
-                    children: [
-
-                      Image.asset('assests/images/Sweep.png'),
-                      const Text('HouseWare ',)
-                    ],
-                  ),
-                ),
-              ),
-Tab(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: borderFormColor,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  height:44,
-                  child: Row(
-                    children: [
-                      Image.asset('assests/images/Vacuum.png'),
-                     const Text('Electronics ',)
-                    ],
-                  ),
-                ),
-              ),
-
-            ]),
- Expanded(
-           child:  TabBarView(
-            
-            controller: tabController,
-            children:const [
+            children: const [
               CleanerMaterialViewBody(),
               HouseWareViewBody(),
               ElectronicsViewBody(),
-                 ],
-           )),
-
-
+            ],
+          )),
         ],
       ),
     );
