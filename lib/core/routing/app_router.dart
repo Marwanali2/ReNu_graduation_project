@@ -6,6 +6,7 @@ import 'package:graduation_project/features/clean_up/presentation/views/custom_g
 import 'package:graduation_project/features/clean_up/presentation/views/descripe_offers.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
+import 'package:graduation_project/features/home/presentation/views/drawer_views/my_orders_view.dart';
 import 'package:graduation_project/features/home/presentation/views/eco_tips_view.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
@@ -26,7 +27,10 @@ import 'package:graduation_project/features/splash/presentaion/view/splash_view1
 import 'package:graduation_project/features/splash/presentaion/view/splash_view3.dart';
 
 abstract class AppRouter {
+  // AppDrawer
   static const kHome = '/home';
+  static const kMyOrders = '/myorders';
+  //
   static const kCleanUp = '/cleanUp';
   static const krecentRecycling = '/recentRecycling';
   static const kSelectCompany = '/selectCompany';
@@ -215,5 +219,11 @@ abstract class AppRouter {
     //     return const RecyclingTabBar();
     //   },
     // ),
+    GoRoute(
+      path: kMyOrders,
+      builder: (context, state) {
+        return const MyOrdersView();
+      },
+    ),
   ]);
 }

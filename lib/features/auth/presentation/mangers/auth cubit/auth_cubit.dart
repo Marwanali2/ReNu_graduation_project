@@ -3,14 +3,13 @@ import 'package:equatable/equatable.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
-import 'package:graduation_project/core/networking/api_services.dart';
 import 'package:graduation_project/features/auth/data/models/user_model.dart';
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
   final Dio _dio = Dio();
-  UserModel userModel = UserModel();
+  static UserModel userModel = UserModel();
 
   Future<void> registerUser({
     required String name,
@@ -98,9 +97,6 @@ class AuthCubit extends Cubit<AuthState> {
         emit(LoginFailureState(
             errorMessage: responseBody['message'] ?? 'Unknown error'));
       }
-      // } on DioError catch (dioError) {
-      //   debugPrint('DioError: $dioError');
-      emit(LoginFailureState(errorMessage: 'Failed to login, TRY AGAIN'));
     } catch (e) {
       debugPrint('Failed to login, Reason: $e');
       emit(LoginFailureState(errorMessage: e.toString()));

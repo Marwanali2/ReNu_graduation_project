@@ -7,7 +7,6 @@ import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
-import 'package:graduation_project/core/widgets/custom_password_field.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_icon_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_field.dart';
@@ -104,6 +103,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                      if (value!.isEmpty) {
                      return 'field is required';
                     }
+                     return null;
                     },
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
