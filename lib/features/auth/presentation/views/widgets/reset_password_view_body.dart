@@ -16,9 +16,9 @@ class ResetPasswordViewBody extends StatefulWidget {
 }
 
 class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
-    GlobalKey<FormState> formKey = GlobalKey();
-      final TextEditingController passwordcontroller = TextEditingController();
- final TextEditingController repeatpasswordcontroller =
+  GlobalKey<FormState> formKey = GlobalKey();
+  final TextEditingController passwordcontroller = TextEditingController();
+  final TextEditingController repeatpasswordcontroller =
       TextEditingController();
 
   @override
@@ -32,7 +32,9 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const CustomTitleWidget(title: '',),
+                        const CustomTitleWidget(
+                          title: '',
+                        ),
                         const SizedBox(
                           height: 30,
                         ),
@@ -40,51 +42,75 @@ class _ResetPasswordViewBodyState extends State<ResetPasswordViewBody> {
                             height: 39,
                             width: 304,
                             child: Text('Reset password',
-                                 style: Styles.textStyle30)),
+                                style: Styles.textStyle30)),
                         const SizedBox(
                           height: 12,
                         ),
                         SizedBox(
+                            height: 20,
+                            child: Text(
+                              'Please type something you’ll remember',
+                              style: Styles.textStyle16.copyWith(
+                                  color: blackcolor,
+                                  fontFamily: interFont,
+                                  fontWeight: FontWeight.w400),
+                            )),
+                        const SizedBox(
+                          height: 31,
+                        ),
+
+                        SizedBox(
+                            height: 105,
+                            width: 310,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'New password ',
+                                  style: Styles.textStyle14.copyWith(
+                                      color: blackcolor, fontFamily: interFont),
+                                ),
+                                const SizedBox(
+                                  height: 3,
+                                ),
+                                CustomPasswordField(
+                                  hintText: 'must be 8 characters',
+                                  controller: passwordcontroller,
+                                ),
+                              ],
+                            )),
+                        // const SizedBox(height: 20,),
+                        SizedBox(
+                            height: 105,
+                            width: 310,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Confirm password ',
+                                  style: Styles.textStyle14.copyWith(
+                                      color: blackcolor, fontFamily: interFont),
+                                ),
+                                const SizedBox(
+                                  height: 3,
+                                ),
+                                CustomPasswordField(
+                                  hintText: 'repeat password',
+                                  controller: repeatpasswordcontroller,
+                                ),
+                              ],
+                            )),
+                        const SizedBox(
                           height: 20,
-                          child: Text('Please type something you’ll remember',
-                          style: Styles.textStyle16.copyWith(color: blackcolor,fontFamily: interFont,
-                          fontWeight: FontWeight.w400),
-                          )),
-                          const SizedBox(height: 31,),
-      
-                          SizedBox(
-                  height: 105,
-                  width: 310,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('New password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
-                     const SizedBox(height: 3,),
-                      CustomPasswordField(hintText: 'must be 8 characters',
-                      controller: passwordcontroller,
-                      ),
-                    
-                    ],
-                  )),
-                  // const SizedBox(height: 20,),
-                     SizedBox(
-                  height: 105,
-                  width: 310,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Confirm password ',style: Styles.textStyle14.copyWith(color: blackcolor,fontFamily: interFont),),
-                     const SizedBox(height: 3,),
-                      CustomPasswordField(hintText: 'repeat password',controller: repeatpasswordcontroller,),
-                    
-                    ],
-                  )),
-                  const SizedBox(height: 20,),
-                  CustomButtonField(text: 'Change password',textcolor: borderFormColor,ontap: (){
-                    GoRouter.of(context).push(AppRouter.kSuccess);
-                  },)
-                      ]
-                  )))),
+                        ),
+                        CustomButtonField(
+                          text: 'Change password',
+                          textcolor: borderFormColor,
+                          ontap: () {
+                            GoRouter.of(context).push(AppRouter.kSuccess);
+                          },
+                        )
+                      ])))),
     );
   }
 }

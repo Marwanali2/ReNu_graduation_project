@@ -13,7 +13,7 @@ class SvgPictureComponent extends StatelessWidget {
   final String name;
   final double width;
   final double height;
-  final Color?color;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(

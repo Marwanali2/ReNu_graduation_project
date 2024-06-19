@@ -11,31 +11,24 @@ class CusttomButtonEmail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kSignUp);
       },
       child: Container(
-      height: 35,
-      width: 210,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: whiteColor,
-        border: Border.all(
-          color: buttonColor,
-          width: 1
-        )
-        
+        height: 35,
+        width: 210,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: whiteColor,
+            border: Border.all(color: buttonColor, width: 1)),
+        child: Center(
+          child: Text(' Use email or phone',
+              style: Styles.textStyle14.copyWith(
+                  fontSize: 12,
+                  color: const Color(0xff013004),
+                  fontFamily: robotoFont)),
+        ),
       ),
-      child:
-          Center(
-            child: Text(
-              ' Use email or phone',
-              style: Styles.textStyle14.copyWith(fontSize: 12,color:const Color(0xff013004),fontFamily: robotoFont)
-            ),
-          ),
-        
-      ),
-      
     );
   }
 }

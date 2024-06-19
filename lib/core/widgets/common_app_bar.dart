@@ -7,7 +7,8 @@ import 'package:graduation_project/features/clean_up/presentation/views/widgets/
 class CommonAppBar extends StatelessWidget {
   const CommonAppBar({
     super.key,
-    required this.title,required this.sizedBoxWidth,
+    required this.title,
+    required this.sizedBoxWidth,
   });
   final String title;
   final double sizedBoxWidth;

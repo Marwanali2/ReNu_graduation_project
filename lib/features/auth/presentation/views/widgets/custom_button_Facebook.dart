@@ -3,7 +3,9 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CusttomButtonFaceBook extends StatefulWidget {
-  const CusttomButtonFaceBook({super.key,  });
+  const CusttomButtonFaceBook({
+    super.key,
+  });
 
   @override
   State<CusttomButtonFaceBook> createState() => _CusttomButtonFaceBookState();
@@ -29,31 +31,26 @@ class _CusttomButtonFaceBookState extends State<CusttomButtonFaceBook> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: (){
+      onPressed: () {
         // signInWithGoogle();
       },
       child: Container(
         height: 35,
         width: 210,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(
-            color: buttonColor
-          )
-        ),
+            borderRadius: BorderRadius.circular(30),
+            border: Border.all(color: buttonColor)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           const Icon(Icons.facebook_sharp, 
-             color: Color(0xff20226A)
-            ),
+            const Icon(Icons.facebook_sharp, color: Color(0xff20226A)),
             const SizedBox(
               width: 15,
             ),
             Text(
               'Continue with facebook',
-              style: Styles.textStyle14
-                  .copyWith(fontWeight: FontWeight.w500, color: const Color(0xff20226A)),
+              style: Styles.textStyle14.copyWith(
+                  fontWeight: FontWeight.w500, color: const Color(0xff20226A)),
             ),
           ],
         ),

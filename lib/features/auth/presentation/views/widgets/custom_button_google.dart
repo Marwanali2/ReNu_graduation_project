@@ -12,40 +12,33 @@ class CusttomButtonGoogle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kSignUp);
       },
       child: Container(
-      height: 35,
-      width: 210,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: whiteColor,
-        border: Border.all(
-          color: buttonColor,
-          width: 1
-        )
-        
-      ),
-      child:
-          Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-               const Icon(FontAwesomeIcons.google),
-                 const SizedBox(
-              width: 15,
-            ),
-                Text(
-                  ' Continue with Google',
-                  style: Styles.textStyle14.copyWith(fontSize: 12,color:const Color(0xff013004),fontFamily: robotoFont)
-                ),
-              ],
-            ),
+        height: 35,
+        width: 210,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: whiteColor,
+            border: Border.all(color: buttonColor, width: 1)),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(FontAwesomeIcons.google),
+              const SizedBox(
+                width: 15,
+              ),
+              Text(' Continue with Google',
+                  style: Styles.textStyle14.copyWith(
+                      fontSize: 12,
+                      color: const Color(0xff013004),
+                      fontFamily: robotoFont)),
+            ],
           ),
-        
+        ),
       ),
-      
     );
   }
-  }
+}

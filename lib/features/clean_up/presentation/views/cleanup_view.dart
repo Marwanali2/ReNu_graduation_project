@@ -6,6 +6,8 @@ class CleanUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomGoogleMap(isShowCompany: false,);
+    return const CustomGoogleMap(
+      isShowCompany: false,
+    );
   }
 }

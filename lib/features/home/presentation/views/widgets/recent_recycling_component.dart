@@ -10,7 +10,8 @@ class RecentRecyclingComponent extends StatelessWidget {
     required this.status,
     required this.time,
     required this.price,
-    required this.priceColor, required this.svgAssetName,
+    required this.priceColor,
+    required this.svgAssetName,
   });
   final String status;
   final String time;

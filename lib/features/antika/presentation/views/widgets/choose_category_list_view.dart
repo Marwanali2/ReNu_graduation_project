@@ -12,22 +12,21 @@ class ChooseCatigoryBodyListView extends StatelessWidget {
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 6,
-          itemBuilder:(context, index) {
+          itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(right: 4),
               child: Container(
-                width:50,
-                height:60,
+                width: 50,
+                height: 60,
                 decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0xffE5E5E5),width: 1),
+                  border: Border.all(color: const Color(0xffE5E5E5), width: 1),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child:Image.asset(catigories[index]),
-                
+                child: Image.asset(catigories[index]),
               ),
             );
           },
-          ),
+        ),
       ),
     );
   }

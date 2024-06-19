@@ -9,21 +9,22 @@ class CustomTitleAnticaBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                             children: [
-                               const CustomTitleWidget(title: '',),
-                               Text('Antika',
-                    style: Styles.textStyle16
-                        .copyWith(color: blackcolor, fontFamily: poppinsBlackFont)),
-                               Container(
-                  height: 29,
-                  width: 29,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: borderColor
-                  ),
-                               )
-                             ],
-                           );
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const CustomTitleWidget(
+          title: '',
+        ),
+        Text('Antika',
+            style: Styles.textStyle16
+                .copyWith(color: blackcolor, fontFamily: poppinsBlackFont)),
+        Container(
+          height: 29,
+          width: 29,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(14), color: borderColor),
+        )
+      ],
+    );
   }
 }

@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CatigoriesListView extends StatelessWidget {
-  const CatigoriesListView({super.key, required this.name, required this.date, required this.image});
+  const CatigoriesListView(
+      {super.key, required this.name, required this.date, required this.image});
   final String name;
   final String date;
   final String image;

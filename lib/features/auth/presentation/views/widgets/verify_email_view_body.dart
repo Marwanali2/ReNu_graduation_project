@@ -17,11 +17,9 @@ class VerifyEmailViewBody extends StatefulWidget {
 
 class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
   GlobalKey<FormState> formKey = GlobalKey();
- 
 
   @override
   Widget build(BuildContext context) {
-        
     return SafeArea(
         child: Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, top: 32),
@@ -30,7 +28,9 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const CustomTitleWidget(title: '',),
+                      const CustomTitleWidget(
+                        title: '',
+                      ),
                       const SizedBox(
                         height: 30,
                       ),
@@ -60,13 +60,13 @@ class _VerifyEmailViewBodyState extends State<VerifyEmailViewBody> {
                         ],
                       ),
                       const PinCodeTextFieldWidget(),
-
-                   CustomButtonField(text: 'Verify',textcolor: borderFormColor,ontap: (){
-                       GoRouter.of(context).push(AppRouter.kResetPassword);
-
-                  },),
-
-                   
+                      CustomButtonField(
+                        text: 'Verify',
+                        textcolor: borderFormColor,
+                        ontap: () {
+                          GoRouter.of(context).push(AppRouter.kResetPassword);
+                        },
+                      ),
                     ]))));
   }
 }

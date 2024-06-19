@@ -9,9 +9,8 @@ class CheckboxOfGender extends StatefulWidget {
 }
 
 class _CheckboxOfGenderState extends State<CheckboxOfGender> {
-
-  bool? male=false;
-  bool? female =false;
+  bool? male = false;
+  bool? female = false;
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -20,23 +19,27 @@ class _CheckboxOfGenderState extends State<CheckboxOfGender> {
         child: Column(
           children: [
             CheckboxListTile(
-              title:const Text('Male',style: Styles.textStyle11,),
-              value: male,
-               onChanged: ( value){
-                setState(() {
-                  male=value;
-                });
-               }
-               ),
-                CheckboxListTile(
-              title:const Text('Female',style: Styles.textStyle11,),
-              value: female,
-               onChanged: ( value){
-                setState(() {
-                  female=value;
-                });
-               }
-               ),
+                title: const Text(
+                  'Male',
+                  style: Styles.textStyle11,
+                ),
+                value: male,
+                onChanged: (value) {
+                  setState(() {
+                    male = value;
+                  });
+                }),
+            CheckboxListTile(
+                title: const Text(
+                  'Female',
+                  style: Styles.textStyle11,
+                ),
+                value: female,
+                onChanged: (value) {
+                  setState(() {
+                    female = value;
+                  });
+                }),
           ],
         ),
       ),

@@ -31,7 +31,9 @@ class LoginFailureState extends AuthState {
 }
 
 class SendCodeLoadingState extends AuthState {}
+
 class SendCodeSuccessState extends AuthState {}
+
 // ignore: must_be_immutable
 class SendCodeFailureState extends AuthState {
   String? errorMessage;
@@ -40,7 +42,9 @@ class SendCodeFailureState extends AuthState {
 }
 
 class CheckCodeLoadingState extends AuthState {}
+
 class CheckCodeSuccessState extends AuthState {}
+
 // ignore: must_be_immutable
 class CheckCodeFailureState extends AuthState {
   String? errorMessage;

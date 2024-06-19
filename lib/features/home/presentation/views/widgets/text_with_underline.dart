@@ -7,18 +7,16 @@ class TextWithUnderLine extends StatelessWidget {
   const TextWithUnderLine({
     super.key,
     required this.text,
-    
     required this.lineWidth,
   });
   final String text;
-  
+
   final double lineWidth;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
-          
           child: Text(
             text,
             style: TextStyles.font12SemiBlack1SemiBold,

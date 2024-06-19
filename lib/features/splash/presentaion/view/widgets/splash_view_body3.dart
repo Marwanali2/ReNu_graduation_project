@@ -11,8 +11,9 @@ class SplashScreen3 extends StatefulWidget {
   State<SplashScreen3> createState() => _SplashScreen3State();
 }
 
-class _SplashScreen3State extends State<SplashScreen3>with SingleTickerProviderStateMixin {
-   void initState() {
+class _SplashScreen3State extends State<SplashScreen3>
+    with SingleTickerProviderStateMixin {
+  void initState() {
     super.initState();
     Timer(Duration(seconds: 2), () {
       GoRouter.of(context).push(AppRouter.kLogOrSign);
@@ -27,7 +28,6 @@ class _SplashScreen3State extends State<SplashScreen3>with SingleTickerProviderS
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assests/images/Component 9.png'),
-           
           ],
         ),
       ),

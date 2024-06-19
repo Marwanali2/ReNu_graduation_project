@@ -23,45 +23,69 @@ class _ForgetPaaswordViewBodyState extends State<ForgetPaaswordViewBody> {
         padding: const EdgeInsets.only(left: 20, right: 20, top: 32),
         child: Form(
           key: formKey,
-          child:  Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-             const CustomTitleWidget(title: '',),
-             const SizedBox(
+              const CustomTitleWidget(
+                title: '',
+              ),
+              const SizedBox(
                 height: 30,
               ),
-             const SizedBox(
+              const SizedBox(
                   height: 76,
                   width: 216,
-                  child: Text('Forget Password?', maxLines: 2,style: Styles.textStyle30)),
-             const SizedBox(
+                  child: Text('Forget Password?',
+                      maxLines: 2, style: Styles.textStyle30)),
+              const SizedBox(
                 height: 28,
               ),
-               SizedBox(
+              SizedBox(
                 height: 36,
                 width: 285,
                 child: Text(
-                  'Don’t worry! it happens. Please enter the email associated with your account.',style: Styles.textStyle14.copyWith(color: Colors.black.withOpacity(0.5),fontWeight: FontWeight.w500),
+                  'Don’t worry! it happens. Please enter the email associated with your account.',
+                  style: Styles.textStyle14.copyWith(
+                      color: Colors.black.withOpacity(0.5),
+                      fontWeight: FontWeight.w500),
                   maxLines: 2,
                 ),
               ),
-              const SizedBox(height: 40,),
-               SizedBox(
-                height: 80,
-                width: 320,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Email address',style: Styles.textStyle14.copyWith(color: const Color(0xff000000)),),
-                  const  SizedBox(height: 3,),
-                   const CustomTextField(hintText: 'Enter your email address',textInputType: TextInputType.emailAddress,),
-                  
-                  ],
-                )),
-                const SizedBox(height: 30,),
-                 CustomButtonField(text: 'Send Code',textcolor: borderFormColor,ontap: (){
-                  GoRouter.of(context).push(AppRouter.kVerifyEmail,);
-                },)
+              const SizedBox(
+                height: 40,
+              ),
+              SizedBox(
+                  height: 80,
+                  width: 320,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Email address',
+                        style: Styles.textStyle14
+                            .copyWith(color: const Color(0xff000000)),
+                      ),
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      const CustomTextField(
+                        hintText: 'Enter your email address',
+                        textInputType: TextInputType.emailAddress,
+                      ),
+                    ],
+                  )),
+              const SizedBox(
+                height: 30,
+              ),
+              CustomButtonField(
+                text: 'Send Code',
+                textcolor: borderFormColor,
+                ontap: () {
+                  GoRouter.of(context).push(
+                    AppRouter.kVerifyEmail,
+                  );
+                },
+              )
             ],
           ),
         ),

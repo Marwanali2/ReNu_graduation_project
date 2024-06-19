@@ -32,8 +32,6 @@ class HomeCustomAppBar extends StatelessWidget {
   }
 }
 
-
-
 // مش مستاهلة احطها في فايل تاني
 class UserInfo extends StatelessWidget {
   const UserInfo({super.key});
@@ -68,4 +66,3 @@ class UserInfo extends StatelessWidget {
     );
   }
 }
-

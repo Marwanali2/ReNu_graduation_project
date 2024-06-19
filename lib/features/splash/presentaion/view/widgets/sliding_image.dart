@@ -7,16 +7,15 @@ class SlidingImage extends StatelessWidget {
   });
 
   final Animation<Offset> slidingAnimation;
- 
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: slidingAnimation,
       builder: (context, _) {
         return SlideTransition(
-          position: slidingAnimation,
-          child: Center(child: Image.asset('assests/images/logo1.png'))
-        );
+            position: slidingAnimation,
+            child: Center(child: Image.asset('assests/images/logo1.png')));
       },
     );
   }

@@ -11,7 +11,8 @@ class SplashScreen2 extends StatefulWidget {
   State<SplashScreen2> createState() => _SplashScreen2State();
 }
 
-class _SplashScreen2State extends State<SplashScreen2>with SingleTickerProviderStateMixin {
+class _SplashScreen2State extends State<SplashScreen2>
+    with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 2), () {
@@ -27,7 +28,6 @@ class _SplashScreen2State extends State<SplashScreen2>with SingleTickerProviderS
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assests/images/logo2.png'),
-           
           ],
         ),
       ),
