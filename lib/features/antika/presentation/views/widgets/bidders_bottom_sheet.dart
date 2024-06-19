@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
-import 'package:graduation_project/features/antica/presentation/views/widgets/components_of_bottom_bidders.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/components_of_bottom_bidders.dart';
 class BiddersBottomSheet extends StatefulWidget {
   const BiddersBottomSheet({super.key});
 
