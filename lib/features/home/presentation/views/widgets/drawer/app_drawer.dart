@@ -1,8 +1,12 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
+import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer/available_balance.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer/drawer_header_and_name_circe.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer/drawer_list_item_page_container.dart';
@@ -21,12 +25,11 @@ class AppDrawer extends StatelessWidget {
           SizedBox(height: 30.h),
           ListTile(
             title: Text(
-              'Marwan',
+              '${AuthCubit.userModel.name}',
               style:
                   TextStyles.font20BlackNormalRobot.copyWith(fontSize: 22.sp),
             ),
-            subtitle: const Text('Marwanalizz42@gmail.com'),
-            trailing: const Icon(Icons.arrow_drop_down_outlined),
+            subtitle: Text('${AuthCubit.userModel.email}'),
           ),
           SizedBox(height: 20.h),
           const AvailableBalance(),
@@ -47,24 +50,24 @@ class AppDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h),
                 DrawerListItemPageContainer(
-                  titleText: 'My Order',
+                  titleText: 'My Orders',
                   icon: null,
                   svgAsset: 'my order',
                   useSvg: true,
                   onTap: () {
-                    // Handle My Order tap
+                    GoRouter.of(context).push(AppRouter.kMyOrders);
                   },
                 ),
-                SizedBox(height: 20.h),
-                DrawerListItemPageContainer(
-                  titleText: 'Favorite',
-                  icon: Icons.favorite_border,
-                  svgAsset: '',
-                  useSvg: false,
-                  onTap: () {
-                    // Handle Favorite tap
-                  },
-                ),
+                // SizedBox(height: 20.h),
+                // DrawerListItemPageContainer(
+                //   titleText: 'Favorite',
+                //   icon: Icons.favorite_border,
+                //   svgAsset: '',
+                //   useSvg: false,
+                //   onTap: () {
+                //     // Handle Favorite tap
+                //   },
+                // ),
                 SizedBox(height: 20.h),
                 DrawerListItemPageContainer(
                   titleText: 'Settings',
@@ -102,7 +105,14 @@ class AppDrawer extends StatelessWidget {
                   svgAsset: 'logout',
                   icon: Icons.logout,
                   onTap: () {
-                    // Handle Logout tap
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => BounceInDown(
+                          curve: Curves.bounceInOut,
+                          child: const SignUpView(),
+                        ),
+                      ),
+                    );
                   },
                 ),
               ],

@@ -7,7 +7,6 @@ import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/custom_button_field.dart';
-import 'package:graduation_project/core/widgets/custom_password_field.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_icon_button.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_field.dart';
@@ -91,49 +90,47 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       const SizedBox(
                         height: 4,
                       ),
-                      SizedBox(
-                        height: 80,
-                        child: TextFormField(
-                            controller: passwordcontroller,
-                            onChanged: (value) {
-                              password = value;
-                            },
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'field is required';
-                              }
-                            },
-                            keyboardType: TextInputType.visiblePassword,
-                            decoration: InputDecoration(
-                              constraints: const BoxConstraints(minHeight: 50),
-                              hintStyle: Styles.textStyle14
-                                  .copyWith(fontFamily: interFont),
-                              border: const OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                borderSide:
-                                    BorderSide(width: 1, color: borderColor),
-                              ),
-                              enabledBorder: const OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                borderSide:
-                                    BorderSide(width: 1, color: borderColor),
-                              ),
-                              errorBorder: const OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                                borderSide: BorderSide(
-                                    width: 1, color: Color(0xffE64646)),
-                              ),
-                              focusedBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 1, color: borderFormColor),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                              ),
-                            )),
-                      ),
+                       SizedBox(
+      height: 80,
+    
+      child: TextFormField(
+        controller: passwordcontroller,
+        onChanged:(value){
+          password=value;
+        } ,
+                    validator: (value) {
+                     if (value!.isEmpty) {
+                     return 'field is required';
+                    }
+                    },
+        keyboardType: TextInputType.visiblePassword,
+        decoration: InputDecoration(
+          constraints:const BoxConstraints(minHeight: 50),
+          
+          hintStyle: Styles.textStyle14.copyWith(fontFamily: interFont),
+           border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: borderColor),
+          ),
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: borderColor),
+          ),
+           errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderSide: BorderSide(width: 1,color: Color(0xffE64646)),
+          ),
+          focusedBorder: const OutlineInputBorder(
+
+            borderSide: BorderSide(width: 1,color: borderFormColor),
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+          ),
+           )
+        ),
+      
+    
+    ),
+
                       const SizedBox(
                         height: 10,
                       ),

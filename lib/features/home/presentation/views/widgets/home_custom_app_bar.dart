@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/styles.dart';
+import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/menu_button.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/notifications_icon.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/profile_image.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/star_rating.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 
 class HomeCustomAppBar extends StatelessWidget {
   const HomeCustomAppBar({super.key});
@@ -24,7 +24,7 @@ class HomeCustomAppBar extends StatelessWidget {
           const StarRating(),
           const Spacer(),
           const UserInfo(),
-          SizedBox(width: 7.w),
+          SizedBox(width: 10.w),
           const ProfileImage(),
         ],
       ),
@@ -41,24 +41,36 @@ class UserInfo extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Hello, Marwan', style: TextStyles.font14WhiteMeduim),
+        // make the Text responsive
         SizedBox(
-          height: 2.h,
+          width: 100.w,
+          child: Text(
+            'Hello, ${AuthCubit.userModel.name}',
+            maxLines: 2,
+            style: TextStyles.font14WhiteMeduim.copyWith(
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 5.h,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SvgPictureComponent(
-              name: 'marker',
-              width: 16,
-              height: 16,
+            const Icon(
+              Icons.phone,
               color: Colors.white,
             ),
             SizedBox(
               width: 3.w,
             ),
             Text(
-              'Egypt, Tanta',
-              style: TextStyles.font11WhiteLight.copyWith(fontSize: 12.sp),
+              '${AuthCubit.userModel.phone}',
+              style: TextStyles.font11WhiteLight.copyWith(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
