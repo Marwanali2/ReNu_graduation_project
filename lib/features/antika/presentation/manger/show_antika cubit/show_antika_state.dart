@@ -8,17 +8,17 @@ sealed class AntikaCubitState extends Equatable {
 }
 
 final class AntikaCubitInitial extends AntikaCubitState {}
+
 final class AntikaCubitSuccess extends AntikaCubitState {
-    final List<AntikaModel> showAntika;
+  final List<AntikaModel> showAntika;
 
- const AntikaCubitSuccess(this.showAntika);
-
+  const AntikaCubitSuccess(this.showAntika);
 }
+
 final class AntikaCubitFailure extends AntikaCubitState {
   final String errorMessage;
 
- const AntikaCubitFailure(this.errorMessage);
-
+  const AntikaCubitFailure(this.errorMessage);
 }
-final class AntikaCubitloading extends AntikaCubitState {}
 
+final class AntikaCubitloading extends AntikaCubitState {}

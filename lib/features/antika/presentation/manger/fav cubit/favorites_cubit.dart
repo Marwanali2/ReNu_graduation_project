@@ -7,20 +7,15 @@ part 'favorites_state.dart';
 
 class FavoritesCubit extends Cubit<FavoritesState> {
   FavoritesCubit(this.antikaRepo) : super(FavoritesInitial());
-final AntikaRepo antikaRepo;
+  final AntikaRepo antikaRepo;
 
-Future <void> fetchFavoriteAntika()async {
-emit(FavoritesLoading());
-var result= await antikaRepo.fetchFavoriteAntika();
-result.fold((failure) {
-emit(FavoritesFailure(failure.errorMessage));
-},
-
-(showAntika) {
-emit(FavoritesSuccess(showAntika));
-}
-);
-}
-
-
+  Future<void> fetchFavoriteAntika() async {
+    emit(FavoritesLoading());
+    var result = await antikaRepo.fetchFavoriteAntika();
+    result.fold((failure) {
+      emit(FavoritesFailure(failure.errorMessage));
+    }, (showAntika) {
+      emit(FavoritesSuccess(showAntika));
+    });
+  }
 }

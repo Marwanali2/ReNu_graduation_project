@@ -8,7 +8,6 @@ class FavoritesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
         padding: EdgeInsets.only(left: 25, right: 20),
-        child: FavoritesGridView()
-        );
+        child: FavoritesGridView());
   }
 }

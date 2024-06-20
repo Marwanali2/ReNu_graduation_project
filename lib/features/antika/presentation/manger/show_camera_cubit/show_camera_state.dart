@@ -8,15 +8,17 @@ sealed class ShowCameraState extends Equatable {
 }
 
 final class ShowCameraInitial extends ShowCameraState {}
+
 final class ShowCameraSuccess extends ShowCameraState {
-    final List<AntikaModel> showcameraAntika;
+  final List<CategoriesAntika> showcameraAntika;
 
- const ShowCameraSuccess(this.showcameraAntika);
-
+  const ShowCameraSuccess(this.showcameraAntika);
 }
+
 final class ShowCameraFailure extends ShowCameraState {
   final String errorMessage;
 
- const ShowCameraFailure(this.errorMessage);
+  const ShowCameraFailure(this.errorMessage);
 }
+
 final class ShowCameraLoading extends ShowCameraState {}

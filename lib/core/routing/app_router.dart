@@ -205,9 +205,8 @@ abstract class AppRouter {
     ),
     GoRoute(
       path: kDetailsOfAntica,
-      builder: (context, state) {
-        return const DetailsOfAnticaView();
-      },
+      builder: (context, state) => const DetailsOfAnticaView( )
+      ,
     ),
     GoRoute(
       path: kbottomSheet,
@@ -227,7 +226,7 @@ abstract class AppRouter {
         return const MyOrdersView();
       },
     ),
-      GoRoute(
+    GoRoute(
       path: kSettings,
       builder: (context, state) {
         return const SettingsView();

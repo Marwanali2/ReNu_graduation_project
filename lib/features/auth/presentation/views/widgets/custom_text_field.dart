@@ -4,16 +4,15 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    this.hintText,
-    this.obscureText = false,
-    this.textInputType,
-    this.onChanged,
-    required this.controller,
-    this.textFieldBorderColor = borderColor,
-    this.width=320
-  });
+  const CustomTextField(
+      {super.key,
+      this.hintText,
+      this.obscureText = false,
+      this.textInputType,
+      this.onChanged,
+      required this.controller,
+      this.textFieldBorderColor = borderColor,
+      this.width = 320});
   final String? hintText;
   final bool? obscureText;
   final TextInputType? textInputType;

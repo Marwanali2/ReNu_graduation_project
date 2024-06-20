@@ -8,17 +8,17 @@ sealed class ShowCoinsState extends Equatable {
 }
 
 final class ShowCoinsInitial extends ShowCoinsState {}
+
 final class ShowCoinsSuccess extends ShowCoinsState {
-    final List<AntikaModel> showcoinAntika;
+  final List<CategoriesAntika> showcoinAntika;
 
- const ShowCoinsSuccess(this.showcoinAntika);
-
+  const ShowCoinsSuccess(this.showcoinAntika);
 }
+
 final class ShowCoinsFailure extends ShowCoinsState {
   final String errorMessage;
 
-const  ShowCoinsFailure(this.errorMessage);
-
+  const ShowCoinsFailure(this.errorMessage);
 }
-final class ShowCoinsLoading extends ShowCoinsState {}
 
+final class ShowCoinsLoading extends ShowCoinsState {}

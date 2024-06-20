@@ -9,22 +9,23 @@ class AntikaModel extends Equatable {
   final DateTime createdAt;
 
   const AntikaModel({
-   required this.id,
-   required this.name,
-   required this.image,
-   required this.desc,
-   required this.categoryName,
-   required this.createdAt,
+    required this.id,
+    required this.name,
+    required this.image,
+    required this.desc,
+    required this.categoryName,
+    required this.createdAt,
   });
 
   factory AntikaModel.fromJson(Map<String, dynamic> json) => AntikaModel(
-        id: json['id'] as int,
-        name: json['name'] as String,
-        image: json['image'] as String,
-        desc: json['Desc'] as String,
-        categoryName: json['category_name'] as String,
-        createdAt:DateTime.parse(json['created_at'] as String
-        ));
+      id: json['id'] as int,
+      name: json['name'] as String,
+      image: json['image'] as String,
+      desc: json['Desc'] as String,
+      categoryName: json['category_name'] as String,
+      createdAt: DateTime.parse(
+        json['created_at'] as String,
+      ));
 
   Map<String, dynamic> toJson() => {
         'id': id,

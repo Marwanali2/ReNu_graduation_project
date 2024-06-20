@@ -7,8 +7,8 @@ class BuyNowViewBody1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding:  EdgeInsets.only(left: 25, right: 20),
-      child:  FavoritesGridView(),
+      padding: EdgeInsets.only(left: 25, right: 20),
+      child: FavoritesGridView(),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/antika/presentation/views/widgets/choose_category_list_view.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/categories_list_view.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/custom_antica_text_field.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/custom_upload_image.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/custom_antica_sell_button.dart';

@@ -11,6 +11,7 @@ import 'package:graduation_project/features/antika/presentation/manger/show_came
 import 'package:graduation_project/features/antika/presentation/manger/show_coins/show_coins_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/manger/show_jewelry_cubit/show_jewelry_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
+
 //TODO: my location page in settings view
 void main() {
   setupServiceLocator();
@@ -42,33 +43,20 @@ class _MyAppState extends State<MyApp> {
             create: (context) => AuthCubit(),
           ),
           BlocProvider(
-            create: (context) => FavoritesCubit(
-              getIt.get<AntikaRepoImpl>()
-            )..fetchFavoriteAntika(),
+            create: (context) => FavoritesCubit(getIt.get<AntikaRepoImpl>())
+              ..fetchFavoriteAntika(),
           ),
           BlocProvider(
-            create: (context) => AntikaCubit(
-             getIt.get<AntikaRepoImpl>()
-
-            ),
+            create: (context) => AntikaCubit(getIt.get<AntikaRepoImpl>()),
           ),
           BlocProvider(
-            create: (context) => ShowCameraCubit(
-              getIt.get<AntikaRepoImpl>()
-
-            ),
+            create: (context) => ShowCameraCubit(getIt.get<AntikaRepoImpl>())..fetchCameraAntika()
           ),
           BlocProvider(
-            create: (context) => ShowJewelryCubit(
-           getIt.get<AntikaRepoImpl>()
-
-            ),
+            create: (context) => ShowJewelryCubit(getIt.get<AntikaRepoImpl>())..fetchJewerlyAntika()
           ),
           BlocProvider(
-            create: (context) => ShowCoinsCubit(
-            getIt.get<AntikaRepoImpl>()
-
-            ),
+            create: (context) => ShowCoinsCubit(getIt.get<AntikaRepoImpl>())..fetchCoinsAntika()
           ),
         ],
         child: MaterialApp.router(
