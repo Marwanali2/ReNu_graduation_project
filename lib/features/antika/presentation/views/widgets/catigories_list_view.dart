@@ -3,11 +3,8 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CatigoriesListView extends StatelessWidget {
-  const CatigoriesListView(
-      {super.key, required this.name, required this.date, required this.image});
-  final String name;
-  final String date;
-  final String image;
+  const CatigoriesListView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -25,15 +22,15 @@ class CatigoriesListView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: borderColor,
                   ),
-                  child: Center(child: Image.asset(image)),
+                  child: Center(child: Image.asset('assests/images/Sweep.png')),
                 ),
               ),
               Text(
-                name,
+                'name',
                 style: Styles.textStyle11,
               ),
               Text(
-                date,
+                'date',
                 style: Styles.textStyle7,
               ),
             ],

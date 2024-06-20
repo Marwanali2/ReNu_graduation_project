@@ -6,11 +6,9 @@ import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antika/presentation/manger/fav%20cubit/favorites_cubit.dart';
 
 class FavoritesGridView extends StatelessWidget {
-  const FavoritesGridView(
-      {super.key, required this.name, required this.date, required this.image});
-  final String name;
-  final String date;
-  final String image;
+  const FavoritesGridView({super.key});
+
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoritesCubit, FavoritesState>(
@@ -19,7 +17,7 @@ class FavoritesGridView extends StatelessWidget {
 
        
         return GridView.builder(
-          itemCount: 18,
+          itemCount: state.showAntika.length,
           clipBehavior: Clip.none,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisExtent: 220,
@@ -42,7 +40,7 @@ class FavoritesGridView extends StatelessWidget {
                     //mainAxisAlignment: MainAxisAlignment.start,
                     //mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset(image),
+                      Image.network('https://api-service.cloud/recycle/storage/app/public/'+state.showAntika[index].image),
                       Padding(
                         padding: const EdgeInsets.only(top: 150, left: 110),
                         child: Container(
@@ -64,11 +62,11 @@ class FavoritesGridView extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  name,
+                  state.showAntika[index].name,
                   style: Styles.textStyle11,
                 ),
                 Text(
-                  date,
+                  state.showAntika[index].createdAt.toString(),
                   style: Styles.textStyle7,
                 ),
               ],
@@ -79,7 +77,9 @@ class FavoritesGridView extends StatelessWidget {
         return CustomErrorWidget(errorMessage: state.errorMessage,);
 
       }else {
-        return const Center(child:  CircularProgressIndicator());
+        return const Center(
+          child:  CircularProgressIndicator()
+          );
       }
     },
     );

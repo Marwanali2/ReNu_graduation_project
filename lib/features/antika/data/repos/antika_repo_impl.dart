@@ -102,7 +102,7 @@ return right(showcoinAntika);
   @override
   Future<Either<Failures, List<AntikaModel>>> fetchJewerlyAntika()async {
  try {
-  var data =await apiServices.get(endpoint: '//show_jewelry');
+  var data =await apiServices.get(endpoint: '/show_jewelry');
 List<AntikaModel> showJewelryAntika=[];
 for (var item in data['data']) {
   showJewelryAntika.add(AntikaModel.fromJson(item));

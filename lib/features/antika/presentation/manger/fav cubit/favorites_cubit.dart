@@ -9,9 +9,9 @@ class FavoritesCubit extends Cubit<FavoritesState> {
   FavoritesCubit(this.antikaRepo) : super(FavoritesInitial());
 final AntikaRepo antikaRepo;
 
-Future <void> fetchShowAntika()async {
+Future <void> fetchFavoriteAntika()async {
 emit(FavoritesLoading());
-var result= await antikaRepo.fetchShowAntika();
+var result= await antikaRepo.fetchFavoriteAntika();
 result.fold((failure) {
 emit(FavoritesFailure(failure.errorMessage));
 },
@@ -22,6 +22,5 @@ emit(FavoritesSuccess(showAntika));
 );
 }
 
-  fetchFavoriteAntika() {}
 
 }
