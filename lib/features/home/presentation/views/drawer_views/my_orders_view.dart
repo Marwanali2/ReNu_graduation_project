@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_project/core/theme/styles.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation_project/core/widgets/common_app_bar.dart';
 import 'package:lottie/lottie.dart';
 
@@ -23,11 +23,15 @@ class MyOrdersView extends StatelessWidget {
                 SizedBox(height: MediaQuery.sizeOf(context).height * 0.2),
                 Text(
                   'No Orders Yet',
-                  style: TextStyles.font20SemiBlack1SemiBold,
+                  style: GoogleFonts.permanentMarker(
+                    fontSize: 30.sp,
+                  ),
                 ),
                 SizedBox(height: 20.h),
                 Lottie.network(
-                    'https://lottie.host/83a699e6-2d22-48eb-a553-5c10652d7d21/KHLe9BpGBo.json'),
+                  'https://lottie.host/83a699e6-2d22-48eb-a553-5c10652d7d21/KHLe9BpGBo.json',
+                  reverse: true,
+                ),
               ],
             ),
           ),

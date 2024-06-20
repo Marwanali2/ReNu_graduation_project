@@ -4,14 +4,8 @@ import 'package:graduation_project/core/helpers/service_locator.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graduation_project/features/antika/data/repos/antika_repo_impl.dart';
-import 'package:graduation_project/features/antika/presentation/manger/fav%20cubit/favorites_cubit.dart';
-import 'package:graduation_project/features/antika/presentation/manger/show_antika%20cubit/show_antika_cubit.dart';
-import 'package:graduation_project/features/antika/presentation/manger/show_camera_cubit/show_camera_cubit.dart';
-import 'package:graduation_project/features/antika/presentation/manger/show_coins/show_coins_cubit.dart';
-import 'package:graduation_project/features/antika/presentation/manger/show_jewelry_cubit/show_jewelry_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
-
+//TODO: my location page in settings view
 void main() {
   setupServiceLocator();
   WidgetsFlutterBinding.ensureInitialized();
