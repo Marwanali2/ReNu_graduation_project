@@ -4,11 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/networking/launch_url.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
-import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/drawer_widgets/available_balance.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer_widgets/drawer_header_and_name_circe.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/drawer_widgets/drawer_list_item_page_container.dart';
 
@@ -84,11 +82,14 @@ class AppDrawer extends StatelessWidget {
                     titleText: 'Invite Friend',
                     icon: Icons.person_add,
                     svgAsset: 'invite friend',
-                    useSvg: true, 
+                    useSvg: true,
                     onTap: () async {
                       launchCustomUrl(
-                          context, "https://wa.me/201125727329", false);
+                          context,
+                          "https://wa.me/?text=I'm%20inviting%20you%20to%20download%20ReNu%20App%20from%20this%20link:%20https://github.com/Marwanali2/graduation_project",
+                          false);
                     }),
+
                 SizedBox(height: 20.h),
                 DrawerListItemPageContainer(
                     titleText: 'Rate App',

@@ -31,9 +31,18 @@ class DrawerHeaderAndNameCircle extends StatelessWidget {
             radius: 40.r,
             backgroundColor: ColorsManager.mainBlack,
             child: Text(
-              '${AuthCubit.userModel.name?.split(' ')[0][0].toUpperCase()}${AuthCubit.userModel.name?.split(' ')[1][0].toUpperCase()}',
-              style: TextStyles.font22WhiteMeduim,
-            ),
+  () {
+    String name = AuthCubit.userModel.name ?? '';
+    List<String> nameParts = name.split(' ');
+    if (nameParts.length > 1) {
+      return '${nameParts[0][0].toUpperCase()}${nameParts[1][0].toUpperCase()}';
+    } else {
+      return name.isNotEmpty ? name[0].toUpperCase() : '';
+    }
+  }(),
+  style: TextStyles.font22WhiteMeduim,
+)
+,
           ),
         ),
       ],
