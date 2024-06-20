@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileImage extends StatelessWidget {
-  const ProfileImage({super.key});
+  final double height;
+  const ProfileImage({super.key,  this.height=35});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 35.h,
+      height: height.h,
       child: Image.asset(
         'assets/images/user.png',
         fit: BoxFit.fill,

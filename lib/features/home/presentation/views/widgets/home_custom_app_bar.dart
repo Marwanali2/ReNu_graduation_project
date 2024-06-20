@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/menu_button.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/notifications_icon.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/profile_image.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/star_rating.dart';
 
@@ -18,7 +17,7 @@ class HomeCustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const MenuButton(),
-          SizedBox(width: 8.w),
+          SizedBox(width: 10.w),
           // const NotificationIcon(),
           // SizedBox(width: 8.w),
           const StarRating(),
@@ -45,8 +44,8 @@ class UserInfo extends StatelessWidget {
         SizedBox(
           width: 100.w,
           child: Text(
-            'youssef abdulkaderabdulkaderabdulkader',
-            maxLines: 1,
+            '${AuthCubit.userModel.name}',
+            maxLines: 2,
             style: TextStyles.font14WhiteMeduim.copyWith(
               overflow: TextOverflow.ellipsis,
             ),

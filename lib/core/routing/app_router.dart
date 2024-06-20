@@ -7,6 +7,7 @@ import 'package:graduation_project/features/clean_up/presentation/views/descripe
 import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
 import 'package:graduation_project/features/home/presentation/views/drawer_views/my_orders_view.dart';
+import 'package:graduation_project/features/home/presentation/views/drawer_views/settings_view.dart';
 import 'package:graduation_project/features/home/presentation/views/eco_tips_view.dart';
 import 'package:graduation_project/features/home/presentation/views/home_view.dart';
 import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
@@ -30,6 +31,7 @@ abstract class AppRouter {
   // AppDrawer
   static const kHome = '/home';
   static const kMyOrders = '/myorders';
+  static const kSettings = '/settings';
   //
   static const kCleanUp = '/cleanUp';
   static const krecentRecycling = '/recentRecycling';
@@ -223,6 +225,12 @@ abstract class AppRouter {
       path: kMyOrders,
       builder: (context, state) {
         return const MyOrdersView();
+      },
+    ),
+      GoRoute(
+      path: kSettings,
+      builder: (context, state) {
+        return const SettingsView();
       },
     ),
   ]);
