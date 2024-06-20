@@ -15,7 +15,7 @@ class _SplashScreen3State extends State<SplashScreen3>
     with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 2), () {
       GoRouter.of(context).push(AppRouter.kLogOrSign);
     });
   }

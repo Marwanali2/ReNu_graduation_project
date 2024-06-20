@@ -2,13 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:graduation_project/core/errors/failures.dart';
 import 'package:graduation_project/core/networking/api_services.dart';
-import 'package:graduation_project/features/antika/data/models/Antika_model.dart';
+import 'package:graduation_project/features/antika/data/models/antika_model.dart';
 import 'package:graduation_project/features/antika/data/repos/antika_repo.dart';
 
 class AntikaRepoImpl implements AntikaRepo{
+
  final ApiServices apiServices;
 
-  AntikaRepoImpl({required this.apiServices});
+  AntikaRepoImpl( this.apiServices);
 
   @override
 
