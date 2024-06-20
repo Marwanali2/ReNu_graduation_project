@@ -84,7 +84,7 @@ class AppDrawer extends StatelessWidget {
                     titleText: 'Invite Friend',
                     icon: Icons.person_add,
                     svgAsset: 'invite friend',
-                    useSvg: true,
+                    useSvg: true, 
                     onTap: () async {
                       launchCustomUrl(
                           context, "https://wa.me/201125727329", false);
