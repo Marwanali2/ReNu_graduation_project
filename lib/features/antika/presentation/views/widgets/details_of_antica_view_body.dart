@@ -12,7 +12,8 @@ import 'package:graduation_project/features/antika/presentation/views/widgets/es
 import 'package:graduation_project/features/antika/presentation/views/widgets/listview_of_bidders_of_antika.dart';
 
 class DetailsOfAnticaViewBody extends StatelessWidget {
-  const DetailsOfAnticaViewBody({super.key});
+  const DetailsOfAnticaViewBody({super.key, });
+  
 
   @override
   Widget build(BuildContext context) {
@@ -124,5 +125,6 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
         ],
       ),
     );
+  
   }
 }

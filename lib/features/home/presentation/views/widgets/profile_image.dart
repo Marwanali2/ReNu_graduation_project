@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileImage extends StatelessWidget {
   final double height;
-  const ProfileImage({super.key,  this.height=35});
+  const ProfileImage({super.key, this.height = 35});
 
   @override
   Widget build(BuildContext context) {

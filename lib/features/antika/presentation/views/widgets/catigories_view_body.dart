@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/antika/presentation/views/widgets/catigories_list_view.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/camera_list_view.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/coins_list_view.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/jewelry_list_view.dart';
 
 class CatigoriesViewBody extends StatelessWidget {
   const CatigoriesViewBody({super.key});
@@ -33,13 +34,7 @@ class CatigoriesViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-                height: 152,
-                child: CatigoriesListView(
-                  name: 'Coin',
-                  date: 'May 23 - June 23',
-                  image: 'assests/images/coin1.png',
-                )),
+            const SizedBox(height: 152, child: CoinsListView()),
             const SizedBox(
               height: 20,
             ),
@@ -62,13 +57,7 @@ class CatigoriesViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-                height: 152,
-                child: CatigoriesListView(
-                  name: 'Camera',
-                  date: 'May 23 - June 23',
-                  image: 'assests/images/camera1.png',
-                )),
+            const SizedBox(height: 152, child: CustomCameraListView()),
             const SizedBox(
               height: 20,
             ),
@@ -91,13 +80,7 @@ class CatigoriesViewBody extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-                height: 152,
-                child: CatigoriesListView(
-                  name: 'Flower Poetry',
-                  date: 'May 23 - June 23',
-                  image: 'assests/images/jew1.png',
-                )),
+            const SizedBox(height: 152, child: CustomJewelryListView())
           ],
         ),
       ),

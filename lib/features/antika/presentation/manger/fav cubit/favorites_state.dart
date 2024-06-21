@@ -8,16 +8,17 @@ sealed class FavoritesState extends Equatable {
 }
 
 final class FavoritesInitial extends FavoritesState {}
+
 final class FavoritesSuccess extends FavoritesState {
-    final List<AntikaModel> showAntika;
+  final List<AntikaModel> showAntika;
 
- const FavoritesSuccess(this.showAntika);
-
+  const FavoritesSuccess(this.showAntika);
 }
+
 final class FavoritesFailure extends FavoritesState {
   final String errorMessage;
 
-const  FavoritesFailure(this.errorMessage);
-
+  const FavoritesFailure(this.errorMessage);
 }
+
 final class FavoritesLoading extends FavoritesState {}

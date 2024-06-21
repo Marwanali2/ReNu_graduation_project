@@ -1,32 +1,31 @@
 import 'package:equatable/equatable.dart';
 
 class AntikaModel extends Equatable {
-  final int? id;
-  final String? name;
-  final String? image;
-  final String? desc;
-  final String? categoryName;
-  final DateTime? createdAt;
+  final int id;
+  final String name;
+  final String image;
+  final String desc;
+  final String categoryName;
+  final DateTime createdAt;
 
   const AntikaModel({
-    this.id,
-    this.name,
-    this.image,
-    this.desc,
-    this.categoryName,
-    this.createdAt,
+    required this.id,
+    required this.name,
+    required this.image,
+    required this.desc,
+    required this.categoryName,
+    required this.createdAt,
   });
 
   factory AntikaModel.fromJson(Map<String, dynamic> json) => AntikaModel(
-        id: json['id'] as int?,
-        name: json['name'] as String?,
-        image: json['image'] as String?,
-        desc: json['Desc'] as String?,
-        categoryName: json['category_name'] as String?,
-        createdAt: json['created_at'] == null
-            ? null
-            : DateTime.parse(json['created_at'] as String),
-      );
+      id: json['id'] as int,
+      name: json['name'] as String,
+      image: json['image'] as String,
+      desc: json['Desc'] as String,
+      categoryName: json['category_name'] as String,
+      createdAt: DateTime.parse(
+        json['created_at'] as String,
+      ));
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -34,7 +33,7 @@ class AntikaModel extends Equatable {
         'image': image,
         'Desc': desc,
         'category_name': categoryName,
-        'created_at': createdAt?.toIso8601String(),
+        'created_at': createdAt.toIso8601String(),
       };
 
   @override
