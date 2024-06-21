@@ -23,9 +23,8 @@ class AntikaModel extends Equatable {
       image: json['image'] as String,
       desc: json['Desc'] as String,
       categoryName: json['category_name'] as String,
-      createdAt: DateTime.parse(
-        json['created_at'] as String,
-      ));
+      createdAt:DateTime.parse(json['created_at'] as String),
+      );
 
   Map<String, dynamic> toJson() => {
         'id': id,

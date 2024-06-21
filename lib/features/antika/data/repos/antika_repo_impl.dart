@@ -100,4 +100,21 @@ class AntikaRepoImpl implements AntikaRepo {
       }
     }
   }
+   @override
+  Future<Either<Failures, List<AntikaModel>>> fetchCategoriesDetails() async {
+    try {
+      var data = await apiServices.get(endpoint: '/show_antika');
+      List<AntikaModel> details = [];
+      for (var item in data['data']) {
+        details.add(AntikaModel.fromJson(item));
+      }
+      return right(details);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      } else {
+        return left(ServerFailure(e.toString()));
+      }
+    }
+  }
 }

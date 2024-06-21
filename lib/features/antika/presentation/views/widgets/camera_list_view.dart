@@ -46,12 +46,12 @@ String formatDate(String dateString) {
                             )),
                   ),
                   Text(
-                    formatDate(
-                    state.showcameraAntika[index].name),
+                    state.showcameraAntika[index].name,
                     style: Styles.textStyle11,
                   ),
                   Text(
-                    state.showcameraAntika[index].createdAt.toString(),
+                    formatDate(
+                    state.showcameraAntika[index].createdAt.toString(),),
                     style: Styles.textStyle7,
                   ),
                 ],

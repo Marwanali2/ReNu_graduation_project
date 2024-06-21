@@ -122,7 +122,7 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
                 final price = binegp.toString();
                 formData['name'] = name;
                 formData['price'] = price;
-                GoRouter.of(context).push(AppRouter.kDetailsOfAntica);
+                GoRouter.of(context).push(AppRouter.kDetailsOfAntica,extra:formData);
               },
               child: Container(
                 width: 126,

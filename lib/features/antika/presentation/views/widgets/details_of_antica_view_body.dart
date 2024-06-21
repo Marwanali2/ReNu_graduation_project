@@ -2,18 +2,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:graduation_project/core/errors/custom_error_widget.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/back_icon_widget.dart';
+import 'package:graduation_project/features/antika/data/models/antika_model.dart';
+import 'package:graduation_project/features/antika/presentation/manger/details%20cubit/details_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/bidders_bottom_sheet.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/descreption_of_details.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/estimate_of_details.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/listview_of_bidders_of_antika.dart';
 
 class DetailsOfAnticaViewBody extends StatelessWidget {
-  const DetailsOfAnticaViewBody({super.key, });
-  
+  const DetailsOfAnticaViewBody({
+    super.key,
+    required this.details,
+  });
+  final AntikaModel details;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +31,14 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(children: [
-                Image.asset('assests/images/big.png'),
+                Center(
+                  child: Image.network(
+                    
+                      'https://api-service.cloud/recycle/storage/app/public/' +
+                          details.image,
+                       height: 300,
+                          ),
+                ),
                 const Padding(
                   padding: EdgeInsets.only(top: 15, left: 10),
                   child: BackIconWidget(
@@ -45,7 +58,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Flower Poetry ',
+                          details.name,
                           style: Styles.textStyle20.copyWith(
                             color: blackcolor,
                             fontFamily: robotoFont,
@@ -99,7 +112,90 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const DescritionOfDetails(),
+              Container(
+                width: 320,
+                height: 153,
+                decoration: BoxDecoration(
+                    color: borderFormColor,
+                    borderRadius: BorderRadius.circular(15)),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 15, right: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Description',
+                        style: Styles.textStyle20.copyWith(
+                          color: whiteColor,
+                          fontFamily: robotoFont,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        details.desc,
+                        style: Styles.textStyle13.copyWith(color: blackcolor),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            'New',
+                            style: Styles.textStyle13.copyWith(
+                                color: whiteColor,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: poppinsBlackFont),
+                          ),
+                          Text(
+                            '2024',
+                            style: Styles.textStyle13.copyWith(
+                                color: whiteColor,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: poppinsBlackFont),
+                          ),
+                          Text(
+                            'EGP 100',
+                            style: Styles.textStyle13.copyWith(
+                                color: whiteColor,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: poppinsBlackFont),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Text(
+                            'Condition',
+                            style: Styles.textStyle13.copyWith(
+                                color: blackcolor,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: poppinsBlackFont),
+                          ),
+                          Text(
+                            'Year',
+                            style: Styles.textStyle13.copyWith(
+                                fontWeight: FontWeight.w400,
+                                color: blackcolor,
+                                fontFamily: poppinsBlackFont),
+                          ),
+                          Text(
+                            'Starting bit',
+                            style: Styles.textStyle13.copyWith(
+                                fontWeight: FontWeight.w400,
+                                color: blackcolor,
+                                fontFamily: poppinsBlackFont),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -117,7 +213,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
             ],
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 630),
+            padding: EdgeInsets.only(top: 650),
             child: SingleChildScrollView(
               child: Center(child: BiddersBottomSheet()),
             ),
@@ -125,6 +221,5 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
         ],
       ),
     );
-  
   }
 }

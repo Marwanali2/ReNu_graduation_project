@@ -1,4 +1,10 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/helpers/service_locator.dart';
+import 'package:graduation_project/features/antika/data/models/antika_model.dart';
+import 'package:graduation_project/features/antika/data/repos/antika_repo_impl.dart';
+import 'package:graduation_project/features/antika/presentation/manger/details%20cubit/details_cubit.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_check_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/company_details_view.dart';
@@ -205,9 +211,12 @@ abstract class AppRouter {
     ),
     GoRoute(
       path: kDetailsOfAntica,
-      builder: (context, state) => const DetailsOfAnticaView( )
-      ,
-    ),
+      builder :(context,state){
+        final details = state.extra as AntikaModel;
+            return DetailsOfAnticaView(antikaModel: details);
+      }
+      ),
+  
     GoRoute(
       path: kbottomSheet,
       builder: (context, state) {
