@@ -119,7 +119,7 @@ class AuthCubit extends Cubit<AuthState> {
           options: Options(
             headers: {
               'Accept': 'application/json',
-              'Authorization': '${AuthCubit.userModel.token}'
+              'Authorization': 'Bearer ${AuthCubit.userModel.token}'
             },
           ),
           data: {

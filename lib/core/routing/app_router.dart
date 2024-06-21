@@ -23,6 +23,7 @@ import 'package:graduation_project/features/auth/presentation/views/reset_passwo
 import 'package:graduation_project/features/auth/presentation/views/sign_up_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/success_view.dart';
 import 'package:graduation_project/features/auth/presentation/views/verify_email_view.dart';
+import 'package:graduation_project/features/recycling/presentation/views/recycling_view.dart';
 import 'package:graduation_project/features/splash/presentaion/view/splash-view2.dart';
 import 'package:graduation_project/features/splash/presentaion/view/splash_view1.dart';
 import 'package:graduation_project/features/splash/presentaion/view/splash_view3.dart';
@@ -57,6 +58,7 @@ abstract class AppRouter {
   static const kDetailsOfAntica = '/detailsofantica';
   static const kbottomSheet = '/bottomsheet';
   static const kRecyclingTabBar = '/recyclingtabbar';
+  static const kRecycling = '/recycling';
   static final router = GoRouter(routes: <RouteBase>[
     GoRoute(
       path: kHome,
@@ -232,5 +234,11 @@ abstract class AppRouter {
         return const SettingsView();
       },
     ),
+    GoRoute(path: 
+    kRecycling,
+    builder: (context, state) {
+      return const RecyclingView();
+    }
+    )
   ]);
 }

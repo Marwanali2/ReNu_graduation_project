@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -5,6 +6,7 @@ import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/service_container_component.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/location_service.dart';
+import 'package:graduation_project/features/recycling/presentation/views/recycling_view.dart';
 import 'package:panara_dialogs/panara_dialogs.dart';
 
 LocationService locationService = LocationService();
@@ -24,7 +26,13 @@ class OurServicesSection extends StatelessWidget {
             ServiceContainerComponent(
               serviceName: 'Recycling',
               serviceSVGName: 'recycling-truck',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return BounceInLeft(
+                      curve: Curves.bounceInOut, child: const RecyclingView());
+                }));
+                // GoRouter.of(context).push(AppRouter.kRecycling);
+              },
             ),
             SizedBox(
               width: 35.w,
@@ -36,9 +44,11 @@ class OurServicesSection extends StatelessWidget {
                 try {
                   await locationService.checkAndRequestLocationService();
                   await locationService.checkAndRequestLocationPermission();
+                  // ignore: use_build_context_synchronously
                   GoRouter.of(context).push(AppRouter.kCleanUp);
                 } catch (e) {
                   PanaraInfoDialog.showAnimatedFromTop(
+                    // ignore: use_build_context_synchronously
                     context,
                     title: "Error",
                     message: "please, enable location service and permissions",
