@@ -51,3 +51,13 @@ class CheckCodeFailureState extends AuthState {
 
   CheckCodeFailureState({required this.errorMessage});
 }
+
+class EditUserSuccessState extends AuthState {}
+class EditUserLoadingState extends AuthState {}
+// ignore: must_be_immutable
+class EditUserFailureState extends AuthState {
+  String? errorMessage;
+
+  EditUserFailureState({required this.errorMessage});
+}
+

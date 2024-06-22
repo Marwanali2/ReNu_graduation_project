@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/features/auth/data/models/user_model.dart';
@@ -100,6 +101,48 @@ class AuthCubit extends Cubit<AuthState> {
     } catch (e) {
       debugPrint('Failed to login, Reason: $e');
       emit(LoginFailureState(errorMessage: 'Failed to login, TRY AGAIN'));
+    }
+  }
+
+  Future<void> editUser({
+    required String name,
+    required String oldPassword,
+    required String password,
+    required String passwordConfirmation,
+  }) async {
+    emit(EditUserLoadingState());
+    debugPrint(
+        'name: $name, oldPassword: $oldPassword, password: $password, passwordConfirmation: $passwordConfirmation');
+    try {
+      Response response = await _dio.post(
+          'https://api-service.cloud/recycle/public_html/api/users/edit_profile',
+          options: Options(
+            headers: {
+              'Accept': 'application/json',
+              'Authorization': 'Bearer ${AuthCubit.userModel.token}'
+            },
+          ),
+          data: {
+            'name': name,
+            'oldpassword': oldPassword,
+            'password': password,
+            'password_confirmation': passwordConfirmation
+          });
+      var responseBody = response.data;
+      if (response.statusCode == 200 && responseBody['message'] == 'updated') {
+        debugPrint('Success Edit: $responseBody');
+        emit(EditUserSuccessState());
+      } else {
+        debugPrint('Failure Edit: $responseBody');
+        emit(EditUserFailureState(
+            errorMessage: responseBody['message'] ?? 'Unknown error'));
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('${AuthCubit.userModel.token}');
+      }
+      debugPrint('Failed to Edit, Reason: $e');
+      emit(EditUserFailureState(errorMessage: 'Failed to Edit, TRY AGAIN'));
     }
   }
 }
