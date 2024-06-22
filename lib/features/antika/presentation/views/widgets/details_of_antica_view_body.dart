@@ -2,15 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:graduation_project/core/errors/custom_error_widget.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/back_icon_widget.dart';
 import 'package:graduation_project/features/antika/data/models/antika_model.dart';
-import 'package:graduation_project/features/antika/presentation/manger/details%20cubit/details_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/bidders_bottom_sheet.dart';
-import 'package:graduation_project/features/antika/presentation/views/widgets/descreption_of_details.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/estimate_of_details.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/listview_of_bidders_of_antika.dart';
 
@@ -209,7 +206,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                   fontFamily: robotoFont,
                 ),
               ),
-              BiddersOfAntikaListView(),
+             const BiddersOfAntikaListView(),
             ],
           ),
           const Padding(

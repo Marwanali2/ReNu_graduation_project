@@ -10,7 +10,7 @@ void showSnackBar(
       backgroundColor: backgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side: BorderSide(width: 2, color: Colors.white),
+        side:const BorderSide(width: 2, color: Colors.white),
       ),
       behavior: SnackBarBehavior.floating,
     ),

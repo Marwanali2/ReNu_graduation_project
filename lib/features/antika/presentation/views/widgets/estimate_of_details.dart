@@ -19,7 +19,7 @@ class _EstimateOfDetailsState extends State<EstimateOfDetails> {
   int counter = 30;
 
   void startTimer() {
-    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+    timer = Timer.periodic(const Duration(seconds: 1), (Timer t) {
       setState(() {
         counter--;
         if (counter == 0) {

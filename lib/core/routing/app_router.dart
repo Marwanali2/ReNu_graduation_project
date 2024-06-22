@@ -1,11 +1,5 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
-import 'package:graduation_project/core/helpers/service_locator.dart';
 import 'package:graduation_project/features/antika/data/models/antika_model.dart';
-import 'package:graduation_project/features/antika/data/repos/antika_repo_impl.dart';
-import 'package:graduation_project/features/antika/presentation/manger/details%20cubit/details_cubit.dart';
-import 'package:graduation_project/features/antika/presentation/views/widgets/listview_of_bidders_of_antika.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_check_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/company_details_view.dart';
