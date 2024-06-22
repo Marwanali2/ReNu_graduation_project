@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:graduation_project/features/antika/data/models/antika_model.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_check_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/company_details_view.dart';
@@ -56,6 +57,7 @@ abstract class AppRouter {
   static const kSuccess = '/success';
   static const kAnticaTabbar = '/anticatabbar';
   static const kDetailsOfAntica = '/detailsofantica';
+  static const kBidderstoDetails = '/bidderstodetails';
   static const kbottomSheet = '/bottomsheet';
   static const kRecyclingTabBar = '/recyclingtabbar';
   static const kRecycling = '/recycling';
@@ -207,15 +209,19 @@ abstract class AppRouter {
     ),
     GoRoute(
       path: kDetailsOfAntica,
-      builder: (context, state) => const DetailsOfAnticaView( )
-      ,
-    ),
+      builder :(context,state){
+        final details = state.extra as AntikaModel;
+            return DetailsOfAnticaView(antikaModel: details);
+      }
+      ),
+  
     GoRoute(
       path: kbottomSheet,
       builder: (context, state) {
         return const BiddersBottomSheet();
       },
     ),
+    
     // GoRoute(
     //   path: kRecyclingTabBar,
     //   builder: (context, state) {

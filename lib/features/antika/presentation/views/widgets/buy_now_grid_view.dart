@@ -3,13 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/errors/custom_error_widget.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
-import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antika/presentation/manger/fav%20cubit/favorites_cubit.dart';
 import 'package:intl/intl.dart';
 
-class FavoritesGridView extends StatelessWidget {
-  const FavoritesGridView({super.key});
+class BuyNowGridView extends StatelessWidget {
+  const BuyNowGridView({super.key});
 String formatDate(String dateString) {
   // Parse the original date string
   DateTime dateTime = DateTime.parse(dateString);
@@ -50,7 +49,7 @@ String formatDate(String dateString) {
                     },
                     child: Container(
                       width: 143,
-                      height: 183,
+                      height: 163,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                       ),
@@ -61,23 +60,7 @@ String formatDate(String dateString) {
                           Image.network(
                               'https://api-service.cloud/recycle/storage/app/public/' +
                                   details.image),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 150, left: 110),
-                            child: Container(
-                                height: 25,
-                                width: 25,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12),
-                                    border: Border.all(color: blackcolor),
-                                    color: whiteColor),
-                                child: GestureDetector(
-                                    child: const Icon(
-                                  Icons.favorite,
-                                  size: 18,
-                                  weight: 13,
-                                  color: Color(0xffEB001B),
-                                ))),
-                          ),
+                          
                         ],
                       ),
                     ),
@@ -104,5 +87,6 @@ String formatDate(String dateString) {
         }
       },
     );
+  
   }
 }

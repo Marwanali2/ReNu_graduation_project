@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:graduation_project/features/antika/data/models/antika_model.dart';
 import 'package:graduation_project/features/antika/data/models/categories_antika.dart';
 import 'package:graduation_project/features/antika/data/repos/antika_repo.dart';
 

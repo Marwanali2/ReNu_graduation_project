@@ -49,7 +49,7 @@ abstract class Styles {
       fontFamily: poppinsBlackFont);
   static const textStyle7 = TextStyle(
       fontSize: 7,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
       color: Color(0xff616161),
       fontFamily: poppinsBlackFont);
 
