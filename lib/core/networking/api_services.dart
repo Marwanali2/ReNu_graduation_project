@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiServices {
   final _baseUrl =
-      "https://api-service.cloud/recycle/public_html/api"; //LOCALHOST
+      "https://api-service.cloud/recycle/public_html/api"; 
   //"http://127.0.0.1:8000/api/"http://192.168.255.18/api
   final Dio _dio;
   ApiServices(this._dio);

@@ -8,7 +8,10 @@ part 'recycling_state.dart';
 class RecyclingCubit extends Cubit<RecyclingState> {
   RecyclingCubit() : super(RecyclingInitial());
   final Dio _dio = Dio();
-  //static UserModel userModel = UserModel();
+  static String totalPoints = ' 0';
+  static String pointsOfBlastic = '0';
+  static String pointsOfIron = '0';
+  static String pointsOfGlass = '0';
 
   Future<void> sendRequest({
     required int weightOfBlastic,
@@ -50,6 +53,50 @@ class RecyclingCubit extends Cubit<RecyclingState> {
       debugPrint('Failed to send request, Reason: $e');
       emit(SendRequestFailureState(
           errorMessage: 'Failed to Confirming Order, TRY AGAIN'));
+    }
+  }
+
+  Future<void> showRequestResult() async {
+    emit(ShowRequestResultLoadingState());
+    try {
+      Response response = await _dio.get(
+        'https://api-service.cloud/recycle/public_html/api/users/recycle/showtotalresult',
+        options: Options(
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ${AuthCubit.userModel.token}'
+          },
+        ),
+      );
+      var responseBody = response.data;
+      if (response.statusCode == 200) {
+        RecyclingCubit.totalPoints = responseBody['deta']['points'];
+        RecyclingCubit.pointsOfBlastic =
+            responseBody['deta']['pointsofblastic'];
+        RecyclingCubit.pointsOfIron = responseBody['deta']['pointsofiron'];
+        RecyclingCubit.pointsOfGlass = responseBody['deta']['pointsofglasses'];
+        debugPrint('Success show request result : $responseBody');
+
+        emit(
+          ShowRequestResultSuccessState(
+            totalPoints: responseBody['deta']['points'],
+            pointsOfBlastic: responseBody['deta']['pointsofblastic'],
+            pointsOfIron: responseBody['deta']['pointsofiron'],
+            pointsOfGlasses: responseBody['deta']['pointsofglasses'],
+          ),
+        );
+      } else {
+        debugPrint('Failure show request result: $responseBody');
+        emit(ShowRequestResultFailureState(
+            errorMessage: responseBody['message'] ?? 'Unknown error'));
+      }
+    } catch (e) {
+      if (kDebugMode) {
+        print('${AuthCubit.userModel.token}');
+      }
+      debugPrint('Failed to show request result, Reason: $e');
+      emit(ShowRequestResultFailureState(
+          errorMessage: 'Failed to show request result, TRY AGAIN'));
     }
   }
 }

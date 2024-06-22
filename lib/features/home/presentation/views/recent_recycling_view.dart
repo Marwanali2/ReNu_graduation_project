@@ -20,7 +20,7 @@ class RecentRecyclingView extends StatelessWidget {
                   sizedBoxWidth: MediaQuery.of(context).size.width * 0.1,
                 ),
                 SizedBox(height: 48.h),
-                const RecentRecyclingListView()
+                const RecentRecyclingSection()
               ],
             ),
           ),

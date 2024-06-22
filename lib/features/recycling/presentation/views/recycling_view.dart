@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,13 +9,8 @@ import 'package:graduation_project/features/recycling/presentation/managers/recy
 import 'package:graduation_project/features/recycling/presentation/views/widgets/quantity_control.dart';
 import 'package:graduation_project/features/recycling/presentation/views/widgets/recycle_type_container.dart';
 
-class RecyclingView extends StatefulWidget {
+class RecyclingView extends StatelessWidget {
   const RecyclingView({super.key});
-  @override
-  State<RecyclingView> createState() => _RecyclingViewState();
-}
-
-class _RecyclingViewState extends State<RecyclingView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -54,17 +48,17 @@ class _RecyclingViewState extends State<RecyclingView> {
                     ),
                     const RecycleTypeContainer(
                         recycleTypeText: 'Plastic',
-                        recycleTypeSvg: 'guidance_plastic'),
+                        recycleTypeSvg: 'guidance_plastic',showQuantityControl: true,),
                     SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.03.h),
                     const RecycleTypeContainer(
                         recycleTypeText: 'Iron',
-                        recycleTypeSvg: 'iconoir_electronics-chip'),
+                        recycleTypeSvg: 'iconoir_electronics-chip',showQuantityControl: true,),
                     SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.03.h),
                     const RecycleTypeContainer(
                         recycleTypeText: 'Glass',
-                        recycleTypeSvg: 'game-icons_shattered-glass'),
+                        recycleTypeSvg: 'game-icons_shattered-glass',showQuantityControl: true,),
                     SizedBox(height: MediaQuery.sizeOf(context).height * 0.1.h),
                     Row(
                       children: [
@@ -74,7 +68,7 @@ class _RecyclingViewState extends State<RecyclingView> {
                         ),
                         const Spacer(),
                         Text(
-                          ' Points',
+                          '${RecyclingCubit.totalPoints} Points',
                           style: TextStyles.font14BlackMeduim.copyWith(
                             color: ColorsManager.green1,
                           ),
@@ -102,7 +96,11 @@ class _RecyclingViewState extends State<RecyclingView> {
                                 ? int.parse(
                                     GlassQuantityControl.glassController.text)
                                 : 0,
-                          );
+                          )
+                              .then((value) {
+                            BlocProvider.of<RecyclingCubit>(context)
+                                .showRequestResult();
+                          });
                         },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(

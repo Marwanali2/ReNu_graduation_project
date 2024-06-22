@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/colors.dart';
-import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
-import 'package:graduation_project/features/recycling/presentation/views/widgets/quantity_control.dart';
+import 'package:graduation_project/features/recycling/presentation/views/widgets/order_type_container.dart';
 
 class RecycleTypeContainer extends StatelessWidget {
   const RecycleTypeContainer({
     super.key,
     required this.recycleTypeText,
     required this.recycleTypeSvg,
+    required this.showQuantityControl,
   });
   final String recycleTypeText;
   final String recycleTypeSvg;
+  final bool showQuantityControl;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,36 +35,10 @@ class RecycleTypeContainer extends StatelessWidget {
           ),
         ],
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            width: 40.w,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.blueGrey.shade100,
-            ),
-            child: Center(
-              child: SvgPictureComponent(
-                  name: recycleTypeSvg, width: 24, height: 24),
-            ),
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Text(
-            recycleTypeText,
-            style: TextStyles.font15SemiBlack2SemiBold,
-          ),
-          const Spacer(),
-          recycleTypeText == 'Plastic'
-              ? const PlasticQuantityControl()
-              : recycleTypeText == 'Iron'
-                  ? const IronQuantityControl()
-                  : recycleTypeText == 'Glass'
-                      ? const GlassQuantityControl()
-                      : const SizedBox(),
-        ],
+      child: OrderTypeContainer(
+        recycleTypeSvg: recycleTypeSvg,
+        recycleTypeText: recycleTypeText,
+        showQuantityControl: showQuantityControl,
       ),
     );
   }

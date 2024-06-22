@@ -20,7 +20,7 @@ class HistoryPointsView extends StatelessWidget {
                   sizedBoxWidth: MediaQuery.of(context).size.width * 0.1,
                 ),
                 SizedBox(height: 48.h),
-                const RecentRecyclingListView() // TODO: change this  list view to listview of history points
+                const RecentRecyclingSection() // TODO: change this  list view to listview of history points
               ],
             ),
           ),

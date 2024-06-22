@@ -71,7 +71,7 @@ class _MyAppState extends State<MyApp> {
               create: (context) => ShowCoinsCubit(getIt.get<AntikaRepoImpl>())
                 ..fetchCoinsAntika()),
           BlocProvider(
-            create: (context) => RecyclingCubit(),
+            create: (context) => RecyclingCubit()..showRequestResult(),
           ),
         ],
         child: MaterialApp.router(
