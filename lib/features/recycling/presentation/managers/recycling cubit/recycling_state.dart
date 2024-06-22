@@ -19,18 +19,7 @@ class SendRequestFailureState extends RecyclingState {
 
 class SendRequestLoadingState extends RecyclingState {}
 
-class ShowRequestResultSuccessState extends RecyclingState {
-  final String? totalPoints;
-  final String? pointsOfBlastic;
-  final String? pointsOfIron;
-  final String? pointsOfGlasses;
-  const ShowRequestResultSuccessState({
-    required this.totalPoints,
-    required this.pointsOfBlastic,
-    required this.pointsOfIron,
-    required this.pointsOfGlasses,
-  });
-}
+class ShowRequestResultSuccessState extends RecyclingState {}
 
 // ignore: must_be_immutable
 class ShowRequestResultFailureState extends RecyclingState {
