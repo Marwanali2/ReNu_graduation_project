@@ -8,10 +8,10 @@ part 'recycling_state.dart';
 class RecyclingCubit extends Cubit<RecyclingState> {
   RecyclingCubit() : super(RecyclingInitial());
   final Dio _dio = Dio();
-  static String totalPoints = ' 0';
-  static String pointsOfBlastic = '0';
-  static String pointsOfIron = '0';
-  static String pointsOfGlass = '0';
+  static int totalPoints = 0;
+  static int pointsOfBlastic = 0;
+  static int pointsOfIron = 0;
+  static int pointsOfGlass = 0;
 
   Future<void> sendRequest({
     required int weightOfBlastic,
@@ -78,12 +78,7 @@ class RecyclingCubit extends Cubit<RecyclingState> {
         debugPrint('Success show request result : $responseBody');
 
         emit(
-          ShowRequestResultSuccessState(
-            totalPoints: responseBody['deta']['points'],
-            pointsOfBlastic: responseBody['deta']['pointsofblastic'],
-            pointsOfIron: responseBody['deta']['pointsofiron'],
-            pointsOfGlasses: responseBody['deta']['pointsofglasses'],
-          ),
+          ShowRequestResultSuccessState(),
         );
       } else {
         debugPrint('Failure show request result: $responseBody');
@@ -99,4 +94,5 @@ class RecyclingCubit extends Cubit<RecyclingState> {
           errorMessage: 'Failed to show request result, TRY AGAIN'));
     }
   }
+
 }

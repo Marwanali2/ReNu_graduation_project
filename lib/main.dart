@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
           ),
           BlocProvider(
             create: (context) => AntikaCubit(getIt.get<AntikaRepoImpl>()),
-          ), 
+          ),
           BlocProvider(
               create: (context) => ShowCameraCubit(getIt.get<AntikaRepoImpl>())
                 ..fetchCameraAntika()),

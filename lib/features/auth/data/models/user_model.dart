@@ -7,8 +7,8 @@ class UserModel {
   String? image;
   int? code;
   String? codeExpiredAt;
-  double? lat;
-  double? long;
+  int? lat;
+  int? long;
   String? emailVerifiedAt;
   String? createdAt;
   String? updatedAt;
