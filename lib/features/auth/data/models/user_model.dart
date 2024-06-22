@@ -13,7 +13,7 @@ class UserModel {
   String? createdAt;
   String? updatedAt;
   String? token;
-  String? points;
+  int? points;
 
   UserModel({
     this.id,
