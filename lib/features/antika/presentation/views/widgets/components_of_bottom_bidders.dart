@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
-import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
@@ -14,13 +13,10 @@ class ComponentsOfBidders extends StatefulWidget {
 
 class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
   final TextEditingController nameController = TextEditingController();
-  double binegp = 0.00;
-  final Map<String, String> formData = {
-    'image': 'assests/images/Ellipse199.png',
-    'name': '',
-    'time': 'now',
-    'price': '',
-  };
+  final Map<String,dynamic> data= {};
+
+   double binegp = 0.00;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -118,11 +114,9 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
             Center(
                 child: GestureDetector(
               onTap: () {
-                final String name = nameController.text;
-                final price = binegp.toString();
-                formData['name'] = name;
-                formData['price'] = price;
-                GoRouter.of(context).push(AppRouter.kDetailsOfAntica,extra:formData);
+                
+                 GoRouter.of(context).pop();
+
               },
               child: Container(
                 width: 126,
@@ -144,42 +138,3 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
   }
 }
 
-class CurrentBitEgp extends StatefulWidget {
-  const CurrentBitEgp({super.key});
-
-  @override
-  State<CurrentBitEgp> createState() => _CurrentBitEgpState();
-}
-
-class _CurrentBitEgpState extends State<CurrentBitEgp> {
-  double binegp = 0.00;
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        GestureDetector(
-            onTap: () {
-              if (binegp == 0.00) {
-                binegp = 0.00;
-                setState(() {});
-              } else {
-                binegp = binegp - 5;
-                setState(() {});
-              }
-            },
-            child: Image.asset('assests/images/minus.png')),
-        Text(
-          'EGP ' + binegp.toString(),
-          style: Styles.textStyle20.copyWith(fontFamily: robotoFont),
-        ),
-        GestureDetector(
-            onTap: () {
-              binegp = binegp + 5;
-              setState(() {});
-            },
-            child: Image.asset('assests/images/plus.png'))
-      ],
-    );
-  }
-}

@@ -5,6 +5,7 @@ import 'package:graduation_project/core/helpers/service_locator.dart';
 import 'package:graduation_project/features/antika/data/models/antika_model.dart';
 import 'package:graduation_project/features/antika/data/repos/antika_repo_impl.dart';
 import 'package:graduation_project/features/antika/presentation/manger/details%20cubit/details_cubit.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/listview_of_bidders_of_antika.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_check_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/cleanup_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/company_details_view.dart';
@@ -61,6 +62,7 @@ abstract class AppRouter {
   static const kSuccess = '/success';
   static const kAnticaTabbar = '/anticatabbar';
   static const kDetailsOfAntica = '/detailsofantica';
+  static const kBidderstoDetails = '/bidderstodetails';
   static const kbottomSheet = '/bottomsheet';
   static const kRecyclingTabBar = '/recyclingtabbar';
   static final router = GoRouter(routes: <RouteBase>[
@@ -223,6 +225,7 @@ abstract class AppRouter {
         return const BiddersBottomSheet();
       },
     ),
+    
     // GoRoute(
     //   path: kRecyclingTabBar,
     //   builder: (context, state) {

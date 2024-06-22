@@ -7,6 +7,7 @@ import 'package:graduation_project/core/theme/styles.dart';
 class BiddersOfAntikaListView extends StatefulWidget {
   const BiddersOfAntikaListView({
     super.key,
+
   });
   @override
   State<BiddersOfAntikaListView> createState() =>
@@ -14,6 +15,7 @@ class BiddersOfAntikaListView extends StatefulWidget {
 }
 
 class _BiddersOfAntikaListViewState extends State<BiddersOfAntikaListView> {
+   
   @override
   List<Map<String, String>> bidders = [
     {
