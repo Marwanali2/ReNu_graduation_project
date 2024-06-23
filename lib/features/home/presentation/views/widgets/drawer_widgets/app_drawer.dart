@@ -47,16 +47,18 @@ class AppDrawer extends StatelessWidget {
                   useSvg: false,
                   svgAsset: '',
                 ),
-                SizedBox(height: 20.h),
-                DrawerListItemPageContainer(
-                  titleText: 'My Orders',
-                  icon: null,
-                  svgAsset: 'my order',
-                  useSvg: true,
-                  onTap: () {
-                    GoRouter.of(context).push(AppRouter.kMyOrders);
-                  },
-                ),
+                SizedBox(height: 10.h),
+                const Divider(),
+                /*          // SizedBox(height: 20.h),
+                // DrawerListItemPageContainer(
+                //   titleText: 'My Orders',
+                //   icon: null,
+                //   svgAsset: 'my order',
+                //   useSvg: true,
+                //   onTap: () {
+                //     GoRouter.of(context).push(AppRouter.kMyOrders);
+                //   },
+                // ),
                 // SizedBox(height: 20.h),
                 // DrawerListItemPageContainer(
                 //   titleText: 'Favorite',
@@ -66,8 +68,8 @@ class AppDrawer extends StatelessWidget {
                 //   onTap: () {
                 //     // Handle Favorite tap
                 //   },
-                // ),
-                SizedBox(height: 20.h),
+                // ), */
+                SizedBox(height: 10.h),
                 DrawerListItemPageContainer(
                   titleText: 'Settings',
                   icon: Icons.settings,
@@ -77,7 +79,9 @@ class AppDrawer extends StatelessWidget {
                     GoRouter.of(context).push(AppRouter.kSettings);
                   },
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 10.h),
+                const Divider(),
+                SizedBox(height: 10.h),
                 DrawerListItemPageContainer(
                     titleText: 'Invite Friend',
                     icon: Icons.person_add,
@@ -89,8 +93,9 @@ class AppDrawer extends StatelessWidget {
                           "https://wa.me/?text=I'm%20inviting%20you%20to%20download%20ReNu%20App%20from%20this%20link:%20https://github.com/Marwanali2/graduation_project",
                           false);
                     }),
-
-                SizedBox(height: 20.h),
+                SizedBox(height: 10.h),
+                const Divider(),
+                SizedBox(height: 10.h),
                 DrawerListItemPageContainer(
                     titleText: 'Rate App',
                     useSvg: true,
@@ -100,7 +105,9 @@ class AppDrawer extends StatelessWidget {
                       launchCustomUrl(context,
                           "https://play.google.com/store/apps/", false);
                     }),
-                SizedBox(height: 20.h),
+                SizedBox(height: 10.h),
+                const Divider(),
+                SizedBox(height: 10.h),
                 DrawerListItemPageContainer(
                   titleText: 'Logout',
                   useSvg: true,

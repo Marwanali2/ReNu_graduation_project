@@ -79,7 +79,28 @@ class SettingsView extends StatelessWidget {
               SvgWithTitleWithIconButton(
                 svgName: 'profile_marker',
                 title: 'My Location',
-                gestureDetectorOnPressed: () {},
+                gestureDetectorOnPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('My Location'),
+                          content:
+                              const Text('Tanta Qism2, Gharbia Governorate'),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text(
+                                'Okay',
+                                style: TextStyle(color: ColorsManager.green1),
+                              ),
+                            ),
+                          ],
+                        );
+                      });
+                },
               ),
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.05.h),
               Text(

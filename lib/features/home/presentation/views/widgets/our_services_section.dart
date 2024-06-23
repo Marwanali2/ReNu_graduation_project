@@ -28,8 +28,7 @@ class OurServicesSection extends StatelessWidget {
               serviceSVGName: 'recycling-truck',
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return BounceInLeft(
-                      curve: Curves.bounceInOut, child: const RecyclingView());
+                  return SlideInLeft(child: const RecyclingView());
                 }));
                 // GoRouter.of(context).push(AppRouter.kRecycling);
               },
