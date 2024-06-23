@@ -67,7 +67,7 @@ class CleanUpCubit extends Cubit<CleanUpState> {
       );
       var responseBody = response.data;
       if (response.statusCode == 200) {
-        CompanyModel.fromJson(responseBody['deta']['company']);
+        companyModel = CompanyModel.fromJson(responseBody['deta']['company']);
         debugPrint('Success Get Company Data : $responseBody');
 
         emit(
@@ -108,7 +108,8 @@ class CleanUpCubit extends Cubit<CleanUpState> {
             'comment': reviewComment,
           });
       var responseBody = response.data;
-      if (response.statusCode == 200 && responseBody['message'] == 'review is successful') {
+      if (response.statusCode == 200 &&
+          responseBody['message'] == 'review is successful') {
         debugPrint('Success Send Customer Review: $responseBody');
         emit(SendReviewSuccessState());
       } else {
@@ -121,7 +122,8 @@ class CleanUpCubit extends Cubit<CleanUpState> {
         print('${AuthCubit.userModel.token}');
       }
       debugPrint('Failed to Send Customer Review, Reason: $e');
-      emit(SendReviewFailureState(errorMessage: 'Failed to Send Customer Review, TRY AGAIN'));
+      emit(SendReviewFailureState(
+          errorMessage: 'Failed to Send Customer Review, TRY AGAIN'));
     }
   }
 

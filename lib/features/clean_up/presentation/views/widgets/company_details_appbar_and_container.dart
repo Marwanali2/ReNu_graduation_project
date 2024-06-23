@@ -15,16 +15,12 @@ class CompanydetailsAppbarAndContainer extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Container(
+        SizedBox(
           width: MediaQuery.sizeOf(context).width,
           height: MediaQuery.sizeOf(context).height * 0.25,
-          color: ColorsManager.green1.withOpacity(0.3),
-          child: const Center(
-            child: SvgPictureComponent(
-              name: 'big_rubbish',
-              width: 105,
-              height: 105,
-            ),
+          child: Center(
+            child: Image.network(
+                'https://api-service.cloud/recycle/storage/app/public/FD2uB65wVPjwskeTZBKSHj1ivANAg3dG.jpeg'),
           ),
         ),
         const CompanyDetailsViewContainer(),

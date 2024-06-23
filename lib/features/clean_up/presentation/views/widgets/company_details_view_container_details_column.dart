@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 
 class CompanyDetailsViewContainerDetailsColumn extends StatelessWidget {
@@ -23,8 +22,8 @@ class CompanyDetailsViewContainerDetailsColumn extends StatelessWidget {
         SizedBox(height: 3.h),
         Text(
           titleValue,
-          style: TextStyles.font12SemiBlack1SemiBold.copyWith(
-              fontWeight: FontWeight.w400, color: ColorsManager.semiGrey5),
+          style: TextStyles.font12SemiBlack1SemiBold
+              .copyWith(fontWeight: FontWeight.w400),
         ),
       ],
     );

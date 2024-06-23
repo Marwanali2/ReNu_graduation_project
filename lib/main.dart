@@ -12,6 +12,7 @@ import 'package:graduation_project/features/antika/presentation/manger/show_came
 import 'package:graduation_project/features/antika/presentation/manger/show_coins/show_coins_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/manger/show_jewelry_cubit/show_jewelry_cubit.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
+import 'package:graduation_project/features/clean_up/presentation/managers/cubit/clean_up_cubit.dart';
 import 'package:graduation_project/features/recycling/presentation/managers/recycling%20cubit/recycling_cubit.dart';
 
 //TODO: my location page in settings view
@@ -53,6 +54,9 @@ class _MyAppState extends State<MyApp> {
         providers: [
           BlocProvider<AuthCubit>(
             create: (context) => AuthCubit(),
+          ),
+            BlocProvider<CleanUpCubit>(
+            create: (context) => CleanUpCubit()..showRequestResult()..showCompanyReview(),
           ),
           BlocProvider(
             create: (context) => FavoritesCubit(getIt.get<AntikaRepoImpl>())

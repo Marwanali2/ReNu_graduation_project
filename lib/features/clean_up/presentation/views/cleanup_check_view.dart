@@ -5,10 +5,8 @@ import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/common_app_bar.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/custom_google_map.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/show_subscription_time_container.dart';
-import 'package:graduation_project/features/home/presentation/views/last_cleanup_view.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/last_cleanup_section.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/text_with_underline.dart';
+import 'package:lottie/lottie.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CleanupCheckView extends StatefulWidget {
@@ -92,7 +90,7 @@ class _CleanupCheckViewState extends State<CleanupCheckView> {
                 Row(
                   children: [
                     Text(
-                      'Cleaner Location',
+                      'EcoDelta Recyclers Location',
                       style: TextStyles.font14BlackMeduim
                           .copyWith(fontFamily: 'Roboto'),
                     ),
@@ -112,32 +110,66 @@ class _CleanupCheckViewState extends State<CleanupCheckView> {
                             ));
                       },
                       icon: const Icon(Icons.map_outlined),
-                      label: const Text('View'),
+                      label: const Text(
+                        'View',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     )
                   ],
                 ),
                 SizedBox(height: 14.h),
-                const SvgPictureComponent(
-                  name: 'company_location',
-                  width: double.infinity,
-                  height: 151,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CustomGoogleMap(
+                            isShowCompany: true,
+                          ),
+                        ));
+                  },
+                  child: Center(
+                      child: Lottie.asset('assets/lottie/map.json',
+                          height: 200.h)),
                 ),
                 SizedBox(height: 14.h),
-                TitleWithSecondUnderLineTextRow(
-                  title: 'Last Clean Up',
-                  secondText: 'Show more',
-                  secondTextOnTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LastCleanUpView()),
-                    );
-                    //  GoRouter.of(context).push(AppRouter.kCleanUp);
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                      ColorsManager.green1,
+                    ),
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(
+                        side: BorderSide(
+                          color: Colors.green[300]!,
+                          width: 5.w,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          10.r,
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    //TODO: @Ananhamdy11 navigate to payment screen
                   },
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top: 18.h,
+                      bottom: 18.h,
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Pay Now',
+                        style: TextStyles.font16BlackSemiBoldInter.copyWith(
+                          color: ColorsManager.mainWhite,
+                          fontFamily: 'Popins',
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
-                SizedBox(height: 20.h),
-                const LastCleanUpListView(),
-                SizedBox(height: 20.h),
+                SizedBox(height: 14.h),
               ],
             ),
           ),

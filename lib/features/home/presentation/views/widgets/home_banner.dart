@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/book_now_button.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class HomeBanner extends StatelessWidget {
       children: [
         Container(
           width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height * 0.2,
+          height: MediaQuery.sizeOf(context).height * 0.21,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.r),
             color: ColorsManager.green2,
@@ -53,12 +53,16 @@ class HomeBanner extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 5.h),
-              Text(
-                'Recycling and collecting garbage',
-                style: TextStyles.font11WhiteLight.copyWith(fontSize: 11.sp),
+              SizedBox(
+                width: MediaQuery.sizeOf(context).width * 0.4.w,
+                child: Text(
+                  'Use promo code "SAVE40" at checkout and enjoy a huge discount on all our services! Don\'t miss out, this offer is valid for a limited time! ⏳',
+                  style: GoogleFonts.raleway(
+                    fontSize: 11.sp,
+                    color: ColorsManager.mainWhite,
+                  ),
+                ),
               ),
-              SizedBox(height: 30.h),
-              const BookNowButton(),
             ],
           ),
         ),
