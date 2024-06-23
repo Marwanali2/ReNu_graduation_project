@@ -34,7 +34,7 @@ class OurServicesSection extends StatelessWidget {
               },
             ),
             SizedBox(
-              width: 35.w,
+              width: MediaQuery.sizeOf(context).width * 0.022.w,
             ),
             ServiceContainerComponent(
               serviceName: 'CleanUp',
@@ -63,7 +63,7 @@ class OurServicesSection extends StatelessWidget {
               },
             ),
             SizedBox(
-              width: 35.w,
+              width: MediaQuery.sizeOf(context).width * 0.022.w,
             ),
             ServiceContainerComponent(
               serviceName: 'Antika',
