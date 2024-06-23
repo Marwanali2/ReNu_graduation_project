@@ -132,7 +132,7 @@ final String hinttext;
             }else if(hinttext =='Card Number' && value.length<16){
               return 'Enter 16 correct number ';
             }else if(hinttext =='328' && value.length<3){
-              return 'Enter 3 correct number ';
+              return 'must 3 number ';
             }
       },
      decoration: InputDecoration(
