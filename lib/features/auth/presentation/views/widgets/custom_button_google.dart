@@ -26,7 +26,7 @@ class CusttomButtonGoogle extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(FontAwesomeIcons.google),
+              Image.asset('assests/images/small_google.png'),
               const SizedBox(
                 width: 15,
               ),

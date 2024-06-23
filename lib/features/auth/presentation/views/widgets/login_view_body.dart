@@ -93,6 +93,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       ),
                       SizedBox(
                         height: 80,
+                        width: 320,
                         child: TextFormField(
                             controller: passwordcontroller,
                             onChanged: (value) {
@@ -189,13 +190,13 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       const SizedBox(
                         height: 30,
                       ),
-                      const Center(
+                       Center(
                         child: SizedBox(
                           width: 250,
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                CustomIconButton(
+                               const CustomIconButton(
                                   icon: FontAwesomeIcons.facebook,
                                   height: 49,
                                   width: 49,
@@ -203,14 +204,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                                   borderRadius: 25,
                                   iconColor: Color(0xff20226A),
                                 ),
-                                CustomIconButton(
-                                  icon: FontAwesomeIcons.google,
-                                  height: 49,
-                                  width: 49,
-                                  iconSize: 34.09,
-                                  borderRadius: 25,
-                                  iconColor: Color(0xffFF3D00),
-                                ),
+                                Image.asset('assests/images/google.png')
                               ]),
                         ),
                       ),

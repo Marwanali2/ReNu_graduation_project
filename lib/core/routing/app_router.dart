@@ -6,6 +6,8 @@ import 'package:graduation_project/features/clean_up/presentation/views/company_
 import 'package:graduation_project/features/clean_up/presentation/views/custom_google_map.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/descripe_offers.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/fav_companies.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/payment_success.dart';
+import 'package:graduation_project/features/clean_up/presentation/views/payment_view.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/select_company.dart';
 import 'package:graduation_project/features/home/presentation/views/drawer_views/my_orders_view.dart';
 import 'package:graduation_project/features/home/presentation/views/drawer_views/settings_view.dart';
@@ -58,7 +60,8 @@ abstract class AppRouter {
   static const kAnticaTabbar = '/anticatabbar';
   static const kDetailsOfAntica = '/detailsofantica';
   static const kBidderstoDetails = '/bidderstodetails';
-  static const kbottomSheet = '/bottomsheet';
+  static const kpayment = '/payment';
+  static const kpaymentSuccess = '/paymentsuccess';
   static const kRecyclingTabBar = '/recyclingtabbar';
   static const kRecycling = '/recycling';
   static final router = GoRouter(routes: <RouteBase>[
@@ -216,9 +219,15 @@ abstract class AppRouter {
       ),
   
     GoRoute(
-      path: kbottomSheet,
+      path: kpayment,
       builder: (context, state) {
-        return const BiddersBottomSheet();
+        return const PaymentView();
+      },
+    ),
+    GoRoute(
+      path: kpaymentSuccess,
+      builder: (context, state) {
+        return const PaymentSuccessView();
       },
     ),
     
