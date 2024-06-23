@@ -24,7 +24,6 @@ class AuthCubit extends Cubit<AuthState> {
         'name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone');
     try {
       Response response = await _dio.post(
-        //'${ApiServices.baseUrl}/users/register',
         'https://api-service.cloud/recycle/public_html/api/users/register',
         options: Options(
           headers: {'Accept': 'application/json'},
