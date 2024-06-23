@@ -12,7 +12,7 @@ class CleanUpCubit extends Cubit<CleanUpState> {
   CleanUpCubit() : super(CleanUpInitial());
   final Dio _dio = Dio();
   static CompanyModel companyModel = CompanyModel();
-  List<ReviewModel> customersReviews = [];
+  static List<ReviewModel> customersReviews = [];
 
   Future<void> sendUserLocation({
     required String userLat,
