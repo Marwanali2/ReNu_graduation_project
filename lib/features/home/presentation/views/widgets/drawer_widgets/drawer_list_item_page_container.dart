@@ -36,7 +36,7 @@ class DrawerListItemPageContainer extends StatelessWidget {
               width: 25.w,
               height: 25.h,
             )
-          : Icon(icon, size: 30.sp),
+          : Icon(icon, size: 40.sp),
       onTap: onTap,
     );
   }

@@ -54,6 +54,9 @@ class _MyAppState extends State<MyApp> {
         providers: [
           BlocProvider<AuthCubit>(
             create: (context) => AuthCubit(),
+          ), 
+           BlocProvider(
+            create: (context) => RecyclingCubit()..showRequestResult(),
           ),
             BlocProvider<CleanUpCubit>(
             create: (context) => CleanUpCubit()..showRequestResult()..showCompanyReview(),
@@ -74,9 +77,7 @@ class _MyAppState extends State<MyApp> {
           BlocProvider(
               create: (context) => ShowCoinsCubit(getIt.get<AntikaRepoImpl>())
                 ..fetchCoinsAntika()),
-          BlocProvider(
-            create: (context) => RecyclingCubit()..showRequestResult(),
-          ),
+         
         ],
         child: MaterialApp.router(
           routerConfig: AppRouter.router,

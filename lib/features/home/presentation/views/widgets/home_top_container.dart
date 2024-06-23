@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/home_custom_app_bar.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/search_field_container.dart';
 
 class HomeTopContainer extends StatelessWidget {
   const HomeTopContainer({
@@ -33,7 +33,12 @@ class HomeTopContainer extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            const SearchFieldContainer(),
+            //const SearchFieldContainer(),
+            Text('ReNu App', //satisfy //sofia //sacramento //rocksalt
+                style: GoogleFonts.monoton(
+                  fontSize: 45.sp,
+                  color: ColorsManager.mainWhite,
+                )),
           ],
         ),
       ),

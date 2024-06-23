@@ -1,10 +1,10 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/text_with_under_line_and_arrow.dart';
+import 'package:graduation_project/features/home/presentation/views/eco_tips_view.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 
 class EcoTipsSection extends StatelessWidget {
@@ -36,7 +36,13 @@ class EcoTipsSection extends StatelessWidget {
                 text: 'Show More',
                 lineWidth: 70,
                 arrowOnTap: () {
-                  GoRouter.of(context).push(AppRouter.kEcoTips);
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return FlipInY(
+                          duration: const Duration(milliseconds: 500),
+                          child: const EcoTipsView());
+                    },
+                  ));
                 }),
           ],
         ),
