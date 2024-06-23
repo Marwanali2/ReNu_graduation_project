@@ -7,13 +7,13 @@ class UserModel {
   String? image;
   int? code;
   String? codeExpiredAt;
-  int? lat;
-  int? long;
+  double? lat;
+  double? long;
   String? emailVerifiedAt;
   String? createdAt;
   String? updatedAt;
   String? token;
-  int? points;
+  String? points;
 
   UserModel({
     this.id,

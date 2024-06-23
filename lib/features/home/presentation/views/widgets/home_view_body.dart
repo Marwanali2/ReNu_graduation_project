@@ -11,6 +11,7 @@ import 'package:graduation_project/features/home/presentation/views/widgets/our_
 import 'package:graduation_project/features/home/presentation/views/widgets/recent_recycling_section.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 import 'package:graduation_project/features/recycling/presentation/managers/recycling%20cubit/recycling_cubit.dart';
+import 'package:lottie/lottie.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
@@ -48,7 +49,17 @@ class HomeViewBody extends StatelessWidget {
                         color: ColorsManager.green1,
                       ));
                     } else if (state is ShowRequestResultFailureState) {
-                      return const Center(child: Text('Error'));
+                      return Column(
+                        children: [
+                          Lottie.asset('assets/lottie/error.json',
+                              height: 200.h),
+                          Center(
+                              child: Text(
+                                  'Failed to load data, try again later',
+                                  style: GoogleFonts.permanentMarker(
+                                      fontSize: 15.sp))),
+                        ],
+                      );
                     } else {
                       return Column(
                         children: [

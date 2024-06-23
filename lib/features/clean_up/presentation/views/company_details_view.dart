@@ -35,10 +35,6 @@ class _CompanyDetailsViewState extends State<CompanyDetailsView> {
       context: context,
       firstDate: DateTime.now(),
       lastDate: DateTime(2030),
-      // initialDateRange: DateTimeRange(
-      //   start: selectedStartDate ?? DateTime.now(),
-      //   end: selectedEndDate ?? DateTime.now().add(const Duration(days: 7)),
-      // ),
       helpText: 'Select a range for EcoDelta Services',
       keyboardType: TextInputType.datetime,
     ).then((pickedDateRange) {
@@ -102,8 +98,8 @@ class _CompanyDetailsViewState extends State<CompanyDetailsView> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Lottie.asset(
-                                'assets/lottie/range_date_lottie.json',
-                                reverse: true,
+                                'assets/lottie/select_date.json',
+                                height: 150.h,
                               ),
                               SizedBox(
                                 height:
@@ -209,46 +205,6 @@ class _CompanyDetailsViewState extends State<CompanyDetailsView> {
                               // )
                             ],
                           )
-                          /*  TableCalendar(
-                          firstDay: DateTime.utc(2010, 10, 16),
-                          lastDay: DateTime.utc(2030, 3, 14),
-                          calendarStyle: CalendarStyle(
-                            todayDecoration: BoxDecoration(
-                              color: Colors.green,
-                              shape: BoxShape.circle,
-                              border: Border.all(color: Colors.black),
-                            ),
-                          ),
-                          focusedDay: DateTime.now(),
-                          currentDay: DateTime.now(),
-                        ), */
-                          /* 
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Reiteration Time',
-                              style: TextStyles.font16BlackMeduim,
-                            ),
-                            SizedBox(height: 15.h),
-                            selectReiterationTime(),
-                            SizedBox(height: 60.h),
-                            Text(
-                              'Clean-Up Time',
-                              style: TextStyles.font16BlackMeduim,
-                            ),
-                            SizedBox(height: 15.h),
-                            selectCleanUpTime(),
-                            SizedBox(
-                              height: MediaQuery.sizeOf(context).height * 0.1,
-                            ),
-                            const Align(
-                              alignment: Alignment.bottomRight,
-                              child: WorkTimeConfirmButton(),
-                            ),
-                          ],
-                        ),
-                       */
                           ),
                     ],
                   ),

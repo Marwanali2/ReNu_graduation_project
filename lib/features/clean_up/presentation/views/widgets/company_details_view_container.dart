@@ -43,7 +43,7 @@ class CompanyDetailsViewContainer extends StatelessWidget {
               children: [
                 SizedBox(width: 10.w),
                 const CompanyDetailsViewContainerDetailsColumn(
-                    title: 'Delivery price', titleValue: 'EGP 35.99'),
+                    title: 'Delivery price', titleValue: 'EGP 50.00'),
                 const VerticalGreyDivider(),
                 const CompanyDetailsViewContainerDetailsColumn(
                     title: 'Delivery Time', titleValue: '15 mins'),

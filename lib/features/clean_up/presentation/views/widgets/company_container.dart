@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
 
 class CompaniesContainer extends StatelessWidget {
   const CompaniesContainer({
@@ -41,12 +40,13 @@ class CompaniesContainer extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyles.font14BlackMeduim,
+                    style: TextStyles.font16BlackMeduimRoboto,
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 10.h),
                   Row(
                     children: [
-                      Icon(Icons.star, size: 20.spMax),
+                      Icon(Icons.star_border,
+                          color: ColorsManager.green1, size: 20.spMax),
                       SizedBox(
                         width: 2.w,
                       ),
@@ -57,18 +57,28 @@ class CompaniesContainer extends StatelessWidget {
                         '( ${numOfRatings.toString()} )',
                         style: TextStyles.font14GreyNormal,
                       ),
+                      SizedBox(width: 15.w),
+                      Icon(
+                        Icons.location_on_outlined,
+                        color: ColorsManager.green1,
+                      ),
+                      Text(
+                        'El nadi Street',
+                        style: TextStyles.font14GreyNormal,
+                      ),
                     ],
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 10.h),
                   Row(
                     children: [
-                      Icon(Icons.access_time, size: 20.spMax),
+                      Icon(Icons.access_time,
+                          color: ColorsManager.green1, size: 20.spMax),
                       SizedBox(width: 2.w),
                       Text(deliveryDuration,
                           style: TextStyles.font14GreyNormal),
                       SizedBox(width: 27.w),
                       Icon(
-                        Icons.fire_truck_outlined,
+                        Icons.attach_money_sharp,
                         size: 20.spMax,
                         color: ColorsManager.green1,
                       ),
@@ -90,18 +100,12 @@ class CompaniesContainer extends StatelessWidget {
               topRight: Radius.circular(10.r),
               bottomRight: Radius.circular(10.r),
             ),
-            child: Container(
-              width: 51.w,
-              height: 48.h,
-              decoration: BoxDecoration(
-                color: ColorsManager.green2,
-              ),
-              child: const Center(
-                child: SvgPictureComponent(
-                  name: 'rubbish',
-                  height: 24,
-                  width: 24,
-                ),
+            child: SizedBox(
+              width: 60.w,
+              height: 50.h,
+              child: Center(
+                child: Image.network(
+                    'https://api-service.cloud/recycle/storage/app/public/FD2uB65wVPjwskeTZBKSHj1ivANAg3dG.jpeg'),
               ),
             ),
           ),
