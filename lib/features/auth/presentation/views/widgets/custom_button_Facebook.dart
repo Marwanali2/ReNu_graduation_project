@@ -28,15 +28,19 @@ class _CusttomButtonFaceBookState extends State<CusttomButtonFaceBook> {
 //   // Once signed in, return the UserCredential
 //   return await FirebaseAuth.instance.signInWithCredential(credential);
 // }
+
+
   @override
   Widget build(BuildContext context) {
+        var screenSize = MediaQuery.of(context).size;
+
     return MaterialButton(
       onPressed: () {
         // signInWithGoogle();
       },
       child: Container(
         height: 35,
-        width: 210,
+        width: screenSize.width*0.59,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             border: Border.all(color: buttonColor)),
@@ -45,7 +49,7 @@ class _CusttomButtonFaceBookState extends State<CusttomButtonFaceBook> {
           children: [
             const Icon(Icons.facebook_sharp, color: Color(0xff20226A)),
             const SizedBox(
-              width: 15,
+              width: 10,
             ),
             Text(
               'Continue with facebook',

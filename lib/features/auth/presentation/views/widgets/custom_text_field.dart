@@ -26,7 +26,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: 80,
-        width: width,
+        width: 320,
         child: TextFormField(
           validator: (value) {
             if (value!.isEmpty) {
