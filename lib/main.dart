@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
         providers: [
           BlocProvider<AuthCubit>(
             create: (context) => AuthCubit(),
-          ),
+          ), 
            BlocProvider(
             create: (context) => RecyclingCubit()..showRequestResult(),
           ),
