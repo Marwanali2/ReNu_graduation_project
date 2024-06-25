@@ -9,6 +9,5 @@ abstract class AntikaRepo {
   Future<Either<Failures, List<CategoriesAntika>>> fetchCameraAntika();
   Future<Either<Failures, List<CategoriesAntika>>> fetchCoinsAntika();
   Future<Either<Failures, List<CategoriesAntika>>> fetchJewerlyAntika();
-    Future<Either<Failures, List<AntikaModel>>> fetchCategoriesDetails();
-
+  Future<Either<Failures, List<AntikaModel>>> fetchCategoriesDetails();
 }

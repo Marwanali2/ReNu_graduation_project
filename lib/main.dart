@@ -6,11 +6,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/features/antika/data/repos/antika_repo_impl.dart';
+import 'package:graduation_project/features/antika/presentation/manger/create_antika%20cubit/cubit/create_antika_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/manger/fav%20cubit/favorites_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/manger/show_antika%20cubit/show_antika_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/manger/show_camera_cubit/show_camera_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/manger/show_coins/show_coins_cubit.dart';
 import 'package:graduation_project/features/antika/presentation/manger/show_jewelry_cubit/show_jewelry_cubit.dart';
+import 'package:graduation_project/features/antika/presentation/views/widgets/categories_list_view.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/clean_up/presentation/managers/cubit/clean_up_cubit.dart';
 import 'package:graduation_project/features/recycling/presentation/managers/recycling%20cubit/recycling_cubit.dart';
@@ -54,12 +56,14 @@ class _MyAppState extends State<MyApp> {
         providers: [
           BlocProvider<AuthCubit>(
             create: (context) => AuthCubit(),
-          ), 
-           BlocProvider(
+          ),
+          BlocProvider(
             create: (context) => RecyclingCubit()..showRequestResult(),
           ),
-            BlocProvider<CleanUpCubit>(
-            create: (context) => CleanUpCubit()..showRequestResult()..showCompanyReview(),
+          BlocProvider<CleanUpCubit>(
+            create: (context) => CleanUpCubit()
+              ..showRequestResult()
+              ..showCompanyReview(),
           ),
           BlocProvider(
             create: (context) => FavoritesCubit(getIt.get<AntikaRepoImpl>())
@@ -77,7 +81,9 @@ class _MyAppState extends State<MyApp> {
           BlocProvider(
               create: (context) => ShowCoinsCubit(getIt.get<AntikaRepoImpl>())
                 ..fetchCoinsAntika()),
-         
+          BlocProvider(
+            create: (context) => CreateAntikaCubit()..fetchDropdownItems(),
+          ),
         ],
         child: MaterialApp.router(
           routerConfig: AppRouter.router,

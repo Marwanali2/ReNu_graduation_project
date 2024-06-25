@@ -6,34 +6,52 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CustomUploadImage extends StatefulWidget {
-  const CustomUploadImage({super.key});
+  const CustomUploadImage({super.key, required this.onImageSelected});
+  final Function(File) onImageSelected;
 
   @override
   State<CustomUploadImage> createState() => _CustomUploadImageState();
 }
 
 class _CustomUploadImageState extends State<CustomUploadImage> {
-  File? image;
-
-  Future<void> pickImage() async {
-    final ImagePicker picker = ImagePicker();
-    final XFile? pickedFile =
-        await picker.pickImage(source: ImageSource.gallery);
+  File? _selectedImage;
+  final ImagePicker _picker = ImagePicker();
+Future<void> _pickImage() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       setState(() {
-        image = File(pickedFile.path);
+        _selectedImage = File(pickedFile.path);
       });
+      widget.onImageSelected(_selectedImage!);
     }
   }
+
+  // Future<void> pickImage() async {
+  //   final ImagePicker picker = ImagePicker();
+  //   final XFile? pickedFile =
+  //       await picker.pickImage(source: ImageSource.gallery);
+
+  //   if (pickedFile != null) {
+  //     setState(() {
+  //       image = File(pickedFile.path);
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        _selectedImage != null
+            ? Image.file(_selectedImage!)
+            : Placeholder(
+                fallbackHeight: 200.0,
+                fallbackWidth: double.infinity,
+              ),
         GestureDetector(
           onTap: () {
-            pickImage();
+            _pickImage();
           },
           child: Container(
             height: 74,
@@ -67,10 +85,10 @@ class _CustomUploadImageState extends State<CustomUploadImage> {
           height: 10,
         ),
         Container(
-          child: image == null
+          child: _selectedImage == null
               ? const Text('No image selected.')
               : Image.file(
-                  image!,
+                  _selectedImage!,
                   height: 100,
                   width: 100,
                 ),

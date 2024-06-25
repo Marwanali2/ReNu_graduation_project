@@ -35,16 +35,22 @@ class RecentRecyclingSection extends StatelessWidget {
         : Column(
             children: [
               const RecycleTypeContainer(
-                  recycleTypeText: 'Plastic',
-                  recycleTypeSvg: 'guidance_plastic',showQuantityControl: false,),
+                recycleTypeText: 'Plastic',
+                recycleTypeSvg: 'guidance_plastic',
+                showQuantityControl: false,
+              ),
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.03.h),
               const RecycleTypeContainer(
-                  recycleTypeText: 'Iron',
-                  recycleTypeSvg: 'iconoir_electronics-chip',showQuantityControl: false,),
+                recycleTypeText: 'Iron',
+                recycleTypeSvg: 'iconoir_electronics-chip',
+                showQuantityControl: false,
+              ),
               SizedBox(height: MediaQuery.sizeOf(context).height * 0.03.h),
               const RecycleTypeContainer(
-                  recycleTypeText: 'Glass',
-                  recycleTypeSvg: 'game-icons_shattered-glass',showQuantityControl: false,),
+                recycleTypeText: 'Glass',
+                recycleTypeSvg: 'game-icons_shattered-glass',
+                showQuantityControl: false,
+              ),
             ],
           );
     // ListView.builder(

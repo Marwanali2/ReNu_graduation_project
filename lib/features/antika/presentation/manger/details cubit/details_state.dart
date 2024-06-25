@@ -8,16 +8,17 @@ sealed class DetailsState extends Equatable {
 }
 
 final class DetailsInitial extends DetailsState {}
+
 final class DetailsLoading extends DetailsState {}
+
 final class DetailsSuccess extends DetailsState {
   final List<AntikaModel> details;
 
- const DetailsSuccess(this.details);
-
+  const DetailsSuccess(this.details);
 }
+
 final class DetailsFailure extends DetailsState {
- final String errorMessage;
+  final String errorMessage;
 
   const DetailsFailure(this.errorMessage);
-  
 }

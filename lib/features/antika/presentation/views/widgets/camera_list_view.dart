@@ -8,19 +8,19 @@ import 'package:intl/intl.dart';
 
 class CustomCameraListView extends StatelessWidget {
   const CustomCameraListView({super.key});
-String formatDate(String dateString) {
-  // Parse the original date string
-  DateTime dateTime = DateTime.parse(dateString);
+  String formatDate(String dateString) {
+    // Parse the original date string
+    DateTime dateTime = DateTime.parse(dateString);
 
-  // Format the date to the desired output
-  String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
+    // Format the date to the desired output
+    String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
 
-  return formattedDate;
-}
+    return formattedDate;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return 
-     BlocBuilder<ShowCameraCubit, ShowCameraState>(
+    return BlocBuilder<ShowCameraCubit, ShowCameraState>(
         builder: (context, state) {
       if (state is ShowCameraSuccess) {
         return ListView.builder(
@@ -51,7 +51,8 @@ String formatDate(String dateString) {
                   ),
                   Text(
                     formatDate(
-                    state.showcameraAntika[index].createdAt.toString(),),
+                      state.showcameraAntika[index].createdAt.toString(),
+                    ),
                     style: Styles.textStyle7,
                   ),
                 ],
@@ -65,4 +66,5 @@ String formatDate(String dateString) {
         return const Center(child: CircularProgressIndicator());
       }
     });
-  }}
+  }
+}

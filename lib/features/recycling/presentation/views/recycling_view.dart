@@ -47,18 +47,24 @@ class RecyclingView extends StatelessWidget {
                       height: MediaQuery.sizeOf(context).height * 0.13.h,
                     ),
                     const RecycleTypeContainer(
-                        recycleTypeText: 'Plastic',
-                        recycleTypeSvg: 'guidance_plastic',showQuantityControl: true,),
+                      recycleTypeText: 'Plastic',
+                      recycleTypeSvg: 'guidance_plastic',
+                      showQuantityControl: true,
+                    ),
                     SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.03.h),
                     const RecycleTypeContainer(
-                        recycleTypeText: 'Iron',
-                        recycleTypeSvg: 'iconoir_electronics-chip',showQuantityControl: true,),
+                      recycleTypeText: 'Iron',
+                      recycleTypeSvg: 'iconoir_electronics-chip',
+                      showQuantityControl: true,
+                    ),
                     SizedBox(
                         height: MediaQuery.sizeOf(context).height * 0.03.h),
                     const RecycleTypeContainer(
-                        recycleTypeText: 'Glass',
-                        recycleTypeSvg: 'game-icons_shattered-glass',showQuantityControl: true,),
+                      recycleTypeText: 'Glass',
+                      recycleTypeSvg: 'game-icons_shattered-glass',
+                      showQuantityControl: true,
+                    ),
                     SizedBox(height: MediaQuery.sizeOf(context).height * 0.1.h),
                     Row(
                       children: [

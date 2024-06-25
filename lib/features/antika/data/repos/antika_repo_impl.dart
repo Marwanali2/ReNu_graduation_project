@@ -100,7 +100,8 @@ class AntikaRepoImpl implements AntikaRepo {
       }
     }
   }
-   @override
+
+  @override
   Future<Either<Failures, List<AntikaModel>>> fetchCategoriesDetails() async {
     try {
       var data = await apiServices.get(endpoint: '/show_antika');

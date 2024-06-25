@@ -4,14 +4,15 @@ import 'package:graduation_project/features/antika/presentation/views/widgets/de
 
 class DetailsOfAnticaView extends StatelessWidget {
   const DetailsOfAnticaView({super.key, required this.antikaModel});
-final AntikaModel antikaModel;
+  final AntikaModel antikaModel;
   @override
-  
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: DetailsOfAnticaViewBody(details: antikaModel,),
+      body: DetailsOfAnticaViewBody(
+        details: antikaModel,
+      ),
     );
   }
 }

@@ -12,7 +12,7 @@ class SuccessViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left:20,right:20),
+      padding: const EdgeInsets.only(left: 20, right: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -36,10 +36,7 @@ class SuccessViewBody extends StatelessWidget {
               fontFamily: interFont,
             ),
           ),
-          const SizedBox(
-            height: 80,
-            width:320
-          ),
+          const SizedBox(height: 80, width: 320),
           CustomButtonField(
             text: 'Back to login',
             backgroundcolor: borderFormColor,

@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlasticQuantityControl extends StatefulWidget {
   const PlasticQuantityControl({super.key});
-static final TextEditingController plasticController = TextEditingController(text: '0');
+  static final TextEditingController plasticController =
+      TextEditingController(text: '0');
   @override
   State<StatefulWidget> createState() {
     return _PlasticQuantityControlState();
@@ -11,11 +12,10 @@ static final TextEditingController plasticController = TextEditingController(tex
 }
 
 class _PlasticQuantityControlState extends State<PlasticQuantityControl> {
-  
-
   void _increment() {
     setState(() {
-      int currentValue = int.parse(PlasticQuantityControl.plasticController.text);
+      int currentValue =
+          int.parse(PlasticQuantityControl.plasticController.text);
       currentValue++;
       PlasticQuantityControl.plasticController.text = currentValue.toString();
     });
@@ -23,7 +23,8 @@ class _PlasticQuantityControlState extends State<PlasticQuantityControl> {
 
   void _decrement() {
     setState(() {
-      int currentValue = int.parse(PlasticQuantityControl.plasticController.text);
+      int currentValue =
+          int.parse(PlasticQuantityControl.plasticController.text);
       if (currentValue > 0) currentValue--;
       PlasticQuantityControl.plasticController.text = currentValue.toString();
     });
@@ -55,7 +56,8 @@ class _PlasticQuantityControlState extends State<PlasticQuantityControl> {
             onSubmitted: (value) {
               setState(() {
                 int newValue = int.tryParse(value) ?? 0;
-                PlasticQuantityControl.plasticController.text = newValue.toString();
+                PlasticQuantityControl.plasticController.text =
+                    newValue.toString();
               });
             },
           ),
@@ -69,13 +71,10 @@ class _PlasticQuantityControlState extends State<PlasticQuantityControl> {
   }
 }
 
-
-
-
-
 class IronQuantityControl extends StatefulWidget {
   const IronQuantityControl({super.key});
-static final TextEditingController ironController = TextEditingController(text: '0');
+  static final TextEditingController ironController =
+      TextEditingController(text: '0');
   @override
   State<StatefulWidget> createState() {
     return _IronQuantityControlState();
@@ -83,8 +82,6 @@ static final TextEditingController ironController = TextEditingController(text: 
 }
 
 class _IronQuantityControlState extends State<IronQuantityControl> {
-  
-
   void _increment() {
     setState(() {
       int currentValue = int.parse(IronQuantityControl.ironController.text);
@@ -141,10 +138,10 @@ class _IronQuantityControlState extends State<IronQuantityControl> {
   }
 }
 
-
 class GlassQuantityControl extends StatefulWidget {
   const GlassQuantityControl({super.key});
-static final TextEditingController glassController = TextEditingController(text: '0');
+  static final TextEditingController glassController =
+      TextEditingController(text: '0');
   @override
   State<StatefulWidget> createState() {
     return _GlassQuantityControlState();
@@ -152,8 +149,6 @@ static final TextEditingController glassController = TextEditingController(text:
 }
 
 class _GlassQuantityControlState extends State<GlassQuantityControl> {
-  
-
   void _increment() {
     setState(() {
       int currentValue = int.parse(GlassQuantityControl.glassController.text);
@@ -209,4 +204,3 @@ class _GlassQuantityControlState extends State<GlassQuantityControl> {
     );
   }
 }
-

@@ -91,6 +91,5 @@ class DescritionOfDetails extends StatelessWidget {
         ),
       ),
     );
- 
   }
 }

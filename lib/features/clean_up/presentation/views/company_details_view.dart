@@ -204,8 +204,7 @@ class _CompanyDetailsViewState extends State<CompanyDetailsView> {
                               //   ),
                               // )
                             ],
-                          )
-                          ),
+                          )),
                     ],
                   ),
                 ),

@@ -31,9 +31,8 @@ class _CustomIconButtonState extends State<CustomIconButton> {
         width: widget.width,
         height: widget.height,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(widget.borderRadius),
-            //border: Border.all(width: 1, color: buttonColor),
-
+          borderRadius: BorderRadius.circular(widget.borderRadius),
+          //border: Border.all(width: 1, color: buttonColor),
         ),
         child: Icon(
           widget.icon,

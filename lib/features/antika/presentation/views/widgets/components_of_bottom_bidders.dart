@@ -13,9 +13,9 @@ class ComponentsOfBidders extends StatefulWidget {
 
 class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
   final TextEditingController nameController = TextEditingController();
-  final Map<String,dynamic> data= {};
+  final Map<String, dynamic> data = {};
 
-   double binegp = 0.00;
+  double binegp = 0.00;
 
   @override
   Widget build(BuildContext context) {
@@ -114,9 +114,7 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
             Center(
                 child: GestureDetector(
               onTap: () {
-                
-                 GoRouter.of(context).pop();
-
+                GoRouter.of(context).pop();
               },
               child: Container(
                 width: 126,
@@ -137,4 +135,3 @@ class _ComponentsOfBiddersState extends State<ComponentsOfBidders> {
     );
   }
 }
-

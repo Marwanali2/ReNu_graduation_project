@@ -18,12 +18,12 @@ class AntikaModel extends Equatable {
   });
 
   factory AntikaModel.fromJson(Map<String, dynamic> json) => AntikaModel(
-      id: json['id'] as int,
-      name: json['name'] as String,
-      image: json['image'] as String,
-      desc: json['Desc'] as String,
-      categoryName: json['category_name'] as String,
-      createdAt:DateTime.parse(json['created_at'] as String),
+        id: json['id'] as int,
+        name: json['name'] as String,
+        image: json['image'] as String,
+        desc: json['Desc'] as String,
+        categoryName: json['category_name'] as String,
+        createdAt: DateTime.parse(json['created_at'] as String),
       );
 
   Map<String, dynamic> toJson() => {

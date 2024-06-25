@@ -56,9 +56,9 @@ class OrderTypeContainer extends StatelessWidget {
                 : recycleTypeText == 'Plastic'
                     ? Text('${RecyclingCubit.pointsOfBlastic} Points')
                     : recycleTypeText == 'Iron'
-                        ?  Text('${RecyclingCubit.pointsOfIron} Points')
+                        ? Text('${RecyclingCubit.pointsOfIron} Points')
                         : recycleTypeText == 'Glass'
-                            ?  Text('${RecyclingCubit.pointsOfGlass} Points')
+                            ? Text('${RecyclingCubit.pointsOfGlass} Points')
                             : const SizedBox(),
           ],
         );

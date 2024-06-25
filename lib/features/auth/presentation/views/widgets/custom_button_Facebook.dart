@@ -29,10 +29,9 @@ class _CusttomButtonFaceBookState extends State<CusttomButtonFaceBook> {
 //   return await FirebaseAuth.instance.signInWithCredential(credential);
 // }
 
-
   @override
   Widget build(BuildContext context) {
-        var screenSize = MediaQuery.of(context).size;
+    var screenSize = MediaQuery.of(context).size;
 
     return MaterialButton(
       onPressed: () {
@@ -40,7 +39,7 @@ class _CusttomButtonFaceBookState extends State<CusttomButtonFaceBook> {
       },
       child: Container(
         height: 35,
-        width: screenSize.width*0.59,
+        width: screenSize.width * 0.59,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             border: Border.all(color: buttonColor)),

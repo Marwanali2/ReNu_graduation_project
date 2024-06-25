@@ -10,15 +10,16 @@ import 'package:intl/intl.dart';
 
 class FavoritesGridView extends StatelessWidget {
   const FavoritesGridView({super.key});
-String formatDate(String dateString) {
-  // Parse the original date string
-  DateTime dateTime = DateTime.parse(dateString);
+  String formatDate(String dateString) {
+    // Parse the original date string
+    DateTime dateTime = DateTime.parse(dateString);
 
-  // Format the date to the desired output
-  String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
+    // Format the date to the desired output
+    String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
 
-  return formattedDate;
-}
+    return formattedDate;
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoritesCubit, FavoritesState>(
@@ -41,12 +42,9 @@ String formatDate(String dateString) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   GestureDetector(
-                    onTap: (){
-                      GoRouter.of(context).push(AppRouter.kDetailsOfAntica,
-                      extra: details
-                      
-                      );
-
+                    onTap: () {
+                      GoRouter.of(context)
+                          .push(AppRouter.kDetailsOfAntica, extra: details);
                     },
                     child: Container(
                       width: 143,
@@ -87,8 +85,7 @@ String formatDate(String dateString) {
                     style: Styles.textStyle11,
                   ),
                   Text(
-                    formatDate(
-                   details.createdAt.toString()),
+                    formatDate(details.createdAt.toString()),
                     style: Styles.textStyle7,
                   ),
                 ],

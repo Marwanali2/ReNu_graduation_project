@@ -8,15 +8,16 @@ import 'package:intl/intl.dart';
 
 class CoinsListView extends StatelessWidget {
   const CoinsListView({super.key});
-String formatDate(String dateString) {
-  // Parse the original date string
-  DateTime dateTime = DateTime.parse(dateString);
+  String formatDate(String dateString) {
+    // Parse the original date string
+    DateTime dateTime = DateTime.parse(dateString);
 
-  // Format the date to the desired output
-  String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
+    // Format the date to the desired output
+    String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
 
-  return formattedDate;
-}
+    return formattedDate;
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ShowCoinsCubit, ShowCoinsState>(
@@ -48,7 +49,7 @@ String formatDate(String dateString) {
                   ),
                   Text(
                     formatDate(
-                    state.showcoinAntika[index].createdAt.toString()),
+                        state.showcoinAntika[index].createdAt.toString()),
                     style: Styles.textStyle7,
                   ),
                 ],

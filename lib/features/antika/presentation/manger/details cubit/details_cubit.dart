@@ -8,7 +8,7 @@ part 'details_state.dart';
 class DetailsCubit extends Cubit<DetailsState> {
   DetailsCubit(this.antikaRepo) : super(DetailsInitial());
 
-final AntikaRepo antikaRepo;
+  final AntikaRepo antikaRepo;
 
   Future<void> fetchCategoriesDetails() async {
     emit(DetailsLoading());
@@ -16,8 +16,7 @@ final AntikaRepo antikaRepo;
     result.fold((failure) {
       emit(DetailsFailure(failure.errorMessage));
     }, (details) {
-      emit(DetailsSuccess( details));
+      emit(DetailsSuccess(details));
     });
   }
-  
 }

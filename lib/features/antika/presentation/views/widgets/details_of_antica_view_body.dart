@@ -30,11 +30,10 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
               Stack(children: [
                 Center(
                   child: Image.network(
-                    
-                      'https://api-service.cloud/recycle/storage/app/public/' +
-                          details.image,
-                       height: 300,
-                          ),
+                    'https://api-service.cloud/recycle/storage/app/public/' +
+                        details.image,
+                    height: 300,
+                  ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(top: 15, left: 10),
@@ -206,7 +205,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                   fontFamily: robotoFont,
                 ),
               ),
-             const BiddersOfAntikaListView(),
+              const BiddersOfAntikaListView(),
             ],
           ),
           const Padding(

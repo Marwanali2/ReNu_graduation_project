@@ -7,15 +7,16 @@ import 'package:intl/intl.dart';
 
 class CustomJewelryListView extends StatelessWidget {
   const CustomJewelryListView({super.key});
-String formatDate(String dateString) {
-  // Parse the original date string
-  DateTime dateTime = DateTime.parse(dateString);
+  String formatDate(String dateString) {
+    // Parse the original date string
+    DateTime dateTime = DateTime.parse(dateString);
 
-  // Format the date to the desired output
-  String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
+    // Format the date to the desired output
+    String formattedDate = DateFormat('yyyy-MM-dd').format(dateTime);
 
-  return formattedDate;
-}
+    return formattedDate;
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ShowJewelryCubit, ShowJewelryState>(
@@ -46,8 +47,9 @@ String formatDate(String dateString) {
                     style: Styles.textStyle11,
                   ),
                   Text(
-                    formatDate(state.showJewelryAntika[index].createdAt.toString()),
-                   // state.showJewelryAntika[index].createdAt.toString(),
+                    formatDate(
+                        state.showJewelryAntika[index].createdAt.toString()),
+                    // state.showJewelryAntika[index].createdAt.toString(),
                     style: Styles.textStyle7,
                   )
                 ],

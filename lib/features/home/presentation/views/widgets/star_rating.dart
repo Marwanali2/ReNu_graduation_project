@@ -30,27 +30,27 @@ class StarRating extends StatelessWidget {
           const SizedBox(
             width: 5,
           ),
-          BlocBuilder<RecyclingCubit, RecyclingState>(
-            builder: (context, state) {
-              return Text(
-                displayValue(),
-                style: TextStyles.font10WhiteMeduim.copyWith(fontSize: 15.sp),
-              );
-            },
-          ),
+          // BlocBuilder<RecyclingCubit, RecyclingState>(
+          //   builder: (context, state) {
+          //     return Text(
+          //       displayValue(),
+          //       style: TextStyles.font10WhiteMeduim.copyWith(fontSize: 15.sp),
+          //     );
+          //   },
+          // ),
         ],
       ),
     );
   }
 
-  String displayValue() {
-    int totalPoints = int.tryParse(RecyclingCubit.totalPoints.toString()) ?? 0;
-    int userPoints = int.tryParse(AuthCubit.userModel.points!) ?? 0;
+//   String displayValue() {
+//     int totalPoints = int.tryParse(RecyclingCubit.totalPoints.toString()) ?? 0;
+//     int userPoints = int.tryParse(AuthCubit.userModel.points!) ?? 0;
 
-    if (totalPoints > userPoints) {
-      return RecyclingCubit.totalPoints.toString();
-    } else {
-      return AuthCubit.userModel.points.toString();
-    }
-  }
+//     if (totalPoints > userPoints) {
+//       return RecyclingCubit.totalPoints.toString();
+//     } else {
+//       return AuthCubit.userModel.points.toString();
+//     }
+//   }
 }

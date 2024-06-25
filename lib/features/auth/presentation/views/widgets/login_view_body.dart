@@ -41,6 +41,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
           isLoading = false;
         } else if (state is LoginFailureState) {
           showSnackBar(context, state.errorMessage!);
+
           isLoading = false;
         }
       },
@@ -93,7 +94,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       ),
                       SizedBox(
                         height: 80,
-                        width: 320,
+                        width: double.infinity,
                         child: TextFormField(
                             controller: passwordcontroller,
                             onChanged: (value) {
@@ -163,7 +164,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                           final String email = emailcontroller.text;
                           final String password = passwordcontroller.text;
                           if (formKey.currentState!.validate()) {
-                        await    BlocProvider.of<AuthCubit>(context)
+                            await BlocProvider.of<AuthCubit>(context)
                                 .loginUser(email: email, password: password);
                           }
                         },
@@ -190,13 +191,13 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                       const SizedBox(
                         height: 30,
                       ),
-                       Center(
+                      Center(
                         child: SizedBox(
                           width: 250,
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                               const CustomIconButton(
+                                const CustomIconButton(
                                   icon: FontAwesomeIcons.facebook,
                                   height: 49,
                                   width: 49,

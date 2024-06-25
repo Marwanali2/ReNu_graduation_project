@@ -211,13 +211,12 @@ abstract class AppRouter {
       },
     ),
     GoRoute(
-      path: kDetailsOfAntica,
-      builder :(context,state){
-        final details = state.extra as AntikaModel;
-            return DetailsOfAnticaView(antikaModel: details);
-      }
-      ),
-  
+        path: kDetailsOfAntica,
+        builder: (context, state) {
+          final details = state.extra as AntikaModel;
+          return DetailsOfAnticaView(antikaModel: details);
+        }),
+
     GoRoute(
       path: kpayment,
       builder: (context, state) {
@@ -230,7 +229,7 @@ abstract class AppRouter {
         return const PaymentSuccessView();
       },
     ),
-    
+
     // GoRoute(
     //   path: kRecyclingTabBar,
     //   builder: (context, state) {
@@ -249,11 +248,10 @@ abstract class AppRouter {
         return const SettingsView();
       },
     ),
-    GoRoute(path: 
-    kRecycling,
-    builder: (context, state) {
-      return const RecyclingView();
-    }
-    )
+    GoRoute(
+        path: kRecycling,
+        builder: (context, state) {
+          return const RecyclingView();
+        })
   ]);
 }
