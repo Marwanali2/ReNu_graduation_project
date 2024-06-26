@@ -9,7 +9,7 @@ import 'package:graduation_project/features/home/presentation/views/widgets/svg_
  
 class EcoTipsSection extends StatelessWidget {
   const EcoTipsSection({super.key});
- 
+     
   @override
   Widget build(BuildContext context) {
     List<String> tips = [
