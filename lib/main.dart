@@ -1,4 +1,6 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:graduation_project/core/helpers/service_locator.dart';
@@ -29,7 +31,10 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(const MyApp());
+  runApp(DevicePreview(
+    enabled: true,
+    builder: (context) => MyApp(),
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -88,10 +93,13 @@ class _MyAppState extends State<MyApp> {
             create: (context) => CreateAntikaCubit()..fetchDropdownItems(),
           ),
           BlocProvider(
-          create: (context) => StoreCubit(),
-        ),
+            create: (context) => StoreCubit(),
+          ),
         ],
         child: MaterialApp.router(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
           routerConfig: AppRouter.router,
           debugShowCheckedModeBanner: false,
         ),

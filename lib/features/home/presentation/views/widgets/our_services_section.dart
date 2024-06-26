@@ -21,58 +21,60 @@ class OurServicesSection extends StatelessWidget {
       children: [
         Text('Our Services', style: TextStyles.font20SemiBlack1SemiBold),
         SizedBox(height: 11.h),
-        Row(
-          children: [
-            ServiceContainerComponent(
-              serviceName: 'Recycling',
-              serviceSVGName: 'recycling-truck',
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return SlideInLeft(child: const RecyclingView());
-                }));
-                // GoRouter.of(context).push(AppRouter.kRecycling);
-              },
+        Center(
+          child: SizedBox(
+            width: double.infinity,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ServiceContainerComponent(
+                  serviceName: 'Recycling',
+                  serviceSVGName: 'recycling-truck',
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return SlideInLeft(child: const RecyclingView());
+                    }));
+                    // GoRouter.of(context).push(AppRouter.kRecycling);
+                  },
+                ),
+                ServiceContainerComponent(
+                  serviceName: 'CleanUp',
+                  serviceSVGName: 'clean-up',
+                  onTap: () async {
+                    try {
+                      await locationService.checkAndRequestLocationService();
+                      await locationService.checkAndRequestLocationPermission();
+                      // ignore: use_build_context_synchronously
+                      GoRouter.of(context).push(AppRouter.kCleanUp);
+                    } catch (e) {
+                      PanaraInfoDialog.showAnimatedFromTop(
+                        // ignore: use_build_context_synchronously
+                        context,
+                        title: "Error",
+                        message:
+                            "please, enable location service and permissions",
+                        buttonText: "Okay",
+                        color: Colors.red,
+                        onTapDismiss: () {
+                          Navigator.pop(context);
+                        },
+                        panaraDialogType: PanaraDialogType.custom,
+                        barrierDismissible: false,
+                      );
+                    }
+                  },
+                ),
+                ServiceContainerComponent(
+                  serviceName: 'Antika',
+                  serviceSVGName: 'antika',
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.kAnticaTabbar);
+                  },
+                ),
+              ],
             ),
-            SizedBox(
-              width: MediaQuery.sizeOf(context).width * 0.022.w,
-            ),
-            ServiceContainerComponent(
-              serviceName: 'CleanUp',
-              serviceSVGName: 'clean-up',
-              onTap: () async {
-                try {
-                  await locationService.checkAndRequestLocationService();
-                  await locationService.checkAndRequestLocationPermission();
-                  // ignore: use_build_context_synchronously
-                  GoRouter.of(context).push(AppRouter.kCleanUp);
-                } catch (e) {
-                  PanaraInfoDialog.showAnimatedFromTop(
-                    // ignore: use_build_context_synchronously
-                    context,
-                    title: "Error",
-                    message: "please, enable location service and permissions",
-                    buttonText: "Okay",
-                    color: Colors.red,
-                    onTapDismiss: () {
-                      Navigator.pop(context);
-                    },
-                    panaraDialogType: PanaraDialogType.custom,
-                    barrierDismissible: false,
-                  );
-                }
-              },
-            ),
-            SizedBox(
-              width: MediaQuery.sizeOf(context).width * 0.022.w,
-            ),
-            ServiceContainerComponent(
-              serviceName: 'Antika',
-              serviceSVGName: 'antika',
-              onTap: () {
-                GoRouter.of(context).push(AppRouter.kAnticaTabbar);
-              },
-            ),
-          ],
+          ),
         ),
       ],
     );
