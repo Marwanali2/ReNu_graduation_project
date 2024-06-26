@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
-import 'package:graduation_project/features/antika/data/models/antika_model.dart';
 import 'package:graduation_project/features/antika/data/models/store_new_antika.dart';
 
 part 'store_state.dart';
@@ -31,7 +30,7 @@ class StoreCubit extends Cubit<StoreState> {
       if (response.statusCode == 201) {
         emit(StoreCubitSuccess());
       } else {
-        emit(StoreCubitFailure('Failed to submit item'));
+        emit(StoreCubitFailure( 'Failed to submit item'));
       }
     } catch (e) {
       emit(StoreCubitFailure(e.toString()));

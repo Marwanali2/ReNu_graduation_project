@@ -130,8 +130,9 @@ class _PaymentViewBodyState extends State<PaymentViewBody> {
                       ),
                     ),
                     onPressed: () {
-                      GoRouter.of(context).push(AppRouter.kpaymentSuccess);
-                      //TODO: @Ananhamdy11 navigate to payment screen
+               if (formKey.currentState!.validate())  {
+                  GoRouter.of(context).push(AppRouter.kpaymentSuccess);
+               }
                     },
                     child: Padding(
                       padding: EdgeInsets.only(
