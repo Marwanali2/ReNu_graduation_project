@@ -27,9 +27,11 @@ class CleanupCheckView extends StatefulWidget {
 }
 
 class _CleanupCheckViewState extends State<CleanupCheckView> {
+  late CleanUpCubit _cleanUpCubit;
   @override
   void initState() {
     super.initState();
+
     if (kDebugMode) {
       print(
           '****************************************${widget.selectedStartDate!.toIso8601String().split('T').first}');
@@ -45,196 +47,201 @@ class _CleanupCheckViewState extends State<CleanupCheckView> {
   Widget build(BuildContext context) {
     //  final theme = Theme.of(context);
     return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 32.h),
-          child: BlocBuilder<CleanUpCubit, CleanUpState>(
-            builder: (context, state) {
-              return SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CommonAppBar(
-                      title: 'Clean Up',
-                      sizedBoxWidth: MediaQuery.sizeOf(context).width * 0.2,
-                    ),
-                    SizedBox(height: 48.h),
-                    Text(
-                      'Clean Up Calender',
-                      style: TextStyles.font14BlackMeduim
-                          .copyWith(fontFamily: 'Roboto'),
-                    ),
-                    SizedBox(height: 15.h),
-                    TableCalendar(
-                      firstDay: widget.selectedEndDate!,
-                      lastDay: widget.selectedStartDate!,
-                      focusedDay: widget.selectedEndDate!,
-                    ),
-                    SizedBox(height: 15.h),
-                    Text(
-                      'subscription time',
-                      style: TextStyles.font14BlackMeduim
-                          .copyWith(fontFamily: 'Roboto'),
-                    ),
-                    SizedBox(height: 14.h),
-                    ShowSubscriptionTimeContainer(
-                      title: 'subscription start time',
-                      date: widget.selectedEndDate!
-                          .toIso8601String()
-                          .split('T')
-                          .first,
-                      svgAsset: 'assets/svg/start_date.svg',
-                      svgColor: ColorsManager.green1,
-                      dateColor: ColorsManager.green1,
-                    ),
-                    SizedBox(height: 8.h),
-                    ShowSubscriptionTimeContainer(
-                      title: 'subscription expiry time',
-                      date: widget.selectedStartDate!
-                          .toIso8601String()
-                          .split('T')
-                          .first,
-                      svgAsset: 'assets/svg/end_date.svg',
-                      svgColor: ColorsManager.red,
-                      dateColor: ColorsManager.red,
-                    ),
-                    SizedBox(height: 14.h),
-                    Row(
-                      children: [
-                        Text(
-                          'EcoDelta Recyclers Location',
-                          style: TextStyles.font14BlackMeduim
-                              .copyWith(fontFamily: 'Roboto'),
-                        ),
-                        const Spacer(),
-                        TextButton.icon(
-                          style: ButtonStyle(
-                            iconColor:
-                                MaterialStateProperty.all(ColorsManager.green1),
+      child: BlocProvider(
+        create: (context) => CleanUpCubit()..showCompanyReview(),
+        child: Scaffold(
+          body: Padding(
+            padding: EdgeInsets.only(left: 16.w, right: 16.w, top: 32.h),
+            child: BlocBuilder<CleanUpCubit, CleanUpState>(
+              builder: (context, state) {
+                return SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CommonAppBar(
+                        title: 'Clean Up',
+                        sizedBoxWidth: MediaQuery.sizeOf(context).width * 0.2,
+                      ),
+                      SizedBox(height: 48.h),
+                      Text(
+                        'Clean Up Calender',
+                        style: TextStyles.font14BlackMeduim
+                            .copyWith(fontFamily: 'Roboto'),
+                      ),
+                      SizedBox(height: 15.h),
+                      TableCalendar(
+                        firstDay: widget.selectedEndDate!,
+                        lastDay: widget.selectedStartDate!,
+                        focusedDay: widget.selectedEndDate!,
+                      ),
+                      SizedBox(height: 15.h),
+                      Text(
+                        'subscription time',
+                        style: TextStyles.font14BlackMeduim
+                            .copyWith(fontFamily: 'Roboto'),
+                      ),
+                      SizedBox(height: 14.h),
+                      ShowSubscriptionTimeContainer(
+                        title: 'subscription start time',
+                        date: widget.selectedEndDate!
+                            .toIso8601String()
+                            .split('T')
+                            .first,
+                        svgAsset: 'assets/svg/start_date.svg',
+                        svgColor: ColorsManager.green1,
+                        dateColor: ColorsManager.green1,
+                      ),
+                      SizedBox(height: 8.h),
+                      ShowSubscriptionTimeContainer(
+                        title: 'subscription expiry time',
+                        date: widget.selectedStartDate!
+                            .toIso8601String()
+                            .split('T')
+                            .first,
+                        svgAsset: 'assets/svg/end_date.svg',
+                        svgColor: ColorsManager.red,
+                        dateColor: ColorsManager.red,
+                      ),
+                      SizedBox(height: 14.h),
+                      Row(
+                        children: [
+                          Text(
+                            'EcoDelta Recyclers Location',
+                            style: TextStyles.font14BlackMeduim
+                                .copyWith(fontFamily: 'Roboto'),
                           ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const CustomGoogleMap(
-                                    isShowCompany: true,
+                          const Spacer(),
+                          TextButton.icon(
+                            style: ButtonStyle(
+                              iconColor: MaterialStateProperty.all(
+                                  ColorsManager.green1),
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const CustomGoogleMap(
+                                      isShowCompany: true,
+                                    ),
+                                  ));
+                            },
+                            icon: const Icon(Icons.map_outlined),
+                            label: const Text(
+                              'View',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 14.h),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const CustomGoogleMap(
+                                  isShowCompany: true,
+                                ),
+                              ));
+                        },
+                        child: Center(
+                            child: Lottie.asset('assets/lottie/map.json',
+                                height: 200.h)),
+                      ),
+                      SizedBox(height: 20.h),
+                      Text(
+                        'Customer Reviews',
+                        style: TextStyles.font14BlackMeduim
+                            .copyWith(fontFamily: 'Roboto'),
+                      ),
+                      SizedBox(height: 5.h),
+                      state is ShowCompanyReviewsSuccessState
+                          ? CleanUpCubit.customersReviews.isEmpty
+                              ? Center(
+                                  child: Text(
+                                    'No Reviews Yet',
+                                    style: TextStyles.font14BlackMeduim
+                                        .copyWith(fontFamily: 'Roboto'),
                                   ),
-                                ));
-                          },
-                          icon: const Icon(Icons.map_outlined),
-                          label: const Text(
-                            'View',
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 14.h),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const CustomGoogleMap(
-                                isShowCompany: true,
-                              ),
-                            ));
-                      },
-                      child: Center(
-                          child: Lottie.asset('assets/lottie/map.json',
-                              height: 200.h)),
-                    ),
-                    SizedBox(height: 20.h),
-                    Text(
-                      'Customer Reviews',
-                      style: TextStyles.font14BlackMeduim
-                          .copyWith(fontFamily: 'Roboto'),
-                    ),
-                    SizedBox(height: 5.h),
-                    state is ShowCompanyReviewsSuccessState
-                        ? CleanUpCubit.customersReviews.isEmpty
-                            ? Center(
-                                child: Text(
+                                )
+                              : ListView.builder(
+                                  itemCount:
+                                      CleanUpCubit.customersReviews.length,
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10.h),
+                                      child: ShowReviewContainer(
+                                        name: CleanUpCubit
+                                            .customersReviews[index].userName,
+                                        value: CleanUpCubit
+                                            .customersReviews[index].value,
+                                        date: CleanUpCubit
+                                            .customersReviews[index].createdAt,
+                                        theReview: CleanUpCubit
+                                            .customersReviews[index].comment,
+                                      ),
+                                    );
+                                  },
+                                )
+                          : state is ShowCompanyReviewsLoadingState
+                              ? Center(
+                                  child: CircularProgressIndicator(
+                                    color: ColorsManager.green1,
+                                  ),
+                                )
+                              : Text(
                                   'No Reviews Yet',
                                   style: TextStyles.font14BlackMeduim
                                       .copyWith(fontFamily: 'Roboto'),
                                 ),
-                              )
-                            : ListView.builder(
-                                itemCount: CleanUpCubit.customersReviews.length,
-                                shrinkWrap: true,
-                                physics: const NeverScrollableScrollPhysics(),
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 10.h),
-                                    child: ShowReviewContainer(
-                                      name: CleanUpCubit
-                                          .customersReviews[index].userName,
-                                      value: CleanUpCubit
-                                          .customersReviews[index].value,
-                                      date: CleanUpCubit
-                                          .customersReviews[index].createdAt,
-                                      theReview: CleanUpCubit
-                                          .customersReviews[index].comment,
-                                    ),
-                                  );
-                                },
-                              )
-                        : state is ShowCompanyReviewsLoadingState
-                            ? Center(
-                                child: CircularProgressIndicator(
-                                  color: ColorsManager.green1,
-                                ),
-                              )
-                            : Text(
-                                'No Reviews Yet',
-                                style: TextStyles.font14BlackMeduim
-                                    .copyWith(fontFamily: 'Roboto'),
+                      SizedBox(height: 4.h),
+                      ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                            ColorsManager.green1,
+                          ),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              side: BorderSide(
+                                color: Colors.green[300]!,
+                                width: 5.w,
                               ),
-                    SizedBox(height: 4.h),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                          ColorsManager.green1,
-                        ),
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            side: BorderSide(
-                              color: Colors.green[300]!,
-                              width: 5.w,
+                              borderRadius: BorderRadius.circular(
+                                10.r,
+                              ),
                             ),
-                            borderRadius: BorderRadius.circular(
-                              10.r,
+                          ),
+                        ),
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.kpayment);
+                          //TODO: @Ananhamdy11 navigate to payment screen
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: 18.h,
+                            bottom: 18.h,
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Pay Now',
+                              style:
+                                  TextStyles.font16BlackSemiBoldInter.copyWith(
+                                color: ColorsManager.mainWhite,
+                                fontFamily: 'Popins',
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      onPressed: () {
-                        GoRouter.of(context).push(AppRouter.kpayment);
-                        //TODO: @Ananhamdy11 navigate to payment screen
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          top: 18.h,
-                          bottom: 18.h,
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Pay Now',
-                            style: TextStyles.font16BlackSemiBoldInter.copyWith(
-                              color: ColorsManager.mainWhite,
-                              fontFamily: 'Popins',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 14.h),
-                  ],
-                ),
-              );
-            },
+                      SizedBox(height: 14.h),
+                    ],
+                  ),
+                );
+              },
+            ),
           ),
         ),
       ),

@@ -23,8 +23,9 @@ class RecyclingView extends StatelessWidget {
                 if (state is SendRequestSuccessState) {
                   showSnackBar(
                     context: context,
-                    label: 'Request Sent Successfully',
-                    backgroundColor: ColorsManager.green1,
+                    label:
+                        'Request Sent Successfully, wait the company to accept/decline it',
+                    backgroundColor: Colors.blue,
                   );
                 } else if (state is SendRequestFailureState) {
                   showSnackBar(
