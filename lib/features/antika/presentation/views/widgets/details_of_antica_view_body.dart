@@ -11,7 +11,7 @@
 // import 'package:graduation_project/features/antika/presentation/views/widgets/bidders_bottom_sheet.dart';
 // import 'package:graduation_project/features/antika/presentation/views/widgets/estimate_of_details.dart';
 // import 'package:graduation_project/features/antika/presentation/views/widgets/listview_of_bidders_of_antika.dart';
-
+   
 // class DetailsOfAnticaViewBody extends StatelessWidget {
 //   const DetailsOfAnticaViewBody({
 //     super.key,
