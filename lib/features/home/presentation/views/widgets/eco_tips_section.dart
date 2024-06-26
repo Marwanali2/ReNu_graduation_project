@@ -6,10 +6,10 @@ import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/text_with_under_line_and_arrow.dart';
 import 'package:graduation_project/features/home/presentation/views/eco_tips_view.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/svg_picture_ccomponent.dart';
-
+ 
 class EcoTipsSection extends StatelessWidget {
   const EcoTipsSection({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
     List<String> tips = [
