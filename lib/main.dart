@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -31,10 +30,9 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(DevicePreview(
-    enabled: true,
-    builder: (context) => MyApp(),
-  ));
+  runApp(
+   const MyApp(),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -97,9 +95,6 @@ class _MyAppState extends State<MyApp> {
           ),
         ],
         child: MaterialApp.router(
-          useInheritedMediaQuery: true,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
           routerConfig: AppRouter.router,
           debugShowCheckedModeBanner: false,
         ),
