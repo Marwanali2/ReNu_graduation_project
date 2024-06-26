@@ -53,7 +53,7 @@ class StarRating extends StatelessWidget {
 
   String displayValue() {
     int totalPoints = int.tryParse(RecyclingCubit.totalPoints.toString()) ?? 0;
-    dynamic userPoints = AuthCubit.userModel.points! ?? 0;
+    dynamic userPoints = int.tryParse(AuthCubit.userModel.points!) ?? 0;
 
     if (totalPoints > userPoints) {
       return RecyclingCubit.totalPoints.toString();

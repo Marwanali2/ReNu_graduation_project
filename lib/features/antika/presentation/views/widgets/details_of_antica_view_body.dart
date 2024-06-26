@@ -158,7 +158,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                             'EGP 100',
                             style: Styles.textStyle13.copyWith(
                                 color: whiteColor,
-                                fontWeight: FontWeight.w500update
+                                fontWeight: FontWeight.w500,
                                 fontFamily: poppinsBlackFont),
                           ),
                         ],
