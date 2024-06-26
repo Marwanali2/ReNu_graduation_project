@@ -40,7 +40,7 @@ class _PlasticQuantityControlState extends State<PlasticQuantityControl> {
         ),
         Container(
           width: 50.w,
-          height: 30.h,
+          height: 35.h,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             border: Border.all(color: Colors.black),
@@ -108,7 +108,7 @@ class _IronQuantityControlState extends State<IronQuantityControl> {
         ),
         Container(
           width: 50.w,
-          height: 30.h,
+          height: 35.h,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             border: Border.all(color: Colors.black),
@@ -175,7 +175,7 @@ class _GlassQuantityControlState extends State<GlassQuantityControl> {
         ),
         Container(
           width: 50.w,
-          height: 30.h,
+          height: 35.h,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             border: Border.all(color: Colors.black),

@@ -8,10 +8,10 @@ part 'recycling_state.dart';
 class RecyclingCubit extends Cubit<RecyclingState> {
   RecyclingCubit() : super(RecyclingInitial());
   final Dio _dio = Dio();
-  static String totalPoints = '0';
-  static int pointsOfBlastic = 0;
-  static String pointsOfIron = '0';
-  static String pointsOfGlass = '0';
+  static dynamic totalPoints = '0';
+  static dynamic pointsOfBlastic = 0;
+  static dynamic pointsOfIron = '0';
+  static dynamic pointsOfGlass = '0';
 
   Future<void> sendRequest({
     required int weightOfBlastic,

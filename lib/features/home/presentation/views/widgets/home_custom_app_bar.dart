@@ -58,14 +58,14 @@ class UserInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const Icon(
-              Icons.phone,
+              Icons.location_on_outlined,
               color: Colors.white,
             ),
             SizedBox(
               width: 3.w,
             ),
             Text(
-              '${AuthCubit.userModel.phone}',
+              'Tanta',
               style: TextStyles.font11WhiteLight.copyWith(
                 fontSize: 12.sp,
                 fontWeight: FontWeight.bold,
