@@ -8,13 +8,13 @@ sealed class StoreState extends Equatable {
 }
 
 final class StoreCubitInitial extends StoreState {}
+
 final class StoreCubitLoading extends StoreState {}
-final class StoreCubitSuccess extends StoreState {
 
-}
+final class StoreCubitSuccess extends StoreState {}
+
 final class StoreCubitFailure extends StoreState {
-
   final String errorMessage;
 
- const StoreCubitFailure(this.errorMessage);
+  const StoreCubitFailure(this.errorMessage);
 }

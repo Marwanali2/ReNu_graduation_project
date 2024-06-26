@@ -43,12 +43,6 @@ Future<void> _pickImage() async {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _selectedImage != null
-            ? Image.file(_selectedImage!)
-            : Placeholder(
-                fallbackHeight: 200.0,
-                fallbackWidth: double.infinity,
-              ),
         GestureDetector(
           onTap: () {
             _pickImage();

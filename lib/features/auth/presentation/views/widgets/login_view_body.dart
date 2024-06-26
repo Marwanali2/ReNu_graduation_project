@@ -12,7 +12,6 @@ import 'package:graduation_project/features/auth/presentation/views/widgets/cust
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_text_widget.dart';
 import 'package:graduation_project/features/auth/presentation/views/widgets/custom_title_widget.dart';
-import 'package:graduation_project/features/recycling/presentation/managers/recycling%20cubit/recycling_cubit.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LogInViewBody extends StatefulWidget {

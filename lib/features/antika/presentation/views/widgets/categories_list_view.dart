@@ -35,10 +35,11 @@ class _ChooseCatigoryBodyListViewState
                 setState(() {
                   _selectedItem = value;
                 });
-              widget.onItemSelected(value);  // Notify the parent widget
-
+                widget.onItemSelected(value); // Notify the parent widget
               },
-              hint: Text(_selectedItem != null ? _selectedItem!.name : 'Select an item'),
+              hint: Text(_selectedItem != null
+                  ? _selectedItem!.name
+                  : 'Select an item'),
             ),
           );
         } else if (state is CreateAntikaFailure) {

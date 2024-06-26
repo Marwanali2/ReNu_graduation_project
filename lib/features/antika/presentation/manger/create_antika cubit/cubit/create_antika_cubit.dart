@@ -24,7 +24,7 @@ class CreateAntikaCubit extends Cubit<CreateAntikaState> {
           print(items);
           emit(CreateAntikaSuccess(items));
         } else {
-          emit(CreateAntikaFailure('Data is null or not a list'));
+          emit(const CreateAntikaFailure('Data is null or not a list'));
         }
       } else {
         emit(CreateAntikaFailure('${response.statusCode}'));
