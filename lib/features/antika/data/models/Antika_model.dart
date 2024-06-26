@@ -7,7 +7,6 @@ class AntikaModel extends Equatable {
   final String desc;
   final String categoryName;
   final DateTime createdAt;
-
   const AntikaModel({
     required this.id,
     required this.name,

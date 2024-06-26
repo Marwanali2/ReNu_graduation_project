@@ -60,7 +60,7 @@ class _EstimateOfDetailsState extends State<EstimateOfDetails> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 321,
+      width: double.infinity,
       height: 105,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15), color: borderFormColor),

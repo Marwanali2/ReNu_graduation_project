@@ -3,7 +3,6 @@ import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/antica_search.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/antica_view_body1.dart';
-import 'package:graduation_project/features/antika/presentation/views/widgets/big_antica_view_body2.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/catigories_view_body.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/custom_title_antica.dart';
 import 'package:graduation_project/features/antika/presentation/views/widgets/favorites_view_body.dart';
@@ -51,14 +50,14 @@ class _AnticaTabBarState extends State<AnticaTabBar>
               height: 30,
             ),
             const Padding(
-                padding: EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(left: 20,right:20),
                 child: SizedBox(
-                  height: 34,
-                  width: 320,
+                  height: 45,
+                  width: double.infinity,
                   child: AnticaSearch(),
                 )),
             const SizedBox(
-              height: 30,
+              height: 25,
             ),
             TabBar(
               labelPadding: EdgeInsets.zero,

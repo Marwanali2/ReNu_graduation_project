@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/theme/colors.dart';
@@ -45,7 +46,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 150, left: 20),
                   child: Container(
-                    width: 164,
+                    width: 169.w,
                     height: 47,
                     decoration: BoxDecoration(
                         color: whiteColor.withOpacity(0.5),
@@ -109,8 +110,8 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                 height: 10,
               ),
               Container(
-                width: 320,
-                height: 153,
+                width: double.infinity,
+                height: 158,
                 decoration: BoxDecoration(
                     color: borderFormColor,
                     borderRadius: BorderRadius.circular(15)),
@@ -157,7 +158,7 @@ class DetailsOfAnticaViewBody extends StatelessWidget {
                             'EGP 100',
                             style: Styles.textStyle13.copyWith(
                                 color: whiteColor,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w500update
                                 fontFamily: poppinsBlackFont),
                           ),
                         ],

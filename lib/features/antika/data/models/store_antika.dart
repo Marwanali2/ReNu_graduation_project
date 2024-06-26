@@ -3,8 +3,9 @@ class StoreAntika {
   final String description;
   final String category;
   final String imageUrl;
-
+  final String time;
   StoreAntika({
+    required this.time,
     required this.productName,
     required this.description,
     required this.category,

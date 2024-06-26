@@ -9,7 +9,7 @@ class DescritionOfDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 320,
+      width: double.infinity,
       height: 183,
       decoration: BoxDecoration(
           color: borderFormColor, borderRadius: BorderRadius.circular(15)),
