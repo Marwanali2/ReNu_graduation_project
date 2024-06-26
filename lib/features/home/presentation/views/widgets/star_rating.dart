@@ -36,11 +36,11 @@ class StarRating extends StatelessWidget {
                 width: 40.w,
                 child: Center(
                   child: Container(
-                    child: Text(
-                      displayValue(),
-                      style: TextStyles.font10WhiteMeduim
-                          .copyWith(fontSize: 15.sp),
-                    ),
+                    // child: Text(
+                    //   displayValue(),
+                    //   style: TextStyles.font10WhiteMeduim
+                    //       .copyWith(fontSize: 15.sp),
+                    // ),
                   ),
                 ),
               );
@@ -51,14 +51,14 @@ class StarRating extends StatelessWidget {
     );
   }
 
-  String displayValue() {
-    int totalPoints = int.tryParse(RecyclingCubit.totalPoints.toString()) ?? 0;
-    int userPoints = int.tryParse(AuthCubit.userModel.points!) ?? 0;
+//   String displayValue() {
+//     int totalPoints = int.tryParse(RecyclingCubit.totalPoints.toString()) ?? 0;
+//     int userPoints = int.tryParse(AuthCubit.userModel.points!) ?? 0;
 
-    if (totalPoints > userPoints) {
-      return RecyclingCubit.totalPoints.toString();
-    } else {
-      return AuthCubit.userModel.points.toString();
-    }
-  }
-}
+//     if (totalPoints > userPoints) {
+//       return RecyclingCubit.totalPoints.toString();
+//     } else {
+//       return AuthCubit.userModel.points.toString();
+//     }
+//   }
+ }

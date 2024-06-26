@@ -107,9 +107,9 @@ class PaymentSuccessViewBody extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 10, vertical: 10),
                           child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor: WidgetStatePropertyAll(
-                                    ColorsManager.green1)),
+                            // style: ButtonStyle(
+                            //     backgroundColor:ColorsManager.green1,
+                            //     ),
                             onPressed: () {
                               if (reviewController.text.isEmpty) {
                                 showSnackBar(
