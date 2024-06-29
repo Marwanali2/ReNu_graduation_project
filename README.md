@@ -7,6 +7,11 @@ application. Also, the user can upload an antique that he wants to sell at aucti
 than one company in all governorates.Its aim is to increase awareness of the importance of recycling and its
 positive impact on the environment and environmental protection.
 
+## ✍ System Design
+![Untitled Diagram drawio (2)](https://github.com/Marwanali2/ReNu_graduation_project/assets/104406542/18f4754a-39c7-4319-a464-7520da08cf83)
+
+
+        
 ## 🧐 Features    
 - Recycle Section
 - Clean Up Section
