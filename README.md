@@ -14,10 +14,7 @@ positive impact on the environment and environmental protection.
 
 ## 📽 Demo     
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/Marwanali2/ReNu_graduation_project/blob/test/demo/VID-20240627-WA0092.mp4">
-  Your browser does not support the video tag.
-</video>        
+https://drive.google.com/file/d/1fwI-V9AS0fpr9RTr064zFs21MCvrDcnB/view?usp=sharing
 
 ## 🎨Figma Design
 https://www.figma.com/design/gpJDYjxbAUObnO0SFxcYWP/project?node-id=769-589&t=seqVu7sEOfFdp9ve-0
