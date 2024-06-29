@@ -14,22 +14,15 @@ positive impact on the environment and environmental protection.
 
 ## 📽 Demo     
 
-        
-
-## 🛠️ Tech Stack
-- [Flutter](https://flutter.dev/)
-- [PHP](https://www.php.net/)
-- [Laravel](https://laravel.com/)
-## 🛠️ Install Dependencies    
-- Use the following git clone command, This will create a local copy of the repository on your machine.
-```bash
-git clone https://github.com/Marwanali2/ReNu_graduation_project.git
-```
+<video width="320" height="240" controls>
+  <source src="https://github.com/Marwanali2/ReNu_graduation_project/blob/test/demo/VID-20240627-WA0092.mp4">
+  Your browser does not support the video tag.
+</video>        
 
 ## 🎨Figma Design
 https://www.figma.com/design/gpJDYjxbAUObnO0SFxcYWP/project?node-id=769-589&t=seqVu7sEOfFdp9ve-0
 
-## 🙇 Author
+## 🙇 Authors
 #### Marwan Ali
 - LinkedIn: [Marwan Ali](https://www.linkedin.com/in/marwan-ali-309aa1219/)
 - Github: [@Marwanali2](https://github.com/Marwanali2)
@@ -37,4 +30,18 @@ https://www.figma.com/design/gpJDYjxbAUObnO0SFxcYWP/project?node-id=769-589&t=se
 #### Anan Hamdy
 - LinkedIn: [Anan Hamdy](https://www.linkedin.com/in/anan-hamdy-b2a6ba203?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADPlPNIBMWFImhCLqhTDL6BKsCBDoTW9wXM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BWVWTygOST0%2BgYTh5niHbCw%3D%3D)
 - Github: [@Ananhamdy11](https://github.com/Ananhamdy11)
+ 
+
+## 🛠️ Tech Stack
+- [Flutter](https://flutter.dev/)
+- [PHP](https://www.php.net/)
+- [Laravel](https://laravel.com/)
+
+
+ ## 💻 Install Dependencies    
+- Use the following git clone command, This will create a local copy of the repository on your machine.
+```bash
+git clone https://github.com/Marwanali2/ReNu_graduation_project.git
+```
+
         
