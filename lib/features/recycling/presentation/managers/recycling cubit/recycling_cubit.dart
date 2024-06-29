@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:graduation_project/core/networking/api_services.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 part 'recycling_state.dart';
 
@@ -22,16 +23,16 @@ class RecyclingCubit extends Cubit<RecyclingState> {
     debugPrint(
         'weightofblastic: $weightOfBlastic, weightofiron: $weightOfIron, weightofglass: $weightOfGlass');
     try {
-      Response response = await _dio.post(
-          'https://api-service.cloud/recycle/public_html/api/users/recycle/sendrequest',
-          options: Options(
-            headers: {
-              'Accept': 'application/json',
-              'Authorization': 'Bearer ${AuthCubit.userModel.token}'
-              //  'Authorization': 'Bearer 169|WG61rv1RN2V8kNlnbnAJAou6M0aqWIsz19jiF5tLc6970021'
-            },
-          ),
-          data: {
+      Response response =
+          await _dio.post('${ApiServices.baseUrl}/users/recycle/sendrequest',
+              options: Options(
+                headers: {
+                  'Accept': 'application/json',
+                  'Authorization': 'Bearer ${AuthCubit.userModel.token}'
+                  //  'Authorization': 'Bearer 169|WG61rv1RN2V8kNlnbnAJAou6M0aqWIsz19jiF5tLc6970021'
+                },
+              ),
+              data: {
             'weightofblastic': weightOfBlastic,
             'weightofiron': weightOfIron,
             'weightofglass': weightOfGlass,
@@ -60,7 +61,7 @@ class RecyclingCubit extends Cubit<RecyclingState> {
     emit(ShowRequestResultLoadingState());
     try {
       Response response = await _dio.get(
-        'https://api-service.cloud/recycle/public_html/api/users/recycle/showtotalresult',
+        '${ApiServices.baseUrl}/users/recycle/showtotalresult',
         options: Options(
           headers: {
             'Accept': 'application/json',

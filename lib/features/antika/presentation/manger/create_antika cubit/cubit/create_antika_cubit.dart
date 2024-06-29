@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:graduation_project/core/networking/api_services.dart';
 import 'package:graduation_project/features/antika/data/models/create_antika.dart';
 
 part 'create_antika_state.dart';
@@ -13,8 +14,8 @@ class CreateAntikaCubit extends Cubit<CreateAntikaState> {
   Future<void> fetchDropdownItems() async {
     emit(CreateAntikaLoading());
     try {
-      final response = await _dio.get(
-          'https://api-service.cloud/recycle/public_html/api/dashbord/antika/create');
+      final response =
+          await _dio.get('${ApiServices.baseUrl}/dashbord/antika/create');
       if (response.statusCode == 200) {
         if (kDebugMode) {
           print(response.data);

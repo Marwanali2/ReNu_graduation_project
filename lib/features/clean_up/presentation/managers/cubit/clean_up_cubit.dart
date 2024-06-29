@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:graduation_project/core/networking/api_services.dart';
 import 'package:graduation_project/features/auth/presentation/mangers/auth%20cubit/auth_cubit.dart';
 import 'package:graduation_project/features/clean_up/data/models/company_model.dart';
 import 'package:graduation_project/features/clean_up/data/models/review_model.dart';
@@ -21,15 +22,15 @@ class CleanUpCubit extends Cubit<CleanUpState> {
     emit(SendingUserLocationLoadingState());
     debugPrint('userLat: $userLat, userLong: $userLong');
     try {
-      Response response = await _dio.post(
-          'https://api-service.cloud/recycle/public_html/api/users/cleanup/Userlocation',
-          options: Options(
-            headers: {
-              'Accept': 'application/json',
-              'Authorization': 'Bearer ${AuthCubit.userModel.token}'
-            },
-          ),
-          data: {
+      Response response =
+          await _dio.post('${ApiServices.baseUrl}/users/cleanup/Userlocation',
+              options: Options(
+                headers: {
+                  'Accept': 'application/json',
+                  'Authorization': 'Bearer ${AuthCubit.userModel.token}'
+                },
+              ),
+              data: {
             'lat': userLat,
             'long': userLong,
           });
@@ -58,7 +59,7 @@ class CleanUpCubit extends Cubit<CleanUpState> {
     emit(GetCompanyLoadingState());
     try {
       Response response = await _dio.get(
-        'https://api-service.cloud/recycle/public_html/api/users/cleanup/getcompanylocation/32',
+        '${ApiServices.baseUrl}/users/cleanup/getcompanylocation/32',
         options: Options(
           headers: {
             'Accept': 'application/json',
@@ -95,15 +96,15 @@ class CleanUpCubit extends Cubit<CleanUpState> {
     emit(SendReviewLoadingState());
     debugPrint('numberOfStars: $numberOfStars, reviewComment: $reviewComment');
     try {
-      Response response = await _dio.post(
-          'https://api-service.cloud/recycle/public_html/api/users/cleanup/sendreview/32',
-          options: Options(
-            headers: {
-              'Accept': 'application/json',
-              'Authorization': 'Bearer ${AuthCubit.userModel.token}'
-            },
-          ),
-          data: {
+      Response response =
+          await _dio.post('${ApiServices.baseUrl}/users/cleanup/sendreview/32',
+              options: Options(
+                headers: {
+                  'Accept': 'application/json',
+                  'Authorization': 'Bearer ${AuthCubit.userModel.token}'
+                },
+              ),
+              data: {
             'value': numberOfStars,
             'comment': reviewComment,
           });
@@ -131,7 +132,7 @@ class CleanUpCubit extends Cubit<CleanUpState> {
     emit(ShowCompanyReviewsLoadingState());
     try {
       Response response = await _dio.get(
-        'https://api-service.cloud/recycle/public_html/api/users/cleanup/showreview/32',
+        '${ApiServices.baseUrl}/users/cleanup/showreview/32',
         options: Options(
           headers: {
             'Accept': 'application/json',

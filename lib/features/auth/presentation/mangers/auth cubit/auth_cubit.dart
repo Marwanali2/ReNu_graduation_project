@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/helpers/constants.dart';
+import 'package:graduation_project/core/networking/api_services.dart';
 import 'package:graduation_project/features/auth/data/models/user_model.dart';
 part 'auth_state.dart';
 
@@ -24,7 +25,7 @@ class AuthCubit extends Cubit<AuthState> {
         'name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, phone: $phone');
     try {
       Response response = await _dio.post(
-        'https://api-service.cloud/recycle/public_html/api/users/register',
+        '${ApiServices.baseUrl}/users/register',
         options: Options(
           headers: {'Accept': 'application/json'},
         ),
@@ -68,14 +69,13 @@ class AuthCubit extends Cubit<AuthState> {
     emit(LoginLoadingState());
     debugPrint('email: $email, password: $password');
     try {
-      Response response = await _dio
-          .post('https://api-service.cloud/recycle/public_html/api/users/login',
-              options: Options(
-                headers: {
-                  'Accept': 'application/json',
-                }, // التوكين ملوش لازمة انه يتبعت مع الطلب
-              ),
-              data: {
+      Response response = await _dio.post('${ApiServices.baseUrl}/users/login',
+          options: Options(
+            headers: {
+              'Accept': 'application/json',
+            }, // التوكين ملوش لازمة انه يتبعت مع الطلب
+          ),
+          data: {
             'email': email,
             'password': password,
           });
@@ -113,15 +113,15 @@ class AuthCubit extends Cubit<AuthState> {
     debugPrint(
         'name: $name, oldPassword: $oldPassword, password: $password, passwordConfirmation: $passwordConfirmation');
     try {
-      Response response = await _dio.post(
-          'https://api-service.cloud/recycle/public_html/api/users/edit_profile',
-          options: Options(
-            headers: {
-              'Accept': 'application/json',
-              'Authorization': 'Bearer ${AuthCubit.userModel.token}'
-            },
-          ),
-          data: {
+      Response response =
+          await _dio.post('${ApiServices.baseUrl}/users/edit_profile',
+              options: Options(
+                headers: {
+                  'Accept': 'application/json',
+                  'Authorization': 'Bearer ${AuthCubit.userModel.token}'
+                },
+              ),
+              data: {
             'name': name,
             'oldpassword': oldPassword,
             'password': password,
