@@ -20,8 +20,7 @@ class StoreCubit extends Cubit<StoreState> {
         'created_at': item.createdAt.toIso8601String(),
         'updatedd_at': item.updatedAt.toIso8601String(),
         'status': item.status,
-        if (item.image != null)
-          'image': await MultipartFile.fromFile(item.image!),
+        'image': await MultipartFile.fromFile(item.image),
       });
       Response response = await dio.post(
         'https://api-service.cloud/recycle/public_html/api/dashbord/antika/store',
@@ -30,6 +29,7 @@ class StoreCubit extends Cubit<StoreState> {
       if (response.statusCode == 201) {
         emit(StoreCubitSuccess());
       } else {
+        // ignore: prefer_const_constructors
         emit(StoreCubitFailure( 'Failed to submit item'));
       }
     } catch (e) {

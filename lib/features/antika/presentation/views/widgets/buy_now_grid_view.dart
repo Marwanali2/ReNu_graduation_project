@@ -56,8 +56,7 @@ class BuyNowGridView extends StatelessWidget {
                           //mainAxisSize: MainAxisSize.min,
                           children: [
                             Image.network(
-                                'https://api-service.cloud/recycle/storage/app/public/' +
-                                    details.image),
+                                'https://api-service.cloud/recycle/storage/app/public/${details.image}'),
                           ],
                         ),
                       ),

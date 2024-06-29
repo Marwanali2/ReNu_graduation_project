@@ -14,6 +14,7 @@ class ShowJewelryCubit extends Cubit<ShowJewelryState> {
     var result = await antikaRepo.fetchJewerlyAntika();
     result.fold((failure) {
       emit(ShowJewelryFailure(failure.errorMessage));
+    // ignore: non_constant_identifier_names
     }, (ShowJewelry) {
       emit(ShowJewelrySuccess(ShowJewelry));
     });

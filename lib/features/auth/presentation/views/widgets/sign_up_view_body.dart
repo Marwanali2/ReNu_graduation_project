@@ -129,6 +129,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                                 if (value!.isEmpty) {
                                   return 'field is required';
                                 }
+                                return null;
                               },
                               keyboardType: TextInputType.visiblePassword,
                               obscureText: obscureText,
@@ -199,6 +200,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                                 if (value!.isEmpty) {
                                   return 'field is required';
                                 }
+                                return null;
                               },
                               keyboardType: TextInputType.visiblePassword,
                               obscureText: obscureText,

@@ -103,6 +103,7 @@ class _LogInViewBodyState extends State<LogInViewBody> {
                               if (value!.isEmpty) {
                                 return 'field is required';
                               }
+                              return null;
                             },
                             keyboardType: TextInputType.visiblePassword,
                             decoration: InputDecoration(

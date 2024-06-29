@@ -27,7 +27,6 @@ class CleanupCheckView extends StatefulWidget {
 }
 
 class _CleanupCheckViewState extends State<CleanupCheckView> {
-  late CleanUpCubit _cleanUpCubit;
   @override
   void initState() {
     super.initState();
@@ -113,7 +112,7 @@ class _CleanupCheckViewState extends State<CleanupCheckView> {
                           const Spacer(),
                           TextButton.icon(
                             style: ButtonStyle(
-                              iconColor: MaterialStateProperty.all(
+                              iconColor: WidgetStateProperty.all(
                                   ColorsManager.green1),
                             ),
                             onPressed: () {
@@ -200,10 +199,10 @@ class _CleanupCheckViewState extends State<CleanupCheckView> {
                       SizedBox(height: 4.h),
                       ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
+                          backgroundColor: WidgetStateProperty.all(
                             ColorsManager.green1,
                           ),
-                          shape: MaterialStateProperty.all(
+                          shape: WidgetStateProperty.all(
                             RoundedRectangleBorder(
                               side: BorderSide(
                                 color: Colors.green[300]!,
@@ -217,7 +216,6 @@ class _CleanupCheckViewState extends State<CleanupCheckView> {
                         ),
                         onPressed: () {
                           GoRouter.of(context).push(AppRouter.kpayment);
-                          //TODO: @Ananhamdy11 navigate to payment screen
                         },
                         child: Padding(
                           padding: EdgeInsets.only(

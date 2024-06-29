@@ -41,8 +41,8 @@ class StoreNewAntika extends Equatable {
         'Desc': desc,
         'category_name': categoryName,
         'status': status,
-        'created_at': createdAt?.toIso8601String(),
-        'updated_at': updatedAt?.toIso8601String(),
+        'created_at': createdAt.toIso8601String(),
+        'updated_at': updatedAt.toIso8601String(),
       };
 
   @override

@@ -33,6 +33,7 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
             if (value!.isEmpty) {
               return 'field is required';
             }
+            return null;
           },
           keyboardType: TextInputType.visiblePassword,
           obscureText: obscureText,

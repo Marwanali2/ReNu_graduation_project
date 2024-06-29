@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,7 +8,6 @@ import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
-import 'package:graduation_project/features/antika/data/models/antika_model.dart';
 import 'package:graduation_project/features/antika/data/models/create_antika.dart';
 import 'package:graduation_project/features/antika/data/models/store_new_antika.dart';
 import 'package:graduation_project/features/antika/presentation/manger/create_antika%20cubit/cubit/create_antika_cubit.dart';
@@ -23,6 +23,7 @@ class SellViewBody extends StatefulWidget {
 }
 
 class _SellViewBodyState extends State<SellViewBody> {
+  @override
   void initState() {
     super.initState();
     context.read<CreateAntikaCubit>().fetchDropdownItems();
@@ -36,10 +37,8 @@ class _SellViewBodyState extends State<SellViewBody> {
   String imageUrl = '';
   File? _selectedImage;
   final Map<String, dynamic> data = {};
-  CreateAntika? _selectedCategory;
   void _handleCategorySelected(CreateAntika? category) {
     setState(() {
-      _selectedCategory = category;
       selectedCategory = category?.name ?? '';
     });
   }
@@ -56,7 +55,9 @@ class _SellViewBodyState extends State<SellViewBody> {
       if (state is StoreCubitLoading) {
       } else if (state is StoreCubitSuccess) {
         GoRouter.of(context).push(AppRouter.kHome);
-        print('success');
+        if (kDebugMode) {
+          print('success');
+        }
       } else if (state is StoreCubitFailure) {
         // Show error message
       }
@@ -125,7 +126,9 @@ class _SellViewBodyState extends State<SellViewBody> {
                         BlocProvider.of<StoreCubit>(context)
                             .submitSellItem(item);
                         // GoRouter.of(context).push(AppRouter.kAnticaTabbar);
-                        print(item);
+                        if (kDebugMode) {
+                          print(item);
+                        }
                       }
                     },
                     child: Container(

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:graduation_project/core/widgets/show_snack_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,9 @@ Future<void> launchCustomUrl(context, String? url, bool inApp) async {
       }
     }
   } catch (e) {
-    print(e.toString());
+    if (kDebugMode) {
+      print(e.toString());
+    }
     showSnackBar(
       context: context,
       label: "Cannot Launch  url ",

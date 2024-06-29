@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/widgets/show_snack_bar.dart';
 import 'package:graduation_project/features/home/presentation/views/widgets/home_custom_app_bar.dart';

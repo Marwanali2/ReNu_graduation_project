@@ -14,7 +14,6 @@ class BiddersOfAntikaListView extends StatefulWidget {
 }
 
 class _BiddersOfAntikaListViewState extends State<BiddersOfAntikaListView> {
-  @override
   List<Map<String, String>> bidders = [
     {
       'image': 'assests/images/Ellipse199.png',

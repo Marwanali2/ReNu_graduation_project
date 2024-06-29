@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:graduation_project/core/helpers/constants.dart';
 import 'package:graduation_project/core/routing/app_router.dart';
 import 'package:graduation_project/core/theme/colors.dart';
 import 'package:graduation_project/core/theme/styles.dart';
 import 'package:graduation_project/core/widgets/back_icon_widget.dart';
-import 'package:graduation_project/core/widgets/custom_button_field.dart';
 import 'package:graduation_project/features/clean_up/presentation/views/widgets/payment_text_field.dart';
 import 'package:lottie/lottie.dart';
 
@@ -114,10 +112,10 @@ class _PaymentViewBodyState extends State<PaymentViewBody> {
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         ColorsManager.green1,
                       ),
-                      shape: MaterialStateProperty.all(
+                      shape: WidgetStateProperty.all(
                         RoundedRectangleBorder(
                           side: BorderSide(
                             color: Colors.green[300]!,
