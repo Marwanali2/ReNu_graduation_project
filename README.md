@@ -1,16 +1,44 @@
-# graduation_project
+# Hi Geeks 👋
+# <p align="center">ReNu App</p>
+  
+✨It is a project that is an intermediary application between the company responsible for recycling waste and
+the user.The user can download it and then deal with the application simply by placing an order through the
+application. Also, the user can upload an antique that he wants to sell at auction, and we can deal with more
+than one company in all governorates.Its aim is to increase awareness of the importance of recycling and its
+positive impact on the environment and environmental protection.
 
-A new Flutter project.
+## 🧐 Features    
+- Recycle Section
+- Clean Up Section
+- Antique Section
 
-## Getting Started
+## 📽 Demo     
 
-This project is a starting point for a Flutter application.
+https://drive.google.com/file/d/1fwI-V9AS0fpr9RTr064zFs21MCvrDcnB/view?usp=sharing
 
-A few resources to get you started if this is your first Flutter project:
+## 🎨Figma Design
+https://www.figma.com/design/gpJDYjxbAUObnO0SFxcYWP/project?node-id=769-589&t=seqVu7sEOfFdp9ve-0
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🙇 Authors
+#### Marwan Ali
+- LinkedIn: [Marwan Ali](https://www.linkedin.com/in/marwan-ali-309aa1219/)
+- Github: [@Marwanali2](https://github.com/Marwanali2)
+- Twitter: [@MaroAlmaro](https://x.com/MaroAlmaro)        
+#### Anan Hamdy
+- LinkedIn: [Anan Hamdy](https://www.linkedin.com/in/anan-hamdy-b2a6ba203?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADPlPNIBMWFImhCLqhTDL6BKsCBDoTW9wXM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BWVWTygOST0%2BgYTh5niHbCw%3D%3D)
+- Github: [@Ananhamdy11](https://github.com/Ananhamdy11)
+ 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Tech Stack
+- [Flutter](https://flutter.dev/)
+- [PHP](https://www.php.net/)
+- [Laravel](https://laravel.com/)
+
+
+ ## 💻 Install Dependencies    
+- Use the following git clone command, This will create a local copy of the repository on your machine.
+```bash
+git clone https://github.com/Marwanali2/ReNu_graduation_project.git
+```
+
+        
