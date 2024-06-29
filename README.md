@@ -19,7 +19,9 @@ positive impact on the environment and environmental protection.
 
 ## 📽 Demo     
 
-https://drive.google.com/file/d/1fwI-V9AS0fpr9RTr064zFs21MCvrDcnB/view?usp=sharing
+https://github.com/Marwanali2/ReNu_graduation_project/assets/104406542/266893af-457f-437a-9b4e-c8cdd552d3b9
+
+
 
 ## 🎨Figma Design
 https://www.figma.com/design/gpJDYjxbAUObnO0SFxcYWP/project?node-id=769-589&t=seqVu7sEOfFdp9ve-0
