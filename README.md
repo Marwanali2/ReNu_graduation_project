@@ -38,7 +38,7 @@ https://github.com/WalaaMohsen/recycle
 - LinkedIn: [Anan Hamdy](https://www.linkedin.com/in/anan-hamdy-b2a6ba203?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADPlPNIBMWFImhCLqhTDL6BKsCBDoTW9wXM&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BWVWTygOST0%2BgYTh5niHbCw%3D%3D)
 - Github: [@Ananhamdy11](https://github.com/Ananhamdy11)
 #### youssef abdelkader
-- LinkedIn: [Youssef Abdalkader] (https://linkedin.com/in/youssef-abdalkader-31591824b)
+- LinkedIn: [Youssef Abdalkader](https://linkedin.com/in/youssef-abdalkader-31591824b)
 - Github: [@youssefabdalkader](https://github.com/youssefabdalkader)
 
 ## 🛠️ Tech Stack
